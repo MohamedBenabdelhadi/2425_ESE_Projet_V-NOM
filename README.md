@@ -22,9 +22,42 @@ Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 graph LR;
 subgraph Robot
     subgraph PCB principal
-        Batterie -- Vcc --> Microcontroleur((Microcontroleur));
-    end
+        subgraph Contrôle
+            M((Microcontroleur)) -- PWM --> D;
+            Q[Quartz] ----> M;
+        end
 
-    Microcontroleur((Microcontroleur)) <-- I2C --> A[Capteur de distance];
+        subgraph Interface utilisateur
+            M ----> LEDR[**Retour d'état :** LED Rouge, *mode chat*]
+            M ----> LEDV[**Retour d'état :** LED Verte, *mode souris*]
+            Bo[**Bouttons :** *switch* On/Off, Start, Mode] ----> M;
+            Con[**Connecteur ST-Link :** Programmation/Debug, *debug* UART] ----> M;
+        end
+
+        subgraph Acquisition
+            CD[**Détecter le bord :**Capteur de distance] -- Analog --> M;
+            L[**Détecter des robots environants :** Lidar] -- UART --> M;
+            AG[**Détecter les mpacts et l'orientation :** Accéléromètre & Gyroscope] -- SPI / I2C --> M;
+        end
+
+        subgraph Déplacement
+            Mot[Moteurs] -- Encodeur : 4 câbles --> M;
+            D[Driver] ----> Mot;
+        end
+
+        subgraph Alimentation
+            Batterie -- 7.2V --> R5V[Régulateur 5V : **Buck**];
+            R5V -- 5V --> R3V[Régulateur 3.3V : **LDO**];
+
+            R3V -- 3.3V --> M;
+            R3V -- 3.3V --> AG;
+
+            R5V -- 5V --> L;
+            R5V -- 5V --> CD;
+        end
+
+        
+    end
+    
 end
 ```
