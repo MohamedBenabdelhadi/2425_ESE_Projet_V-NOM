@@ -1,10 +1,10 @@
 # 2425-ESE-Projet-V-NOM
-Mohamed Benabdelhadi
+Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 
 ## Liste des composants
 - Microcontrôleur : STM32G431CBU6
-- Quartz 16 MHz (Farnell : 2853935)
-- Connecteur SWD/STLink (Farnell : 3226055)
+- Quartz 16 MHz [(Farnell : 2853935)](https://fr.farnell.com/multicomp/mcsjk-7u-16-00-10-30-80-b-30/quartz-16mhz-10pf-3-2mm-x-2-5mm/dp/2853935?srsltid=AfmBOopnM4CmIZbCnYPaPceE-P2LMk88lLX2_RwnxhyCD5bpNZaeiR3n)
+- Connecteur SWD/STLink [(Farnell : 3226055)](https://fr.farnell.com/harwin/m50-3600742/conn-btb-header-14-voies-2-rangs/dp/3226055?srsltid=AfmBOor9wrCqsNTtS0W1yuL9x_f5FiK8xT4XoT9aEqTOFeltcxXGvdPQ)
 - Driver moteur : ZXBM5210-SP-13
 - Moteurs : DfRobot FIT0520 ou FIT0521
 - Acc´el´erom`etre : ADXL343BCCZ-RL
