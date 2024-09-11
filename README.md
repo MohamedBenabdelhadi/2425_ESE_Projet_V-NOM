@@ -19,15 +19,19 @@ Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 
 ## Diagramme d'architecture
 ```mermaid
-graph LR;
+---
+title: V-NOM
+---
+
+graph TD;
 subgraph Robot
     subgraph PCB principal
-    subgraph Déplacement
-            D[Driver] ----> Mot[Moteurs];
+        subgraph Déplacement
+            D[Driver] -..-> Mot[Moteurs];
         end
 
         subgraph Contrôle
-            M((Microcontroleur)) -- PWM --> D;
+            M(("Microcontroleur fa:fa-twitter")) -- PWM --> D;
             Q[Quartz] ----> M;
         end
 
@@ -45,7 +49,7 @@ subgraph Robot
         end
 
         subgraph Déplacement
-            Mot -- Encodeur : 4 câbles --> M;
+            Mot == Encodeur : 4 câbles ==> M;
         end
 
         subgraph Alimentation
