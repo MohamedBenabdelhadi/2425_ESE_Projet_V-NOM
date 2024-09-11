@@ -22,6 +22,10 @@ Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 graph LR;
 subgraph Robot
     subgraph PCB principal
+    subgraph Déplacement
+            D[Driver] ----> Mot[Moteurs];
+        end
+
         subgraph Contrôle
             M((Microcontroleur)) -- PWM --> D;
             Q[Quartz] ----> M;
@@ -41,8 +45,7 @@ subgraph Robot
         end
 
         subgraph Déplacement
-            Mot[Moteurs] -- Encodeur : 4 câbles --> M;
-            D[Driver] ----> Mot;
+            Mot -- Encodeur : 4 câbles --> M;
         end
 
         subgraph Alimentation
@@ -55,9 +58,6 @@ subgraph Robot
             R5V -- 5V --> L;
             R5V -- 5V --> CD;
         end
-
-        
     end
-    
 end
 ```
