@@ -16,3 +16,15 @@ Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 - Connecteurs JST 2.54mm
 - LED + R/C en 0603
 - Cable connecteur de bordure :https://www.digikey.fr/fr/products/detail/jst-sales-america-inc./A03SR03SR30K152A/6708479?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax%20Shopping_Product_High%20ROAS&utm_term=&productid=6708479&utm_content=&utm_id=go_cmp-19538087217_adg-_ad-__dev-c_ext-_prd-6708479_sig-EAIaIQobChMI266NvsG6iAMVgkRBAh3lExJ7EAQYASABEgJQt_D_BwE&gad_source=1&gclid=EAIaIQobChMI266NvsG6iAMVgkRBAh3lExJ7EAQYASABEgJQt_D_BwE
+
+## Diagramme d'architecture
+```mermaid
+graph LR;
+subgraph Robot
+    subgraph PCB principal
+        Batterie -- Vcc --> Microcontroleur((Microcontroleur));
+    end
+
+    Microcontroleur((Microcontroleur)) <-- I2C --> A[Capteur de distance];
+end
+```
