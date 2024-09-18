@@ -1,5 +1,51 @@
-(kicad_sch (version 20231120) (generator "eeschema") (generator_version "8.0")
-  (paper "A4")
-  (lib_symbols)
-  (symbol_instances)
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "64ddd74e-45d0-45ba-af79-a163fd80b296")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 34.29 27.94)
+		(size 88.9 38.1)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f47d467b-f93c-4a34-9390-a73575284095")
+		(property "Sheetname" "alimentation"
+			(at 34.29 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "alimentation.kicad_sch"
+			(at 34.29 66.6246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/64ddd74e-45d0-45ba-af79-a163fd80b296"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
 )
