@@ -1,0 +1,9 @@
+Manufacturer=ROHM Semiconductor
+PartNumber=BU33SD5WG-TR
+PartCategory=Power Supply
+PackageCategory=SOT23 (5-Pin)
+PinCount=5
+Version=2.1
+Released=2017-06-09 11:54:39
+Downloaded=2024-09-18 15:59:33
+3D=Y
