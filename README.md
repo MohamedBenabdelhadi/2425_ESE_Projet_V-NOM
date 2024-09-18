@@ -43,7 +43,7 @@ subgraph Robot
         end
 
         subgraph Acquisition
-            CD[**Détecter le bord :**Capteur de distance] -- Analog --> M;
+            CD[**Détecter le bord :**Capteurs de distance] -- Analog --> M;
             L[**Détecter des robots environants :** Lidar] -- UART --> M;
             AG[**Détecter les mpacts et l'orientation :** Accéléromètre & Gyroscope] -- SPI / I2C --> M;
         end
@@ -65,3 +65,9 @@ subgraph Robot
     end
 end
 ```
+
+## Strategie
+La stratégie de déplacement retenue a été de détecter les bords de la surface de l'arène grâce à des capteurs de distance à l'avant et à l'arrière du robot.  
+**En mode souris :** le robot cherche à garder la plus grande distance possible du robot adverse ("chat"), tout en évitant les bords.  
+**En mode chat :** le robot cherche à entrer en contact avec le robot adverse ("souris") par colision.  
+La détection de la position du robot adverse se fait grâce au capteur Lidar qui permet de déterminer une trajectoire en temps réel. La détection de la colision est faite grâce à l'accéléromètre.
