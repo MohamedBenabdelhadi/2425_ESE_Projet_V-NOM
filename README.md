@@ -1,6 +1,7 @@
 # 2425-ESE-Projet-V-NOM
 Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 
+
 ## Liste des composants
 - Microcontrôleur : STM32G431CBU6 [(ST-Microelectronics)](https://www.st.com/en/microcontrollers-microprocessors/stm32g431cb.html)
 - Quartz 16 MHz [(Farnell : 2853935)](https://fr.farnell.com/multicomp/mcsjk-7u-16-00-10-30-80-b-30/quartz-16mhz-10pf-3-2mm-x-2-5mm/dp/2853935?srsltid=AfmBOopnM4CmIZbCnYPaPceE-P2LMk88lLX2_RwnxhyCD5bpNZaeiR3n)
@@ -15,7 +16,9 @@ Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 - Lidar : YDLIDAR X4
 - Connecteurs JST 2.54mm
 - LED + R/C en 0603
-- Cable + Connecteur capteur de bordure : A03SR03SR30K152A [(Digikey : 455-3703-ND)](https://www.digikey.fr/fr/products/detail/jst-sales-america-inc./A03SR03SR30K152A/6708479?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax%20Shopping_Product_High%20ROAS&utm_term=&productid=6708479&utm_content=&utm_id=go_cmp-19538087217_adg-_ad-__dev-c_ext-_prd-6708479_sig-EAIaIQobChMI266NvsG6iAMVgkRBAh3lExJ7EAQYASABEgJQt_D_BwE&gad_source=1&gclid=EAIaIQobChMI266NvsG6iAMVgkRBAh3lExJ7EAQYASABEgJQt_D_BwE)
+- Cable avec Connecteur du capteur de bordure : A03SR03SR30K152A [(Digikey : 455-3703-ND)](https://www.digikey.fr/fr/products/detail/jst-sales-america-inc./A03SR03SR30K152A/6708479?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax%20Shopping_Product_High%20ROAS&utm_term=&productid=6708479&utm_content=&utm_id=go_cmp-19538087217_adg-_ad-__dev-c_ext-_prd-6708479_sig-EAIaIQobChMI266NvsG6iAMVgkRBAh3lExJ7EAQYASABEgJQt_D_BwE&gad_source=1&gclid=EAIaIQobChMI266NvsG6iAMVgkRBAh3lExJ7EAQYASABEgJQt_D_BwE)
+- Port pour câble du capteur de bordure : BM03B-SRSS-TB(LF)(SN) [(Farnell : 1679128)](https://fr.farnell.com/jst-japan-solderless-terminals/bm03b-srss-tb-lf-sn/embase-entree-sur-le-dessus-3/dp/1679128?&CMP=KNC-GFR-GEN-SKU-MDC-Connectors-Cables-Testing-with-Restricted-MPNs-14-March&mckv=s_dc%7Cpcrid%7C648720547172%7Ckword%7Cbm03b%20srss%20tblfsn%7Cmatch%7Cp%7Cplid%7C%7Cslid%7C%7Cproduct%7C%7Cpgrid%7C129493161308%7Cptaid%7Ckwd-1185703700119%7C&gad_source=1&gclid=Cj0KCQjw9Km3BhDjARIsAGUb4nwrscZTVEgmP52M6HoGuYSXzhf93gxqATGiTRUDuMloynbn5Pj27rIaAikjEALw_wcB)
+
 
 ## Diagramme d'architecture
 ```mermaid
@@ -65,6 +68,7 @@ subgraph Robot
     end
 end
 ```
+
 
 ## Strategie
 La stratégie de déplacement retenue a été de détecter les bords de la surface de l'arène grâce à des capteurs de distance à l'avant et à l'arrière du robot.  
