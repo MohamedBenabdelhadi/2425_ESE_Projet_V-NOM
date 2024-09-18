@@ -1,0 +1,18 @@
+.MP1475SGJ-P :1 ;Switching Voltage Regulators 3A 16V 500kHz Synch Step-Down Conv W/PG
+SOT65P280X100-8N
+*STM IC
+*NGS
+*PLB 1="PG" 2="IN" 3="SW" 4="GND" 5="BST" 6="EN/SYNC" 7="VCC" 8="FB"
+*MXP 8
+*DFN MP1475SGJ-P
+~!Manufacturer_Name (Monolithic Power Systems (MPS))
+~!Manufacturer_Part_Number (MP1475SGJ-P)
+~!Mouser Part Number (946-MP1475SGJ-P)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Monolithic-Power-Systems-MPS/MP1475SGJ-P?qs=FIQZoK1q933LtAjxu26L8w%3D%3D)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Link Datasheet (http://media.digikey.com/pdf/Data%20Sheets/Monolithic%20Power%20PDF)
+~!Height (1mm)
+~!3D_Model (MP1475SGJ-P)
+MP1475SGJ-P
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 

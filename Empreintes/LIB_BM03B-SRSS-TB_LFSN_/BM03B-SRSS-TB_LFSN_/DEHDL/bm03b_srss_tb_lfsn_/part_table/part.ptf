@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'BM03B_SRSS_TB_LFSN_'
+CLASS = IO
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "DESCRIPTION", "DATASHEET";
+{========================================================================================}
+ "JST (JAPAN SOLDERLESS TERMINALS)", "BM03B-SRSS-TB(LFSN)" (!) = "", "BM03B-SRSS-TB", "Other", "", "", "", "", "JST SH Series, 1mm Pitch 3 Way 1 Row Straight PCB Header, Solder Termination, 1A", ""
+END_PART
+
+END.

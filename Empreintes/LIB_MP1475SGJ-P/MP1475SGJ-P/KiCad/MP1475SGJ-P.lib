@@ -1,0 +1,31 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model MP1475SGJ-P
+#/551846/1490449/2.50/8/3/Integrated Circuit
+DEF MP1475SGJ-P IC 0 30 Y Y 1 F N
+F0 "IC" 1050 300 50 H V L CNN
+F1 "MP1475SGJ-P" 1050 200 50 H V L CNN
+F2 "SOT65P280X100-8N" 1050 100 50 H I L CNN
+F3 "http://media.digikey.com/pdf/Data%20Sheets/Monolithic%20Power%20PDF" 1050 0 50 H I L CNN
+F4 "Switching Voltage Regulators 3A 16V 500kHz Synch Step-Down Conv W/PG" 1050 -100 50 H I L CNN "Description"
+F5 "1" 1050 -200 50 H I L CNN "Height"
+F6 "Monolithic Power Systems (MPS)" 1050 -300 50 H I L CNN "Manufacturer_Name"
+F7 "MP1475SGJ-P" 1050 -400 50 H I L CNN "Manufacturer_Part_Number"
+F8 "946-MP1475SGJ-P" 1050 -500 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.co.uk/ProductDetail/Monolithic-Power-Systems-MPS/MP1475SGJ-P?qs=FIQZoK1q933LtAjxu26L8w%3D%3D" 1050 -600 50 H I L CNN "Mouser Price/Stock"
+F10 "" 1050 -700 50 H I L CNN "Arrow Part Number"
+F11 "" 1050 -800 50 H I L CNN "Arrow Price/Stock"
+DRAW
+X PG 1 0 0 200 R 50 50 0 0 P
+X IN 2 0 -100 200 R 50 50 0 0 P
+X SW 3 0 -200 200 R 50 50 0 0 P
+X GND 4 0 -300 200 R 50 50 0 0 P
+X BST 5 1200 0 200 L 50 50 0 0 P
+X EN/SYNC 6 1200 -100 200 L 50 50 0 0 P
+X VCC 7 1200 -200 200 L 50 50 0 0 P
+X FB 8 1200 -300 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 1000 100 1000 -400 200 -400 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library

@@ -1,0 +1,9 @@
+Manufacturer=JST (JAPAN SOLDERLESS TERMINALS)
+PartNumber=BM03B-SRSS-TB(LFSN)
+PartCategory=Connector
+PackageCategory=Other
+PinCount=3
+Version=1.1
+Released=2016-11-29 14:04:38
+Downloaded=2024-09-18 15:18:06
+3D=N
