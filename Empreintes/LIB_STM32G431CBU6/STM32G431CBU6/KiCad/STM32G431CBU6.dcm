@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP STM32G431CBU6
+D STMICROELECTRONICS - STM32G431CBU6 - MCU, 32BIT, 170MHZ, UFQFPN-48
+K
+F https://www.st.com/resource/en/datasheet/stm32g431cb.pdf
+$ENDCMP
+#
+#End Doc Library

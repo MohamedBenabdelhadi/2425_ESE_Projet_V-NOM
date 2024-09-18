@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'STM32G431CBU6'
+CLASS = IC
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "STMicroelectronics", "STM32G431CBU6" (!) = "", "QFN50P700X700X65-49N-D", "Quad Flat No-Lead", "511-STM32G431CBU6", "https://www.mouser.co.uk/ProductDetail/STMicroelectronics/STM32G431CBU6?qs=T3oQrply3y%252B0hTuSHQ7oqA%3D%3D", "STM32G431CBU6", "https://www.arrow.com/en/products/stm32g431cbu6/stmicroelectronics?region=nac", "STMICROELECTRONICS - STM32G431CBU6 - MCU, 32BIT, 170MHZ, UFQFPN-48", "https://www.st.com/resource/en/datasheet/stm32g431cb.pdf", "0.65 mm"
+END_PART
+
+END.
