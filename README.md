@@ -82,3 +82,5 @@ Pour mettre à jour une branche à partir de la branche principale (```main```) 
 git rebase master
 ```
 ![image](https://github.com/user-attachments/assets/46c6d10b-ff33-4031-baca-c4026fec3046)
+![Uploading image.png…]()
+
