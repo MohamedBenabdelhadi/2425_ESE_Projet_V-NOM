@@ -76,11 +76,13 @@ La stratégie de déplacement retenue a été de détecter les bords de la surfa
 **En mode chat :** le robot cherche à entrer en contact avec le robot adverse ("souris") par colision.  
 La détection de la position du robot adverse se fait grâce au capteur Lidar qui permet de déterminer une trajectoire en temps réel. La détection de la colision est faite grâce à l'accéléromètre.
 
+
+## Schémas utiles
+![image](https://github.com/user-attachments/assets/46c6d10b-ff33-4031-baca-c4026fec3046)
+
+
 ## Astuces
 Pour mettre à jour une branche à partir de la branche principale (```main```) : 
 ```bash
 git rebase master
 ```
-![image](https://github.com/user-attachments/assets/46c6d10b-ff33-4031-baca-c4026fec3046)
-![Uploading image.png…]()
-
