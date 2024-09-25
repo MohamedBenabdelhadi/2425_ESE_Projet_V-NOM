@@ -90,3 +90,11 @@ Pour mettre à jour une branche à partir de la branche principale (```main```) 
 ```bash
 git rebase master
 ```
+Pour se lancer avec le **protocole SPI** en STM32 c'est plutôt utile de regarder [le site officiel](https://wiki.st.com/stm32mcu/wiki/Getting_started_with_SPI#What_is_Serial_Peripheral_Interface_-28SPI-29--).
+
+
+## Notes popur finir le schéma électronique
+
+> - Il faut prévoir un pin GPIO pour le Chip Select (CS) du SPI de l'accéléromètre.  
+> - Il faut prévoir un pin pour le bouton RESET.
+> - Il faut prévoir un pin pour le BOOT.
