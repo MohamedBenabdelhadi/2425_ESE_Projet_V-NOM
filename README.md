@@ -85,12 +85,13 @@ La détection de la position du robot adverse se fait grâce au capteur Lidar qu
 ![image](https://github.com/user-attachments/assets/46c6d10b-ff33-4031-baca-c4026fec3046)
 
 
-## Astuces
+## Astuces et solution à des erreurs courrantes
 Pour mettre à jour une branche à partir de la branche principale (```main```) : 
 ```bash
 git rebase master
 ```
 Pour se lancer avec le **protocole SPI** en STM32 c'est plutôt utile de regarder [le site officiel](https://wiki.st.com/stm32mcu/wiki/Getting_started_with_SPI#What_is_Serial_Peripheral_Interface_-28SPI-29--).
+Quand STM32CubeIDE crash au démarage avec ue erreur `"Java" is not responding` il faut effacer le dossier nomé `.metadata` dans le répertoire workspace qui pose problème.
 
 
 ## Notes popur finir le schéma électronique
