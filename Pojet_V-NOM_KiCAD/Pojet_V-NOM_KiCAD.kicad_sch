@@ -2,12 +2,21 @@
 	(version 20231120)
 	(generator "eeschema")
 	(generator_version "8.0")
+<<<<<<< Updated upstream
 	(uuid "d95ccfa6-fc8c-4519-8114-f94d10cca768")
 	(paper "A4")
 	(lib_symbols)
 	(sheet
 		(at 240.03 53.34)
 		(size 35.56 76.2)
+=======
+	(uuid "a23f2243-42c9-4d74-b5b5-02f5d1097592")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 44.45 27.94)
+		(size 107.95 87.63)
+>>>>>>> Stashed changes
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -16,9 +25,15 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
+<<<<<<< Updated upstream
 		(uuid "d64cf973-db76-49a3-b767-735a9dd69c6f")
 		(property "Sheetname" "deplacement"
 			(at 240.03 52.6284 0)
+=======
+		(uuid "1c9d92ec-6586-4c13-bc00-f9493a1f3297")
+		(property "Sheetname" "Déplacement"
+			(at 44.45 27.2284 0)
+>>>>>>> Stashed changes
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26,8 +41,13 @@
 				(justify left bottom)
 			)
 		)
+<<<<<<< Updated upstream
 		(property "Sheetfile" "deplacement.kicad_sch"
 			(at 240.03 130.1246 0)
+=======
+		(property "Sheetfile" "Déplacement.kicad_sch"
+			(at 44.45 116.1546 0)
+>>>>>>> Stashed changes
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37,7 +57,11 @@
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
+<<<<<<< Updated upstream
 				(path "/d95ccfa6-fc8c-4519-8114-f94d10cca768"
+=======
+				(path "/a23f2243-42c9-4d74-b5b5-02f5d1097592"
+>>>>>>> Stashed changes
 					(page "2")
 				)
 			)
