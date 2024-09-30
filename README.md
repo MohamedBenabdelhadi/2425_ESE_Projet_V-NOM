@@ -96,6 +96,6 @@ Quand STM32CubeIDE crash au démarage avec ue erreur `"Java" is not responding` 
 
 ## Notes popur finir le schéma électronique
 
-> - Il faut prévoir un pin GPIO pour le Chip Select (CS) du SPI de l'accéléromètre.  
-> - Il faut prévoir un pin pour le bouton RESET.
-> - Il faut prévoir un pin pour le BOOT.
+> [x] Il faut prévoir un pin GPIO pour le Chip Select (CS) du SPI de l'accéléromètre.  
+> [ ] Il faut prévoir un pin pour le bouton RESET.  
+> [ ] Il faut prévoir un pin pour le BOOT.  
