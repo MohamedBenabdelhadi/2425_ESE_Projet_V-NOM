@@ -44,6 +44,44 @@
 		)
 	)
 	(sheet
+		(at 179.07 45.72)
+		(size 59.69 44.45)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "aef3d9b2-029f-4338-91be-d4af664a9426")
+		(property "Sheetname" "alimentation"
+			(at 179.07 45.0084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "alimentation.kicad_sch"
+			(at 179.07 90.7546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 110.49 95.25)
 		(size 49.53 33.02)
 		(fields_autoplaced yes)
