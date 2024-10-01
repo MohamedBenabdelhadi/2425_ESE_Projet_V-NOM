@@ -981,7 +981,7 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 72.39) (xy 220.98 86.36)
+			(xy 219.71 77.47) (xy 219.71 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1261,6 +1261,16 @@
 	)
 	(wire
 		(pts
+			(xy 228.6 77.47) (xy 228.6 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd149088-ac23-44b2-b1fc-3a3b9182c56a")
+	)
+	(wire
+		(pts
 			(xy 77.47 33.02) (xy 81.28 33.02)
 		)
 		(stroke
@@ -1288,6 +1298,16 @@
 			(type default)
 		)
 		(uuid "dcbcdb4a-dd8d-4f43-9189-90cf72827018")
+	)
+	(wire
+		(pts
+			(xy 220.98 78.74) (xy 220.98 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddf06c77-f3c2-47f7-9265-01b3c9d7ecc1")
 	)
 	(wire
 		(pts
@@ -1331,15 +1351,15 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 72.39) (xy 228.6 86.36)
+			(xy 219.71 78.74) (xy 220.98 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f9a16ba8-3825-4842-8d09-ca684067bad8")
+		(uuid "fe730b5f-e957-4110-9f54-18854efe3d0b")
 	)
-	(hierarchical_label "PA5"
+	(hierarchical_label "Encoder B phase 1 "
 		(shape passive)
 		(at 109.22 77.47 90)
 		(fields_autoplaced yes)
@@ -1351,7 +1371,7 @@
 		)
 		(uuid "4042b3a1-43ef-4ae2-b700-b8c3707dda9e")
 	)
-	(hierarchical_label "PA0"
+	(hierarchical_label "FWD1"
 		(shape passive)
 		(at 69.85 52.07 180)
 		(fields_autoplaced yes)
@@ -1363,7 +1383,7 @@
 		)
 		(uuid "40fd791a-04ef-4838-a26a-7dfb9d25aa44")
 	)
-	(hierarchical_label "PB0"
+	(hierarchical_label "FWD2"
 		(shape passive)
 		(at 186.69 55.88 180)
 		(fields_autoplaced yes)
@@ -1375,7 +1395,7 @@
 		)
 		(uuid "63390a60-a43b-4ac3-ad1e-79341f91a713")
 	)
-	(hierarchical_label "PA8"
+	(hierarchical_label "VREF1"
 		(shape passive)
 		(at 39.37 27.94 90)
 		(fields_autoplaced yes)
@@ -1387,7 +1407,7 @@
 		)
 		(uuid "74e2f195-efe7-4f10-9216-57cafe38c5d2")
 	)
-	(hierarchical_label "PB5"
+	(hierarchical_label "Encoder B phase 2"
 		(shape passive)
 		(at 226.06 80.01 90)
 		(fields_autoplaced yes)
@@ -1399,7 +1419,7 @@
 		)
 		(uuid "7700730c-0535-433e-9375-02eda38ef936")
 	)
-	(hierarchical_label "PA1"
+	(hierarchical_label "REV1"
 		(shape passive)
 		(at 69.85 54.61 180)
 		(fields_autoplaced yes)
@@ -1411,7 +1431,7 @@
 		)
 		(uuid "849108de-ab70-46ee-8171-a43f7827e2f6")
 	)
-	(hierarchical_label "PA6"
+	(hierarchical_label "Encoder A phase 1 "
 		(shape passive)
 		(at 106.68 77.47 90)
 		(fields_autoplaced yes)
@@ -1423,7 +1443,7 @@
 		)
 		(uuid "9026a508-a794-423f-8cc7-0c5fee7807e6")
 	)
-	(hierarchical_label "PB6"
+	(hierarchical_label "VREF2"
 		(shape passive)
 		(at 166.37 33.02 90)
 		(fields_autoplaced yes)
@@ -1435,7 +1455,7 @@
 		)
 		(uuid "9f870f79-0cce-4612-a4c5-1666a995ea76")
 	)
-	(hierarchical_label "PB6"
+	(hierarchical_label "Encoder A phase 2"
 		(shape passive)
 		(at 223.52 80.01 90)
 		(fields_autoplaced yes)
@@ -1447,7 +1467,7 @@
 		)
 		(uuid "b3c98fac-4789-4e78-91aa-c65fdd5fa2dc")
 	)
-	(hierarchical_label "PB1"
+	(hierarchical_label "REV2"
 		(shape passive)
 		(at 186.69 58.42 180)
 		(fields_autoplaced yes)
@@ -1467,7 +1487,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "0ffcb804-9cdc-4dee-b786-7753e7c41bf6")
 		(property "Reference" "#PWR0308"
 			(at 104.14 74.93 0)
@@ -1479,7 +1498,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 104.14 66.04 0)
+			(at 103.124 65.786 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1662,16 +1681,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 228.6 72.39 180)
+		(at 228.6 77.47 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "46c27835-eede-45bf-8b61-f96187b31aaf")
 		(property "Reference" "#PWR0310"
-			(at 228.6 66.04 0)
+			(at 228.6 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1680,7 +1698,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 228.6 67.31 0)
+			(at 229.108 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1688,7 +1706,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 228.6 72.39 0)
+			(at 228.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1697,7 +1715,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 228.6 72.39 0)
+			(at 228.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1706,7 +1724,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 228.6 72.39 0)
+			(at 228.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1930,7 +1948,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 220.98 72.39 0)
+		(at 219.71 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1938,7 +1956,7 @@
 		(dnp no)
 		(uuid "8a835173-4580-4d3c-953a-06649489224d")
 		(property "Reference" "#PWR0309"
-			(at 220.98 76.2 0)
+			(at 219.71 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1947,7 +1965,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 220.726 67.818 0)
+			(at 219.456 72.898 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1955,7 +1973,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 220.98 72.39 0)
+			(at 219.71 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1964,7 +1982,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 220.98 72.39 0)
+			(at 219.71 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1973,7 +1991,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 220.98 72.39 0)
+			(at 219.71 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2134,7 +2152,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "c60433c9-1644-4e2f-bbec-440a74cde55e")
 		(property "Reference" "#PWR0307"
 			(at 111.76 64.77 0)
@@ -2146,7 +2163,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 111.76 66.04 0)
+			(at 112.268 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)

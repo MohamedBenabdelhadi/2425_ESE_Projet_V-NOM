@@ -1440,7 +1440,7 @@
 		(uuid "d788f1d6-fff5-432c-9a57-5243bd6f9b5c")
 	)
 	(no_connect
-		(at 158.75 55.88)
+		(at 62.23 156.21)
 		(uuid "f0ed5046-133a-4244-925d-2a6fe6af1722")
 	)
 	(wire
@@ -1455,7 +1455,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 63.5) (xy 240.03 63.5)
+			(xy 205.74 91.44) (xy 217.17 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1473,6 +1473,16 @@
 		)
 		(uuid "3c0aa61d-fc2e-4dcf-a66d-98bdbb7b2b97")
 	)
+	(polyline
+		(pts
+			(xy 160.02 12.7) (xy 160.02 198.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a384871-d7d5-4806-95a6-1c0d7e162216")
+	)
 	(wire
 		(pts
 			(xy 73.66 54.61) (xy 73.66 59.69)
@@ -1485,7 +1495,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 48.26) (xy 176.53 55.88)
+			(xy 80.01 148.59) (xy 80.01 156.21)
 		)
 		(stroke
 			(width 0)
@@ -1495,7 +1505,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 66.04) (xy 240.03 66.04)
+			(xy 205.74 93.98) (xy 217.17 93.98)
 		)
 		(stroke
 			(width 0)
@@ -1503,9 +1513,19 @@
 		)
 		(uuid "59806fe7-3d9d-44e1-9307-f91fa58fb73b")
 	)
+	(polyline
+		(pts
+			(xy 10.16 110.49) (xy 160.02 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6edda364-15ec-4033-8e76-10e6ec10f832")
+	)
 	(wire
 		(pts
-			(xy 228.6 60.96) (xy 240.03 60.96)
+			(xy 205.74 88.9) (xy 217.17 88.9)
 		)
 		(stroke
 			(width 0)
@@ -1555,7 +1575,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 48.26) (xy 168.91 55.88)
+			(xy 72.39 148.59) (xy 72.39 156.21)
 		)
 		(stroke
 			(width 0)
@@ -1615,7 +1635,7 @@
 	)
 	(text "LIDAR"
 		(exclude_from_sim no)
-		(at 148.59 33.528 0)
+		(at 52.07 133.858 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -1635,7 +1655,7 @@
 	)
 	(text "Capteur de bordure\n"
 		(exclude_from_sim no)
-		(at 235.204 34.544 0)
+		(at 212.344 62.484 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -1655,7 +1675,7 @@
 		)
 		(uuid "013d1184-dab5-4db8-9a97-02ed28f441c4")
 	)
-	(hierarchical_label "PA2"
+	(hierarchical_label "INT1_ACCEL"
 		(shape passive)
 		(at 81.28 72.39 0)
 		(fields_autoplaced yes)
@@ -1667,9 +1687,9 @@
 		)
 		(uuid "03667ad6-eb26-4af6-9395-9b8707eb2cd8")
 	)
-	(hierarchical_label "PA9"
+	(hierarchical_label "RX_LIDAR"
 		(shape passive)
-		(at 171.45 55.88 90)
+		(at 74.93 156.21 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1679,9 +1699,9 @@
 		)
 		(uuid "2421b9a3-22a5-4927-a405-368f18055e80")
 	)
-	(hierarchical_label "PA5"
+	(hierarchical_label "DEV_EN"
 		(shape passive)
-		(at 163.83 55.88 90)
+		(at 67.31 156.21 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1693,7 +1713,7 @@
 	)
 	(hierarchical_label "Vo"
 		(shape passive)
-		(at 228.6 60.96 180)
+		(at 205.74 88.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1727,7 +1747,7 @@
 		)
 		(uuid "a8d73f48-17db-45ce-9786-05c6d991db09")
 	)
-	(hierarchical_label "PA3"
+	(hierarchical_label "INT2_ACCEL"
 		(shape passive)
 		(at 81.28 74.93 0)
 		(fields_autoplaced yes)
@@ -1739,9 +1759,9 @@
 		)
 		(uuid "cf50654e-a4f7-45f8-b536-e07c2993b9cd")
 	)
-	(hierarchical_label "PA6"
+	(hierarchical_label "M_EN"
 		(shape passive)
-		(at 161.29 55.88 90)
+		(at 64.77 156.21 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1751,9 +1771,9 @@
 		)
 		(uuid "d974e6f7-3edb-439a-9d79-c7e672f170e0")
 	)
-	(hierarchical_label "PA4"
+	(hierarchical_label "M_SCTR"
 		(shape passive)
-		(at 166.37 55.88 90)
+		(at 69.85 156.21 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1763,9 +1783,9 @@
 		)
 		(uuid "eea2cb14-cd28-41b9-a062-87f69a08ee86")
 	)
-	(hierarchical_label "PA10"
+	(hierarchical_label "TX_LIDAR"
 		(shape passive)
-		(at 173.99 55.88 90)
+		(at 77.47 156.21 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1912,7 +1932,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 176.53 48.26 0)
+		(at 80.01 148.59 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1921,7 +1941,7 @@
 		(fields_autoplaced yes)
 		(uuid "31d15e61-74e6-475d-9599-df68275018fc")
 		(property "Reference" "#PWR0602"
-			(at 176.53 52.07 0)
+			(at 80.01 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1930,7 +1950,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 176.53 43.18 0)
+			(at 80.01 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1938,7 +1958,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 176.53 48.26 0)
+			(at 80.01 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1947,7 +1967,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 176.53 48.26 0)
+			(at 80.01 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1956,7 +1976,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 176.53 48.26 0)
+			(at 80.01 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1978,7 +1998,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 228.6 66.04 90)
+		(at 205.74 93.98 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1987,7 +2007,7 @@
 		(fields_autoplaced yes)
 		(uuid "453eb9d2-135f-46f4-af99-fcd77005a493")
 		(property "Reference" "#PWR0604"
-			(at 232.41 66.04 0)
+			(at 209.55 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1996,7 +2016,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 224.79 66.0399 90)
+			(at 201.93 93.9799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2005,7 +2025,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 228.6 66.04 0)
+			(at 205.74 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2014,7 +2034,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 228.6 66.04 0)
+			(at 205.74 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2023,7 +2043,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 228.6 66.04 0)
+			(at 205.74 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2111,7 +2131,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x08")
-		(at 168.91 60.96 270)
+		(at 72.39 161.29 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2120,7 +2140,7 @@
 		(fields_autoplaced yes)
 		(uuid "833c50e4-3e79-4058-9726-23f85273a899")
 		(property "Reference" "J601"
-			(at 167.64 64.77 90)
+			(at 71.12 165.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2128,7 +2148,7 @@
 			)
 		)
 		(property "Value" "Conn_01x08"
-			(at 167.64 67.31 90)
+			(at 71.12 167.64 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2136,7 +2156,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 168.91 60.96 0)
+			(at 72.39 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2145,7 +2165,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 168.91 60.96 0)
+			(at 72.39 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2154,7 +2174,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 168.91 60.96 0)
+			(at 72.39 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2197,7 +2217,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 228.6 63.5 270)
+		(at 205.74 91.44 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2206,7 +2226,7 @@
 		(fields_autoplaced yes)
 		(uuid "8fb8d5fa-7d5f-4789-b207-61ce1314c471")
 		(property "Reference" "#PWR0603"
-			(at 222.25 63.5 0)
+			(at 199.39 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2215,7 +2235,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 224.79 63.4999 90)
+			(at 201.93 91.4399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2224,7 +2244,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 228.6 63.5 0)
+			(at 205.74 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2233,7 +2253,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 228.6 63.5 0)
+			(at 205.74 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2242,7 +2262,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 228.6 63.5 0)
+			(at 205.74 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2334,7 +2354,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 168.91 48.26 180)
+		(at 72.39 148.59 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2343,7 +2363,7 @@
 		(fields_autoplaced yes)
 		(uuid "98c8012b-e458-46ea-b93e-91a319d26a1a")
 		(property "Reference" "#PWR0601"
-			(at 168.91 41.91 0)
+			(at 72.39 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2352,7 +2372,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 168.91 43.18 0)
+			(at 72.39 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2360,7 +2380,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 168.91 48.26 0)
+			(at 72.39 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2369,7 +2389,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 168.91 48.26 0)
+			(at 72.39 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2378,7 +2398,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 168.91 48.26 0)
+			(at 72.39 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2772,7 +2792,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
-		(at 245.11 63.5 0)
+		(at 222.25 91.44 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2781,7 +2801,7 @@
 		(fields_autoplaced yes)
 		(uuid "fbd5c048-a070-4896-a69d-c2c3701024d4")
 		(property "Reference" "J602"
-			(at 247.65 62.2299 0)
+			(at 224.79 90.1699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2790,7 +2810,7 @@
 			)
 		)
 		(property "Value" "Conn_01x03"
-			(at 247.65 64.7699 0)
+			(at 224.79 92.7099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2799,7 +2819,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 245.11 63.5 0)
+			(at 222.25 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2808,7 +2828,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 245.11 63.5 0)
+			(at 222.25 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2817,7 +2837,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 245.11 63.5 0)
+			(at 222.25 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
