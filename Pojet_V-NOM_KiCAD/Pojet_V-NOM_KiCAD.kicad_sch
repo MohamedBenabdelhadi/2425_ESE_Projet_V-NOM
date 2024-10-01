@@ -5,6 +5,56 @@
 	(uuid "37e0fdad-f3fd-48e0-8377-111662233a91")
 	(paper "A4")
 	(lib_symbols)
+	(wire
+		(pts
+			(xy 83.82 139.7) (xy 110.49 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "562752bf-9fde-4ef0-b89c-03c6088668f6")
+	)
+	(wire
+		(pts
+			(xy 83.82 129.54) (xy 110.49 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3f57e06-b531-46cd-ada7-413c7f1c54b8")
+	)
+	(wire
+		(pts
+			(xy 83.82 137.16) (xy 110.49 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c460704b-1540-42bf-8cae-36dde4137480")
+	)
+	(wire
+		(pts
+			(xy 83.82 132.08) (xy 110.49 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc6078ba-ce1d-4727-8fd7-13122de093c0")
+	)
+	(wire
+		(pts
+			(xy 83.82 121.92) (xy 110.49 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e983a1ca-aa7e-4f96-9834-e23027f3fad2")
+	)
 	(sheet
 		(at 50.8 30.48)
 		(size 67.31 43.18)
@@ -121,7 +171,7 @@
 	)
 	(sheet
 		(at 110.49 95.25)
-		(size 49.53 33.02)
+		(size 49.53 53.34)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -141,13 +191,273 @@
 			)
 		)
 		(property "Sheetfile" "controle.kicad_sch"
-			(at 110.49 128.8546 0)
+			(at 110.49 149.1746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
 			)
+		)
+		(pin "TIM1_CH2N" output
+			(at 134.62 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "036e4045-1be3-431c-8790-8484fa13e229")
+		)
+		(pin "BTN_RESET" input
+			(at 110.49 124.46 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "170ceb89-aaa7-436f-bd61-cd1736e37ed5")
+		)
+		(pin "BTN_MODE" input
+			(at 110.49 121.92 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7364e8ef-a2fc-4312-87cc-87fd70fe1ce4")
+		)
+		(pin "VCP_RX" bidirectional
+			(at 110.49 132.08 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "64d73091-82c2-44a1-bf5b-cca649854cb6")
+		)
+		(pin "TIM1_CH1N" output
+			(at 132.08 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "48153dbf-91f9-4de1-b9e8-d7c007f7817a")
+		)
+		(pin "BTN_START" input
+			(at 110.49 119.38 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "08d461d6-00ba-48b3-9c2f-5a77df8e4691")
+		)
+		(pin "LIDAR_TX" bidirectional
+			(at 160.02 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "96aad847-7248-47cb-8501-434b893c75d8")
+		)
+		(pin "TIM3_CH1" output
+			(at 137.16 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4cae3595-4b42-4422-be9e-5b94c895678c")
+		)
+		(pin "AG_USART_TX" bidirectional
+			(at 160.02 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "a43f5c52-c83b-448e-932f-3904428be2c9")
+		)
+		(pin "TIM3_CH2" output
+			(at 139.7 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "8816163f-1a61-4f8a-91d1-954e2683d319")
+		)
+		(pin "AG_USART_RX" bidirectional
+			(at 160.02 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "09ea54d9-16bf-4562-97b1-98d1db06f28d")
+		)
+		(pin "VCP_TX" bidirectional
+			(at 110.49 129.54 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "5b4b9c50-d9dc-4373-8180-fe98852c02eb")
+		)
+		(pin "TOF2" input
+			(at 160.02 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "aef51077-3320-493a-883d-440b19277142")
+		)
+		(pin "3.3V" input
+			(at 160.02 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "dc1d650e-9176-4ce4-b408-650a39af3bc6")
+		)
+		(pin "TOF1" input
+			(at 160.02 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "aa0d42f4-3b7c-4b8d-b2e0-7825311dd421")
+		)
+		(pin "SPI_MOSI" output
+			(at 160.02 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2cd1353e-e05e-4193-b75d-f0829825f458")
+		)
+		(pin "SPI_MISO" bidirectional
+			(at 160.02 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4e965141-201a-452f-9e94-e97fbaa9d9f4")
+		)
+		(pin "SPI_SCK" bidirectional
+			(at 160.02 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "a21ed27e-29fa-41d2-9d5a-9c0142654421")
+		)
+		(pin "TIM1_CH1" output
+			(at 124.46 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "9d636947-01d8-478d-99bf-85dedc7d5683")
+		)
+		(pin "TIM4_CH2" output
+			(at 144.78 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ac7ac875-e284-4d97-8167-7c5b0610b3b4")
+		)
+		(pin "SWCLK" bidirectional
+			(at 110.49 137.16 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "1f3cd3de-2b20-43a5-acef-4e147cf8df08")
+		)
+		(pin "TIM1_CH3" output
+			(at 129.54 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "679c5230-fa1c-43f8-81ec-0d577bea9688")
+		)
+		(pin "LIDAR_RX" bidirectional
+			(at 160.02 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "e2735b63-ea49-4298-9a74-51169a839618")
+		)
+		(pin "TIM4_CH1" output
+			(at 142.24 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "fc9ead29-a1ca-43a9-9f50-043e43e6b6d9")
+		)
+		(pin "TIM1_CH2" output
+			(at 127 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "7e16bddf-3965-44b7-9938-39abaa87a5f8")
+		)
+		(pin "SWDIO" bidirectional
+			(at 110.49 139.7 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "c1fce318-3b8b-44e1-9ce6-2b19646e6ba3")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
@@ -158,8 +468,8 @@
 		)
 	)
 	(sheet
-		(at 46.99 146.05)
-		(size 85.09 34.29)
+		(at 17.78 95.25)
+		(size 66.04 53.34)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -170,7 +480,7 @@
 		)
 		(uuid "e3530ec7-9c0b-4af7-af62-470ecf12c871")
 		(property "Sheetname" "interface_utilisateur"
-			(at 46.99 145.3384 0)
+			(at 17.78 94.5384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -179,13 +489,103 @@
 			)
 		)
 		(property "Sheetfile" "interface_utilisateur.kicad_sch"
-			(at 46.99 180.9246 0)
+			(at 17.78 149.1746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
 			)
+		)
+		(pin "Switch_Mode" output
+			(at 83.82 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "c71d8d4c-a768-43f5-b7ca-29831fbad5ad")
+		)
+		(pin "VCP_RX" input
+			(at 83.82 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "d9e533ce-2fcb-4d66-8a56-8fa501496ad1")
+		)
+		(pin "VCP_TX" output
+			(at 83.82 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f3b19da3-1c6b-45b3-a1e6-9831ecdde83b")
+		)
+		(pin "LED_SOURIS" input
+			(at 83.82 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "0492f959-7200-45b3-b121-966b0567e055")
+		)
+		(pin "LED_CHAT" input
+			(at 83.82 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6273ce38-3565-40aa-9a6f-c500712b4db4")
+		)
+		(pin "SWCLK" input
+			(at 83.82 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2d9a37db-e30f-42e8-88f9-51402f502d67")
+		)
+		(pin "SWDIO" bidirectional
+			(at 83.82 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "932988b2-02dd-4cf7-8177-1b51ff095c78")
+		)
+		(pin "SWO" output
+			(at 83.82 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "b94dfbf3-6b23-4798-ae33-979fd50b02a4")
+		)
+		(pin "NRST" output
+			(at 83.82 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6d78a2e5-d6e7-439e-a375-6b0a891dee2a")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"

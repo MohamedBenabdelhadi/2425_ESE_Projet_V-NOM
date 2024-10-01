@@ -1193,44 +1193,8 @@
 		)
 		(uuid "6c0593dd-a6bd-4538-9a54-780916953b10")
 	)
-	(hierarchical_label "SWO"
-		(shape output)
-		(at 57.15 100.33 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "27825395-86a9-4f6e-8818-7932e096a267")
-	)
-	(hierarchical_label "LED_CHAT"
-		(shape input)
-		(at 154.94 85.09 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "70eff01f-f591-41d7-af3e-5c51947be3f0")
-	)
-	(hierarchical_label "VCP_TX"
-		(shape output)
-		(at 57.15 115.57 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7a24ba27-da75-4420-baa9-735f001060b7")
-	)
 	(hierarchical_label "NRST"
-		(shape output)
+		(shape passive)
 		(at 57.15 90.17 0)
 		(fields_autoplaced yes)
 		(effects
@@ -1239,31 +1203,7 @@
 			)
 			(justify left)
 		)
-		(uuid "8f780026-286d-48f0-83dc-6ab2d9578b98")
-	)
-	(hierarchical_label "SWCLK"
-		(shape input)
-		(at 57.15 95.25 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "9421314d-88cd-470d-a1bd-3f67cffa99bf")
-	)
-	(hierarchical_label "Switch_Mode"
-		(shape output)
-		(at 223.52 88.9 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "aba3285f-4889-4d5f-9ab8-a61c48b277fa")
+		(uuid "1ca9564a-4f70-4ac9-97f0-704c447c1320")
 	)
 	(hierarchical_label "LED_SOURIS"
 		(shape input)
@@ -1275,11 +1215,11 @@
 			)
 			(justify left)
 		)
-		(uuid "d7909966-dbe1-4292-8485-347297656504")
+		(uuid "3213dc75-a583-4433-823c-bf76d5485174")
 	)
-	(hierarchical_label "SWDIO"
-		(shape bidirectional)
-		(at 57.15 97.79 0)
+	(hierarchical_label "LED_CHAT"
+		(shape input)
+		(at 154.94 85.09 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1287,7 +1227,19 @@
 			)
 			(justify left)
 		)
-		(uuid "da535f11-32e3-470d-b6ce-0ef88d6435fc")
+		(uuid "4009f76c-acc1-4e63-adab-4d5a93ab4aba")
+	)
+	(hierarchical_label "SWCLK"
+		(shape passive)
+		(at 57.15 95.25 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "494aeb55-468b-43c6-b801-284f8417df0e")
 	)
 	(hierarchical_label "VCP_RX"
 		(shape input)
@@ -1299,38 +1251,68 @@
 			)
 			(justify left)
 		)
-		(uuid "fbb277ff-6461-428f-842b-778c9fff61ad")
+		(uuid "7107185f-b34e-4dae-8825-11fc26e47fd1")
+	)
+	(hierarchical_label "Switch_Mode"
+		(shape output)
+		(at 223.52 88.9 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c50bce77-d798-49ca-8cd3-d1b05edeeaeb")
+	)
+	(hierarchical_label "VCP_TX"
+		(shape output)
+		(at 57.15 115.57 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cd6f2e11-4ae3-4a06-8d22-219d21ecd323")
+	)
+	(hierarchical_label "SWDIO"
+		(shape passive)
+		(at 57.15 97.79 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e7a72c30-28b9-4068-9c93-91055011c343")
+	)
+	(hierarchical_label "SWO"
+		(shape passive)
+		(at 57.15 100.33 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ef22f4aa-88e6-4460-a70e-701733d742a0")
 	)
 	(symbol
-		(lib_id "Connector:Conn_ST_STDC14")
-		(at 44.45 102.87 0)
+		(lib_id "power:GND")
+		(at 220.98 95.25 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "1d982a51-073e-4033-aca3-dc629d844404")
-		(property "Reference" "J1"
-			(at 33.02 101.5999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Conn_ST_STDC14"
-			(at 33.02 104.1399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_2x07_P1.27mm_Vertical_SMD"
-			(at 44.45 102.87 0)
+		(uuid "40a6e374-7be0-4ce5-a5de-be2921492096")
+		(property "Reference" "#PWR09"
+			(at 220.98 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1338,166 +1320,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.st.com/content/ccc/resource/technical/document/user_manual/group1/99/49/91/b6/b2/3a/46/e5/DM00526767/files/DM00526767.pdf/jcr:content/translations/en.DM00526767.pdf"
-			(at 35.56 134.62 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "ST Debug Connector, standard ARM Cortex-M SWD and JTAG interface plus UART"
-			(at 44.45 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "8"
-			(uuid "66a819f6-a75a-460a-805a-1d5d1b269c4e")
-		)
-		(pin "3"
-			(uuid "421c16a0-6fd2-4f64-ad54-257b307d1de7")
-		)
-		(pin "4"
-			(uuid "027dca1f-9b00-4d23-a3d1-85e04c78692f")
-		)
-		(pin "5"
-			(uuid "872a792e-71ab-4be6-9dfc-de6f673bc592")
-		)
-		(pin "2"
-			(uuid "06cf8640-3529-4d7c-acd8-8890898f657a")
-		)
-		(pin "1"
-			(uuid "3cc50440-edfd-45ad-b3c9-2c1a008e9670")
-		)
-		(pin "14"
-			(uuid "a811e8c6-55c6-46d2-b56a-2bd0a4cf5208")
-		)
-		(pin "9"
-			(uuid "4b535eb6-1916-4e57-a273-606a8bd55166")
-		)
-		(pin "6"
-			(uuid "6019aa92-d2b6-4cce-8be1-91ede8ae6f06")
-		)
-		(pin "13"
-			(uuid "1c8709dd-5c36-4e51-a019-75d8324151b1")
-		)
-		(pin "12"
-			(uuid "3360a710-4e3d-45fc-ac78-00e9ed60a6d4")
-		)
-		(pin "10"
-			(uuid "cd9b58ef-d33a-421c-ada8-a8009e25c7e3")
-		)
-		(pin "11"
-			(uuid "f7d498e9-66db-40cd-9204-ac4002438a0a")
-		)
-		(pin "7"
-			(uuid "1ad5bbf7-964c-4a18-9564-7dc2037ec3ab")
-		)
-		(instances
-			(project "Pojet_V-NOM_KiCAD"
-				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 228.6 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "33f42161-e29e-491e-aacb-ac17cc45b390")
-		(property "Reference" "J2"
-			(at 231.14 88.8999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_01x02"
-			(at 231.14 91.4399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal"
-			(at 228.6 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 228.6 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 228.6 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8781a079-9a69-4d50-afeb-012d3e1396dc")
-		)
-		(pin "2"
-			(uuid "2ff0cfa2-2793-4c34-8a18-1d8022e177ac")
-		)
-		(instances
-			(project "Pojet_V-NOM_KiCAD"
-				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 44.45 85.09 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "79aa4c8d-2181-4bf9-a733-fd7507116f12")
-		(property "Reference" "#PWR0502"
-			(at 44.45 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 44.45 80.01 0)
+		(property "Value" "GND"
+			(at 220.98 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1505,7 +1329,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 44.45 85.09 0)
+			(at 220.98 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1514,7 +1338,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 44.45 85.09 0)
+			(at 220.98 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1522,75 +1346,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 44.45 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5c4ae51d-3c1b-47e3-9413-76276c41a045")
-		)
-		(instances
-			(project ""
-				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
-					(reference "#PWR0502")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED_Small")
-		(at 154.94 95.25 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "83170ef8-62be-4ee6-801a-b793d3744a47")
-		(property "Reference" "D2"
-			(at 157.48 93.9164 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "RED"
-			(at 157.48 96.4564 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 154.94 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 154.94 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode, small symbol"
-			(at 154.94 95.25 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 220.98 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1599,15 +1356,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "c1dc0845-e153-4379-8dbc-33ca9fef32b1")
-		)
-		(pin "2"
-			(uuid "d385c3bd-4983-4e52-a6a5-5ff459132f1e")
+			(uuid "69771764-ea0c-4fbd-875f-614f22d98af5")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
-					(reference "D2")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -1622,7 +1376,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "89d42f2c-cc21-4388-9102-28063441af01")
+		(uuid "449df198-23d3-4913-ac75-f70e536ccd50")
 		(property "Reference" "R3"
 			(at 157.48 106.6799 0)
 			(effects
@@ -1669,15 +1423,187 @@
 			)
 		)
 		(pin "1"
-			(uuid "1d8c6254-8a20-465c-91a3-024e2ad99328")
+			(uuid "3356baf5-2388-4c81-abc4-ffeb85cca7c7")
 		)
 		(pin "2"
-			(uuid "a5466340-dee2-4cfa-9a53-9136ef0977c6")
+			(uuid "ce77f2ae-4493-4f65-9546-fe1366be6a1c")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
 					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 154.94 123.19 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4978ec52-cad5-416c-b40f-c34a03a8dc96")
+		(property "Reference" "#PWR08"
+			(at 154.94 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 154.94 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 154.94 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a3fa854c-3510-44a9-b0b4-fb575b78abad")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_ST_STDC14")
+		(at 44.45 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4ce9a925-7ae2-40e2-84ac-bf12f517cec5")
+		(property "Reference" "J1"
+			(at 33.02 101.5999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Conn_ST_STDC14"
+			(at 33.02 104.1399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_2x07_P1.27mm_Vertical_SMD"
+			(at 44.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.st.com/content/ccc/resource/technical/document/user_manual/group1/99/49/91/b6/b2/3a/46/e5/DM00526767/files/DM00526767.pdf/jcr:content/translations/en.DM00526767.pdf"
+			(at 35.56 134.62 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ST Debug Connector, standard ARM Cortex-M SWD and JTAG interface plus UART"
+			(at 44.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "8"
+			(uuid "cb3214bb-a381-4ce7-a765-601c795cf791")
+		)
+		(pin "3"
+			(uuid "baa5a56d-818f-4170-b3c8-323cffc76ed8")
+		)
+		(pin "4"
+			(uuid "304becc7-db72-4d67-adeb-58fff73c68b1")
+		)
+		(pin "5"
+			(uuid "ab6a885b-bdd5-4e28-903f-079a1d563a47")
+		)
+		(pin "2"
+			(uuid "fc88966d-9cf2-4635-86f0-aad3b2fbc0c7")
+		)
+		(pin "1"
+			(uuid "ab3a7434-bee4-4f05-b455-857fa2532d2d")
+		)
+		(pin "14"
+			(uuid "ba1f9dbf-6d7e-4fbd-84f0-bfa3750adf59")
+		)
+		(pin "9"
+			(uuid "ab0962fe-7919-43e5-83ec-97614c487a03")
+		)
+		(pin "6"
+			(uuid "4d8fb17f-df68-4444-b843-6a5c8d91dac2")
+		)
+		(pin "13"
+			(uuid "a3e2e0c8-ac0e-4acf-82e3-1c5ad121f6de")
+		)
+		(pin "12"
+			(uuid "5606f1d1-1e1b-498c-9836-11b2daafda71")
+		)
+		(pin "10"
+			(uuid "0a9689d8-14e6-4fee-b680-ec87b29b04fa")
+		)
+		(pin "11"
+			(uuid "e9017186-03cb-4a3c-bf2d-cd19a6aaa88b")
+		)
+		(pin "7"
+			(uuid "e372fd8b-ab76-428e-9b13-a4b3743da55e")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -1692,8 +1618,8 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "91fc7e2c-ce5e-4cbd-82f3-448cdffa11e6")
-		(property "Reference" "#PWR0503"
+		(uuid "72052bc4-90eb-4364-a359-aa9542c79be9")
+		(property "Reference" "#PWR07"
 			(at 134.62 129.54 0)
 			(effects
 				(font
@@ -1738,29 +1664,29 @@
 			)
 		)
 		(pin "1"
-			(uuid "6b4bc778-c7c3-4865-87a3-17e096421159")
+			(uuid "63632e03-e671-421c-b717-b890889012a8")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
-					(reference "#PWR0503")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 43.18 132.08 0)
+		(lib_id "power:+3.3V")
+		(at 44.45 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "b5c34687-b1fe-4ca3-a25e-297cd44a9e38")
-		(property "Reference" "#PWR0501"
-			(at 43.18 138.43 0)
+		(uuid "82a9bb08-de15-473b-bbde-5dc1697ecc91")
+		(property "Reference" "#PWR06"
+			(at 44.45 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1768,8 +1694,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 43.18 137.16 0)
+		(property "Value" "+3.3V"
+			(at 44.45 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1777,7 +1703,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 43.18 132.08 0)
+			(at 44.45 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1786,7 +1712,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 43.18 132.08 0)
+			(at 44.45 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1794,8 +1720,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 43.18 132.08 0)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 44.45 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1804,12 +1730,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "d7c26b7e-f319-4074-99ce-c681f0a8221d")
+			(uuid "905cc576-bd1e-43f4-ad37-3b306b26ca36")
 		)
 		(instances
-			(project ""
+			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
-					(reference "#PWR0501")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -1824,7 +1750,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c617e14b-0981-46d8-a9d2-618091ed976f")
+		(uuid "8f59b1ff-e027-4e6a-a66c-f3f1e7edd6b8")
 		(property "Reference" "R2"
 			(at 137.16 106.6799 0)
 			(effects
@@ -1871,10 +1797,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a2a9bef2-eb2a-4089-b267-5ea0ab7fe95b")
+			(uuid "6c97dbb3-a24c-4637-874e-37efbc880471")
 		)
 		(pin "2"
-			(uuid "2ba0e44d-15b6-40c8-87c8-2e69af27e6b8")
+			(uuid "e86d562f-b372-4b25-a965-255ad0702ed1")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
@@ -1887,16 +1813,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 220.98 95.25 0)
+		(at 43.18 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c90ea6a4-f149-428f-98f7-7de8d9581598")
-		(property "Reference" "#PWR0505"
-			(at 220.98 101.6 0)
+		(uuid "ab9c6c52-dc15-4c5f-9a8b-a96d2b96058e")
+		(property "Reference" "#PWR05"
+			(at 43.18 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1905,7 +1831,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 220.98 100.33 0)
+			(at 43.18 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1913,7 +1839,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 220.98 95.25 0)
+			(at 43.18 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1922,7 +1848,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 220.98 95.25 0)
+			(at 43.18 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1931,7 +1857,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 220.98 95.25 0)
+			(at 43.18 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1940,12 +1866,152 @@
 			)
 		)
 		(pin "1"
-			(uuid "33a0aef2-1f40-42f4-bb2e-ae63d0a6c38b")
+			(uuid "f40797bb-a113-41a8-97f6-a50e0b69b942")
 		)
 		(instances
-			(project ""
+			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
-					(reference "#PWR0505")
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_Small")
+		(at 154.94 95.25 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b39e102c-7562-46cf-bb44-e2d7831caf47")
+		(property "Reference" "D2"
+			(at 157.48 93.9164 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RED"
+			(at 157.48 96.4564 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 154.94 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 154.94 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode, small symbol"
+			(at 154.94 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "18076ba5-b8e3-4b1f-8065-55b3793f75fa")
+		)
+		(pin "2"
+			(uuid "3313dbea-c500-4165-aa38-f2af39ac1b3b")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 228.6 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d984b88f-ab5d-436f-bc9b-2d4eb291cdcb")
+		(property "Reference" "J2"
+			(at 231.14 88.8999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 231.14 91.4399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal"
+			(at 228.6 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 228.6 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 228.6 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4afad563-3814-4661-97dc-b0df9a6c8dc2")
+		)
+		(pin "2"
+			(uuid "d847fbb7-6cae-4d32-856e-b2ba98bdc95b")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -1960,7 +2026,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d803167f-c1c8-4875-8f3c-589702801704")
+		(uuid "db83c050-6492-4a48-b984-0fd06b9265d4")
 		(property "Reference" "D1"
 			(at 137.16 93.9164 90)
 			(effects
@@ -2007,81 +2073,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "fdf95a34-9d29-483e-aeb0-25b3b7235e6b")
+			(uuid "237420b0-dffc-4292-b01c-86dad0b8c869")
 		)
 		(pin "2"
-			(uuid "f083a40c-3ff8-45ee-a857-3ad66b2e74dd")
+			(uuid "ab6889a9-8868-4a0f-8f43-ada3288933a0")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
 					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 154.94 123.19 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ecb1266d-5723-4d08-9405-528a1351ec85")
-		(property "Reference" "#PWR0504"
-			(at 154.94 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 154.94 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 154.94 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 154.94 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 154.94 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cc7d9a41-1137-479a-9cfc-a074c015f5ec")
-		)
-		(instances
-			(project "Pojet_V-NOM_KiCAD"
-				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/e3530ec7-9c0b-4af7-af62-470ecf12c871"
-					(reference "#PWR0504")
 					(unit 1)
 				)
 			)
