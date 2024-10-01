@@ -2,7 +2,7 @@
 Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 
 
-## BOM (Build Of Mateirals)
+## BOM (Build Of Materials)
 ### Liste des composants
 - Microcontrôleur : STM32G431CBU6 [(ST-Microelectronics)](https://www.st.com/en/microcontrollers-microprocessors/stm32g431cb.html)
 - Quartz 16 MHz [(Farnell : 2853935)](https://fr.farnell.com/multicomp/mcsjk-7u-16-00-10-30-80-b-30/quartz-16mhz-10pf-3-2mm-x-2-5mm/dp/2853935?srsltid=AfmBOopnM4CmIZbCnYPaPceE-P2LMk88lLX2_RwnxhyCD5bpNZaeiR3n)
@@ -50,7 +50,7 @@ subgraph Robot
         end
 
         subgraph Acquisition
-            CD[**Détecter le bord :**Capteurs de distance] -- Analog --> M;
+            CD[**Détecter le bord :** Capteurs de distance] -- Analog --> M;
             L[**Détecter des robots environants :** Lidar] -- UART --> M;
             AG[**Détecter les mpacts et l'orientation :** Accéléromètre & Gyroscope] -- SPI / I2C --> M;
         end
@@ -94,7 +94,7 @@ Pour se lancer avec le **protocole SPI** en STM32 c'est plutôt utile de regarde
 Quand STM32CubeIDE crash au démarage avec ue erreur `"Java" is not responding` il faut effacer le dossier nomé `.metadata` dans le répertoire workspace qui pose problème.
 
 
-## Notes popur finir le schéma électronique
+## Notes pour finir le schéma électronique
 
 > [x] Il faut prévoir un pin GPIO pour le Chip Select (CS) du SPI de l'accéléromètre.  
 > [ ] Il faut prévoir un pin pour le bouton RESET.  
