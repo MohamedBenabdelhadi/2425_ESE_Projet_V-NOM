@@ -1,0 +1,363 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "37e0fdad-f3fd-48e0-8377-111662233a91")
+	(paper "A4")
+	(lib_symbols)
+	(wire
+		(pts
+			(xy 96.52 58.42) (xy 156.21 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08fc87d1-56e0-4a04-a047-d2a1511b43f0")
+	)
+	(sheet
+		(at 22.86 86.36)
+		(size 67.31 43.18)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "778527cd-4ba2-44a7-9be0-e348ce68e304")
+		(property "Sheetname" "Deplacement"
+			(at 22.86 85.6484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "deplacement.kicad_sch"
+			(at 22.86 130.1246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 156.21 31.75)
+		(size 67.31 35.56)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8a0e1cc3-b8cc-4980-b1ce-7a1b28674574")
+		(property "Sheetname" "acquisition"
+			(at 156.21 31.0384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "acquisition.kicad_sch"
+			(at 156.21 67.8946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "+3.3V" input
+			(at 156.21 58.42 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "a56d7f04-750b-47a4-8ecb-8245a3cde989")
+		)
+		(pin "CS" passive
+			(at 156.21 36.83 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "649bb144-2024-474d-adce-e5aef9719f6e")
+		)
+		(pin "sclk" input
+			(at 156.21 50.8 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "13d0e1ee-9967-4755-a414-94c125a3577f")
+		)
+		(pin "SDA" input
+			(at 156.21 44.45 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "77f15d42-9e47-4dfa-8036-2008437464f8")
+		)
+		(pin "DEV_EN" passive
+			(at 223.52 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "66ad22bc-7004-4692-a39d-4635547c2b13")
+		)
+		(pin "M_EN" passive
+			(at 223.52 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "42f1780c-faca-4a88-bfdc-7f74a172e452")
+		)
+		(pin "M_SCTR" passive
+			(at 203.2 67.31 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "a9c46ef5-75a3-4c72-b000-54430e03adb0")
+		)
+		(pin "INT1_ACCEL" passive
+			(at 213.36 67.31 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "57f08c2d-f1b0-4bee-b8ca-10e08ef8bbd6")
+		)
+		(pin "Vo" passive
+			(at 223.52 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "0c0f7c56-723a-456b-b940-c6eaac040040")
+		)
+		(pin "INT2_ACCEL" passive
+			(at 223.52 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "5e6d5d20-0d3a-444b-9c13-0199824da03e")
+		)
+		(pin "RX_LIDAR" passive
+			(at 205.74 31.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "3031dfb7-2923-4563-b19d-dd65a8832663")
+		)
+		(pin "TX_LIDAR" passive
+			(at 200.66 31.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6c145011-f7c1-45fb-8893-548469150d5a")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 36.83 26.67)
+		(size 59.69 44.45)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "aef3d9b2-029f-4338-91be-d4af664a9426")
+		(property "Sheetname" "alimentation"
+			(at 36.83 25.9584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "alimentation.kicad_sch"
+			(at 36.83 71.7046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "+5V" output
+			(at 96.52 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "786c3dfc-588a-49cd-bfa9-a08f4f518a4c")
+		)
+		(pin "+3.3V" output
+			(at 96.52 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2b6ea501-d86a-47fa-b156-588b0f1fd279")
+		)
+		(pin "+7.2V" output
+			(at 96.52 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "032d5c84-6137-473a-9d3c-bb45720582b3")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 110.49 95.25)
+		(size 49.53 33.02)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "d618a370-a672-4f19-b1d1-7104c075c5ae")
+		(property "Sheetname" "controle"
+			(at 110.49 94.5384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "controle.kicad_sch"
+			(at 110.49 128.8546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 46.99 146.05)
+		(size 85.09 34.29)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "e3530ec7-9c0b-4af7-af62-470ecf12c871")
+		(property "Sheetname" "interface_utilisateur"
+			(at 46.99 145.3384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "interface_utilisateur.kicad_sch"
+			(at 46.99 180.9246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
