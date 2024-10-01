@@ -63,10 +63,12 @@ void Error_Handler(void);
 #define ToF1_GPIO_Port GPIOC
 #define ToF2_Pin GPIO_PIN_0
 #define ToF2_GPIO_Port GPIOA
-#define LED_GREEN_Pin GPIO_PIN_4
-#define LED_GREEN_GPIO_Port GPIOC
+#define SPI1_CSN_Pin GPIO_PIN_4
+#define SPI1_CSN_GPIO_Port GPIOC
 #define LED_RED_Pin GPIO_PIN_0
 #define LED_RED_GPIO_Port GPIOB
+#define LED_GREEN_Pin GPIO_PIN_1
+#define LED_GREEN_GPIO_Port GPIOB
 #define VCP_TX_Pin GPIO_PIN_10
 #define VCP_TX_GPIO_Port GPIOB
 #define VCP_RX_Pin GPIO_PIN_11
