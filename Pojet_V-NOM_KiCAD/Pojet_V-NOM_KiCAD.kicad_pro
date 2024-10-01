@@ -385,7 +385,7 @@
   "sheets": [
     [
       "37e0fdad-f3fd-48e0-8377-111662233a91",
-      "Root"
+      "Racine"
     ],
     [
       "d618a370-a672-4f19-b1d1-7104c075c5ae",
@@ -406,6 +406,14 @@
     [
       "8a0e1cc3-b8cc-4980-b1ce-7a1b28674574",
       "acquisition"
+    ],
+    [
+      "5cb59191-dae7-46ed-abdf-f6d9d3fbe962",
+      "Driver_Motor1"
+    ],
+    [
+      "a37b102b-6b50-46eb-b8ae-7cacb8a76bdc",
+      "Driver_Motor2"
     ]
   ],
   "text_variables": {}

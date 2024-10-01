@@ -85,6 +85,96 @@
 				(justify left top)
 			)
 		)
+		(pin "VREF1" input
+			(at 50.8 40.64 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7d8cceba-55cc-4678-8058-37b8cc041e83")
+		)
+		(pin "FWD1" input
+			(at 50.8 50.8 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "79a8a13e-f0dd-465a-aad1-b00f10f0063b")
+		)
+		(pin "Encoder A phase 2" output
+			(at 118.11 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "fcfa1df1-03be-4aa6-8444-16ce51589306")
+		)
+		(pin "Encoder B phase 2" output
+			(at 118.11 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4800bbc4-12cb-4867-8008-c85eb5684cf5")
+		)
+		(pin "Encoder B phase 1" output
+			(at 118.11 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "cb0a93af-822c-4fe0-aa35-a65f0df97c4b")
+		)
+		(pin "Encoder A phase 1" output
+			(at 118.11 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "84165837-6bd8-454c-93e4-a1baf82c128b")
+		)
+		(pin "VREF2" input
+			(at 50.8 43.18 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "484e125d-5389-453d-bcbe-d56bca843582")
+		)
+		(pin "FWD2" input
+			(at 50.8 53.34 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "473c68a6-6fa6-44ce-a26a-f42d434c9833")
+		)
+		(pin "+7.2V" input
+			(at 81.28 30.48 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "865b28a3-23fd-41c1-9d94-eb6570d102ae")
+		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91"
