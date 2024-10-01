@@ -94,7 +94,7 @@ Pour se lancer avec le **protocole SPI** en STM32 c'est plutôt utile de regarde
 Quand STM32CubeIDE crash au démarage avec ue erreur `"Java" is not responding` il faut effacer le dossier nomé `.metadata` dans le répertoire workspace qui pose problème.
 
 
-## Notes popur finir le schéma électronique
+## Notes pour finir le schéma électronique
 
 > [x] Il faut prévoir un pin GPIO pour le Chip Select (CS) du SPI de l'accéléromètre.  
 > [ ] Il faut prévoir un pin pour le bouton RESET.  
