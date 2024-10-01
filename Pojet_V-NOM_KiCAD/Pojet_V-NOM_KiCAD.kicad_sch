@@ -278,7 +278,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 40.005) (xy 171.45 40.005)
+			(xy 143.51 40.64) (xy 171.45 40.64)
 		)
 		(stroke
 			(width 0)
@@ -308,7 +308,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 42.545) (xy 171.45 42.545)
+			(xy 146.05 43.18) (xy 171.45 43.18)
 		)
 		(stroke
 			(width 0)
@@ -378,7 +378,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 71.12) (xy 146.05 42.545)
+			(xy 146.05 71.12) (xy 146.05 43.18)
 		)
 		(stroke
 			(width 0)
@@ -688,7 +688,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 71.12) (xy 143.51 40.005)
+			(xy 143.51 71.12) (xy 143.51 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1216,26 +1216,6 @@
 				(justify left top)
 			)
 		)
-		(pin "TX_LIDAR" passive
-			(at 171.45 40.005 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "7cd927cb-d844-4662-967c-28cc6f815a6b")
-		)
-		(pin "RX_LIDAR" passive
-			(at 171.45 42.545 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "c22c63eb-cdcb-45ec-8cac-735b89d23419")
-		)
 		(pin "INT1_ACCEL" output
 			(at 171.45 47.625 180)
 			(effects
@@ -1255,36 +1235,6 @@
 				(justify left)
 			)
 			(uuid "c5c37b7c-9e35-428b-8248-77f612e86707")
-		)
-		(pin "M_SCTR" passive
-			(at 171.45 56.515 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "5f628534-487e-48a6-8603-ac0b787558ae")
-		)
-		(pin "DEV_EN" passive
-			(at 171.45 59.055 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "cc8a8991-9ed9-4cb2-973e-60226fa50d02")
-		)
-		(pin "M_EN" passive
-			(at 171.45 61.595 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "9b4e1cbf-52c1-4403-8bac-99d915031640")
 		)
 		(pin "TOF2" output
 			(at 171.45 34.925 180)
@@ -1355,6 +1305,46 @@
 				(justify left)
 			)
 			(uuid "2081a2fa-9f66-4f95-a38b-462fcd07ba75")
+		)
+		(pin "+5V" input
+			(at 196.85 17.145 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "8653e222-2360-4a1a-af4f-41ca88bed65e")
+		)
+		(pin "+3.3V" input
+			(at 190.5 17.145 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "41af808a-d6c3-47f7-b5d9-a27a795f24f9")
+		)
+		(pin "RX_LIDAR" input
+			(at 171.45 43.18 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "de6ee0ce-b814-4746-91b4-7991b58e71c3")
+		)
+		(pin "TX_LIDAR" output
+			(at 171.45 40.64 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "60025a61-300e-401e-907d-0315930f05a3")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
