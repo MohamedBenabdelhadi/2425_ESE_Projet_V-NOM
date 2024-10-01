@@ -321,110 +321,110 @@
 		)
 	)
 	(junction
-		(at 142.24 93.98)
+		(at 149.86 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6c4579ff-eb2c-483b-8781-d4ec4e2e901d")
+		(uuid "35cd3a76-cdda-49bc-8666-ebe985fffc63")
 	)
 	(junction
-		(at 60.96 92.71)
+		(at 68.58 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8c9aef0a-ee4b-451f-ab64-7c5bb86a3e36")
+		(uuid "5d76ab15-9a0d-4850-b098-896979fe3d9f")
 	)
 	(wire
 		(pts
-			(xy 54.61 92.71) (xy 60.96 92.71)
+			(xy 241.3 85.09) (xy 247.65 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "04738f0c-75b8-406c-90e7-dc365f7694fd")
+		(uuid "1b912118-3089-438a-8eb4-1ed3e7dfe803")
 	)
 	(wire
 		(pts
-			(xy 233.68 93.98) (xy 240.03 93.98)
+			(xy 62.23 83.82) (xy 68.58 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "08efc754-954d-4735-a070-5e6efb41861d")
+		(uuid "3c4d4867-e970-445d-9beb-da991a0afefd")
 	)
 	(wire
 		(pts
-			(xy 60.96 88.9) (xy 60.96 92.71)
+			(xy 52.07 83.82) (xy 49.53 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "18b6f6eb-ae1f-4d2c-a9b4-3f4c06191885")
+		(uuid "44502fb7-e505-4d92-9506-ba4ffca3bcb0")
 	)
 	(wire
 		(pts
-			(xy 135.89 93.98) (xy 142.24 93.98)
+			(xy 68.58 80.01) (xy 68.58 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1d71b0db-70e7-40e0-96e2-4d44ab572c54")
+		(uuid "44f984a0-95b1-4150-aef9-03bac2ebdb0c")
 	)
 	(wire
 		(pts
-			(xy 60.96 92.71) (xy 68.58 92.71)
+			(xy 143.51 85.09) (xy 149.86 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "217ef168-c2dc-4599-96d3-a652067c2bf9")
+		(uuid "e01f2df3-3e80-4d1b-a763-a55cbbb91c0d")
 	)
 	(wire
 		(pts
-			(xy 44.45 92.71) (xy 41.91 92.71)
+			(xy 149.86 85.09) (xy 186.69 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "be1828d8-c6e3-4ade-af08-33a3299e6665")
+		(uuid "e1dcd331-a7c6-4e93-9556-74474adf9e11")
 	)
 	(wire
 		(pts
-			(xy 142.24 87.63) (xy 142.24 93.98)
+			(xy 149.86 78.74) (xy 149.86 85.09)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fc2c8cc8-4aa6-4e58-82dd-d259d322bab9")
+		(uuid "f09de70b-dad7-408f-ab5c-153400e51a26")
 	)
 	(wire
 		(pts
-			(xy 142.24 93.98) (xy 179.07 93.98)
+			(xy 68.58 83.82) (xy 76.2 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ffcf1f1a-97bb-48c6-9e6e-78aa518cf201")
+		(uuid "f6b84d49-ae59-4020-80a6-65860024dbee")
 	)
 	(text "Batterie\n"
 		(exclude_from_sim no)
-		(at 48.768 76.962 0)
+		(at 56.388 68.072 0)
 		(effects
 			(font
 				(size 2.54 2.54)
 			)
 		)
-		(uuid "bd9678fd-13f6-453d-8a86-5273db94f7b0")
+		(uuid "2dddc1ba-19b2-462e-9577-675945d140bd")
 	)
 	(hierarchical_label "+3.3V"
 		(shape output)
-		(at 240.03 93.98 0)
+		(at 247.65 85.09 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -432,23 +432,11 @@
 			)
 			(justify left)
 		)
-		(uuid "2315332d-63b6-491f-894e-467fbdceb1f4")
-	)
-	(hierarchical_label "+7.2V"
-		(shape output)
-		(at 60.96 88.9 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ce1f285c-7de6-4222-b92a-1a4adf5c3778")
+		(uuid "0a112f5e-65d5-414b-b743-68a6aca9155d")
 	)
 	(hierarchical_label "+5V"
 		(shape output)
-		(at 142.24 87.63 90)
+		(at 149.86 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -456,20 +444,32 @@
 			)
 			(justify left)
 		)
-		(uuid "fc46e237-837d-43d6-b109-211b546c757a")
+		(uuid "353493ba-aef9-4c8d-b98b-78ae3cfafdb6")
+	)
+	(hierarchical_label "+7.2V"
+		(shape output)
+		(at 68.58 80.01 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "50c3fc37-b8d8-400c-8568-53d8dd1b5711")
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 41.91 92.71 270)
+		(at 49.53 83.82 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "6aee8415-1322-4951-824f-897c3dc69c4e")
-		(property "Reference" "#PWR016"
-			(at 35.56 92.71 0)
+		(uuid "5f9cdfb7-f4d7-445b-a5d9-71c5c3b86df4")
+		(property "Reference" "#PWR05"
+			(at 43.18 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -478,7 +478,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 38.1 92.7099 90)
+			(at 45.72 83.8199 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -487,7 +487,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 41.91 92.71 0)
+			(at 49.53 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -496,7 +496,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 41.91 92.71 0)
+			(at 49.53 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -505,7 +505,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 41.91 92.71 0)
+			(at 49.53 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -514,12 +514,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "d9188850-f301-4b29-b568-42c815442ae5")
+			(uuid "382309bb-f13d-412d-ad3a-f29348e1ff9b")
 		)
 		(instances
-			(project ""
+			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426"
-					(reference "#PWR016")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -527,16 +527,16 @@
 	)
 	(symbol
 		(lib_id "Device:Battery")
-		(at 49.53 92.71 270)
+		(at 57.15 83.82 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "dcd1ead1-ede2-4281-b1b8-a1c8972aef75")
-		(property "Reference" "BT401"
-			(at 50.1015 85.09 90)
+		(uuid "d426185c-d590-469a-a254-6170178f07a9")
+		(property "Reference" "BT1"
+			(at 57.7215 76.2 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -544,7 +544,7 @@
 			)
 		)
 		(property "Value" "Battery"
-			(at 50.1015 87.63 90)
+			(at 57.7215 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -552,7 +552,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 51.054 92.71 90)
+			(at 58.674 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -561,7 +561,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 51.054 92.71 90)
+			(at 58.674 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -570,7 +570,7 @@
 			)
 		)
 		(property "Description" "Multiple-cell battery"
-			(at 49.53 92.71 0)
+			(at 57.15 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -579,22 +579,22 @@
 			)
 		)
 		(pin "2"
-			(uuid "836938f9-1fba-4075-8c60-117c9cf73bc2")
+			(uuid "21846834-8ee4-46fb-b8cb-3e224379a631")
 		)
 		(pin "1"
-			(uuid "e8c584c6-fa07-4a1c-8101-ebe090476a9d")
+			(uuid "ec7a1900-2f6e-404a-8bc9-daac756f5c2c")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426"
-					(reference "BT401")
+					(reference "BT1")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(sheet
-		(at 68.58 72.39)
+		(at 76.2 63.5)
 		(size 67.31 44.45)
 		(fields_autoplaced yes)
 		(stroke
@@ -604,9 +604,9 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "a217acee-21da-4726-b86c-a821bb164a6a")
+		(uuid "8d105b4f-1ef8-4d0d-b5ad-377f3bebef1c")
 		(property "Sheetname" "Régulateur_5V"
-			(at 68.58 71.0434 0)
+			(at 76.2 62.1534 0)
 			(effects
 				(font
 					(size 2.54 2.54)
@@ -615,7 +615,7 @@
 			)
 		)
 		(property "Sheetfile" "Régulateur_5V.kicad_sch"
-			(at 68.58 117.4246 0)
+			(at 76.2 108.5346 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -624,35 +624,35 @@
 			)
 		)
 		(pin "+5V" output
-			(at 135.89 93.98 0)
+			(at 143.51 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "bdd8c3e9-6781-4fd5-bb4e-05c6a8296808")
+			(uuid "c7765f84-db58-4a41-8f2a-8840e0c0db11")
 		)
 		(pin "+7.2V" input
-			(at 68.58 92.71 180)
+			(at 76.2 83.82 180)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "f19b6e7d-658a-4057-9669-d2f0234ff51b")
+			(uuid "98c1bc1a-5d1e-4811-a9de-7bcaf4b218f1")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426"
-					(page "8")
+					(page "10")
 				)
 			)
 		)
 	)
 	(sheet
-		(at 179.07 72.39)
+		(at 186.69 63.5)
 		(size 54.61 46.99)
 		(fields_autoplaced yes)
 		(stroke
@@ -662,9 +662,9 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "f89d0020-f58a-44d7-b0bd-6768371fe528")
+		(uuid "a5848076-92cd-4e99-9706-01c7593ded28")
 		(property "Sheetname" "Régulateur_3.3V"
-			(at 179.07 71.0434 0)
+			(at 186.69 62.1534 0)
 			(effects
 				(font
 					(size 2.54 2.54)
@@ -673,7 +673,7 @@
 			)
 		)
 		(property "Sheetfile" "Régulateur_3.3V.kicad_sch"
-			(at 179.07 119.9646 0)
+			(at 186.69 111.0746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -682,29 +682,29 @@
 			)
 		)
 		(pin "+3.3V" output
-			(at 233.68 93.98 0)
+			(at 241.3 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "32984329-313d-47ae-a30d-02eaa14f85b7")
+			(uuid "761e2eef-7158-4883-af99-f69681647762")
 		)
 		(pin "+5V" input
-			(at 179.07 93.98 180)
+			(at 186.69 85.09 180)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "2c4ada5e-d5d1-4135-9826-6e224ddc2875")
+			(uuid "3f73a2b5-f1bf-4fb2-bff8-5bb0425cf519")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426"
-					(page "8")
+					(page "9")
 				)
 			)
 		)
