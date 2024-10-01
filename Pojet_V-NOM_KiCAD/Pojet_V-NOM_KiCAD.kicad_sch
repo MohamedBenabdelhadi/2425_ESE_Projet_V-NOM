@@ -5,6 +5,66 @@
 	(uuid "37e0fdad-f3fd-48e0-8377-111662233a91")
 	(paper "A4")
 	(lib_symbols)
+	(wire
+		(pts
+			(xy 67.31 132.08) (xy 110.49 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06887189-046d-400c-8896-ea250dc1db35")
+	)
+	(wire
+		(pts
+			(xy 67.31 137.16) (xy 110.49 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "549bfe41-8de6-49ac-85fc-2855cec0659a")
+	)
+	(wire
+		(pts
+			(xy 67.31 134.62) (xy 110.49 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7730b03d-400b-45f2-b989-02ce1c0c2ceb")
+	)
+	(wire
+		(pts
+			(xy 67.31 127) (xy 110.49 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad47dbd3-2cc9-49d5-ac6b-5e5d90543922")
+	)
+	(wire
+		(pts
+			(xy 67.31 142.24) (xy 110.49 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce857087-2bd4-44d0-bb1b-996d049ef634")
+	)
+	(wire
+		(pts
+			(xy 67.31 139.7) (xy 110.49 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcb72cb9-9207-44e2-b405-e0b7e13dfda4")
+	)
 	(sheet
 		(at 50.8 30.48)
 		(size 67.31 43.18)
@@ -160,7 +220,7 @@
 			(uuid "036e4045-1be3-431c-8790-8484fa13e229")
 		)
 		(pin "BTN_RESET" input
-			(at 110.49 124.46 180)
+			(at 110.49 142.24 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -170,7 +230,7 @@
 			(uuid "170ceb89-aaa7-436f-bd61-cd1736e37ed5")
 		)
 		(pin "BTN_MODE" input
-			(at 110.49 121.92 180)
+			(at 110.49 127 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -180,7 +240,7 @@
 			(uuid "7364e8ef-a2fc-4312-87cc-87fd70fe1ce4")
 		)
 		(pin "VCP_RX" bidirectional
-			(at 110.49 132.08 180)
+			(at 110.49 134.62 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -200,7 +260,7 @@
 			(uuid "48153dbf-91f9-4de1-b9e8-d7c007f7817a")
 		)
 		(pin "BTN_START" input
-			(at 110.49 119.38 180)
+			(at 110.49 113.03 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -260,7 +320,7 @@
 			(uuid "09ea54d9-16bf-4562-97b1-98d1db06f28d")
 		)
 		(pin "VCP_TX" bidirectional
-			(at 110.49 129.54 180)
+			(at 110.49 132.08 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -418,8 +478,8 @@
 		)
 	)
 	(sheet
-		(at 19.05 153.67)
-		(size 85.09 34.29)
+		(at 13.97 95.25)
+		(size 53.34 53.34)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -430,7 +490,7 @@
 		)
 		(uuid "e3530ec7-9c0b-4af7-af62-470ecf12c871")
 		(property "Sheetname" "interface_utilisateur"
-			(at 19.05 152.9584 0)
+			(at 13.97 94.5384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -439,7 +499,7 @@
 			)
 		)
 		(property "Sheetfile" "interface_utilisateur.kicad_sch"
-			(at 19.05 188.5446 0)
+			(at 13.97 149.1746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -448,7 +508,7 @@
 			)
 		)
 		(pin "Switch_Mode" output
-			(at 104.14 156.21 0)
+			(at 67.31 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -458,17 +518,17 @@
 			(uuid "c71d8d4c-a768-43f5-b7ca-29831fbad5ad")
 		)
 		(pin "VCP_RX" input
-			(at 19.05 162.56 180)
+			(at 67.31 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 			(uuid "d9e533ce-2fcb-4d66-8a56-8fa501496ad1")
 		)
 		(pin "VCP_TX" output
-			(at 104.14 162.56 0)
+			(at 67.31 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -478,37 +538,37 @@
 			(uuid "f3b19da3-1c6b-45b3-a1e6-9831ecdde83b")
 		)
 		(pin "LED_SOURIS" input
-			(at 19.05 168.91 180)
+			(at 67.31 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 			(uuid "0492f959-7200-45b3-b121-966b0567e055")
 		)
 		(pin "LED_CHAT" input
-			(at 19.05 171.45 180)
+			(at 67.31 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 			(uuid "6273ce38-3565-40aa-9a6f-c500712b4db4")
 		)
 		(pin "SWCLK" input
-			(at 19.05 175.26 180)
+			(at 67.31 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 			(uuid "2d9a37db-e30f-42e8-88f9-51402f502d67")
 		)
 		(pin "SWDIO" bidirectional
-			(at 48.26 153.67 90)
+			(at 67.31 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -518,7 +578,7 @@
 			(uuid "932988b2-02dd-4cf7-8177-1b51ff095c78")
 		)
 		(pin "SWO" output
-			(at 104.14 173.99 0)
+			(at 67.31 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -528,7 +588,7 @@
 			(uuid "b94dfbf3-6b23-4798-ae33-979fd50b02a4")
 		)
 		(pin "NRST" output
-			(at 104.14 176.53 0)
+			(at 67.31 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
