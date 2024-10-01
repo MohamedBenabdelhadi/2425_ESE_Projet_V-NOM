@@ -5,6 +5,62 @@
 	(uuid "37e0fdad-f3fd-48e0-8377-111662233a91")
 	(paper "A4")
 	(lib_symbols)
+	(junction
+		(at 165.1 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9e2e65bf-b532-47a2-a06f-18aee037f9e0")
+	)
+	(wire
+		(pts
+			(xy 173.99 55.88) (xy 173.99 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ef58f33-9ea8-4bc1-969a-33988d2485cf")
+	)
+	(wire
+		(pts
+			(xy 173.99 119.38) (xy 160.02 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ef78ece-0eaf-4478-84bb-c4221baf41a9")
+	)
+	(wire
+		(pts
+			(xy 128.27 46.99) (xy 128.27 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13e195ed-30df-4bc5-8f70-e29e4ce450fd")
+	)
+	(wire
+		(pts
+			(xy 128.27 83.82) (xy 215.9 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33098ad0-a6f1-4a64-811d-7b50e2f1c8ad")
+	)
+	(wire
+		(pts
+			(xy 81.28 38.1) (xy 181.61 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46c3f99f-53da-4552-939b-06c4e645ef56")
+	)
 	(wire
 		(pts
 			(xy 83.82 139.7) (xy 110.49 139.7)
@@ -17,6 +73,36 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 31.75) (xy 165.1 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "642d24f8-5268-4745-8601-c09ce7dedd8c")
+	)
+	(wire
+		(pts
+			(xy 160.02 101.6) (xy 165.1 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90f77845-7f4e-4f6f-baf6-08ace44b27bb")
+	)
+	(wire
+		(pts
+			(xy 181.61 55.88) (xy 173.99 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1be9945-5a49-4581-914f-539beec1c1d1")
+	)
+	(wire
+		(pts
 			(xy 83.82 129.54) (xy 110.49 129.54)
 		)
 		(stroke
@@ -24,6 +110,26 @@
 			(type default)
 		)
 		(uuid "a3f57e06-b531-46cd-ada7-413c7f1c54b8")
+	)
+	(wire
+		(pts
+			(xy 171.45 114.3) (xy 171.45 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b664c706-b79b-45f3-8366-5096a46f48f4")
+	)
+	(wire
+		(pts
+			(xy 165.1 31.75) (xy 181.61 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bca7d978-14a0-4ce3-a357-b9e17163df36")
 	)
 	(wire
 		(pts
@@ -47,6 +153,56 @@
 	)
 	(wire
 		(pts
+			(xy 171.45 44.45) (xy 181.61 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3681d67-dacf-4647-abb1-ab038e0cf6e3")
+	)
+	(wire
+		(pts
+			(xy 81.28 46.99) (xy 128.27 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd258096-0e8e-4e42-bcaf-152e604da2c7")
+	)
+	(wire
+		(pts
+			(xy 81.28 31.75) (xy 165.1 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1b0d3f7-4a7b-49da-b3e8-1817fecf1125")
+	)
+	(wire
+		(pts
+			(xy 215.9 83.82) (xy 215.9 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3814c5d-adbc-44e3-92ae-20a4f2721dd1")
+	)
+	(wire
+		(pts
+			(xy 160.02 114.3) (xy 171.45 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4e394ca-29eb-4f32-9cac-ffd1f88ab09d")
+	)
+	(wire
+		(pts
 			(xy 83.82 121.92) (xy 110.49 121.92)
 		)
 		(stroke
@@ -56,7 +212,7 @@
 		(uuid "e983a1ca-aa7e-4f96-9834-e23027f3fad2")
 	)
 	(sheet
-		(at 50.8 30.48)
+		(at 185.42 92.71)
 		(size 67.31 43.18)
 		(fields_autoplaced yes)
 		(stroke
@@ -68,7 +224,7 @@
 		)
 		(uuid "778527cd-4ba2-44a7-9be0-e348ce68e304")
 		(property "Sheetname" "Deplacement"
-			(at 50.8 29.7684 0)
+			(at 185.42 91.9984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77,7 +233,7 @@
 			)
 		)
 		(property "Sheetfile" "deplacement.kicad_sch"
-			(at 50.8 74.2446 0)
+			(at 185.42 136.4746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86,7 +242,7 @@
 			)
 		)
 		(pin "VREF1" input
-			(at 50.8 40.64 180)
+			(at 185.42 102.87 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -96,7 +252,7 @@
 			(uuid "7d8cceba-55cc-4678-8058-37b8cc041e83")
 		)
 		(pin "FWD1" input
-			(at 50.8 50.8 180)
+			(at 185.42 113.03 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -106,7 +262,7 @@
 			(uuid "79a8a13e-f0dd-465a-aad1-b00f10f0063b")
 		)
 		(pin "Encoder A phase 2" output
-			(at 118.11 43.18 0)
+			(at 252.73 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -116,7 +272,7 @@
 			(uuid "fcfa1df1-03be-4aa6-8444-16ce51589306")
 		)
 		(pin "Encoder B phase 2" output
-			(at 118.11 49.53 0)
+			(at 252.73 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -126,7 +282,7 @@
 			(uuid "4800bbc4-12cb-4867-8008-c85eb5684cf5")
 		)
 		(pin "Encoder B phase 1" output
-			(at 118.11 46.99 0)
+			(at 252.73 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -136,7 +292,7 @@
 			(uuid "cb0a93af-822c-4fe0-aa35-a65f0df97c4b")
 		)
 		(pin "Encoder A phase 1" output
-			(at 118.11 40.64 0)
+			(at 252.73 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -146,7 +302,7 @@
 			(uuid "84165837-6bd8-454c-93e4-a1baf82c128b")
 		)
 		(pin "VREF2" input
-			(at 50.8 43.18 180)
+			(at 185.42 105.41 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -156,7 +312,7 @@
 			(uuid "484e125d-5389-453d-bcbe-d56bca843582")
 		)
 		(pin "FWD2" input
-			(at 50.8 53.34 180)
+			(at 185.42 115.57 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -166,7 +322,7 @@
 			(uuid "473c68a6-6fa6-44ce-a26a-f42d434c9833")
 		)
 		(pin "+7.2V" input
-			(at 81.28 30.48 90)
+			(at 215.9 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -184,7 +340,7 @@
 		)
 	)
 	(sheet
-		(at 184.15 115.57)
+		(at 181.61 24.13)
 		(size 67.31 35.56)
 		(fields_autoplaced yes)
 		(stroke
@@ -196,7 +352,7 @@
 		)
 		(uuid "8a0e1cc3-b8cc-4980-b1ce-7a1b28674574")
 		(property "Sheetname" "acquisition"
-			(at 184.15 114.8584 0)
+			(at 181.61 23.4184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -205,13 +361,153 @@
 			)
 		)
 		(property "Sheetfile" "acquisition.kicad_sch"
-			(at 184.15 151.7146 0)
+			(at 181.61 60.2746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
 			)
+		)
+		(pin "TX_LIDAR" passive
+			(at 248.92 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "7cd927cb-d844-4662-967c-28cc6f815a6b")
+		)
+		(pin "RX_LIDAR" passive
+			(at 248.92 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "c22c63eb-cdcb-45ec-8cac-735b89d23419")
+		)
+		(pin "INT1_ACCEL" output
+			(at 248.92 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "e292b597-6790-4cb9-8b5b-184ecb4ee494")
+		)
+		(pin "INT2_ACCEL" output
+			(at 248.92 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "c5c37b7c-9e35-428b-8248-77f612e86707")
+		)
+		(pin "SDA" input
+			(at 181.61 55.88 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "802611f1-506d-4571-a454-34704211a616")
+		)
+		(pin "CS" input
+			(at 181.61 49.53 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "07e7badc-4a44-41fe-89a7-5cddd11bb3c1")
+		)
+		(pin "sclk" input
+			(at 181.61 44.45 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "769fce98-259b-4191-b324-ac3d8b2cf588")
+		)
+		(pin "+3.3V" input
+			(at 181.61 31.75 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "19765628-9bfd-4698-a68a-f89ebd391dfc")
+		)
+		(pin "M_SCTR" passive
+			(at 248.92 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "5f628534-487e-48a6-8603-ac0b787558ae")
+		)
+		(pin "DEV_EN" passive
+			(at 248.92 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "cc8a8991-9ed9-4cb2-973e-60226fa50d02")
+		)
+		(pin "M_EN" passive
+			(at 248.92 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "9b4e1cbf-52c1-4403-8bac-99d915031640")
+		)
+		(pin "Vo_2" output
+			(at 248.92 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ef7b60c9-bc01-427c-8859-dd98e72d4e98")
+		)
+		(pin "Vo_1" output
+			(at 248.92 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f890c6f6-4b35-4167-a039-d34adefac6b3")
+		)
+		(pin "+5V" input
+			(at 181.61 38.1 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "b9c35aaa-be39-42f7-8783-9784e0b32a61")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
@@ -222,7 +518,7 @@
 		)
 	)
 	(sheet
-		(at 179.07 45.72)
+		(at 21.59 20.32)
 		(size 59.69 44.45)
 		(fields_autoplaced yes)
 		(stroke
@@ -234,7 +530,7 @@
 		)
 		(uuid "aef3d9b2-029f-4338-91be-d4af664a9426")
 		(property "Sheetname" "alimentation"
-			(at 179.07 45.0084 0)
+			(at 21.59 19.6084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -243,13 +539,43 @@
 			)
 		)
 		(property "Sheetfile" "alimentation.kicad_sch"
-			(at 179.07 90.7546 0)
+			(at 21.59 65.3546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
 			)
+		)
+		(pin "+3.3V" output
+			(at 81.28 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "be5baa71-548c-477e-802e-de2e7cd76871")
+		)
+		(pin "+5V" output
+			(at 81.28 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "a3ffa0b0-a3c8-4361-b05d-115565ebe4d5")
+		)
+		(pin "+7.2V" output
+			(at 81.28 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "73d31155-02c8-4fdf-bde0-03b30eb41a2b")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
@@ -319,7 +645,7 @@
 			)
 			(uuid "7364e8ef-a2fc-4312-87cc-87fd70fe1ce4")
 		)
-		(pin "VCP_RX" output
+		(pin "VCP_RX" bidirectional
 			(at 110.49 132.08 180)
 			(effects
 				(font
@@ -399,7 +725,7 @@
 			)
 			(uuid "09ea54d9-16bf-4562-97b1-98d1db06f28d")
 		)
-		(pin "VCP_TX" input
+		(pin "VCP_TX" bidirectional
 			(at 110.49 129.54 180)
 			(effects
 				(font
@@ -489,7 +815,7 @@
 			)
 			(uuid "ac7ac875-e284-4d97-8167-7c5b0610b3b4")
 		)
-		(pin "SWCLK" output
+		(pin "SWCLK" bidirectional
 			(at 110.49 137.16 180)
 			(effects
 				(font

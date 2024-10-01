@@ -414,6 +414,14 @@
     [
       "a37b102b-6b50-46eb-b8ae-7cacb8a76bdc",
       "Driver_Motor2"
+    ],
+    [
+      "a5848076-92cd-4e99-9706-01c7593ded28",
+      "Régulateur_3.3V"
+    ],
+    [
+      "8d105b4f-1ef8-4d0d-b5ad-377f3bebef1c",
+      "Régulateur_5V"
     ]
   ],
   "text_variables": {}
