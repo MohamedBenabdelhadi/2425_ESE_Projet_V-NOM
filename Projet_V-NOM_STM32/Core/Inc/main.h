@@ -69,6 +69,10 @@ void Error_Handler(void);
 #define Encoder2_A_GPIO_Port GPIOA
 #define Encoder2_B_Pin GPIO_PIN_4
 #define Encoder2_B_GPIO_Port GPIOA
+#define On_Off_Pin GPIO_PIN_8
+#define On_Off_GPIO_Port GPIOB
+#define Mode_Pin GPIO_PIN_9
+#define Mode_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
