@@ -50,7 +50,7 @@ subgraph Robot
         end
 
         subgraph Acquisition
-            CD[**Détecter le bord :**Capteurs de distance] -- Analog --> M;
+            CD[**Détecter le bord :** Capteurs de distance] -- Analog --> M;
             L[**Détecter des robots environants :** Lidar] -- UART --> M;
             AG[**Détecter les mpacts et l'orientation :** Accéléromètre & Gyroscope] -- SPI / I2C --> M;
         end
