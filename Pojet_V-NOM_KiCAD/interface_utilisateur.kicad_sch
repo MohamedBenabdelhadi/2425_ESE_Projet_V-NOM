@@ -1194,7 +1194,11 @@
 		(uuid "6c0593dd-a6bd-4538-9a54-780916953b10")
 	)
 	(hierarchical_label "NRST"
+<<<<<<< HEAD
 		(shape passive)
+=======
+		(shape output)
+>>>>>>> 82cdae5 (Import Pins UI)
 		(at 57.15 90.17 0)
 		(fields_autoplaced yes)
 		(effects
@@ -1254,7 +1258,11 @@
 		(uuid "7107185f-b34e-4dae-8825-11fc26e47fd1")
 	)
 	(hierarchical_label "Switch_Mode"
+<<<<<<< HEAD
 		(shape passive)
+=======
+		(shape output)
+>>>>>>> 82cdae5 (Import Pins UI)
 		(at 223.52 88.9 180)
 		(fields_autoplaced yes)
 		(effects
@@ -1266,7 +1274,11 @@
 		(uuid "c50bce77-d798-49ca-8cd3-d1b05edeeaeb")
 	)
 	(hierarchical_label "VCP_TX"
+<<<<<<< HEAD
 		(shape passive)
+=======
+		(shape output)
+>>>>>>> 82cdae5 (Import Pins UI)
 		(at 57.15 115.57 0)
 		(fields_autoplaced yes)
 		(effects
@@ -1278,7 +1290,11 @@
 		(uuid "cd6f2e11-4ae3-4a06-8d22-219d21ecd323")
 	)
 	(hierarchical_label "SWDIO"
+<<<<<<< HEAD
 		(shape passive)
+=======
+		(shape bidirectional)
+>>>>>>> 82cdae5 (Import Pins UI)
 		(at 57.15 97.79 0)
 		(fields_autoplaced yes)
 		(effects
@@ -1290,7 +1306,11 @@
 		(uuid "e7a72c30-28b9-4068-9c93-91055011c343")
 	)
 	(hierarchical_label "SWO"
+<<<<<<< HEAD
 		(shape passive)
+=======
+		(shape output)
+>>>>>>> 82cdae5 (Import Pins UI)
 		(at 57.15 100.33 0)
 		(fields_autoplaced yes)
 		(effects
