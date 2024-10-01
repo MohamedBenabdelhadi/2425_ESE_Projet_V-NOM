@@ -1658,16 +1658,6 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 99.06) (xy 227.33 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6e453ed0-4c69-4e25-a3f9-b468239d2601")
-	)
-	(wire
-		(pts
 			(xy 130.81 80.01) (xy 46.99 80.01)
 		)
 		(stroke
@@ -1735,6 +1725,26 @@
 			(type default)
 		)
 		(uuid "89e2e7b5-3b97-4ef9-aa7b-3530971ba82c")
+	)
+	(wire
+		(pts
+			(xy 227.33 102.87) (xy 227.33 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89f2db8e-3b43-4664-a27e-7cea95815004")
+	)
+	(wire
+		(pts
+			(xy 227.33 81.28) (xy 227.33 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bde2fa4-2584-4b94-93c2-5f9693904618")
 	)
 	(wire
 		(pts
@@ -1888,16 +1898,6 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 85.09) (xy 227.33 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e2a07797-cfbb-4c06-861f-4ab4b6518f3a")
-	)
-	(wire
-		(pts
 			(xy 102.87 148.59) (xy 105.41 148.59)
 		)
 		(stroke
@@ -2018,18 +2018,6 @@
 	)
 	(hierarchical_label "+7.5V"
 		(shape passive)
-		(at 227.33 105.41 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "043b98df-4b8a-4a02-808a-3f9cb7a5eee4")
-	)
-	(hierarchical_label "+7.5V"
-		(shape passive)
 		(at 25.4 55.88 180)
 		(fields_autoplaced yes)
 		(effects
@@ -2039,6 +2027,18 @@
 			(justify right)
 		)
 		(uuid "0598159b-94ab-4960-9432-098cc1bcab7e")
+	)
+	(hierarchical_label "+7.2V"
+		(shape passive)
+		(at 227.33 81.28 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6da13222-ea79-4042-a432-e23c6a5d3b9e")
 	)
 	(hierarchical_label "+5V"
 		(shape passive)
@@ -2536,6 +2536,72 @@
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426"
 					(reference "C403")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 227.33 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3fd3bc54-88f0-4e7a-8a9e-4f9ab8176661")
+		(property "Reference" "#PWR0401"
+			(at 227.33 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 227.33 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 227.33 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 227.33 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 227.33 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "15d1c95c-d5eb-417b-ab7c-05139edb0913")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426"
+					(reference "#PWR0401")
 					(unit 1)
 				)
 			)
@@ -3630,72 +3696,6 @@
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426"
 					(reference "R402")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 227.33 85.09 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b9806ac7-b4ad-4042-bf91-dbc608235aa5")
-		(property "Reference" "#PWR0418"
-			(at 227.33 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 227.33 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 227.33 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 227.33 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 227.33 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e487f353-26ee-4fea-aaa3-f6843374dee7")
-		)
-		(instances
-			(project "Pojet_V-NOM_KiCAD"
-				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426"
-					(reference "#PWR0418")
 					(unit 1)
 				)
 			)

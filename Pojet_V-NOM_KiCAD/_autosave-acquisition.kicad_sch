@@ -1742,7 +1742,7 @@
 		(uuid "7097f4fe-6050-4c70-a3a3-5cde778d0226")
 	)
 	(hierarchical_label "Vo1"
-		(shape passive)
+		(shape output)
 		(at 205.74 88.9 180)
 		(fields_autoplaced yes)
 		(effects
@@ -1790,7 +1790,7 @@
 		(uuid "cf50654e-a4f7-45f8-b536-e07c2993b9cd")
 	)
 	(hierarchical_label "Vo2"
-		(shape passive)
+		(shape output)
 		(at 205.74 107.95 180)
 		(fields_autoplaced yes)
 		(effects
