@@ -1573,7 +1573,7 @@
 		)
 		(uuid "e3b527ff-3663-4eba-8c2b-551d16109a25")
 	)
-	(hierarchical_label "SDA"
+	(hierarchical_label "AG_SDA"
 		(shape input)
 		(at 58.42 63.5 180)
 		(fields_autoplaced yes)
@@ -1585,7 +1585,7 @@
 		)
 		(uuid "107106d8-a8b8-4990-9910-20eced298a2d")
 	)
-	(hierarchical_label "Vo_2"
+	(hierarchical_label "TOF2"
 		(shape output)
 		(at 209.55 97.79 180)
 		(fields_autoplaced yes)
@@ -1609,7 +1609,7 @@
 		)
 		(uuid "27aa18fd-19ae-4e0b-96e6-12561f06a36d")
 	)
-	(hierarchical_label "INT1_ACCEL"
+	(hierarchical_label "AG_INT1"
 		(shape output)
 		(at 83.82 63.5 0)
 		(fields_autoplaced yes)
@@ -1645,7 +1645,7 @@
 		)
 		(uuid "8fe99e74-36c0-49fd-8fa7-a34a9af5fa02")
 	)
-	(hierarchical_label "sclk"
+	(hierarchical_label "AG_SCLK"
 		(shape input)
 		(at 58.42 66.04 180)
 		(fields_autoplaced yes)
@@ -1657,7 +1657,7 @@
 		)
 		(uuid "951db95b-7fc4-4c3e-a7aa-3c1b0984663a")
 	)
-	(hierarchical_label "Vo_1"
+	(hierarchical_label "TOF1"
 		(shape output)
 		(at 208.28 80.01 180)
 		(fields_autoplaced yes)
@@ -1693,7 +1693,7 @@
 		)
 		(uuid "bdacf4bb-5ff2-4d1d-bc95-be933b0a0ebc")
 	)
-	(hierarchical_label "CS"
+	(hierarchical_label "AG_CSN"
 		(shape input)
 		(at 58.42 68.58 180)
 		(fields_autoplaced yes)
@@ -1741,7 +1741,7 @@
 		)
 		(uuid "eec3b2d1-75d3-48e1-8c20-aeececb307bf")
 	)
-	(hierarchical_label "INT2_ACCEL"
+	(hierarchical_label "AG_INT2"
 		(shape output)
 		(at 83.82 66.04 0)
 		(fields_autoplaced yes)
