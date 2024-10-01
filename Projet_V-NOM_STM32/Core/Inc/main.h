@@ -57,6 +57,18 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define ToF1_Pin GPIO_PIN_10
+#define ToF1_GPIO_Port GPIOG
+#define ToF2_Pin GPIO_PIN_0
+#define ToF2_GPIO_Port GPIOA
+#define Encoder1_A_Pin GPIO_PIN_1
+#define Encoder1_A_GPIO_Port GPIOA
+#define Encoder1_B_Pin GPIO_PIN_2
+#define Encoder1_B_GPIO_Port GPIOA
+#define Encoder2_A_Pin GPIO_PIN_3
+#define Encoder2_A_GPIO_Port GPIOA
+#define Encoder2_B_Pin GPIO_PIN_4
+#define Encoder2_B_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 
