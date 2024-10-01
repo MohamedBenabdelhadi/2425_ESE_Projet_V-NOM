@@ -319,7 +319,7 @@
 			)
 			(uuid "7364e8ef-a2fc-4312-87cc-87fd70fe1ce4")
 		)
-		(pin "VCP_RX" bidirectional
+		(pin "VCP_RX" output
 			(at 110.49 132.08 180)
 			(effects
 				(font
@@ -399,7 +399,7 @@
 			)
 			(uuid "09ea54d9-16bf-4562-97b1-98d1db06f28d")
 		)
-		(pin "VCP_TX" bidirectional
+		(pin "VCP_TX" input
 			(at 110.49 129.54 180)
 			(effects
 				(font
@@ -489,7 +489,7 @@
 			)
 			(uuid "ac7ac875-e284-4d97-8167-7c5b0610b3b4")
 		)
-		(pin "SWCLK" bidirectional
+		(pin "SWCLK" output
 			(at 110.49 137.16 180)
 			(effects
 				(font
