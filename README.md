@@ -14,7 +14,7 @@ Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 - Régulateur 3.3V : BU33SD5WG-TR [(Farnell : 3011248)](https://fr.farnell.com/rohm/bu33sd5wg-tr/ldo-fixe-3-3v-0-5a-40-a-105-c/dp/3011248)  (done)
 - Batterie NIMH 7.2V 1.3Ah [(RS : 777-0377)](https://fr.rs-online.com/web/p/blocs-batteries-rechargeables/7770377?srsltid=AfmBOoqrzm-2xAbhXLv9pRw4Oh5hJvgaiMIRUeVsAtR-6kuSAeCwSjIW)(done)
 - Capteur bordure : GP2Y0A41SK0F [(Farnell : 1618431)](https://fr.farnell.com/sharp/gp2y0a41sk0f/capteur-de-distance/dp/1618431)  (pas besoin de l'empreinte dessiner)
-- Lidar : YDLIDAR X4 
+- Lidar : YDLIDAR X4 (https://www.ydlidar.com/dowfile.html?cid=5&type=1)
 - Connecteurs JST 2.54mm
 - LED + R/C en 0603
 - Cable avec Connecteur du capteur de bordure : A03SR03SR30K152A [(Digikey : 455-3703-ND)](https://www.digikey.fr/fr/products/detail/jst-sales-america-inc./A03SR03SR30K152A/6708479?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax%20Shopping_Product_High%20ROAS&utm_term=&productid=6708479&utm_content=&utm_id=go_cmp-19538087217_adg-_ad-__dev-c_ext-_prd-6708479_sig-EAIaIQobChMI266NvsG6iAMVgkRBAh3lExJ7EAQYASABEgJQt_D_BwE&gad_source=1&gclid=EAIaIQobChMI266NvsG6iAMVgkRBAh3lExJ7EAQYASABEgJQt_D_BwE)
