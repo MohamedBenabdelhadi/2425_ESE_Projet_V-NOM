@@ -6,30 +6,50 @@
 	(paper "A4")
 	(lib_symbols)
 	(junction
-		(at 165.1 31.75)
+		(at 113.03 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9e2e65bf-b532-47a2-a06f-18aee037f9e0")
+		(uuid "3ca526ee-20b9-4f19-9282-39d91e34d5af")
+	)
+	(junction
+		(at 143.51 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3cc5fa9c-d41e-4561-a386-0e47f16de9c5")
+	)
+	(junction
+		(at 135.89 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7ee9a166-c554-449f-be15-ab2caba74bb8")
+	)
+	(junction
+		(at 148.59 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "96751570-8d65-4442-97c5-97642efdef1e")
+	)
+	(junction
+		(at 133.35 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c8eb1406-c0e4-42a0-95a3-b9089206e2b3")
+	)
+	(junction
+		(at 140.97 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fc1fd3ff-b74e-41db-a69f-506fcfabb5f6")
 	)
 	(wire
 		(pts
-			(xy 173.99 55.88) (xy 173.99 119.38)
+			(xy 151.13 95.25) (xy 148.59 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0ef58f33-9ea8-4bc1-969a-33988d2485cf")
-	)
-	(wire
-		(pts
-			(xy 173.99 119.38) (xy 160.02 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0ef78ece-0eaf-4478-84bb-c4221baf41a9")
+		(uuid "0e6b945c-0f04-4de9-87fb-7e9871a3d629")
 	)
 	(wire
 		(pts
@@ -53,6 +73,16 @@
 	)
 	(wire
 		(pts
+			(xy 181.61 44.45) (xy 123.19 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e1bdba2-1899-4ba1-a6dc-d5846994e8de")
+	)
+	(wire
+		(pts
 			(xy 81.28 38.1) (xy 181.61 38.1)
 		)
 		(stroke
@@ -73,33 +103,53 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 31.75) (xy 165.1 101.6)
+			(xy 140.97 95.25) (xy 135.89 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "642d24f8-5268-4745-8601-c09ce7dedd8c")
+		(uuid "74a554ba-78c8-4d9b-9cbb-0aa8f66bcf8d")
 	)
 	(wire
 		(pts
-			(xy 160.02 101.6) (xy 165.1 101.6)
+			(xy 148.59 95.25) (xy 143.51 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "90f77845-7f4e-4f6f-baf6-08ace44b27bb")
+		(uuid "7505d8dc-b7ab-45e1-a84c-88bb2b8bbf83")
 	)
 	(wire
 		(pts
-			(xy 181.61 55.88) (xy 173.99 55.88)
+			(xy 113.03 31.75) (xy 181.61 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a1be9945-5a49-4581-914f-539beec1c1d1")
+		(uuid "82a4eac7-b2c3-45bb-9f14-7533477456ac")
+	)
+	(wire
+		(pts
+			(xy 123.19 44.45) (xy 123.19 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97e57473-7b72-4de7-95b8-e6eef39abb7f")
+	)
+	(wire
+		(pts
+			(xy 143.51 95.25) (xy 140.97 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a086d4da-f785-4da9-8459-fe9b7f6292fe")
 	)
 	(wire
 		(pts
@@ -113,23 +163,33 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 114.3) (xy 171.45 44.45)
+			(xy 135.89 95.25) (xy 133.35 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b664c706-b79b-45f3-8366-5096a46f48f4")
+		(uuid "aff0b3ab-809e-412e-bb01-0e43fa8f1fb5")
 	)
 	(wire
 		(pts
-			(xy 165.1 31.75) (xy 181.61 31.75)
+			(xy 81.28 31.75) (xy 113.03 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "bca7d978-14a0-4ce3-a357-b9e17163df36")
+	)
+	(wire
+		(pts
+			(xy 113.03 31.75) (xy 113.03 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd210534-b682-48cc-861f-ec291467c7f4")
 	)
 	(wire
 		(pts
@@ -153,16 +213,6 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 44.45) (xy 181.61 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d3681d67-dacf-4647-abb1-ab038e0cf6e3")
-	)
-	(wire
-		(pts
 			(xy 81.28 46.99) (xy 128.27 46.99)
 		)
 		(stroke
@@ -170,16 +220,6 @@
 			(type default)
 		)
 		(uuid "dd258096-0e8e-4e42-bcaf-152e604da2c7")
-	)
-	(wire
-		(pts
-			(xy 81.28 31.75) (xy 165.1 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e1b0d3f7-4a7b-49da-b3e8-1817fecf1125")
 	)
 	(wire
 		(pts
@@ -193,16 +233,6 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 114.3) (xy 171.45 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e4e394ca-29eb-4f32-9cac-ffd1f88ab09d")
-	)
-	(wire
-		(pts
 			(xy 83.82 121.92) (xy 110.49 121.92)
 		)
 		(stroke
@@ -210,6 +240,16 @@
 			(type default)
 		)
 		(uuid "e983a1ca-aa7e-4f96-9834-e23027f3fad2")
+	)
+	(wire
+		(pts
+			(xy 133.35 95.25) (xy 128.27 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8873a59-df86-4b43-9b6a-7ad30b123ddf")
 	)
 	(sheet
 		(at 185.42 92.71)
@@ -242,7 +282,7 @@
 			)
 		)
 		(pin "VREF1" input
-			(at 185.42 102.87 180)
+			(at 185.42 109.22 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -252,7 +292,7 @@
 			(uuid "7d8cceba-55cc-4678-8058-37b8cc041e83")
 		)
 		(pin "FWD1" input
-			(at 185.42 113.03 180)
+			(at 185.42 116.84 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -262,47 +302,47 @@
 			(uuid "79a8a13e-f0dd-465a-aad1-b00f10f0063b")
 		)
 		(pin "Encoder A phase 2" output
-			(at 252.73 105.41 0)
+			(at 185.42 127 180)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "fcfa1df1-03be-4aa6-8444-16ce51589306")
 		)
 		(pin "Encoder B phase 2" output
-			(at 252.73 111.76 0)
+			(at 185.42 133.35 180)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "4800bbc4-12cb-4867-8008-c85eb5684cf5")
 		)
 		(pin "Encoder B phase 1" output
-			(at 252.73 109.22 0)
+			(at 185.42 130.81 180)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "cb0a93af-822c-4fe0-aa35-a65f0df97c4b")
 		)
 		(pin "Encoder A phase 1" output
-			(at 252.73 102.87 0)
+			(at 185.42 124.46 180)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "84165837-6bd8-454c-93e4-a1baf82c128b")
 		)
 		(pin "VREF2" input
-			(at 185.42 105.41 180)
+			(at 185.42 111.76 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -312,7 +352,7 @@
 			(uuid "484e125d-5389-453d-bcbe-d56bca843582")
 		)
 		(pin "FWD2" input
-			(at 185.42 115.57 180)
+			(at 185.42 119.38 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -370,42 +410,42 @@
 			)
 		)
 		(pin "TX_LIDAR" passive
-			(at 248.92 31.75 0)
+			(at 224.79 59.69 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "7cd927cb-d844-4662-967c-28cc6f815a6b")
 		)
 		(pin "RX_LIDAR" passive
-			(at 248.92 36.83 0)
+			(at 227.33 59.69 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "c22c63eb-cdcb-45ec-8cac-735b89d23419")
 		)
 		(pin "INT1_ACCEL" output
-			(at 248.92 41.91 0)
+			(at 232.41 59.69 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "e292b597-6790-4cb9-8b5b-184ecb4ee494")
 		)
 		(pin "INT2_ACCEL" output
-			(at 248.92 45.72 0)
+			(at 234.95 59.69 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "c5c37b7c-9e35-428b-8248-77f612e86707")
 		)
@@ -450,52 +490,52 @@
 			(uuid "19765628-9bfd-4698-a68a-f89ebd391dfc")
 		)
 		(pin "M_SCTR" passive
-			(at 248.92 49.53 0)
+			(at 241.3 59.69 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "5f628534-487e-48a6-8603-ac0b787558ae")
 		)
 		(pin "DEV_EN" passive
-			(at 248.92 53.34 0)
+			(at 243.84 59.69 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "cc8a8991-9ed9-4cb2-973e-60226fa50d02")
 		)
 		(pin "M_EN" passive
-			(at 248.92 55.88 0)
+			(at 246.38 59.69 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "9b4e1cbf-52c1-4403-8bac-99d915031640")
 		)
 		(pin "Vo_2" output
-			(at 248.92 29.21 0)
+			(at 219.71 59.69 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "ef7b60c9-bc01-427c-8859-dd98e72d4e98")
 		)
 		(pin "Vo_1" output
-			(at 248.92 26.67 0)
+			(at 217.17 59.69 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "f890c6f6-4b35-4167-a039-d34adefac6b3")
 		)
@@ -616,12 +656,12 @@
 			)
 		)
 		(pin "TIM1_CH2N" output
-			(at 134.62 95.25 90)
+			(at 134.62 148.59 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "036e4045-1be3-431c-8790-8484fa13e229")
 		)
@@ -656,12 +696,12 @@
 			(uuid "64d73091-82c2-44a1-bf5b-cca649854cb6")
 		)
 		(pin "TIM1_CH1N" output
-			(at 132.08 95.25 90)
+			(at 132.08 148.59 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "48153dbf-91f9-4de1-b9e8-d7c007f7817a")
 		)
@@ -676,7 +716,7 @@
 			(uuid "08d461d6-00ba-48b3-9c2f-5a77df8e4691")
 		)
 		(pin "LIDAR_TX" bidirectional
-			(at 160.02 127 0)
+			(at 140.97 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -686,17 +726,17 @@
 			(uuid "96aad847-7248-47cb-8501-434b893c75d8")
 		)
 		(pin "TIM3_CH1" output
-			(at 137.16 95.25 90)
+			(at 137.16 148.59 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "4cae3595-4b42-4422-be9e-5b94c895678c")
 		)
 		(pin "AG_USART_TX" bidirectional
-			(at 160.02 132.08 0)
+			(at 148.59 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -706,17 +746,17 @@
 			(uuid "a43f5c52-c83b-448e-932f-3904428be2c9")
 		)
 		(pin "TIM3_CH2" output
-			(at 139.7 95.25 90)
+			(at 139.7 148.59 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "8816163f-1a61-4f8a-91d1-954e2683d319")
 		)
 		(pin "AG_USART_RX" bidirectional
-			(at 160.02 134.62 0)
+			(at 151.13 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -736,7 +776,7 @@
 			(uuid "5b4b9c50-d9dc-4373-8180-fe98852c02eb")
 		)
 		(pin "TOF2" input
-			(at 160.02 124.46 0)
+			(at 135.89 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -746,7 +786,7 @@
 			(uuid "aef51077-3320-493a-883d-440b19277142")
 		)
 		(pin "3.3V" input
-			(at 160.02 101.6 0)
+			(at 113.03 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -756,7 +796,7 @@
 			(uuid "dc1d650e-9176-4ce4-b408-650a39af3bc6")
 		)
 		(pin "TOF1" input
-			(at 160.02 121.92 0)
+			(at 133.35 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -766,7 +806,7 @@
 			(uuid "aa0d42f4-3b7c-4b8d-b2e0-7825311dd421")
 		)
 		(pin "SPI_MOSI" output
-			(at 160.02 119.38 0)
+			(at 128.27 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -776,7 +816,7 @@
 			(uuid "2cd1353e-e05e-4193-b75d-f0829825f458")
 		)
 		(pin "SPI_MISO" bidirectional
-			(at 160.02 116.84 0)
+			(at 125.73 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -786,7 +826,7 @@
 			(uuid "4e965141-201a-452f-9e94-e97fbaa9d9f4")
 		)
 		(pin "SPI_SCK" bidirectional
-			(at 160.02 114.3 0)
+			(at 123.19 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -796,22 +836,22 @@
 			(uuid "a21ed27e-29fa-41d2-9d5a-9c0142654421")
 		)
 		(pin "TIM1_CH1" output
-			(at 124.46 95.25 90)
+			(at 124.46 148.59 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "9d636947-01d8-478d-99bf-85dedc7d5683")
 		)
 		(pin "TIM4_CH2" output
-			(at 144.78 95.25 90)
+			(at 144.78 148.59 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "ac7ac875-e284-4d97-8167-7c5b0610b3b4")
 		)
@@ -826,17 +866,17 @@
 			(uuid "1f3cd3de-2b20-43a5-acef-4e147cf8df08")
 		)
 		(pin "TIM1_CH3" output
-			(at 129.54 95.25 90)
+			(at 129.54 148.59 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "679c5230-fa1c-43f8-81ec-0d577bea9688")
 		)
 		(pin "LIDAR_RX" bidirectional
-			(at 160.02 129.54 0)
+			(at 143.51 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -846,22 +886,22 @@
 			(uuid "e2735b63-ea49-4298-9a74-51169a839618")
 		)
 		(pin "TIM4_CH1" output
-			(at 142.24 95.25 90)
+			(at 142.24 148.59 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "fc9ead29-a1ca-43a9-9f50-043e43e6b6d9")
 		)
 		(pin "TIM1_CH2" output
-			(at 127 95.25 90)
+			(at 127 148.59 270)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 			(uuid "7e16bddf-3965-44b7-9938-39abaa87a5f8")
 		)
