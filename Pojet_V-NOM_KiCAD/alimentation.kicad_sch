@@ -705,7 +705,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "Switch ON/OFF"
 			(at 55.88 80.0099 90)
 			(effects
 				(font

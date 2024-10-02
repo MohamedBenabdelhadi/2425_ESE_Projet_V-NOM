@@ -75,6 +75,10 @@ void Error_Handler(void);
 #define LED_GREEN_GPIO_Port GPIOB
 #define LIDAR_RX_Pin GPIO_PIN_15
 #define LIDAR_RX_GPIO_Port GPIOA
+#define EN_LIDAR_Pin GPIO_PIN_10
+#define EN_LIDAR_GPIO_Port GPIOC
+#define EN_MOT_Pin GPIO_PIN_11
+#define EN_MOT_GPIO_Port GPIOC
 #define LIDAR_TX_Pin GPIO_PIN_3
 #define LIDAR_TX_GPIO_Port GPIOB
 #define VCP_TX_Pin GPIO_PIN_6

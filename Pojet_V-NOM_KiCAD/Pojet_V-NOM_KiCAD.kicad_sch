@@ -211,30 +211,6 @@
 		(uuid "2c594bcf-334d-4dcd-80d7-1a4411c4617e")
 	)
 	(junction
-		(at 146.05 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2d1f1105-1018-414e-b68c-2060fb695526")
-	)
-	(junction
-		(at 135.89 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5848985b-9fd9-4d10-ad02-17b6d4b328c9")
-	)
-	(junction
-		(at 143.51 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "954485d9-7245-492d-aaa6-6166c104600f")
-	)
-	(junction
-		(at 138.43 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ad8a59bd-f4fe-4f7c-b3b3-2a972475e1db")
-	)
-	(junction
 		(at 57.15 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -268,16 +244,6 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 40.64) (xy 171.45 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f529f2d-98f3-45bc-9180-e5dc6a609360")
-	)
-	(wire
-		(pts
 			(xy 134.62 167.64) (xy 123.19 167.64)
 		)
 		(stroke
@@ -298,13 +264,13 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 43.18) (xy 171.45 43.18)
+			(xy 132.08 124.46) (xy 132.08 132.08)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "234e8817-629c-4c02-b5da-a41e7630dfc6")
+		(uuid "216b179a-ef51-4253-acc0-abf1a92c7400")
 	)
 	(wire
 		(pts
@@ -348,6 +314,16 @@
 	)
 	(wire
 		(pts
+			(xy 246.38 132.08) (xy 246.38 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55ef4bd6-fe80-4d1c-976c-3606a3257ab6")
+	)
+	(wire
+		(pts
 			(xy 86.36 115.57) (xy 113.03 115.57)
 		)
 		(stroke
@@ -355,6 +331,16 @@
 			(type default)
 		)
 		(uuid "562752bf-9fde-4ef0-b89c-03c6088668f6")
+	)
+	(wire
+		(pts
+			(xy 171.45 40.64) (xy 146.05 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c536295-17d9-4099-b7c6-7aaca451d7b3")
 	)
 	(wire
 		(pts
@@ -388,16 +374,6 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 71.12) (xy 146.05 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5f6c30c5-bf7b-45b4-9721-18f51d82d315")
-	)
-	(wire
-		(pts
 			(xy 129.54 157.48) (xy 123.19 157.48)
 		)
 		(stroke
@@ -415,6 +391,16 @@
 			(type default)
 		)
 		(uuid "68bbcb4d-d0ed-4c89-8ed8-d88d6463deab")
+	)
+	(wire
+		(pts
+			(xy 146.05 40.64) (xy 146.05 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b84cce9-326c-4c9c-959c-f181b102c312")
 	)
 	(wire
 		(pts
@@ -498,16 +484,6 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 71.12) (xy 143.51 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a086d4da-f785-4da9-8459-fe9b7f6292fe")
-	)
-	(wire
-		(pts
 			(xy 86.36 105.41) (xy 113.03 105.41)
 		)
 		(stroke
@@ -565,16 +541,6 @@
 			(type default)
 		)
 		(uuid "ab29fe63-e6ae-4872-8496-71f5bb4213eb")
-	)
-	(wire
-		(pts
-			(xy 138.43 71.12) (xy 135.89 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aff0b3ab-809e-412e-bb01-0e43fa8f1fb5")
 	)
 	(wire
 		(pts
@@ -728,6 +694,16 @@
 	)
 	(wire
 		(pts
+			(xy 132.08 132.08) (xy 246.38 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4656cab-2b40-4cd1-92c4-e85edc8b0b0c")
+	)
+	(wire
+		(pts
 			(xy 123.19 149.86) (xy 142.24 149.86)
 		)
 		(stroke
@@ -758,13 +734,13 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 71.12) (xy 143.51 40.64)
+			(xy 143.51 43.18) (xy 143.51 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "eda20ef1-8209-4183-b647-16b795ed2395")
+		(uuid "f0bd6802-27b2-4730-ac16-a564a6eb4253")
 	)
 	(wire
 		(pts
@@ -785,6 +761,16 @@
 			(type default)
 		)
 		(uuid "f1e36d6c-716a-49c5-bea9-9bf56f520cca")
+	)
+	(wire
+		(pts
+			(xy 171.45 43.18) (xy 143.51 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5988ff5-393d-4e99-a2e3-0b54c122e9f4")
 	)
 	(wire
 		(pts
@@ -1376,7 +1362,37 @@
 			)
 			(uuid "60025a61-300e-401e-907d-0315930f05a3")
 		)
-		(pin "AG_SDI" input
+		(pin "EN_MOT" input
+			(at 171.45 45.72 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "0d30bb93-be08-4d9d-aa84-3dde1bf87b45")
+		)
+		(pin "EN_LIDAR" input
+			(at 171.45 48.26 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7fcf20e4-32ad-4f5c-ae50-95bc2c6391d0")
+		)
+		(pin "VIT_MOT_LIDAR" input
+			(at 246.38 64.77 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "aee51e8f-4124-47f6-aecf-b60d870f6b0f")
+		)
+		(pin "AG_MOSI" input
 			(at 205.74 64.77 270)
 			(effects
 				(font
@@ -1384,9 +1400,9 @@
 				)
 				(justify left)
 			)
-			(uuid "f2721a56-f8f0-4ea4-8a07-4b1875229b40")
+			(uuid "2b3910d8-3f11-4383-a8a2-510955e4f7ed")
 		)
-		(pin "AG_SDO" output
+		(pin "AG_MISO" output
 			(at 208.28 64.77 270)
 			(effects
 				(font
@@ -1394,7 +1410,7 @@
 				)
 				(justify left)
 			)
-			(uuid "84c70bfe-6cdc-460f-a980-cf3b1dc548e6")
+			(uuid "afca351e-0e47-4a9d-8b89-132ad1a16249")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"

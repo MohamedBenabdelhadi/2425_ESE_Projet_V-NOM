@@ -1310,22 +1310,10 @@
 		(uuid "c78218e0-c5db-4c09-9568-78c3bf68d535")
 	)
 	(junction
-		(at 72.39 149.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dfac4873-f493-41f0-ad05-69cd8bbcedb1")
-	)
-	(junction
 		(at 69.85 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e7e2ba50-7666-4da3-8375-cd76a4ab1c02")
-	)
-	(junction
-		(at 77.47 147.32)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f9a2130e-f286-4be5-9a08-b0b36ba60100")
 	)
 	(no_connect
 		(at 83.82 52.07)
@@ -1391,36 +1379,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 146.05) (xy 80.01 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1aada2d1-c60f-4ed4-bae3-e9ae8a06e890")
-	)
-	(wire
-		(pts
-			(xy 74.93 149.86) (xy 72.39 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "26b040b1-ab9a-4eab-bd87-c0e6bde44da4")
-	)
-	(wire
-		(pts
-			(xy 77.47 154.94) (xy 77.47 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "53694bfc-fe5b-41e1-bf6d-6f64c48b81c8")
-	)
-	(wire
-		(pts
 			(xy 224.79 100.33) (xy 224.79 91.44)
 		)
 		(stroke
@@ -1471,16 +1429,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 147.32) (xy 77.47 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "67562475-042d-4d9e-b06c-97eb70fec0e4")
-	)
-	(wire
-		(pts
 			(xy 88.9 77.47) (xy 88.9 81.28)
 		)
 		(stroke
@@ -1501,7 +1449,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 154.94) (xy 72.39 149.86)
+			(xy 72.39 146.05) (xy 72.39 154.94)
 		)
 		(stroke
 			(width 0)
@@ -1558,36 +1506,6 @@
 			(type default)
 		)
 		(uuid "a64881ec-345f-4ff5-a515-4d8eb5a68016")
-	)
-	(wire
-		(pts
-			(xy 77.47 147.32) (xy 77.47 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a7adaf35-7e10-477d-9ad8-01023e16de24")
-	)
-	(wire
-		(pts
-			(xy 72.39 149.86) (xy 72.39 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b9af7a93-c3bc-4acf-92c1-4ee69435716f")
-	)
-	(wire
-		(pts
-			(xy 74.93 146.05) (xy 74.93 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c3dd9c1d-8c87-4d2c-a39b-5ce8d497077a")
 	)
 	(wire
 		(pts
@@ -1669,7 +1587,7 @@
 		)
 		(uuid "e3b527ff-3663-4eba-8c2b-551d16109a25")
 	)
-	(hierarchical_label "AG_SDI"
+	(hierarchical_label "AG_MOSI"
 		(shape input)
 		(at 76.2 64.77 180)
 		(fields_autoplaced yes)
@@ -1693,7 +1611,7 @@
 		)
 		(uuid "1438a7f3-2be6-4a20-b754-c41d1046fffa")
 	)
-	(hierarchical_label "AG_SDO"
+	(hierarchical_label "AG_MISO"
 		(shape output)
 		(at 76.2 62.23 180)
 		(fields_autoplaced yes)
@@ -1704,6 +1622,18 @@
 			(justify right)
 		)
 		(uuid "62c05c02-6e1b-45d7-a5c8-01329ddd802b")
+	)
+	(hierarchical_label "EN_MOT"
+		(shape input)
+		(at 74.93 146.05 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6d54d207-b4fd-4ac1-b1e1-445b9e0b083b")
 	)
 	(hierarchical_label "AG_INT1"
 		(shape output)
@@ -1716,6 +1646,18 @@
 			(justify left)
 		)
 		(uuid "7a232cef-e3ca-49ea-b36a-ebb62ea98186")
+	)
+	(hierarchical_label "EN_LIDAR"
+		(shape input)
+		(at 77.47 146.05 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "86c4fd92-ad97-4731-8726-f3f2f30b0824")
 	)
 	(hierarchical_label "AG_SCLK"
 		(shape input)
@@ -1740,6 +1682,18 @@
 			(justify right)
 		)
 		(uuid "a0421762-3fb5-4158-a96b-a87689008456")
+	)
+	(hierarchical_label "VIT_MOT_LIDAR"
+		(shape input)
+		(at 80.01 146.05 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a75344c2-a65a-4553-aa10-390663ee1ec3")
 	)
 	(hierarchical_label "TX_LIDAR"
 		(shape output)
@@ -1851,72 +1805,6 @@
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/8a0e1cc3-b8cc-4980-b1ce-7a1b28674574"
 					(reference "#PWR018")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 77.47 154.94 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1138a60e-6832-4b78-bf61-5901cbcad380")
-		(property "Reference" "#PWR0601"
-			(at 77.47 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 77.47 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 77.47 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 77.47 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 77.47 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "01f04357-c9d7-4778-8c73-9e808b774968")
-		)
-		(instances
-			(project ""
-				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/8a0e1cc3-b8cc-4980-b1ce-7a1b28674574"
-					(reference "#PWR0601")
 					(unit 1)
 				)
 			)
