@@ -1890,16 +1890,6 @@
 			)
 			(uuid "932988b2-02dd-4cf7-8177-1b51ff095c78")
 		)
-		(pin "SWO" output
-			(at 86.36 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "b94dfbf3-6b23-4798-ae33-979fd50b02a4")
-		)
 		(pin "NRST" output
 			(at 86.36 120.65 0)
 			(effects
