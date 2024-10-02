@@ -621,128 +621,6 @@
 				)
 			)
 		)
-		(symbol "Device:R_Small"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0.254) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 0.762 0.508 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "R_Small"
-				(at 0.762 -1.016 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor, small symbol"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_Small_0_1"
-				(rectangle
-					(start -0.762 1.778)
-					(end 0.762 -1.778)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_Small_1_1"
-				(pin passive line
-					(at 0 2.54 270)
-					(length 0.762)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 0.762)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Sensor_Motion:ADXL343"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1633,16 +1511,6 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 66.04) (xy 55.88 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8db2cc87-cb9c-449b-b2aa-af9f7d9397ff")
-	)
-	(wire
-		(pts
 			(xy 88.9 44.45) (xy 72.39 44.45)
 		)
 		(stroke
@@ -1700,16 +1568,6 @@
 			(type default)
 		)
 		(uuid "a7adaf35-7e10-477d-9ad8-01023e16de24")
-	)
-	(wire
-		(pts
-			(xy 55.88 62.23) (xy 76.2 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b000f29a-8396-4a03-bf2a-12d3a21e7a61")
 	)
 	(wire
 		(pts
@@ -1811,7 +1669,7 @@
 		)
 		(uuid "e3b527ff-3663-4eba-8c2b-551d16109a25")
 	)
-	(hierarchical_label "AG_SDA"
+	(hierarchical_label "AG_SDI"
 		(shape input)
 		(at 76.2 64.77 180)
 		(fields_autoplaced yes)
@@ -1834,6 +1692,18 @@
 			(justify right)
 		)
 		(uuid "1438a7f3-2be6-4a20-b754-c41d1046fffa")
+	)
+	(hierarchical_label "AG_SDO"
+		(shape input)
+		(at 76.2 62.23 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "62c05c02-6e1b-45d7-a5c8-01329ddd802b")
 	)
 	(hierarchical_label "AG_INT1"
 		(shape output)
@@ -2047,75 +1917,6 @@
 			(project ""
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/8a0e1cc3-b8cc-4980-b1ce-7a1b28674574"
 					(reference "#PWR0601")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 55.88 68.58 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "294b62c2-4001-4690-9f15-6ac226470d16")
-		(property "Reference" "R4"
-			(at 61.722 70.866 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10 k"
-			(at 62.992 68.326 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 55.88 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 55.88 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 55.88 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "40159f57-91fe-4d00-b877-d69d6e742a4c")
-		)
-		(pin "2"
-			(uuid "df5825fa-3335-4c20-8ccc-e28873daf8cc")
-		)
-		(instances
-			(project "Pojet_V-NOM_KiCAD"
-				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/8a0e1cc3-b8cc-4980-b1ce-7a1b28674574"
-					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -2980,72 +2781,6 @@
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/8a0e1cc3-b8cc-4980-b1ce-7a1b28674574"
 					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 55.88 71.12 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f139295e-fc83-4867-8738-41ae89a1f2da")
-		(property "Reference" "#PWR010"
-			(at 55.88 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 55.88 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 55.88 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 55.88 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 55.88 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cec4ad3f-8755-43e8-981a-4520525843b2")
-		)
-		(instances
-			(project "Pojet_V-NOM_KiCAD"
-				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/8a0e1cc3-b8cc-4980-b1ce-7a1b28674574"
-					(reference "#PWR010")
 					(unit 1)
 				)
 			)
