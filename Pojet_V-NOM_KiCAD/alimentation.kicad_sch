@@ -362,6 +362,126 @@
 				)
 			)
 		)
+		(symbol "power:+BATT"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+BATT"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+BATT\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power battery"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+BATT_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+BATT_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -459,21 +579,15 @@
 			)
 		)
 	)
-	(junction
-		(at 71.12 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9d34a642-776d-4086-9283-657e9b382941")
-	)
 	(wire
 		(pts
-			(xy 241.3 85.09) (xy 247.65 85.09)
+			(xy 53.34 83.82) (xy 72.39 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1b912118-3089-438a-8eb4-1ed3e7dfe803")
+		(uuid "3f8220ea-6326-4e0c-a68a-61c4ac57d2c5")
 	)
 	(wire
 		(pts
@@ -487,26 +601,6 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 80.01) (xy 71.12 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44f984a0-95b1-4150-aef9-03bac2ebdb0c")
-	)
-	(wire
-		(pts
-			(xy 53.34 83.82) (xy 71.12 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9a7e42e2-07d5-491d-a300-7193092116cc")
-	)
-	(wire
-		(pts
 			(xy 35.56 83.82) (xy 50.8 83.82)
 		)
 		(stroke
@@ -514,26 +608,6 @@
 			(type default)
 		)
 		(uuid "a76ed9d0-26ee-4f70-b6d6-afb2fe4632fa")
-	)
-	(wire
-		(pts
-			(xy 71.12 83.82) (xy 76.2 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bfc29500-5280-4157-a345-bcba4cd8da3e")
-	)
-	(wire
-		(pts
-			(xy 143.51 85.09) (xy 186.69 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e01f2df3-3e80-4d1b-a763-a55cbbb91c0d")
 	)
 	(text "Batterie\n"
 		(exclude_from_sim no)
@@ -544,30 +618,6 @@
 			)
 		)
 		(uuid "2dddc1ba-19b2-462e-9577-675945d140bd")
-	)
-	(hierarchical_label "+3.3V"
-		(shape output)
-		(at 247.65 85.09 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0a112f5e-65d5-414b-b743-68a6aca9155d")
-	)
-	(hierarchical_label "+7.2V"
-		(shape output)
-		(at 71.12 80.01 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "50c3fc37-b8d8-400c-8568-53d8dd1b5711")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -707,6 +757,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+BATT")
+		(at 72.39 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "afdaa116-0afa-4cda-950f-83a84fb1f357")
+		(property "Reference" "#PWR0401"
+			(at 72.39 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+BATT"
+			(at 72.39 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 72.39 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 72.39 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+BATT\""
+			(at 72.39 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ca469de6-02eb-4610-b10e-81a489f615e4")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426"
+					(reference "#PWR0401")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Battery")
 		(at 35.56 88.9 0)
 		(unit 1)
@@ -724,7 +840,7 @@
 				)
 			)
 		)
-		(property "Value" "Battery"
+		(property "Value" "+7.2V"
 			(at 30.48 88.3285 90)
 			(effects
 				(font
@@ -775,7 +891,7 @@
 		)
 	)
 	(sheet
-		(at 76.2 63.5)
+		(at 91.44 66.04)
 		(size 67.31 44.45)
 		(fields_autoplaced yes)
 		(stroke
@@ -787,7 +903,7 @@
 		)
 		(uuid "8d105b4f-1ef8-4d0d-b5ad-377f3bebef1c")
 		(property "Sheetname" "Régulateur_5V"
-			(at 76.2 62.1534 0)
+			(at 91.44 64.6934 0)
 			(effects
 				(font
 					(size 2.54 2.54)
@@ -796,33 +912,13 @@
 			)
 		)
 		(property "Sheetfile" "Régulateur_5V.kicad_sch"
-			(at 76.2 108.5346 0)
+			(at 91.44 111.0746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
 			)
-		)
-		(pin "+5V" output
-			(at 143.51 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "c7765f84-db58-4a41-8f2a-8840e0c0db11")
-		)
-		(pin "+7.2V" input
-			(at 76.2 83.82 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "98c1bc1a-5d1e-4811-a9de-7bcaf4b218f1")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
@@ -861,26 +957,6 @@
 				)
 				(justify left top)
 			)
-		)
-		(pin "+3.3V" output
-			(at 241.3 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "761e2eef-7158-4883-af99-f69681647762")
-		)
-		(pin "+5V" input
-			(at 186.69 85.09 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "3f73a2b5-f1bf-4fb2-bff8-5bb0425cf519")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"

@@ -308,16 +308,6 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 158.75) (xy 55.88 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2be354bc-25f8-4af5-b474-88541aa0d4a2")
-	)
-	(wire
-		(pts
 			(xy 205.74 95.25) (xy 162.56 95.25)
 		)
 		(stroke
@@ -1258,16 +1248,6 @@
 			)
 			(uuid "473c68a6-6fa6-44ce-a26a-f42d434c9833")
 		)
-		(pin "+7.2V" input
-			(at 55.88 158.75 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "6d0dbbdb-9a0d-4d97-ba76-e5b3556e7dd1")
-		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91"
@@ -1443,16 +1423,6 @@
 				)
 				(justify left top)
 			)
-		)
-		(pin "+7.2V" output
-			(at 45.72 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "73d31155-02c8-4fdf-bde0-03b30eb41a2b")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
