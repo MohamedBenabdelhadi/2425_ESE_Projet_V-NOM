@@ -91,13 +91,36 @@ La détection de la position du robot adverse se fait grâce au capteur Lidar qu
 
 
 ## Astuces et solution à des erreurs courrantes
-Pour mettre à jour une branche à partir de la branche principale (```main```) : 
+### Mettre à jour une branche à partir de la branche principale (```main```)
 ```bash
 git rebase master
 ```
-Pour se lancer avec le **protocole SPI** en STM32 c'est plutôt utile de regarder [le site officiel](https://wiki.st.com/stm32mcu/wiki/Getting_started_with_SPI#What_is_Serial_Peripheral_Interface_-28SPI-29--).
+### Se lancer avec le **protocole SPI** en STM32
+C'est utile de regarder [le site officiel](https://wiki.st.com/stm32mcu/wiki/Getting_started_with_SPI#What_is_Serial_Peripheral_Interface_-28SPI-29--).
 Quand STM32CubeIDE crash au démarage avec ue erreur `"Java" is not responding` il faut effacer le dossier nomé `.metadata` dans le répertoire workspace qui pose problème.
 
+### Annuler un merge sur GitHub
+
+Il faut resset la tête sur le commit juste avant la tête actuelle. Solution sur [Stack Overflow](https://stackoverflow.com/questions/42860234/how-to-undo-a-merge-in-github)
+```bash
+git reset --hard <commit_before_merge>
+```
+
+Exemple :
+```bash
+git reset --hard master^
+```
+
+### Forcer un commit
+Solution sur [Stack Overflow](https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github)
+On se remet sur la branche :
+```bash
+git rebase -i HEAD~2
+```
+Puis on force le push de la branche qu'on souhaite restaurer :
+```bash
+git push origin <branch_name> --force
+```
 
 ## Notes pour finir le schéma électronique
 
