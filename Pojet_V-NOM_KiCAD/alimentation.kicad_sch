@@ -5,6 +5,145 @@
 	(uuid "0e7e5f4c-5d90-481e-82df-5d3956bfe998")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:Battery"
 			(pin_numbers hide)
 			(pin_names
@@ -321,10 +460,10 @@
 		)
 	)
 	(junction
-		(at 68.58 83.82)
+		(at 71.12 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5d76ab15-9a0d-4850-b098-896979fe3d9f")
+		(uuid "9d34a642-776d-4086-9283-657e9b382941")
 	)
 	(wire
 		(pts
@@ -338,17 +477,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 83.82) (xy 68.58 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c4d4867-e970-445d-9beb-da991a0afefd")
-	)
-	(wire
-		(pts
-			(xy 52.07 83.82) (xy 49.53 83.82)
+			(xy 35.56 93.98) (xy 35.56 96.52)
 		)
 		(stroke
 			(width 0)
@@ -358,13 +487,43 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 80.01) (xy 68.58 83.82)
+			(xy 71.12 80.01) (xy 71.12 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "44f984a0-95b1-4150-aef9-03bac2ebdb0c")
+	)
+	(wire
+		(pts
+			(xy 53.34 83.82) (xy 71.12 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a7e42e2-07d5-491d-a300-7193092116cc")
+	)
+	(wire
+		(pts
+			(xy 35.56 83.82) (xy 50.8 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a76ed9d0-26ee-4f70-b6d6-afb2fe4632fa")
+	)
+	(wire
+		(pts
+			(xy 71.12 83.82) (xy 76.2 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfc29500-5280-4157-a345-bcba4cd8da3e")
 	)
 	(wire
 		(pts
@@ -375,16 +534,6 @@
 			(type default)
 		)
 		(uuid "e01f2df3-3e80-4d1b-a763-a55cbbb91c0d")
-	)
-	(wire
-		(pts
-			(xy 68.58 83.82) (xy 76.2 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f6b84d49-ae59-4020-80a6-65860024dbee")
 	)
 	(text "Batterie\n"
 		(exclude_from_sim no)
@@ -410,7 +559,7 @@
 	)
 	(hierarchical_label "+7.2V"
 		(shape output)
-		(at 68.58 80.01 90)
+		(at 71.12 80.01 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -422,7 +571,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 49.53 83.82 270)
+		(at 35.56 96.52 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -431,7 +580,7 @@
 		(fields_autoplaced yes)
 		(uuid "5f9cdfb7-f4d7-445b-a5d9-71c5c3b86df4")
 		(property "Reference" "#PWR05"
-			(at 43.18 83.82 0)
+			(at 35.56 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -440,7 +589,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 45.72 83.8199 90)
+			(at 35.5599 100.33 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -449,7 +598,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 49.53 83.82 0)
+			(at 35.56 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -458,7 +607,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 49.53 83.82 0)
+			(at 35.56 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -467,7 +616,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 49.53 83.82 0)
+			(at 35.56 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -488,33 +637,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Battery")
-		(at 57.15 83.82 270)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 50.8 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d426185c-d590-469a-a254-6170178f07a9")
-		(property "Reference" "BT1"
-			(at 57.7215 76.2 90)
+		(uuid "786bd23d-5a42-4bea-9b55-2f33cf4ff732")
+		(property "Reference" "J6"
+			(at 55.88 77.4699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Value" "Battery"
-			(at 57.7215 78.74 90)
+		(property "Value" "Conn_01x02"
+			(at 55.88 80.0099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Footprint" ""
-			(at 58.674 83.82 90)
+		(property "Footprint" "Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal"
+			(at 50.8 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -523,7 +674,75 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 58.674 83.82 90)
+			(at 50.8 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 50.8 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6656658b-f613-4673-98e0-ea1a9c53d2d4")
+		)
+		(pin "1"
+			(uuid "6180212e-defe-47d6-bd3c-61ffcd0c86b2")
+		)
+		(instances
+			(project ""
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Battery")
+		(at 35.56 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d426185c-d590-469a-a254-6170178f07a9")
+		(property "Reference" "BT1"
+			(at 27.94 88.3285 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Battery"
+			(at 30.48 88.3285 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 87.376 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 35.56 87.376 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -532,7 +751,7 @@
 			)
 		)
 		(property "Description" "Multiple-cell battery"
-			(at 57.15 83.82 0)
+			(at 35.56 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -996,6 +996,10 @@
 		(uuid "12f50956-1beb-4917-8b94-18e56596d4fc")
 	)
 	(no_connect
+		(at 57.15 100.33)
+		(uuid "16394112-22c5-4909-92da-9287b3ffcc5e")
+	)
+	(no_connect
 		(at 57.15 107.95)
 		(uuid "24d28a95-88b1-4a20-81e4-ff3910b3491e")
 	)
@@ -1192,18 +1196,6 @@
 			)
 		)
 		(uuid "6c0593dd-a6bd-4538-9a54-780916953b10")
-	)
-	(hierarchical_label "SWO"
-		(shape output)
-		(at 57.15 100.33 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "27825395-86a9-4f6e-8818-7932e096a267")
 	)
 	(hierarchical_label "LED_CHAT"
 		(shape input)
