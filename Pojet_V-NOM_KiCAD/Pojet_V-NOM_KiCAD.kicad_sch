@@ -418,6 +418,16 @@
 	)
 	(wire
 		(pts
+			(xy 86.36 95.25) (xy 113.03 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b3f4cb3-57af-4d56-95a4-049c21937c02")
+	)
+	(wire
+		(pts
 			(xy 67.31 41.91) (xy 67.31 43.18)
 		)
 		(stroke
@@ -1472,16 +1482,6 @@
 			)
 			(uuid "036e4045-1be3-431c-8790-8484fa13e229")
 		)
-		(pin "BTN_RESET" input
-			(at 113.03 100.33 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "170ceb89-aaa7-436f-bd61-cd1736e37ed5")
-		)
 		(pin "BTN_MODE" input
 			(at 113.03 97.79 180)
 			(effects
@@ -1869,6 +1869,16 @@
 				(justify right)
 			)
 			(uuid "6d78a2e5-d6e7-439e-a375-6b0a891dee2a")
+		)
+		(pin "BTN_START" output
+			(at 86.36 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "a878d093-07eb-479f-a4d5-b38a2a8535f3")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
