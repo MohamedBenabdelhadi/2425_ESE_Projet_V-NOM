@@ -1029,7 +1029,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 163.83 110.49 0)
 			(effects
 				(font
@@ -1097,7 +1097,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOT95P280X125-5N"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
 			(at 157.48 196.52 0)
 			(effects
 				(font
@@ -1314,7 +1314,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 119.38 104.14 0)
 			(effects
 				(font

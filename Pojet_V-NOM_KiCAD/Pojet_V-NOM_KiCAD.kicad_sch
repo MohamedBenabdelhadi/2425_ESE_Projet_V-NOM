@@ -254,6 +254,16 @@
 	)
 	(wire
 		(pts
+			(xy 171.45 48.26) (xy 152.4 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2093ed7c-9e5c-4295-8570-c940e1df7d50")
+	)
+	(wire
+		(pts
 			(xy 213.36 102.87) (xy 162.56 102.87)
 		)
 		(stroke
@@ -464,6 +474,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 45.72) (xy 149.86 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a906179-cb59-4876-b785-c3e4e552c9e4")
+	)
+	(wire
+		(pts
 			(xy 147.32 124.46) (xy 147.32 143.51)
 		)
 		(stroke
@@ -581,6 +601,16 @@
 			(type default)
 		)
 		(uuid "c460704b-1540-42bf-8cae-36dde4137480")
+	)
+	(wire
+		(pts
+			(xy 152.4 48.26) (xy 152.4 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5074204-b923-43d6-baf3-25820d6ae5ec")
 	)
 	(wire
 		(pts
@@ -721,6 +751,16 @@
 			(type default)
 		)
 		(uuid "e514b930-9302-41b4-a44c-38cdbef54988")
+	)
+	(wire
+		(pts
+			(xy 171.45 45.72) (xy 149.86 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e528a8c8-7c38-4da4-b0eb-339c1212a05b")
 	)
 	(wire
 		(pts
@@ -1767,6 +1807,36 @@
 				(justify right)
 			)
 			(uuid "3a66ad87-2377-456e-86ec-dc2c95f4c8de")
+		)
+		(pin "BTN_RESET" input
+			(at 162.56 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "93caa280-4674-4b80-9b48-83fc06711458")
+		)
+		(pin "EN_MOT" input
+			(at 149.86 71.12 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "28ceb30c-3574-4242-983a-54421457495e")
+		)
+		(pin "EN_LIDAR" input
+			(at 152.4 71.12 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "871c4ef8-3bff-4133-afd0-ed92c47e5dd8")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"

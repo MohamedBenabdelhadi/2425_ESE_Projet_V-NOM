@@ -609,6 +609,16 @@
 		)
 		(uuid "a76ed9d0-26ee-4f70-b6d6-afb2fe4632fa")
 	)
+	(text "Ajouter des jumpers pour vérifier les sorties des régulateurs "
+		(exclude_from_sim no)
+		(at 119.126 35.306 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+		)
+		(uuid "021f6529-8819-49d1-a46d-89627a379bbb")
+	)
 	(text "Batterie\n"
 		(exclude_from_sim no)
 		(at 56.388 68.072 0)
@@ -629,7 +639,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5f9cdfb7-f4d7-445b-a5d9-71c5c3b86df4")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR0101"
 			(at 35.56 102.87 0)
 			(effects
 				(font
@@ -680,7 +690,7 @@
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426"
-					(reference "#PWR05")
+					(reference "#PWR0101")
 					(unit 1)
 				)
 			)
@@ -848,7 +858,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_JST:JST_XH_S2B-XH-A-1_1x02_P2.50mm_Horizontal"
 			(at 35.56 87.376 90)
 			(effects
 				(font
