@@ -538,6 +538,26 @@
 	)
 	(wire
 		(pts
+			(xy 218.44 107.95) (xy 162.56 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a76bb802-6fd7-4552-a4e0-c7d10b72e1af")
+	)
+	(wire
+		(pts
+			(xy 215.9 105.41) (xy 162.56 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9314407-aa40-4081-9e70-0d108b53c667")
+	)
+	(wire
+		(pts
 			(xy 123.19 146.05) (xy 144.78 146.05)
 		)
 		(stroke
@@ -565,6 +585,16 @@
 			(type default)
 		)
 		(uuid "aff0b3ab-809e-412e-bb01-0e43fa8f1fb5")
+	)
+	(wire
+		(pts
+			(xy 215.9 64.77) (xy 215.9 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0cb9e5b-8be7-4eac-b6ef-be7600e3ebb1")
 	)
 	(wire
 		(pts
@@ -695,6 +725,16 @@
 			(type default)
 		)
 		(uuid "dea3c099-1143-4a55-98d4-013cae075e42")
+	)
+	(wire
+		(pts
+			(xy 218.44 64.77) (xy 218.44 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e33335d7-7569-4512-943f-10351999a7c4")
 	)
 	(wire
 		(pts
@@ -1771,6 +1811,26 @@
 				(justify left)
 			)
 			(uuid "5f7d0561-8a14-4cd9-94ea-e77db22dea2d")
+		)
+		(pin "AG_INT2" input
+			(at 162.56 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "132135bf-f939-455f-9c44-5a6f27d2dd2f")
+		)
+		(pin "AG_INT1" input
+			(at 162.56 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "08a9903e-151b-4c51-8b22-023eff36de6d")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
