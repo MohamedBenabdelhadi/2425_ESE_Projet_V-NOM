@@ -2422,10 +2422,6 @@
 		(uuid "23318403-62d0-47d6-81a1-9ba9f9568628")
 	)
 	(no_connect
-		(at 163.83 68.58)
-		(uuid "4667606d-cfed-497f-9296-5df1e0af1cb6")
-	)
-	(no_connect
 		(at 130.81 101.6)
 		(uuid "5bb7bef9-5cef-4289-bb66-c8099aca596b")
 	)
@@ -2436,10 +2432,6 @@
 	(no_connect
 		(at 130.81 134.62)
 		(uuid "af02b0a5-0475-482c-b373-9342451084e5")
-	)
-	(no_connect
-		(at 163.83 66.04)
-		(uuid "c214f81c-b0ca-4096-a436-960d0c7243b8")
 	)
 	(no_connect
 		(at 130.81 81.28)
@@ -2945,6 +2937,18 @@
 		)
 		(uuid "8f4d68c9-861b-453c-8303-1884ca227b0b")
 	)
+	(hierarchical_label "AG_INT1"
+		(shape input)
+		(at 163.83 66.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "91d8d2cb-97dd-4472-840e-055aedd54520")
+	)
 	(hierarchical_label "NRST"
 		(shape input)
 		(at 130.81 63.5 180)
@@ -3040,6 +3044,18 @@
 			(justify right)
 		)
 		(uuid "be31388a-eda0-46c8-8099-c8f836af13a7")
+	)
+	(hierarchical_label "AG_INT2"
+		(shape input)
+		(at 163.83 68.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bf744d9e-799a-4964-86fb-0df4ad081a73")
 	)
 	(hierarchical_label "TIM3_CH2"
 		(shape output)
