@@ -1,4 +1,9 @@
 # 2425-ESE-Projet-V-NOM
+
+Ce projet consiste à créer un robot capable de jouer à chat avec d'autres robots du même type. Ils joueront sur une table sans bordures et devront donc être capable de détecter les bords de celle-ci.
+Les élèves sont chargés de réaliser les schémas électroniques, le routage et la configuration des différents composants choisis pour réaliser ce projet. 
+Celui-ci est piloté par un microcontrôleur de type STM32.
+
 Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 
 
@@ -77,8 +82,8 @@ end
 ## Strategie
 La stratégie de déplacement retenue a été de détecter les bords de la surface de l'arène grâce à des capteurs de distance à l'avant et à l'arrière du robot.  
 **En mode souris :** le robot cherche à garder la plus grande distance possible du robot adverse ("chat"), tout en évitant les bords.  
-**En mode chat :** le robot cherche à entrer en contact avec le robot adverse ("souris") par colision.  
-La détection de la position du robot adverse se fait grâce au capteur Lidar qui permet de déterminer une trajectoire en temps réel. La détection de la colision est faite grâce à l'accéléromètre.
+**En mode chat :** le robot cherche à entrer en contact avec le robot adverse ("souris") par collision.  
+La détection de la position du robot adverse se fait grâce au capteur Lidar qui permet de déterminer une trajectoire en temps réel. La détection de la collision est faite grâce à l'accéléromètre.
 
 
 ## Schémas utiles
