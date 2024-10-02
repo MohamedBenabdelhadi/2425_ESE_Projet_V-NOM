@@ -1316,26 +1316,6 @@
 				(justify left top)
 			)
 		)
-		(pin "INT1_ACCEL" output
-			(at 171.45 47.625 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "e292b597-6790-4cb9-8b5b-184ecb4ee494")
-		)
-		(pin "INT2_ACCEL" output
-			(at 171.45 50.165 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "c5c37b7c-9e35-428b-8248-77f612e86707")
-		)
 		(pin "TOF2" output
 			(at 171.45 34.925 180)
 			(effects
@@ -1426,7 +1406,7 @@
 			)
 			(uuid "f2721a56-f8f0-4ea4-8a07-4b1875229b40")
 		)
-		(pin "AG_SDO" input
+		(pin "AG_SDO" output
 			(at 208.28 64.77 270)
 			(effects
 				(font
@@ -1434,7 +1414,7 @@
 				)
 				(justify left)
 			)
-			(uuid "716a0d9b-5f64-4bab-b619-50264a520f3c")
+			(uuid "84c70bfe-6cdc-460f-a980-cf3b1dc548e6")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"
@@ -1672,26 +1652,6 @@
 			)
 			(uuid "2cd1353e-e05e-4193-b75d-f0829825f458")
 		)
-		(pin "SPI_MISO" bidirectional
-			(at 162.56 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "4e965141-201a-452f-9e94-e97fbaa9d9f4")
-		)
-		(pin "SPI_SCK" bidirectional
-			(at 162.56 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "a21ed27e-29fa-41d2-9d5a-9c0142654421")
-		)
 		(pin "TIM1_CH1" output
 			(at 127 124.46 270)
 			(effects
@@ -1831,6 +1791,26 @@
 				(justify right)
 			)
 			(uuid "08a9903e-151b-4c51-8b22-023eff36de6d")
+		)
+		(pin "SPI_MISO" input
+			(at 162.56 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "3112e051-ad1d-4151-b129-cbf2668ca47a")
+		)
+		(pin "SPI_SCK" output
+			(at 162.56 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "3a66ad87-2377-456e-86ec-dc2c95f4c8de")
 		)
 		(instances
 			(project "Pojet_V-NOM_KiCAD"

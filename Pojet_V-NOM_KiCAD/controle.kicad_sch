@@ -2998,7 +2998,7 @@
 		(uuid "a75260c1-7848-4aae-90cb-bef24c980d89")
 	)
 	(hierarchical_label "SPI_MISO"
-		(shape bidirectional)
+		(shape input)
 		(at 163.83 73.66 0)
 		(fields_autoplaced yes)
 		(effects
@@ -3010,7 +3010,7 @@
 		(uuid "ad39be47-5313-4411-a7e6-1c828c9a3d78")
 	)
 	(hierarchical_label "SPI_SCK"
-		(shape bidirectional)
+		(shape output)
 		(at 163.83 71.12 0)
 		(fields_autoplaced yes)
 		(effects

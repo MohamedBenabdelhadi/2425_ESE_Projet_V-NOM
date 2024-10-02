@@ -1694,7 +1694,7 @@
 		(uuid "1438a7f3-2be6-4a20-b754-c41d1046fffa")
 	)
 	(hierarchical_label "AG_SDO"
-		(shape input)
+		(shape output)
 		(at 76.2 62.23 180)
 		(fields_autoplaced yes)
 		(effects
