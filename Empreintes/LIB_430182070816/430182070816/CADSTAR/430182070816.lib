@@ -1,0 +1,18 @@
+.430182070816 :1 ;WURTH ELEKTRONIK - 430182070816 - SWITCH, 160GF, 6X6MM,SMD, 7MM ACT
+"430182070816"
+*STM S
+*NGS
+*PLB 1="COM_1" 2="NO_1" 3="COM_2" 4="NO_2"
+*MXP 4
+*DFN 430182070816
+~!Manufacturer_Name (Wurth Elektronik)
+~!Manufacturer_Part_Number (430182070816)
+~!Mouser Part Number (710-430182070816)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/430182070816?qs=wr8lucFkNMXtq9RwGFkUbg%3D%3D)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Link Datasheet (https://datasheet.datasheetarchive.com/originals/distributors/DKDS-9/165015.pdf)
+~!Height (7.15mm)
+~!3D_Model (430182070816)
+"430182070816"
+1.1!U 2.1!U 3.1!U 4.1!U 

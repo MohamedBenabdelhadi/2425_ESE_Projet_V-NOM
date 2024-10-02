@@ -1,0 +1,9 @@
+Manufacturer=Würth Elektronik
+PartNumber=430182070816
+PartCategory=Switch
+PackageCategory=Other
+PinCount=4
+Version=2.2
+Released=2016-10-26 10:02:24
+Downloaded=2024-10-02 09:48:50
+3D=Y
