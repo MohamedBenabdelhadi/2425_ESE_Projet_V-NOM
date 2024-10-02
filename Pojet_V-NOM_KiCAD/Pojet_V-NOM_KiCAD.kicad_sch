@@ -1336,26 +1336,6 @@
 			)
 			(uuid "2081a2fa-9f66-4f95-a38b-462fcd07ba75")
 		)
-		(pin "+5V" input
-			(at 196.85 17.145 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "8653e222-2360-4a1a-af4f-41ca88bed65e")
-		)
-		(pin "+3.3V" input
-			(at 190.5 17.145 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "41af808a-d6c3-47f7-b5d9-a27a795f24f9")
-		)
 		(pin "RX_LIDAR" input
 			(at 171.45 43.18 180)
 			(effects
