@@ -2430,8 +2430,20 @@
 		(uuid "604f537c-3b3a-43f4-bba6-f024fed98c1f")
 	)
 	(no_connect
+		(at 130.81 121.92)
+		(uuid "8250a448-4d4d-43f5-9a14-e491a4009476")
+	)
+	(no_connect
+		(at 130.81 124.46)
+		(uuid "8b6321e5-ecc1-45b5-9660-838a675dcfa5")
+	)
+	(no_connect
 		(at 130.81 134.62)
 		(uuid "af02b0a5-0475-482c-b373-9342451084e5")
+	)
+	(no_connect
+		(at 120.65 87.63)
+		(uuid "c2104250-b298-46d6-9a88-5e0697dcccf1")
 	)
 	(no_connect
 		(at 130.81 81.28)
@@ -2841,18 +2853,6 @@
 		)
 		(uuid "47bf8c66-287f-4d05-a0f5-deee2a171283")
 	)
-	(hierarchical_label "AG_USART_TX"
-		(shape bidirectional)
-		(at 130.81 111.76 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "48134043-874f-41a5-9731-af384e09b411")
-	)
 	(hierarchical_label "SPI1_CSN"
 		(shape output)
 		(at 130.81 76.2 180)
@@ -2987,7 +2987,7 @@
 	)
 	(hierarchical_label "VCP_TX"
 		(shape bidirectional)
-		(at 130.81 121.92 180)
+		(at 130.81 111.76 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3071,7 +3071,7 @@
 	)
 	(hierarchical_label "VCP_RX"
 		(shape bidirectional)
-		(at 130.81 124.46 180)
+		(at 130.81 114.3 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3116,18 +3116,6 @@
 			(justify right)
 		)
 		(uuid "ee750dd2-2741-4114-b6ea-212efc33c53b")
-	)
-	(hierarchical_label "AG_USART_RX"
-		(shape bidirectional)
-		(at 130.81 114.3 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f08642a8-dc35-4d9c-a0a0-4c5ae2b0c98a")
 	)
 	(hierarchical_label "SWDIO"
 		(shape bidirectional)

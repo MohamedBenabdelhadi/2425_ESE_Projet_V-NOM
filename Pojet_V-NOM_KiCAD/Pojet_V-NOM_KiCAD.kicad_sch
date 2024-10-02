@@ -268,16 +268,6 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 71.12) (xy 151.13 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e6b945c-0f04-4de9-87fb-7e9871a3d629")
-	)
-	(wire
-		(pts
 			(xy 143.51 40.64) (xy 171.45 40.64)
 		)
 		(stroke
@@ -1582,16 +1572,6 @@
 			)
 			(uuid "4cae3595-4b42-4422-be9e-5b94c895678c")
 		)
-		(pin "AG_USART_TX" bidirectional
-			(at 151.13 71.12 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "a43f5c52-c83b-448e-932f-3904428be2c9")
-		)
 		(pin "TIM3_CH2" output
 			(at 142.24 124.46 270)
 			(effects
@@ -1601,16 +1581,6 @@
 				(justify left)
 			)
 			(uuid "8816163f-1a61-4f8a-91d1-954e2683d319")
-		)
-		(pin "AG_USART_RX" bidirectional
-			(at 153.67 71.12 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "09ea54d9-16bf-4562-97b1-98d1db06f28d")
 		)
 		(pin "VCP_TX" bidirectional
 			(at 113.03 105.41 180)
