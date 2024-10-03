@@ -581,7 +581,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 83.82) (xy 72.39 83.82)
+			(xy 53.34 96.52) (xy 63.5 96.52)
 		)
 		(stroke
 			(width 0)
@@ -591,7 +591,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 93.98) (xy 35.56 96.52)
+			(xy 40.64 106.68) (xy 40.64 109.22)
 		)
 		(stroke
 			(width 0)
@@ -601,7 +601,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 83.82) (xy 50.8 83.82)
+			(xy 40.64 96.52) (xy 50.8 96.52)
 		)
 		(stroke
 			(width 0)
@@ -621,7 +621,7 @@
 	)
 	(text "Batterie\n"
 		(exclude_from_sim no)
-		(at 56.388 68.072 0)
+		(at 56.388 80.772 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -631,7 +631,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 35.56 96.52 0)
+		(at 40.64 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -640,7 +640,7 @@
 		(fields_autoplaced yes)
 		(uuid "5f9cdfb7-f4d7-445b-a5d9-71c5c3b86df4")
 		(property "Reference" "#PWR0101"
-			(at 35.56 102.87 0)
+			(at 40.64 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -649,7 +649,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 35.5599 100.33 90)
+			(at 40.6399 113.03 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -658,7 +658,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 35.56 96.52 0)
+			(at 40.64 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -667,7 +667,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 35.56 96.52 0)
+			(at 40.64 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -676,7 +676,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 96.52 0)
+			(at 40.64 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -698,16 +698,15 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 50.8 78.74 90)
+		(at 50.8 91.44 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "786bd23d-5a42-4bea-9b55-2f33cf4ff732")
 		(property "Reference" "J6"
-			(at 55.88 77.4699 90)
+			(at 55.88 91.44 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -716,7 +715,7 @@
 			)
 		)
 		(property "Value" "Switch ON/OFF"
-			(at 55.88 80.0099 90)
+			(at 43.434 88.138 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -725,7 +724,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal"
-			(at 50.8 78.74 0)
+			(at 50.8 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -734,7 +733,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 50.8 78.74 0)
+			(at 50.8 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -743,7 +742,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 50.8 78.74 0)
+			(at 50.8 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -768,7 +767,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 72.39 83.82 0)
+		(at 63.5 96.52 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -777,7 +776,7 @@
 		(fields_autoplaced yes)
 		(uuid "afdaa116-0afa-4cda-950f-83a84fb1f357")
 		(property "Reference" "#PWR0401"
-			(at 72.39 87.63 0)
+			(at 63.5 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -786,7 +785,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 72.39 78.74 0)
+			(at 63.5 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -794,7 +793,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 72.39 83.82 0)
+			(at 63.5 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -803,7 +802,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 72.39 83.82 0)
+			(at 63.5 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -812,7 +811,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 72.39 83.82 0)
+			(at 63.5 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -834,7 +833,7 @@
 	)
 	(symbol
 		(lib_id "Device:Battery")
-		(at 35.56 88.9 0)
+		(at 40.64 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -843,7 +842,7 @@
 		(fields_autoplaced yes)
 		(uuid "d426185c-d590-469a-a254-6170178f07a9")
 		(property "Reference" "BT1"
-			(at 27.94 88.3285 90)
+			(at 33.02 101.0285 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -851,7 +850,7 @@
 			)
 		)
 		(property "Value" "+7.2V"
-			(at 30.48 88.3285 90)
+			(at 35.56 101.0285 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -859,7 +858,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_S2B-XH-A-1_1x02_P2.50mm_Horizontal"
-			(at 35.56 87.376 90)
+			(at 40.64 100.076 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -868,7 +867,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 35.56 87.376 90)
+			(at 40.64 100.076 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -877,7 +876,7 @@
 			)
 		)
 		(property "Description" "Multiple-cell battery"
-			(at 35.56 88.9 0)
+			(at 40.64 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -901,7 +900,7 @@
 		)
 	)
 	(sheet
-		(at 91.44 66.04)
+		(at 91.44 78.74)
 		(size 67.31 44.45)
 		(fields_autoplaced yes)
 		(stroke
@@ -913,7 +912,7 @@
 		)
 		(uuid "8d105b4f-1ef8-4d0d-b5ad-377f3bebef1c")
 		(property "Sheetname" "Régulateur_5V"
-			(at 91.44 64.6934 0)
+			(at 91.44 77.3934 0)
 			(effects
 				(font
 					(size 2.54 2.54)
@@ -922,7 +921,7 @@
 			)
 		)
 		(property "Sheetfile" "Régulateur_5V.kicad_sch"
-			(at 91.44 111.0746 0)
+			(at 91.44 123.7746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -939,7 +938,7 @@
 		)
 	)
 	(sheet
-		(at 186.69 63.5)
+		(at 186.69 76.2)
 		(size 54.61 46.99)
 		(fields_autoplaced yes)
 		(stroke
@@ -951,7 +950,7 @@
 		)
 		(uuid "a5848076-92cd-4e99-9706-01c7593ded28")
 		(property "Sheetname" "Régulateur_3.3V"
-			(at 186.69 62.1534 0)
+			(at 186.69 74.8534 0)
 			(effects
 				(font
 					(size 2.54 2.54)
@@ -960,7 +959,7 @@
 			)
 		)
 		(property "Sheetfile" "Régulateur_3.3V.kicad_sch"
-			(at 186.69 111.0746 0)
+			(at 186.69 123.7746 0)
 			(effects
 				(font
 					(size 1.27 1.27)

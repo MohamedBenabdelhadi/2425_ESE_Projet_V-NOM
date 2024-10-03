@@ -724,7 +724,7 @@
 		)
 		(uuid "ffbb41de-d276-4710-a691-736a8b4ab3d9")
 	)
-	(text "Driver motor\n"
+	(text "Driver moteur\n"
 		(exclude_from_sim no)
 		(at 58.166 32.766 0)
 		(effects

@@ -2442,6 +2442,10 @@
 		(uuid "af02b0a5-0475-482c-b373-9342451084e5")
 	)
 	(no_connect
+		(at 130.81 116.84)
+		(uuid "b984fa1c-be55-4c1c-a7e6-077d75ca07e8")
+	)
+	(no_connect
 		(at 163.83 63.5)
 		(uuid "e39d8f63-d84f-4bad-968e-86d1179c6baf")
 	)
@@ -3014,18 +3018,6 @@
 			(justify left)
 		)
 		(uuid "9403c76e-aa46-4dbf-8f36-666185140c10")
-	)
-	(hierarchical_label "BTN_RESET"
-		(shape input)
-		(at 130.81 116.84 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "97b2a27f-93a4-49bf-a247-5dfcfa22422f")
 	)
 	(hierarchical_label "VCP_TX"
 		(shape bidirectional)

@@ -479,7 +479,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 78.74) (xy 30.48 78.74)
+			(xy 30.48 81.28) (xy 38.1 81.28)
 		)
 		(stroke
 			(width 0)
@@ -489,7 +489,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 92.71) (xy 130.81 92.71)
+			(xy 104.14 95.25) (xy 128.27 95.25)
 		)
 		(stroke
 			(width 0)
@@ -499,7 +499,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 90.17) (xy 177.8 90.17)
+			(xy 165.1 93.98) (xy 176.53 93.98)
 		)
 		(stroke
 			(width 0)
@@ -509,7 +509,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 78.74) (xy 265.43 78.74)
+			(xy 237.49 82.55) (xy 264.16 82.55)
 		)
 		(stroke
 			(width 0)
@@ -519,7 +519,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 91.44) (xy 265.43 91.44)
+			(xy 237.49 95.25) (xy 264.16 95.25)
 		)
 		(stroke
 			(width 0)
@@ -529,7 +529,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 80.01) (xy 130.81 80.01)
+			(xy 104.14 82.55) (xy 128.27 82.55)
 		)
 		(stroke
 			(width 0)
@@ -539,7 +539,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 91.44) (xy 30.48 91.44)
+			(xy 30.48 93.98) (xy 38.1 93.98)
 		)
 		(stroke
 			(width 0)
@@ -549,7 +549,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 76.2) (xy 177.8 76.2)
+			(xy 166.37 80.01) (xy 176.53 80.01)
 		)
 		(stroke
 			(width 0)
@@ -567,7 +567,7 @@
 		)
 		(uuid "ee914e19-7bc2-4f64-8a6e-1df59012a0e7")
 	)
-	(text "Driver motor 2\n"
+	(text "Driver moteur 2\n"
 		(exclude_from_sim no)
 		(at 169.672 18.034 0)
 		(effects
@@ -577,7 +577,7 @@
 		)
 		(uuid "25f99232-1163-4fd4-82be-b9a291e3cea0")
 	)
-	(text "Driver motor 1\n"
+	(text "Driver moteur 1\n"
 		(exclude_from_sim no)
 		(at 36.322 18.288 0)
 		(effects
@@ -589,7 +589,7 @@
 	)
 	(hierarchical_label "Encoder A phase 1"
 		(shape output)
-		(at 130.81 87.63 180)
+		(at 128.27 90.17 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -601,7 +601,7 @@
 	)
 	(hierarchical_label "VREF1"
 		(shape input)
-		(at 22.86 78.74 180)
+		(at 30.48 81.28 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -613,7 +613,7 @@
 	)
 	(hierarchical_label "FWD1"
 		(shape input)
-		(at 22.86 91.44 180)
+		(at 30.48 93.98 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -625,7 +625,7 @@
 	)
 	(hierarchical_label "Encoder B phase 2"
 		(shape output)
-		(at 265.43 83.82 180)
+		(at 264.16 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -637,7 +637,7 @@
 	)
 	(hierarchical_label "Encoder A phase 2"
 		(shape output)
-		(at 265.43 86.36 180)
+		(at 264.16 90.17 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -649,7 +649,7 @@
 	)
 	(hierarchical_label "Encoder B phase 1"
 		(shape output)
-		(at 130.81 85.09 180)
+		(at 128.27 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -661,7 +661,7 @@
 	)
 	(hierarchical_label "VREF2"
 		(shape input)
-		(at 167.64 76.2 180)
+		(at 166.37 80.01 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -673,7 +673,7 @@
 	)
 	(hierarchical_label "FWD2"
 		(shape input)
-		(at 166.37 90.17 180)
+		(at 165.1 93.98 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -685,7 +685,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
-		(at 135.89 85.09 0)
+		(at 133.35 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -694,7 +694,7 @@
 		(fields_autoplaced yes)
 		(uuid "0f5f25a2-68b8-4a0a-aacb-d947b5bcf755")
 		(property "Reference" "J301"
-			(at 138.43 85.0899 0)
+			(at 135.89 87.6299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -703,7 +703,7 @@
 			)
 		)
 		(property "Value" "Conn_01x06"
-			(at 138.43 87.6299 0)
+			(at 135.89 90.1699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -712,7 +712,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_S6B-XH-A_1x06_P2.50mm_Horizontal"
-			(at 135.89 85.09 0)
+			(at 133.35 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -721,7 +721,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 135.89 85.09 0)
+			(at 133.35 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -730,7 +730,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 135.89 85.09 0)
+			(at 133.35 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -767,7 +767,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
-		(at 270.51 83.82 0)
+		(at 269.24 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -776,7 +776,7 @@
 		(fields_autoplaced yes)
 		(uuid "34c8d46e-b4ff-4991-810c-51eac6aac52d")
 		(property "Reference" "J302"
-			(at 273.05 83.8199 0)
+			(at 271.78 87.6299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -785,7 +785,7 @@
 			)
 		)
 		(property "Value" "Conn_01x06"
-			(at 273.05 86.3599 0)
+			(at 271.78 90.1699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -794,7 +794,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_S6B-XH-A_1x06_P2.50mm_Horizontal"
-			(at 270.51 83.82 0)
+			(at 269.24 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -803,7 +803,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 270.51 83.82 0)
+			(at 269.24 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -812,7 +812,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 270.51 83.82 0)
+			(at 269.24 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -849,7 +849,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 265.43 88.9 90)
+		(at 264.16 92.71 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -858,7 +858,7 @@
 		(fields_autoplaced yes)
 		(uuid "62c2105a-ddc1-4f53-9ae4-08720e4609ed")
 		(property "Reference" "#PWR0304"
-			(at 269.24 88.9 0)
+			(at 267.97 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -867,7 +867,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 261.62 88.8999 90)
+			(at 260.35 92.7099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -876,7 +876,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 265.43 88.9 0)
+			(at 264.16 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -885,7 +885,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 265.43 88.9 0)
+			(at 264.16 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -894,7 +894,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 265.43 88.9 0)
+			(at 264.16 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -916,7 +916,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 130.81 90.17 90)
+		(at 128.27 92.71 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -925,7 +925,7 @@
 		(fields_autoplaced yes)
 		(uuid "96c7d665-7c6a-48da-867b-60e2d9d1628b")
 		(property "Reference" "#PWR0302"
-			(at 134.62 90.17 0)
+			(at 132.08 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -934,7 +934,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 127 90.1699 90)
+			(at 124.46 92.7099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -943,7 +943,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 130.81 90.17 0)
+			(at 128.27 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -952,7 +952,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 130.81 90.17 0)
+			(at 128.27 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -961,7 +961,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 130.81 90.17 0)
+			(at 128.27 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -983,7 +983,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 265.43 81.28 270)
+		(at 264.16 85.09 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -991,7 +991,7 @@
 		(dnp no)
 		(uuid "b2691fb9-8b24-4710-8666-174b342063bd")
 		(property "Reference" "#PWR0303"
-			(at 259.08 81.28 0)
+			(at 257.81 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1000,7 +1000,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 260.35 80.772 0)
+			(at 259.08 84.582 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1008,7 +1008,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 265.43 81.28 0)
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1017,7 +1017,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 265.43 81.28 0)
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1026,7 +1026,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 265.43 81.28 0)
+			(at 264.16 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1048,7 +1048,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 130.81 82.55 270)
+		(at 128.27 85.09 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1056,7 +1056,7 @@
 		(dnp no)
 		(uuid "e4513f13-8e83-487c-aacd-e2dc6a1d97f3")
 		(property "Reference" "#PWR0301"
-			(at 124.46 82.55 0)
+			(at 121.92 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1065,7 +1065,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 125.73 82.042 0)
+			(at 123.19 84.582 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1073,7 +1073,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 130.81 82.55 0)
+			(at 128.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1082,7 +1082,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 130.81 82.55 0)
+			(at 128.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1091,7 +1091,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 130.81 82.55 0)
+			(at 128.27 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1112,7 +1112,7 @@
 		)
 	)
 	(sheet
-		(at 30.48 60.96)
+		(at 38.1 63.5)
 		(size 66.04 50.8)
 		(fields_autoplaced yes)
 		(stroke
@@ -1124,7 +1124,7 @@
 		)
 		(uuid "5cb59191-dae7-46ed-abdf-f6d9d3fbe962")
 		(property "Sheetname" "Driver_Motor1"
-			(at 30.48 60.2484 0)
+			(at 38.1 62.7884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1133,7 +1133,7 @@
 			)
 		)
 		(property "Sheetfile" "Driver_Moter.kicad_sch"
-			(at 30.48 112.3446 0)
+			(at 38.1 114.8846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1142,7 +1142,7 @@
 			)
 		)
 		(pin "OUT1" output
-			(at 96.52 92.71 0)
+			(at 104.14 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1152,7 +1152,7 @@
 			(uuid "e1e5ae24-b995-4cdd-be7c-1291cd16b103")
 		)
 		(pin "OUT2" output
-			(at 96.52 80.01 0)
+			(at 104.14 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1162,7 +1162,7 @@
 			(uuid "3bef4334-d5d5-44ab-805f-7d14f885d388")
 		)
 		(pin "REV" input
-			(at 30.48 78.74 180)
+			(at 38.1 81.28 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1172,7 +1172,7 @@
 			(uuid "6226865b-9098-42ee-9576-20fffdb47107")
 		)
 		(pin "FWD" input
-			(at 30.48 91.44 180)
+			(at 38.1 93.98 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1190,7 +1190,7 @@
 		)
 	)
 	(sheet
-		(at 177.8 60.96)
+		(at 176.53 64.77)
 		(size 60.96 46.99)
 		(fields_autoplaced yes)
 		(stroke
@@ -1202,7 +1202,7 @@
 		)
 		(uuid "a37b102b-6b50-46eb-b8ae-7cacb8a76bdc")
 		(property "Sheetname" "Driver_Motor2"
-			(at 177.8 60.2484 0)
+			(at 176.53 64.0584 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1211,7 +1211,7 @@
 			)
 		)
 		(property "Sheetfile" "Driver_Moter.kicad_sch"
-			(at 177.8 108.5346 0)
+			(at 176.53 112.3446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1220,7 +1220,7 @@
 			)
 		)
 		(pin "OUT1" output
-			(at 238.76 91.44 0)
+			(at 237.49 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1230,7 +1230,7 @@
 			(uuid "592d5253-f5e2-46b6-b67e-94ee0db771ae")
 		)
 		(pin "OUT2" output
-			(at 238.76 78.74 0)
+			(at 237.49 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1240,7 +1240,7 @@
 			(uuid "4b6637c2-0fbe-43a4-8f4c-b5e7b727e63d")
 		)
 		(pin "REV" input
-			(at 177.8 76.2 180)
+			(at 176.53 80.01 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1250,7 +1250,7 @@
 			(uuid "f55c319a-863d-4e82-ac1a-dfaf04d5a5c5")
 		)
 		(pin "FWD" input
-			(at 177.8 90.17 180)
+			(at 176.53 93.98 180)
 			(effects
 				(font
 					(size 1.27 1.27)

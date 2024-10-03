@@ -1808,16 +1808,6 @@
 			)
 			(uuid "3a66ad87-2377-456e-86ec-dc2c95f4c8de")
 		)
-		(pin "BTN_RESET" input
-			(at 162.56 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "93caa280-4674-4b80-9b48-83fc06711458")
-		)
 		(pin "EN_MOT" input
 			(at 149.86 71.12 90)
 			(effects
