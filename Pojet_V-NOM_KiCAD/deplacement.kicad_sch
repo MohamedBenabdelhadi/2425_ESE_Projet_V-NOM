@@ -5,6 +5,108 @@
 	(uuid "68c9e247-7312-4671-8d98-30ab508c9445")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.762) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Connector_Generic:Conn_01x06"
 			(pin_names
 				(offset 1.016) hide)
@@ -476,6 +578,152 @@
 				)
 			)
 		)
+		(symbol "power:PWR_FLAG"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 120.65 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0ae4b246-0771-48a1-bf4e-07ac5873c95f")
+	)
+	(junction
+		(at 250.19 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "193c12dd-ea0a-4cdc-9c34-c9072fd93a53")
+	)
+	(junction
+		(at 250.19 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b863caef-d343-49a1-9546-bb6245e7da83")
+	)
+	(junction
+		(at 132.08 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bb11c1c1-90d2-4a25-8512-e80a256784a3")
+	)
+	(junction
+		(at 121.92 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f05cb3d7-5e3a-406d-8b54-e0ed9123cd8c")
+	)
+	(wire
+		(pts
+			(xy 113.03 87.63) (xy 120.65 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0956d2b8-cf6b-4dc4-971a-8811462d5719")
+	)
+	(wire
+		(pts
+			(xy 115.57 92.71) (xy 121.92 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13d4e5ad-8e94-47e2-9c63-a210c9566950")
 	)
 	(wire
 		(pts
@@ -489,13 +737,93 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 95.25) (xy 128.27 95.25)
+			(xy 121.92 92.71) (xy 137.16 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d14b76d-43b6-4ad2-97aa-ebc78fa764fd")
+	)
+	(wire
+		(pts
+			(xy 132.08 90.17) (xy 113.03 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2de6f20f-7c5f-49e1-a0fe-81bb1880b71f")
+	)
+	(wire
+		(pts
+			(xy 137.16 90.17) (xy 132.08 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3057aea1-4b21-4ddc-86e0-580f4df30cab")
+	)
+	(wire
+		(pts
+			(xy 104.14 95.25) (xy 137.16 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "40438b96-1443-4e6f-8d26-59567c883202")
+	)
+	(wire
+		(pts
+			(xy 120.65 87.63) (xy 137.16 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41584511-0dfd-4720-800c-35d176a912db")
+	)
+	(wire
+		(pts
+			(xy 246.38 90.17) (xy 250.19 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "450e134f-27d7-42d9-a37b-12f541804d94")
+	)
+	(wire
+		(pts
+			(xy 137.16 85.09) (xy 135.89 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "537279e9-3dc0-4d71-b4d8-e551d7fdc50f")
+	)
+	(wire
+		(pts
+			(xy 250.19 87.63) (xy 264.16 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5385f769-9698-4706-aefa-4c48fa0ef2eb")
+	)
+	(wire
+		(pts
+			(xy 250.19 90.17) (xy 264.16 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70d3b99e-baac-4bb8-97d7-8de86f54f87e")
 	)
 	(wire
 		(pts
@@ -506,6 +834,26 @@
 			(type default)
 		)
 		(uuid "788f0c20-5b87-4401-b4a9-1789f2bffa89")
+	)
+	(wire
+		(pts
+			(xy 132.08 96.52) (xy 132.08 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8707161d-a0e1-42f0-9dab-8f57dc79b631")
+	)
+	(wire
+		(pts
+			(xy 246.38 87.63) (xy 250.19 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9eab32b1-8ebc-4b2c-9390-50f26377d9bc")
 	)
 	(wire
 		(pts
@@ -529,13 +877,23 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 82.55) (xy 128.27 82.55)
+			(xy 104.14 82.55) (xy 137.16 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c1e8a230-48f1-40e4-b6f7-981f028671da")
+	)
+	(wire
+		(pts
+			(xy 121.92 97.79) (xy 121.92 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c59c596f-e007-4870-bb5d-10bef46d8318")
 	)
 	(wire
 		(pts
@@ -589,7 +947,7 @@
 	)
 	(hierarchical_label "Encoder A phase 1"
 		(shape output)
-		(at 128.27 90.17 180)
+		(at 113.03 90.17 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -625,7 +983,7 @@
 	)
 	(hierarchical_label "Encoder B phase 2"
 		(shape output)
-		(at 264.16 87.63 180)
+		(at 246.38 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -637,7 +995,7 @@
 	)
 	(hierarchical_label "Encoder A phase 2"
 		(shape output)
-		(at 264.16 90.17 180)
+		(at 246.38 90.17 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -649,7 +1007,7 @@
 	)
 	(hierarchical_label "Encoder B phase 1"
 		(shape output)
-		(at 128.27 87.63 180)
+		(at 113.03 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -685,7 +1043,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
-		(at 133.35 87.63 0)
+		(at 142.24 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -694,7 +1052,7 @@
 		(fields_autoplaced yes)
 		(uuid "0f5f25a2-68b8-4a0a-aacb-d947b5bcf755")
 		(property "Reference" "J301"
-			(at 135.89 87.6299 0)
+			(at 144.78 87.6299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -703,7 +1061,7 @@
 			)
 		)
 		(property "Value" "Conn_01x06"
-			(at 135.89 90.1699 0)
+			(at 144.78 90.1699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -712,7 +1070,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_S6B-XH-A_1x06_P2.50mm_Horizontal"
-			(at 133.35 87.63 0)
+			(at 142.24 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -721,7 +1079,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 133.35 87.63 0)
+			(at 142.24 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -730,7 +1088,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 133.35 87.63 0)
+			(at 142.24 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -848,6 +1206,140 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 132.08 96.52 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4c05fd7d-14fe-47f0-b2a0-dd7c03dea3d2")
+		(property "Reference" "TP302"
+			(at 134.62 98.5519 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 134.62 101.0919 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 127 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 127 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 132.08 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "969baaad-b393-4483-9101-b5390847264f")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304"
+					(reference "TP302")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 121.92 97.79 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4daa00d3-6f7e-40c6-aadf-7b281a8b2ce8")
+		(property "Reference" "#FLG0301"
+			(at 121.92 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 121.92 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 121.92 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fce3e375-c2c6-412a-9d43-22e230bda6be")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304"
+					(reference "#FLG0301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+BATT")
 		(at 264.16 92.71 90)
 		(unit 1)
@@ -915,8 +1407,142 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 120.65 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "70ed54e6-73c2-4873-aada-7d2abc7825c6")
+		(property "Reference" "TP301"
+			(at 121.92 84.328 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 123.19 85.5979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 125.73 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 125.73 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 120.65 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "35c1e081-92d1-4520-877a-6ef0fa7cd96a")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304"
+					(reference "TP301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 250.19 90.17 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "929a2b13-dcb0-4cef-af3f-19b8dd41bbd3")
+		(property "Reference" "TP304"
+			(at 242.57 92.964 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 252.73 94.7419 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 245.11 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 245.11 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 250.19 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a5213e1f-e742-42c6-a36d-e329d9858d15")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304"
+					(reference "TP304")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+BATT")
-		(at 128.27 92.71 90)
+		(at 115.57 92.71 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -925,7 +1551,7 @@
 		(fields_autoplaced yes)
 		(uuid "96c7d665-7c6a-48da-867b-60e2d9d1628b")
 		(property "Reference" "#PWR0302"
-			(at 132.08 92.71 0)
+			(at 119.38 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -934,7 +1560,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 124.46 92.7099 90)
+			(at 111.76 92.7099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -943,7 +1569,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 128.27 92.71 0)
+			(at 115.57 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -952,7 +1578,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 92.71 0)
+			(at 115.57 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -961,7 +1587,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 128.27 92.71 0)
+			(at 115.57 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1047,8 +1673,75 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 250.19 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "da4a400a-f64d-43c2-92b3-fbc76c5a2d6f")
+		(property "Reference" "TP303"
+			(at 251.714 84.582 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 252.73 85.5979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 255.27 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 255.27 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 250.19 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "55ba89de-2353-4231-81f6-92f221271063")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304"
+					(reference "TP303")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 128.27 85.09 270)
+		(at 135.89 85.09 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1056,7 +1749,7 @@
 		(dnp no)
 		(uuid "e4513f13-8e83-487c-aacd-e2dc6a1d97f3")
 		(property "Reference" "#PWR0301"
-			(at 121.92 85.09 0)
+			(at 129.54 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1065,7 +1758,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 123.19 84.582 0)
+			(at 130.81 84.582 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1073,7 +1766,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 128.27 85.09 0)
+			(at 135.89 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1082,7 +1775,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 85.09 0)
+			(at 135.89 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1091,7 +1784,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 128.27 85.09 0)
+			(at 135.89 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)

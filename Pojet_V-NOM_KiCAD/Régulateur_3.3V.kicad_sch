@@ -230,6 +230,108 @@
 				)
 			)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.762) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:C_Small"
 			(pin_numbers hide)
 			(pin_names
@@ -709,6 +811,18 @@
 		(uuid "3830794a-5d5a-460f-b697-c7c2c8751aac")
 	)
 	(junction
+		(at 171.45 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4173999b-49a1-4666-9deb-6b70947b27b9")
+	)
+	(junction
+		(at 127 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5350c84a-28ab-46a3-be7b-c3bbf8d574c4")
+	)
+	(junction
 		(at 163.83 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -726,7 +840,27 @@
 	)
 	(wire
 		(pts
-			(xy 127 104.14) (xy 133.35 104.14)
+			(xy 127 101.6) (xy 134.62 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "326596b0-5c3f-429c-a31c-ebd3214c5bc2")
+	)
+	(wire
+		(pts
+			(xy 134.62 106.68) (xy 133.35 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d2557ec-c349-4977-860a-5d0528d371c4")
+	)
+	(wire
+		(pts
+			(xy 127 104.14) (xy 134.62 104.14)
 		)
 		(stroke
 			(width 0)
@@ -736,7 +870,17 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 104.14) (xy 163.83 104.14)
+			(xy 127 99.06) (xy 127 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "735d357c-7e13-4e19-95cc-608353761cb9")
+	)
+	(wire
+		(pts
+			(xy 162.56 104.14) (xy 163.83 104.14)
 		)
 		(stroke
 			(width 0)
@@ -746,7 +890,17 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 101.6) (xy 119.38 101.6)
+			(xy 171.45 104.14) (xy 185.42 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af113148-c192-476b-a688-408299093543")
+	)
+	(wire
+		(pts
+			(xy 107.95 101.6) (xy 119.38 101.6)
 		)
 		(stroke
 			(width 0)
@@ -756,7 +910,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 101.6) (xy 133.35 101.6)
+			(xy 119.38 101.6) (xy 127 101.6)
 		)
 		(stroke
 			(width 0)
@@ -766,7 +920,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 104.14) (xy 170.18 104.14)
+			(xy 163.83 104.14) (xy 171.45 104.14)
 		)
 		(stroke
 			(width 0)
@@ -806,7 +960,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 170.18 104.14 0)
+		(at 185.42 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -815,7 +969,7 @@
 		(fields_autoplaced yes)
 		(uuid "04afa142-713d-4b0a-8e5c-8fbe904b90cb")
 		(property "Reference" "#PWR0905"
-			(at 170.18 107.95 0)
+			(at 185.42 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -824,7 +978,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 170.18 99.06 0)
+			(at 185.42 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -832,7 +986,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 170.18 104.14 0)
+			(at 185.42 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -841,7 +995,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 170.18 104.14 0)
+			(at 185.42 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -850,7 +1004,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 170.18 104.14 0)
+			(at 185.42 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -930,6 +1084,73 @@
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426/a5848076-92cd-4e99-9706-01c7593ded28"
 					(reference "#PWR0902")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 171.45 104.14 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4a9ba946-46a5-4227-9803-c316b0cc1d3b")
+		(property "Reference" "TP901"
+			(at 173.99 99.5679 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 173.99 102.1079 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 176.53 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 176.53 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 171.45 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ce3bc355-45ac-40e1-8bab-6e413e919b78")
+		)
+		(instances
+			(project ""
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426/a5848076-92cd-4e99-9706-01c7593ded28"
+					(reference "TP901")
 					(unit 1)
 				)
 			)
@@ -1073,7 +1294,7 @@
 	)
 	(symbol
 		(lib_id "BU33SD5WG-TR:BU33SD5WG-TR")
-		(at 133.35 101.6 0)
+		(at 134.62 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1082,7 +1303,7 @@
 		(fields_autoplaced yes)
 		(uuid "6bf773ba-df2b-43fe-bd9d-6a6794e81be7")
 		(property "Reference" "PS901"
-			(at 147.32 93.98 0)
+			(at 148.59 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1090,7 +1311,7 @@
 			)
 		)
 		(property "Value" "BU33SD5WG-TR"
-			(at 147.32 96.52 0)
+			(at 148.59 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1098,7 +1319,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
-			(at 157.48 196.52 0)
+			(at 158.75 196.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1108,7 +1329,7 @@
 			)
 		)
 		(property "Datasheet" "https://componentsearchengine.com/Datasheets/1/BU33SD5WG-TR.pdf"
-			(at 157.48 296.52 0)
+			(at 158.75 296.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1118,7 +1339,7 @@
 			)
 		)
 		(property "Description" "LDO regulator,3.3V,0.5A,standby,SSOP5 ROHM BU33SD5WG-TR, LDO Voltage Regulator, 0.5A, 3.3 V +/-2%, 1.7  6 Vin, 5-Pin SSOP"
-			(at 133.35 101.6 0)
+			(at 134.62 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1127,7 +1348,7 @@
 			)
 		)
 		(property "Height" "1.25"
-			(at 157.48 496.52 0)
+			(at 158.75 496.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1137,7 +1358,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "ROHM Semiconductor"
-			(at 157.48 596.52 0)
+			(at 158.75 596.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1147,7 +1368,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "BU33SD5WG-TR"
-			(at 157.48 696.52 0)
+			(at 158.75 696.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1157,7 +1378,7 @@
 			)
 		)
 		(property "Mouser Part Number" "755-BU33SD5WG-TR"
-			(at 157.48 796.52 0)
+			(at 158.75 796.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1167,7 +1388,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ROHM-Semiconductor/BU33SD5WG-TR?qs=%2FKR40Cd6GUrQDzRkUEt69Q%3D%3D"
-			(at 157.48 896.52 0)
+			(at 158.75 896.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1177,7 +1398,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 157.48 996.52 0)
+			(at 158.75 996.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1187,7 +1408,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 157.48 1096.52 0)
+			(at 158.75 1096.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1222,7 +1443,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 113.03 101.6 0)
+		(at 107.95 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1231,7 +1452,7 @@
 		(fields_autoplaced yes)
 		(uuid "8b322714-5dfd-46b8-90c9-1fe11c7fc75a")
 		(property "Reference" "#PWR0904"
-			(at 113.03 105.41 0)
+			(at 107.95 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1240,7 +1461,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 113.03 96.52 0)
+			(at 107.95 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1248,7 +1469,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 113.03 101.6 0)
+			(at 107.95 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1257,7 +1478,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 113.03 101.6 0)
+			(at 107.95 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1266,7 +1487,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 113.03 101.6 0)
+			(at 107.95 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1417,6 +1638,73 @@
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426/a5848076-92cd-4e99-9706-01c7593ded28"
 					(reference "#PWR0901")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 127 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d82b1d63-de6a-42df-a716-0a1522070c20")
+		(property "Reference" "TP902"
+			(at 129.54 94.4879 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 129.54 97.0279 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 132.08 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 132.08 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 127 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3d8636fe-69a8-4ddd-b6c3-1f8c2c31ea17")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426/a5848076-92cd-4e99-9706-01c7593ded28"
+					(reference "TP902")
 					(unit 1)
 				)
 			)

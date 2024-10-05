@@ -5,6 +5,108 @@
 	(uuid "99feeac8-95fc-445b-bb6d-80d4f103668b")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.762) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:C_Small"
 			(pin_numbers hide)
 			(pin_names
@@ -601,10 +703,34 @@
 		)
 	)
 	(junction
+		(at 128.27 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3a9b78b6-e47a-4cda-ac89-48b17183f174")
+	)
+	(junction
 		(at 137.16 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3d4f1e7d-4182-4c41-908b-49cb038bd442")
+	)
+	(junction
+		(at 172.72 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "76c8e384-1b42-4c2a-be38-00a1a76cbd7c")
+	)
+	(junction
+		(at 128.27 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "93b93b84-0424-470e-82fc-76fc44f9f868")
+	)
+	(junction
+		(at 172.72 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ad9fe540-3730-4504-acd3-cbb4340a71aa")
 	)
 	(junction
 		(at 142.24 74.93)
@@ -623,6 +749,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e8dbd3ae-e56f-44bd-97f8-cc17a0f2f298")
+	)
+	(junction
+		(at 133.35 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f4627827-2943-4300-8da4-7e4f0a7e41db")
 	)
 	(wire
 		(pts
@@ -656,6 +788,56 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 69.85) (xy 129.54 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f565f1a-5b4a-4b29-9ccc-c57b06517161")
+	)
+	(wire
+		(pts
+			(xy 128.27 90.17) (xy 149.86 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b5cbcd0-ee7a-49ed-a176-a11bf5d57a1c")
+	)
+	(wire
+		(pts
+			(xy 176.53 85.09) (xy 172.72 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ab239dc-ce11-4134-aebc-6e321e40bf97")
+	)
+	(wire
+		(pts
+			(xy 149.86 85.09) (xy 133.35 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d533300-dc6f-4ff9-8a30-ec9b01128514")
+	)
+	(wire
+		(pts
+			(xy 133.35 85.09) (xy 133.35 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66d0ff2f-6126-4532-84c1-d13d10dd06af")
+	)
+	(wire
+		(pts
 			(xy 137.16 74.93) (xy 142.24 74.93)
 		)
 		(stroke
@@ -666,13 +848,33 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 69.85) (xy 129.54 69.85)
+			(xy 172.72 90.17) (xy 170.18 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "724ffd9d-fece-4a52-8f86-5e73b94165bf")
+	)
+	(wire
+		(pts
+			(xy 137.16 69.85) (xy 133.35 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "795d6417-707c-47ea-8e91-1b815f7dd1a2")
+	)
+	(wire
+		(pts
+			(xy 125.73 87.63) (xy 128.27 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e711e9f-b902-48a4-ad80-c7305a515238")
 	)
 	(wire
 		(pts
@@ -696,6 +898,26 @@
 	)
 	(wire
 		(pts
+			(xy 176.53 90.17) (xy 172.72 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9eed6f68-7f4b-42fc-a7f4-0296ae0afb1c")
+	)
+	(wire
+		(pts
+			(xy 128.27 87.63) (xy 149.86 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7882ebb-9298-4873-a98e-6337451e2cd3")
+	)
+	(wire
+		(pts
 			(xy 147.32 69.85) (xy 157.48 69.85)
 		)
 		(stroke
@@ -706,6 +928,16 @@
 	)
 	(wire
 		(pts
+			(xy 125.73 90.17) (xy 128.27 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcdfba87-2fc0-4175-9fc7-803d5dd0aa70")
+	)
+	(wire
+		(pts
 			(xy 142.24 74.93) (xy 147.32 74.93)
 		)
 		(stroke
@@ -713,6 +945,16 @@
 			(type default)
 		)
 		(uuid "e8ab8fcf-946a-4e35-9775-a376f9a8e50a")
+	)
+	(wire
+		(pts
+			(xy 172.72 85.09) (xy 170.18 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f75c4091-4504-48d0-90a8-66e7ea745d42")
 	)
 	(wire
 		(pts
@@ -736,7 +978,7 @@
 	)
 	(hierarchical_label "FWD"
 		(shape input)
-		(at 149.86 87.63 180)
+		(at 125.73 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -748,7 +990,7 @@
 	)
 	(hierarchical_label "REV"
 		(shape input)
-		(at 149.86 90.17 180)
+		(at 125.73 90.17 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -760,7 +1002,7 @@
 	)
 	(hierarchical_label "OUT2"
 		(shape output)
-		(at 170.18 90.17 0)
+		(at 176.53 90.17 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -772,7 +1014,7 @@
 	)
 	(hierarchical_label "OUT1"
 		(shape output)
-		(at 170.18 85.09 0)
+		(at 176.53 85.09 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -781,6 +1023,77 @@
 			(justify left)
 		)
 		(uuid "f7866f7a-336e-4bc3-a9ea-1e347fce3520")
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 128.27 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "32509227-7161-44a2-afbd-13eb0bd5ffe7")
+		(property "Reference" "TP704"
+			(at 124.206 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 130.3922 85.5979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 133.35 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 133.35 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 128.27 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8e8f5109-456d-4f1b-a32b-a7a8540a0eae")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/5cb59191-dae7-46ed-abdf-f6d9d3fbe962"
+					(reference "TP704")
+					(unit 1)
+				)
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/a37b102b-6b50-46eb-b8ae-7cacb8a76bdc"
+					(reference "TP804")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:+BATT")
@@ -848,6 +1161,77 @@
 				)
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/a37b102b-6b50-46eb-b8ae-7cacb8a76bdc"
 					(reference "#PWR0803")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 128.27 90.17 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6e25f033-0ccd-4c9a-9cd7-96b1eb52099e")
+		(property "Reference" "TP703"
+			(at 124.206 96.012 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 130.81 94.7419 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 123.19 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 123.19 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 128.27 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7e8dd06f-b6ed-469c-9937-a5268b1804ed")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/5cb59191-dae7-46ed-abdf-f6d9d3fbe962"
+					(reference "TP703")
+					(unit 1)
+				)
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/a37b102b-6b50-46eb-b8ae-7cacb8a76bdc"
+					(reference "TP803")
 					(unit 1)
 				)
 			)
@@ -925,6 +1309,77 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 133.35 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "90329894-664b-49fa-a5e1-1de618f65c43")
+		(property "Reference" "TP705"
+			(at 130.81 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 135.89 67.8179 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 138.43 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 138.43 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 133.35 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c683acb9-2450-4165-9056-f59c47e06bf8")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/5cb59191-dae7-46ed-abdf-f6d9d3fbe962"
+					(reference "TP705")
+					(unit 1)
+				)
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/a37b102b-6b50-46eb-b8ae-7cacb8a76bdc"
+					(reference "TP805")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 160.02 100.33 0)
 		(unit 1)
@@ -989,6 +1444,77 @@
 				)
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/a37b102b-6b50-46eb-b8ae-7cacb8a76bdc"
 					(reference "#PWR0801")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 172.72 85.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a2b6096c-2932-4527-bc19-4e4e4b1eaf13")
+		(property "Reference" "TP701"
+			(at 173.99 82.042 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 175.26 83.0579 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 177.8 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 177.8 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 172.72 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "528cbc85-5462-42c3-9bef-8c5b353f8bc7")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/5cb59191-dae7-46ed-abdf-f6d9d3fbe962"
+					(reference "TP701")
+					(unit 1)
+				)
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/a37b102b-6b50-46eb-b8ae-7cacb8a76bdc"
+					(reference "TP801")
 					(unit 1)
 				)
 			)
@@ -1069,77 +1595,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+BATT")
-		(at 149.86 85.09 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c9d94e58-5e02-40e6-a527-21177d0b9453")
-		(property "Reference" "#PWR0704"
-			(at 153.67 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+BATT"
-			(at 146.05 85.0899 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 149.86 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 149.86 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 149.86 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3446bb1e-1822-4f8b-8519-2457ebe95bc4")
-		)
-		(instances
-			(project "Pojet_V-NOM_KiCAD"
-				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/5cb59191-dae7-46ed-abdf-f6d9d3fbe962"
-					(reference "#PWR0704")
-					(unit 1)
-				)
-				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/a37b102b-6b50-46eb-b8ae-7cacb8a76bdc"
-					(reference "#PWR0804")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 137.16 72.39 180)
 		(unit 1)
@@ -1208,6 +1663,77 @@
 				)
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/a37b102b-6b50-46eb-b8ae-7cacb8a76bdc"
 					(reference "C801")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 172.72 90.17 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d2e51d40-fca9-4072-8741-a859766f240b")
+		(property "Reference" "TP702"
+			(at 174.244 93.726 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 175.26 94.7419 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 167.64 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 167.64 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 172.72 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "87fba8b8-6b08-427f-b4e2-481ae6f86f40")
+		)
+		(instances
+			(project "Pojet_V-NOM_KiCAD"
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/5cb59191-dae7-46ed-abdf-f6d9d3fbe962"
+					(reference "TP702")
+					(unit 1)
+				)
+				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/778527cd-4ba2-44a7-9be0-e348ce68e304/a37b102b-6b50-46eb-b8ae-7cacb8a76bdc"
+					(reference "TP802")
 					(unit 1)
 				)
 			)
