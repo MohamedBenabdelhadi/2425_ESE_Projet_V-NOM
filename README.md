@@ -91,6 +91,9 @@ La détection de la position du robot adverse se fait grâce au capteur Lidar qu
 ## Schémas utiles
 ![image](https://github.com/user-attachments/assets/46c6d10b-ff33-4031-baca-c4026fec3046)
 
+## Exemples de projets avec le YDLIDAR X4
+- [**stm32-ydlidar-x4**](https://github.com/radii-dev/stm32-ydlidar-x4)
+
 
 ## Astuces et solution à des erreurs courrantes
 ### Mettre à jour une branche à partir de la branche principale (```main```)
