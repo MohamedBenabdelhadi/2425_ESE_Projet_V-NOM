@@ -832,6 +832,16 @@
 		)
 		(uuid "fafab8b3-c3bb-4639-9d6c-722987ee4ee4")
 	)
+	(text "empreinte bobine \n"
+		(exclude_from_sim no)
+		(at 95.25 25.146 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b73894f6-3e37-4fa3-9524-8b6562ce2269")
+	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 52.07 39.37 0)

@@ -817,12 +817,6 @@
 		(uuid "4173999b-49a1-4666-9deb-6b70947b27b9")
 	)
 	(junction
-		(at 127 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5350c84a-28ab-46a3-be7b-c3bbf8d574c4")
-	)
-	(junction
 		(at 163.83 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -840,7 +834,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 101.6) (xy 134.62 101.6)
+			(xy 119.38 101.6) (xy 134.62 101.6)
 		)
 		(stroke
 			(width 0)
@@ -867,16 +861,6 @@
 			(type default)
 		)
 		(uuid "6cc05d5b-a542-46bc-a16a-720a13823209")
-	)
-	(wire
-		(pts
-			(xy 127 99.06) (xy 127 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "735d357c-7e13-4e19-95cc-608353761cb9")
 	)
 	(wire
 		(pts
@@ -907,16 +891,6 @@
 			(type default)
 		)
 		(uuid "bda5527e-dbd9-4cc9-92bc-f7d9961abc19")
-	)
-	(wire
-		(pts
-			(xy 119.38 101.6) (xy 127 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c8132594-db85-4bbf-baa7-32145a5c5fd5")
 	)
 	(wire
 		(pts
@@ -1117,7 +1091,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 176.53 104.14 0)
 			(effects
 				(font
@@ -1638,73 +1612,6 @@
 			(project "Pojet_V-NOM_KiCAD"
 				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426/a5848076-92cd-4e99-9706-01c7593ded28"
 					(reference "#PWR0901")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 127 99.06 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d82b1d63-de6a-42df-a716-0a1522070c20")
-		(property "Reference" "TP902"
-			(at 129.54 94.4879 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 129.54 97.0279 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 132.08 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 132.08 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 127 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3d8636fe-69a8-4ddd-b6c3-1f8c2c31ea17")
-		)
-		(instances
-			(project "Pojet_V-NOM_KiCAD"
-				(path "/37e0fdad-f3fd-48e0-8377-111662233a91/aef3d9b2-029f-4338-91be-d4af664a9426/a5848076-92cd-4e99-9706-01c7593ded28"
-					(reference "TP902")
 					(unit 1)
 				)
 			)
