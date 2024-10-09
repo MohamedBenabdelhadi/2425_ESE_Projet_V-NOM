@@ -7,6 +7,13 @@ Celui-ci est piloté par un microcontrôleur de type STM32.
 Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 
 
+## Strategie
+La stratégie de déplacement retenue a été de détecter les bords de la surface de l'arène grâce à des capteurs de distance à l'avant et à l'arrière du robot.  
+**En mode souris :** le robot cherche à garder la plus grande distance possible du robot adverse ("chat"), tout en évitant les bords.  
+**En mode chat :** le robot cherche à entrer en contact avec le robot adverse ("souris") par collision.  
+La détection de la position du robot adverse se fait grâce au capteur Lidar qui permet de déterminer une trajectoire en temps réel. La détection de la collision est faite grâce à l'accéléromètre.
+
+
 ## BOM (Build Of Materials)
 ### Liste des composants
 - Microcontrôleur : STM32G431CBU6 [(ST-Microelectronics)](https://www.st.com/en/microcontrollers-microprocessors/stm32g431cb.html)
@@ -19,7 +26,7 @@ Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 - Régulateur 3.3V : BU33SD5WG-TR [(Farnell : 3011248)](https://fr.farnell.com/rohm/bu33sd5wg-tr/ldo-fixe-3-3v-0-5a-40-a-105-c/dp/3011248)  (done)
 - Batterie NIMH 7.2V 1.3Ah [(RS : 777-0377)](https://fr.rs-online.com/web/p/blocs-batteries-rechargeables/7770377?srsltid=AfmBOoqrzm-2xAbhXLv9pRw4Oh5hJvgaiMIRUeVsAtR-6kuSAeCwSjIW) (done)
 - Capteur bordure : GP2Y0A41SK0F [(Farnell : 1618431)](https://fr.farnell.com/sharp/gp2y0a41sk0f/capteur-de-distance/dp/1618431)  (pas besoin de l'empreinte dessiner)
-- Lidar : YDLIDAR X4 (https://www.ydlidar.com/dowfile.html?cid=5&type=1)
+- Lidar : [YDLIDAR X4](https://www.ydlidar.com/dowfile.html?cid=5&type=1)
 - Connecteurs JST 2.54mm
 - LED + R/C en 0603
 - Cable avec Connecteur du capteur de bordure : A03SR03SR30K152A [(Digikey : 455-3703-ND)](https://www.digikey.fr/fr/products/detail/jst-sales-america-inc./A03SR03SR30K152A/6708479?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax%20Shopping_Product_High%20ROAS&utm_term=&productid=6708479&utm_content=&utm_id=go_cmp-19538087217_adg-_ad-__dev-c_ext-_prd-6708479_sig-EAIaIQobChMI266NvsG6iAMVgkRBAh3lExJ7EAQYASABEgJQt_D_BwE&gad_source=1&gclid=EAIaIQobChMI266NvsG6iAMVgkRBAh3lExJ7EAQYASABEgJQt_D_BwE)
@@ -30,6 +37,7 @@ Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 ### Sources d'empreintes
 Pour les empreintes officielles (serveur utilisé par Farnell, Mouser...) : https://componentsearchengine.com/ 
 > La création de compte est gratuite. <u> **/!\\**</u> La recherche et le téléchargement des empreintes composants doit se faire directement depuis le site et non pas depuis les sites de fournisseurs de composants pour éviter les bugs !
+
 
 ## Diagramme d'architecture
 ```mermaid
@@ -81,15 +89,9 @@ end
 ```
 
 
-## Strategie
-La stratégie de déplacement retenue a été de détecter les bords de la surface de l'arène grâce à des capteurs de distance à l'avant et à l'arrière du robot.  
-**En mode souris :** le robot cherche à garder la plus grande distance possible du robot adverse ("chat"), tout en évitant les bords.  
-**En mode chat :** le robot cherche à entrer en contact avec le robot adverse ("souris") par collision.  
-La détection de la position du robot adverse se fait grâce au capteur Lidar qui permet de déterminer une trajectoire en temps réel. La détection de la collision est faite grâce à l'accéléromètre.
-
-
 ## Schémas utiles
 ![image](https://github.com/user-attachments/assets/46c6d10b-ff33-4031-baca-c4026fec3046)
+
 
 ## Exemples de projets avec le YDLIDAR X4
 - [**stm32-ydlidar-x4**](https://github.com/radii-dev/stm32-ydlidar-x4)
@@ -126,9 +128,3 @@ Puis on force le push de la branche qu'on souhaite restaurer :
 ```bash
 git push origin <branch_name> --force
 ```
-
-## Notes pour finir le schéma électronique
-
-> [x] Il faut prévoir un pin GPIO pour le Chip Select (CS) du SPI de l'accéléromètre.  
-> [ ] Il faut prévoir un pin pour le bouton RESET.  
-> [ ] Il faut prévoir un pin pour le BOOT.  
