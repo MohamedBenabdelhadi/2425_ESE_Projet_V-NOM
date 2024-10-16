@@ -112,12 +112,16 @@ Quand STM32CubeIDE crash au démarage avec ue erreur `"Java" is not responding` 
 
 Il faut resset la tête sur le commit juste avant la tête actuelle. Solution sur [Stack Overflow](https://stackoverflow.com/questions/42860234/how-to-undo-a-merge-in-github)
 ```bash
+git checkout master
 git reset --hard <commit_before_merge>
+git push -f
 ```
 
 Exemple :
 ```bash
-git reset --hard master^
+git checkout master
+git reset --hard master
+git push -f
 ```
 
 ### Forcer un commit
