@@ -33,6 +33,7 @@ La détection de la position du robot adverse se fait grâce au capteur Lidar qu
 - Port pour câble du capteur de bordure : BM03B-SRSS-TB(LF)(SN) [(Farnell : 1679128)](https://fr.farnell.com/jst-japan-solderless-terminals/bm03b-srss-tb-lf-sn/embase-entree-sur-le-dessus-3/dp/1679128?&CMP=KNC-GFR-GEN-SKU-MDC-Connectors-Cables-Testing-with-Restricted-MPNs-14-March&mckv=s_dc%7Cpcrid%7C648720547172%7Ckword%7Cbm03b%20srss%20tblfsn%7Cmatch%7Cp%7Cplid%7C%7Cslid%7C%7Cproduct%7C%7Cpgrid%7C129493161308%7Cptaid%7Ckwd-1185703700119%7C&gad_source=1&gclid=Cj0KCQjw9Km3BhDjARIsAGUb4nwrscZTVEgmP52M6HoGuYSXzhf93gxqATGiTRUDuMloynbn5Pj27rIaAikjEALw_wcB) *This product displays (LF)(SN) on the label to indicate RoHS compliance.* (JST_EH_S3B-EH_1x03_P2.50mm_Horizontal)
 - Boutons poussoirs : Wurth 430182070816 → SW Push 1P1T NO 6x6mm H9.5mm
 - Interrupteur ON/OFF : Wurth 472121020311 → Faites l’empreinte
+- Schématique inductance https://www.mouser.fr/ProductDetail/Wurth-Elektronik/74404052047?qs=HXx4m3XcTe3PWRKQiM%2F8dA%3D%3D&srsltid=AfmBOopCCSO3W02IXTjj6vSLd7tvcbkEO4dISegjH-otZ-69jXdCQCaM&_gl=1*1izmqad*_ga*OTA4NTQxMzAzLjE3MjkwNjA0Mzc.*_ga_15W4STQT4T*MTcyOTA2MDQzNy4xLjAuMTcyOTA2MDQ0My41NC4wLjA. 
 
 ### Sources d'empreintes
 Pour les empreintes officielles (serveur utilisé par Farnell, Mouser...) : https://componentsearchengine.com/ 
