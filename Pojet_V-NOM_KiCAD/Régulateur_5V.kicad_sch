@@ -2201,7 +2201,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0402_1005Metric"
+		(property "Footprint" "Library:Inductance L1"
 			(at 173.99 91.44 0)
 			(effects
 				(font
