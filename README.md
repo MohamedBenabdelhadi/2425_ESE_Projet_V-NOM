@@ -35,7 +35,6 @@ La détection de la position du robot adverse se fait grâce au capteur Lidar qu
 - Interrupteur ON/OFF : [Wurth 472121020311] → empreinte à faire  
   
 **Fournisseurs autorisés :** RS, Farnell, Mouser.
-- Schématique inductance https://www.mouser.fr/ProductDetail/Wurth-Elektronik/74404052047?qs=HXx4m3XcTe3PWRKQiM%2F8dA%3D%3D&srsltid=AfmBOopCCSO3W02IXTjj6vSLd7tvcbkEO4dISegjH-otZ-69jXdCQCaM&_gl=1*1izmqad*_ga*OTA4NTQxMzAzLjE3MjkwNjA0Mzc.*_ga_15W4STQT4T*MTcyOTA2MDQzNy4xLjAuMTcyOTA2MDQ0My41NC4wLjA. 
 
 ### Sources d'empreintes
 Pour les empreintes officielles (serveur utilisé par Farnell, Mouser...) : https://componentsearchengine.com/ 
