@@ -1,0 +1,8 @@
+../Core/Inc/YDLidar.h:169:18:getCurrentScanPoint	1
+../Core/Src/YDLidar.c:18:10:getHealth	7
+../Core/Src/YDLidar.c:58:10:getDeviceInfo	7
+../Core/Src/YDLidar.c:97:10:stop	1
+../Core/Src/YDLidar.c:104:10:startScan	6
+../Core/Src/YDLidar.c:131:10:waitScanDot	36
+../Core/Src/YDLidar.c:331:10:sendCommand	4
+../Core/Src/YDLidar.c:360:10:waitResponseHeader	7
