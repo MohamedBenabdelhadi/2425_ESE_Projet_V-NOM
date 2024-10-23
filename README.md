@@ -28,7 +28,7 @@ La détection de la position du robot adverse se fait grâce au capteur Lidar qu
 - Capteur bordure : GP2Y0A41SK0F [(RS : 666-6568)](https://fr.rs-online.com/web/p/capteurs-optiques-reflechissants/6666568?gb=s)   
 - Lidar : [YDLIDAR X4](https://www.ydlidar.com/dowfile.html?cid=5&type=1)
 - Connecteurs JST 2.54mm
-- LED + R/C en 0603 : 
+- LED + R/C en 0603 :
     - LED Rouge : [(Farnell : 150060RS55040)](https://fr.farnell.com/wurth-elektronik/150060rs55040/led-rouge-90mcd-624nm-cms/dp/2900762?srsltid=AfmBOorNugn7Hvu9bw1OmH61YvC2Vub_GdCKCcCiIE3ujNj7Wx1MRa4I)
     - LED Verte : [(Farnell : 150060GS55040)](https://fr.farnell.com/wurth-elektronik/150060gs55040/led-verte-430mcd-525nm-cms/dp/2900760)
 - Cable avec Connecteur du capteur de bordure : A03SR03SR30K152A [(Mouser : 306-A03SR03SR30K152A)](https://www.mouser.fr/ProductDetail/JST-Commercial/A03SR03SR30K152A?qs=QpmGXVUTftGJe7b%2B%2FlYZEQ%3D%3D)
