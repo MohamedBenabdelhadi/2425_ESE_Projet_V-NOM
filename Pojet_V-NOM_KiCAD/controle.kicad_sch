@@ -2550,10 +2550,6 @@
 		(uuid "08c6a294-89b0-4bd7-bf07-bc86393b5ea5")
 	)
 	(no_connect
-		(at 163.83 60.96)
-		(uuid "23318403-62d0-47d6-81a1-9ba9f9568628")
-	)
-	(no_connect
 		(at 130.81 101.6)
 		(uuid "5bb7bef9-5cef-4289-bb66-c8099aca596b")
 	)
@@ -2578,8 +2574,12 @@
 		(uuid "b984fa1c-be55-4c1c-a7e6-077d75ca07e8")
 	)
 	(no_connect
-		(at 163.83 63.5)
-		(uuid "e39d8f63-d84f-4bad-968e-86d1179c6baf")
+		(at 163.83 60.96)
+		(uuid "b9d6cc65-5257-40af-b2d4-726b7f2fdd95")
+	)
+	(no_connect
+		(at 130.81 88.9)
+		(uuid "e64cadbb-cae5-4a7d-b9a3-d24f0a7dfd55")
 	)
 	(no_connect
 		(at 130.81 91.44)
@@ -3137,6 +3137,18 @@
 		)
 		(uuid "09c27bc5-6d50-4596-93d8-b37fe1a01bff")
 	)
+	(hierarchical_label "TOF1"
+		(shape input)
+		(at 163.83 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0f0de501-e3f2-4a00-914c-eda7f6ad46f0")
+	)
 	(hierarchical_label "LIDAR_TX"
 		(shape bidirectional)
 		(at 111.76 104.14 180)
@@ -3220,18 +3232,6 @@
 			(justify right)
 		)
 		(uuid "695ea188-26eb-4280-8912-2fc47fdd263f")
-	)
-	(hierarchical_label "TOF1"
-		(shape input)
-		(at 130.81 88.9 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7412c1ae-28d5-456a-ac45-97c15cf239a0")
 	)
 	(hierarchical_label "SPI_MOSI"
 		(shape output)
