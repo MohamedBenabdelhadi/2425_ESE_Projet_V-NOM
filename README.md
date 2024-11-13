@@ -113,7 +113,8 @@ wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_am
 
 wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_amd64.deb && sudo dpkg -i libncurses5_6.4-2_amd64.deb && rm -f libncurses5_6.4-2_amd64.deb
 
-sudo apt install lib32ncurses5-dev libncurses5 libncurses5-dev -y```
+sudo apt install lib32ncurses5-dev libncurses5 libncurses5-dev -y
+```
 
 ### Mettre à jour une branche à partir de la branche principale (```main```)
 ```bash
