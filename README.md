@@ -99,6 +99,7 @@ end
 
 ## Exemples de projets avec le YDLIDAR X4
 - [**stm32-ydlidar-x4**](https://github.com/radii-dev/stm32-ydlidar-x4)
+> /!\\ Attention : Pour développer avec la carte P-PNUCLEO-IHM3 (avec une NUCLEO-G431RB) il faut retirer le module shield X-NUCLEO-IHM16M1-1 !
 
 
 ## Astuces et solution à des erreurs courrantes
