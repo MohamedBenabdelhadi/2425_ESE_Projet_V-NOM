@@ -157,6 +157,7 @@ Composants fonctionnels:
 2. Quartz
 3. Switch*2
 4. Connecteur lidar
+5. Driver Moteur
 
 Composants non fonctionnels:
 1. Leds (inversés)
