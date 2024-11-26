@@ -151,5 +151,15 @@ Puis on force le push de la branche qu'on souhaite restaurer :
 ```bash
 git push origin <branch_name> --force
 ```
-# Note :
-UART1 marche + QUARTZ + les leds sont inversés +UART2 marche pas 
+## Test Hardware :
+Composants fonctionnels:
+1. UART1
+2. Quartz
+3. Switch*2
+4. Connecteur lidar
+
+Composants non fonctionnels:
+1. Leds (inversés)
+2. UART2
+   
+
