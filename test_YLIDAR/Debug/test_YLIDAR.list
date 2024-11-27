@@ -39,9 +39,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   0000df8f  00000000  00000000  0003b63d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000b9295  00000000  00000000  000495cc  2**0
+ 18 .debug_str    000b9294  00000000  00000000  000495cc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  00102861  2**0
+ 19 .comment      00000043  00000000  00000000  00102860  2**0
                   CONTENTS, READONLY
  20 .debug_frame  0000421c  00000000  00000000  001028a4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -1590,7 +1590,7 @@ void parseYLIDARData(uint8_t *data)
  8001204:	4619      	mov	r1, r3
  8001206:	4891      	ldr	r0, [pc, #580]	@ (800144c <parseYLIDARData+0x304>)
  8001208:	f005 f8ea 	bl	80063e0 <iprintf>
-		printf("Scan frequency: %d\r\n", scan_frequency);
+		printf("Scan frequency: %d Hz\r\n", scan_frequency);
  800120c:	f897 302c 	ldrb.w	r3, [r7, #44]	@ 0x2c
  8001210:	4619      	mov	r1, r3
  8001212:	488f      	ldr	r0, [pc, #572]	@ (8001450 <parseYLIDARData+0x308>)
@@ -1686,7 +1686,7 @@ void parseYLIDARData(uint8_t *data)
  80012e4:	3302      	adds	r3, #2
  80012e6:	63bb      	str	r3, [r7, #56]	@ 0x38
  80012e8:	6bbb      	ldr	r3, [r7, #56]	@ 0x38
- 80012ea:	2b0a      	cmp	r3, #10
+ 80012ea:	2b08      	cmp	r3, #8
  80012ec:	dde6      	ble.n	80012bc <parseYLIDARData+0x174>
 		}
 		if (calculatedChecksum != checksum)

@@ -47,7 +47,7 @@
 // YLIDAR2 constants
 #define YLIDAR_START_BYTE1 0x55
 #define YLIDAR_START_BYTE2 0xAA
-#define YLIDAR_SAMPLE_BYTE_OFFSET 10
+#define YLIDAR_SAMPLE_BYTE_OFFSET 8
 
 // Math constants
 #define PI 3.14159265359
@@ -116,14 +116,14 @@ void parseYLIDARData(uint8_t *data)
         uint16_t packetHeader = (data[1] << 8) | data[0];
         uint8_t packageType = data[2] & 0x1;
         uint8_t scan_frequency = (data[1] >> 1)/10;
-        uint8_t sampleQuantity = data[3];
+        uint8_t sampleQuantity = data[3];	// Number of 16 bits sample points
         uint16_t startAngleRaw = data[4] | (data[5] << 8);
 		uint16_t endAngleRaw = data[6] | (data[7] << 8);
 		uint16_t checksum = data[8] | (data[9] << 8);
 
         printf("Packet Header: 0x%X\r\n", packetHeader);
 		printf("Package Type: %d\r\n", packageType);
-		printf("Scan frequency: %d\r\n", scan_frequency);
+		printf("Scan frequency: %d Hz\r\n", scan_frequency);
 		printf("Sample Quantity: %d\r\n", sampleQuantity);
 
         // Calculate starting and ending angles
@@ -185,7 +185,16 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if (huart->Instance == USART3)
 	{
-		uartBuffer[bufferIndex++] = rxByte;
+		// Add the received byte to the buffer
+		if (bufferIndex < USART_BUFFER_SIZE)
+		{
+			uartBuffer[bufferIndex++] = rxByte;
+		}
+		else
+		{
+			printf("Buffer overflow! Clearing buffer.\r\n");
+			bufferIndex = 0; // Reset buffer to prevent overflow
+		}
 		printf("Received byte: 0x%X\r\n", rxByte);
 
 		// Synchronize to start bytes (0x55 0xAA)
@@ -198,7 +207,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		}
 
 		// Process message if start bytes + full response (26 bytes) received
-		if (bufferIndex >= 26 &&
+		if (bufferIndex >= 26 &&	// Minimum packet size (26 bytes for YDLIDAR)
 			uartBuffer[bufferIndex-1] != YLIDAR_START_BYTE2 &&
 			uartBuffer[bufferIndex] != YLIDAR_START_BYTE1)
 		{
