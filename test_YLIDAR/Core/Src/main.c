@@ -73,8 +73,17 @@
 		((bit) & 1 ? "TRUE" : 'FALSE')
 
 typedef struct {
+	uint16_t data;
+	uint16_t distance;
+	uint8_t interference_flag;
+	float corrected_angle;
+} YLIDARX2_sample_t;
+
+typedef struct {
 	uint8_t* data_buffer;
+	int data_length;
 	uint8_t sample_quantity;	// Samples in last received data
+	YLIDARX2_sample_t* samples;
 } h_YLIDARX2_t;
 
 h_YLIDARX2_t hYLIDAR;
@@ -121,6 +130,8 @@ void printData(uint8_t* data, int length)
 	for (int i=0; i < length; i++)
 	{
 		printf("0x%X ", data[i]);
+
+		if (i%10 == 0) printf("\r\n");
 	}
 
 	printf("\r\n");
@@ -150,7 +161,6 @@ void parseYLIDARData(uint8_t *data)
 #if (LOGS)
 		printf("Started parsing\r\n");
 #endif
-		printData(data, bufferIndex);
 
 		// Verify checksum
 		uint16_t checksum = data[8] | (data[9] << 8);
@@ -158,9 +168,13 @@ void parseYLIDARData(uint8_t *data)
 
 		if (calculatedChecksum != checksum)
 		{
+#if (LOGS)
 			printf("Checksum mismatch! Calculated: 0x%X, Received: 0x%X\r\n", calculatedChecksum, checksum);
+#endif
 			return;
 		}
+
+		printData(hYLIDAR.data_buffer, hYLIDAR.data_length);
 
 #if (LOGS)
 		// Extract fields in little-endian mode
@@ -189,25 +203,38 @@ void parseYLIDARData(uint8_t *data)
 
 		// Process sample data
 		printf("Sample Data:\r\n");
+
+		YLIDARX2_sample_t samples[hYLIDAR.sample_quantity];
+
 		for (int i = 0; i < hYLIDAR.sample_quantity; i++)
 		{
-			uint16_t sample = data[10 + i*2] | (data[11 + i*2] << 8);
-			uint16_t distance = (uint16_t)((sample)/4);
-			uint8_t interferenceFlag = (sample) & 0xF; // Upper 4 bits
+			samples[i].data = data[10 + i*2] | (data[11 + i*2] << 8);
+			samples[i].distance = (uint16_t)((samples[i].data) >> 2);
+			samples[i].interference_flag = (samples[i].data) & 0b11; // Lower 2 bits
 
 			// Compute the intermediate angle
 			float Angle_i = diffAngle * (float)((i - 1)/(hYLIDAR.sample_quantity-1)) + Angle_FSA;
 
 			// Compute angle correction
 			float AngCorrect = 0.0f;
-			if (distance > 0)
-			{
-				AngCorrect = atan(21.8f * (155.3f - distance)/(155.3f * distance) ) * (180.0f / PI);
-			}
-			float Corrected_Angle = Angle_i + AngCorrect;
 
-			printf("Sample %d: Distance = %d mm, Interference = %d, Corrected Angle = %.2f°\r\n",
-					i + 1, distance, interferenceFlag, Corrected_Angle);
+			if (samples[i].distance > 0)
+			{
+				AngCorrect = atan(21.8f * (155.3f - samples[i].distance)/(155.3f * samples[i].distance) ) * (180.0f / PI);
+			}
+
+			samples[i].corrected_angle = Angle_i + AngCorrect;
+		}
+
+		hYLIDAR.samples = samples;
+
+		for (int i=0; i < hYLIDAR.sample_quantity; i++)
+		{
+			printf("Sample %d: Distance = %d mm, ", i + 1, hYLIDAR.samples[i].distance);
+#if (LOGS)
+			printf("Interference = %d, ", hYLIDAR.samples[i].interference_flag);
+#endif
+			printf("Corrected Angle = %.2f°\r\n", hYLIDAR.samples[i].corrected_angle);
 		}
 	}
 	else
@@ -226,79 +253,48 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if (huart->Instance == USART3)
 	{
-		/*
-		// Add the received byte to the buffer
-		if (bufferIndex < USART_BUFFER_SIZE)
-		{
-			uartBuffer[bufferIndex++] = rxByte;
-		}
-		else
-		{
-			printf("Buffer overflow! Clearing buffer.\r\n");
-			bufferIndex = 0; // Reset buffer to prevent overflow
-		}
-		printf("Received byte: 0x%X\r\n", rxByte);
-
-		// Synchronize to start bytes (0x55 0xAA)
-		if (bufferIndex >= 2 &&
-			uartBuffer[0] != YLIDAR_START_BYTE2 &&
-			uartBuffer[1] != YLIDAR_START_BYTE1)
-		{
-			// Shift buffer to discard invalid start bytes
-			//memmove(uartBuffer, uartBuffer + 1, --bufferIndex);
-			// Reset the buffer for the next frame
-			bufferIndex = 0;
-			memset(uartBuffer, 0, sizeof(uartBuffer));
-		}
-
-		// Process message if start bytes + full response (26 bytes) received
-		if (bufferIndex >= YLIDAR_PACKET_HEADER_LENGTH)
-		{
-			parseYLIDARData(uartBuffer);
-
-			// Reset the buffer for the next frame
-			bufferIndex = 0;
-			memset(uartBuffer, 0, sizeof(uartBuffer));
-		}
-		 */
 		// Add received byte to the buffer
 		uartBuffer[bufferIndex++] = rxByte;
 
 		// Check for start bytes and process data only if a full packet is received
-		if (bufferIndex >= 2 &&
-				uartBuffer[0] == YLIDAR_START_BYTE2 &&
-				uartBuffer[1] == YLIDAR_START_BYTE1)
+		if (bufferIndex >= 2)
 		{
-			if (bufferIndex >= YLIDAR_PACKET_HEADER_LENGTH) // Minimum packet size
+			if(uartBuffer[0] == YLIDAR_START_BYTE2 && uartBuffer[1] == YLIDAR_START_BYTE1)
 			{
-				// Extract sample quantity
-				hYLIDAR.sample_quantity = uartBuffer[3];
-				uint16_t expectedLength = YLIDAR_PACKET_HEADER_LENGTH + (hYLIDAR.sample_quantity * 2);
-
-				// Process only when the full packet is received
-				if (bufferIndex >= expectedLength)
+				if (bufferIndex >= YLIDAR_PACKET_HEADER_LENGTH) // Minimum packet size
 				{
-					hYLIDAR.data_buffer = uartBuffer;
-					parseYLIDARData(hYLIDAR.data_buffer);
+					// Extract sample quantity
+					hYLIDAR.sample_quantity = uartBuffer[3];
+					uint16_t expectedLength = YLIDAR_PACKET_HEADER_LENGTH + (hYLIDAR.sample_quantity * 2);
 
-					// Reset the buffer
-					bufferIndex = 0;
-					memset(uartBuffer, 0, sizeof(uartBuffer));
+					// Process only when the full packet is received
+					if (bufferIndex >= expectedLength)
+					{
+						hYLIDAR.data_buffer = uartBuffer;
+						hYLIDAR.data_length = bufferIndex;
+
+						parseYLIDARData(hYLIDAR.data_buffer);
+
+						// Reset the buffer
+						bufferIndex = 0;
+						memset(uartBuffer, 0, sizeof(uartBuffer));
+					}
 				}
 			}
+			else
+			{
+				// Shift buffer to discard invalid start bytes
+				memmove(uartBuffer, uartBuffer + 1, --bufferIndex);
+			}
 		}
-		else if (bufferIndex >= 2 &&
-				uartBuffer[0] != YLIDAR_START_BYTE2 &&
-				uartBuffer[1] != YLIDAR_START_BYTE1)
-		{
-			// Shift buffer to discard invalid start bytes
-			memmove(uartBuffer, uartBuffer + 1, --bufferIndex);
-		}
-		else if (bufferIndex >= USART_BUFFER_SIZE)
+
+		if (bufferIndex >= USART_BUFFER_SIZE)
 		{
 			// Reset buffer if overflow occurs
 			bufferIndex = 0;
+#if (LOGS)
 			printf("Buffer overflow! Clearing buffer.\r\n");
+#endif
 		}
 
 		// Restart reception for the next byte
