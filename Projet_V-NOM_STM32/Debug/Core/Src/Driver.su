@@ -1,0 +1,4 @@
+../Core/Src/Driver.c:22:6:Motor_Init	16	static
+../Core/Src/Driver.c:42:6:Motor_SetMode	16	static
+../Core/Src/Driver.c:95:6:Motor_Speed	24	static
+../Core/Src/Driver.c:112:6:Motor_Stop	8	static
