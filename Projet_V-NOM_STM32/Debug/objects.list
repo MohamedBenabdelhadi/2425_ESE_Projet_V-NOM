@@ -1,3 +1,4 @@
+"./Core/Src/ADXL.o"
 "./Core/Src/Driver.o"
 "./Core/Src/YDLidar.o"
 "./Core/Src/adc.o"
