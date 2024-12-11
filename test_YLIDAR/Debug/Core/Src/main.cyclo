@@ -1,9 +1,6 @@
-../Core/Src/main.c:119:5:__io_putchar	1
-../Core/Src/main.c:126:6:printData	3
-../Core/Src/main.c:140:10:calculateChecksum	2
-../Core/Src/main.c:157:6:parseYLIDARData	8
-../Core/Src/main.c:252:6:HAL_UART_RxCpltCallback	8
-../Core/Src/main.c:310:6:HAL_UART_ErrorCallback	6
-../Core/Src/main.c:334:5:main	1
-../Core/Src/main.c:387:6:SystemClock_Config	3
-../Core/Src/main.c:437:6:Error_Handler	1
+../Core/Src/main.c:73:5:__io_putchar	1
+../Core/Src/main.c:85:6:HAL_UART_RxCpltCallback	2
+../Core/Src/main.c:101:6:HAL_UART_ErrorCallback	6
+../Core/Src/main.c:125:5:main	1
+../Core/Src/main.c:180:6:SystemClock_Config	3
+../Core/Src/main.c:230:6:Error_Handler	1

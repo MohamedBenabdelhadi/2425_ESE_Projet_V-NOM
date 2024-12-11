@@ -1,0 +1,4 @@
+../Core/Src/driver_YLIDARX2.c:23:6:YLIDARX2_PrintData	3
+../Core/Src/driver_YLIDARX2.c:49:10:YLIDARX2_CalculateChecksum	2
+../Core/Src/driver_YLIDARX2.c:66:6:YLIDARX2_ParseData	8
+../Core/Src/driver_YLIDARX2.c:146:6:YLIDARX2_UART_irq	7
