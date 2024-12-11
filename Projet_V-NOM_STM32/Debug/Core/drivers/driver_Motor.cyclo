@@ -1,0 +1,4 @@
+../Core/drivers/driver_Motor.c:22:6:Motor_Init	1
+../Core/drivers/driver_Motor.c:42:6:Motor_SetMode	11
+../Core/drivers/driver_Motor.c:95:6:Motor_Speed	3
+../Core/drivers/driver_Motor.c:112:6:Motor_Stop	1
