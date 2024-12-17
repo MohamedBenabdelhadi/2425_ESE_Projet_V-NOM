@@ -164,7 +164,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if (huart->Instance == USART2)
 	{
-		printf("UART2 Interrupt\r\n")
+		printf("UART2 Interrupt\r\n");
 		YLIDARX2_UART_irq(&hYLIDAR);
 
 		// Restart reception for the next byte
