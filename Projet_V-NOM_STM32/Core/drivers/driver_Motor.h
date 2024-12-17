@@ -6,7 +6,7 @@
 #define TIM_CHANNEL_1N 0x00000004U
 #define TIM_CHANNEL_2N 0x00000004U
 
-#define PWM_MAX 4000  // Valeur maximale pour le signal PWM
+#define PWM_MAX 65535  // Valeur maximale pour le signal PWM
 
 
 #define MOTOR1_FWD_PIN       GPIO_PIN_8   // FWD (TIM1 CH1)
@@ -22,7 +22,7 @@
 
 // Modes de fonctionnement du moteur
 typedef enum {
-    STANDBY_MODE,
+    STANDBY_MODE, // Stop a motor
     FORWARD_MODE,
     REVERSE_MODE,
     BRAKE_MODE
