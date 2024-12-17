@@ -62,7 +62,7 @@ main-build: Projet_V-NOM_STM32.elf secondary-outputs
 
 # Tool invocations
 Projet_V-NOM_STM32.elf Projet_V-NOM_STM32.map: $(OBJS) $(USER_OBJS) /home/oliver/Documents/3A/2425_ESE_Projet_V-NOM/Projet_V-NOM_STM32/STM32G431CBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Projet_V-NOM_STM32.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/oliver/Documents/3A/2425_ESE_Projet_V-NOM/Projet_V-NOM_STM32/STM32G431CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_V-NOM_STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "Projet_V-NOM_STM32.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/oliver/Documents/3A/2425_ESE_Projet_V-NOM/Projet_V-NOM_STM32/STM32G431CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_V-NOM_STM32.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

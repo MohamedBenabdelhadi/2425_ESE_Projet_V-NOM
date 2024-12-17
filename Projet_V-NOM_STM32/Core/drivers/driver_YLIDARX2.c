@@ -11,7 +11,8 @@
 #include <string.h>
 #include <math.h>
 
-#define LOGS 0
+#define LOGS 1
+#define DEBUG 1
 
 uint16_t bufferIndex = 0;
 uint8_t uartBuffer[USART_BUFFER_SIZE];
@@ -44,6 +45,21 @@ void YLIDARX2_PrintData(h_YLIDARX2_t * hYLIDAR)
 	}
 
 	printf("\r\n");
+}
+
+/**
+ * Debugging function to print samples
+ */
+void YLIDARX2_PrintSamples(h_YLIDARX2_t * hYLIDAR)
+{
+	for (int i=0; i < hYLIDAR->sample_quantity; i++)
+			{
+				printf("Sample %d: Distance = %d mm, ", i + 1, hYLIDAR->samples[i].distance);
+	#if (LOGS)
+				printf("Interference = %d, ", hYLIDAR->samples[i].interference_flag);
+	#endif
+				printf("Corrected Angle = %.2f°\r\n", hYLIDAR->samples[i].corrected_angle);
+			}
 }
 
 uint16_t YLIDARX2_CalculateChecksum(uint8_t *data, uint16_t length)
@@ -82,9 +98,9 @@ void YLIDARX2_ParseData(h_YLIDARX2_t * hYLIDAR)
 #endif
 			return;
 		}
-
+#if (DEBUG)
 		YLIDARX2_PrintData(hYLIDAR);
-
+#endif
 		uint16_t startAngleRaw = hYLIDAR->data_buffer[4] | (hYLIDAR->data_buffer[5] << 8);
 		uint16_t endAngleRaw = hYLIDAR->data_buffer[6] | (hYLIDAR->data_buffer[7] << 8);
 
@@ -97,10 +113,10 @@ void YLIDARX2_ParseData(h_YLIDARX2_t * hYLIDAR)
 
 		// Calculate the angle difference
 		float diffAngle = (Angle_LSA > Angle_FSA) ? (Angle_LSA - Angle_FSA) : (360.0f + Angle_LSA - Angle_FSA);
-
+#if (DEBUG)
 		// Process sample data
 		printf("Sample Data:\r\n");
-
+#endif
 		YLIDARX2_sample_t samples[hYLIDAR->sample_quantity];
 
 		for (int i = 0; i < hYLIDAR->sample_quantity; i++)
@@ -124,19 +140,13 @@ void YLIDARX2_ParseData(h_YLIDARX2_t * hYLIDAR)
 		}
 
 		hYLIDAR->samples = samples;
-
-		for (int i=0; i < hYLIDAR->sample_quantity; i++)
-		{
-			printf("Sample %d: Distance = %d mm, ", i + 1, hYLIDAR->samples[i].distance);
-#if (LOGS)
-			printf("Interference = %d, ", hYLIDAR->samples[i].interference_flag);
+#if (DEBUG)
+		YLIDARX2_PrintSamples(hYLIDAR);
 #endif
-			printf("Corrected Angle = %.2f°\r\n", hYLIDAR->samples[i].corrected_angle);
-		}
 	}
 	else
 	{
-		printf("Invalid start bytes!\r\n");
+		printf("YLIDAR X2: Invalid start bytes!\r\n");
 	}
 }
 
@@ -185,7 +195,7 @@ void YLIDARX2_UART_irq(h_YLIDARX2_t * hYLIDAR)
 		// Reset buffer if overflow occurs
 		bufferIndex = 0;
 #if (LOGS)
-		printf("Buffer overflow! Clearing buffer.\r\n");
+		printf("YLIDAR X2: Buffer overflow! Clearing buffer.\r\n");
 #endif
 	}
 }

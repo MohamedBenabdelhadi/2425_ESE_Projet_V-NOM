@@ -66,6 +66,7 @@ typedef struct {
 
 
 void YLIDARX2_PrintData(h_YLIDARX2_t * hYLIDAR);
+void YLIDARX2_PrintSamples(h_YLIDARX2_t * hYLIDAR);
 uint16_t YLIDARX2_CalculateChecksum(uint8_t *data, uint16_t length);
 void YLIDARX2_ParseData(h_YLIDARX2_t * hYLIDAR);
 void YLIDARX2_UART_irq(h_YLIDARX2_t * hYLIDAR);
