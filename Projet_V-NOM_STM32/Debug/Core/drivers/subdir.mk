@@ -5,21 +5,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/drivers/driver_ADXL343.c \
 ../Core/drivers/driver_GP2Y0A41SK0F.c \
 ../Core/drivers/driver_Motor.c \
-../Core/drivers/driver_ToF.c \
 ../Core/drivers/driver_YLIDARX2.c 
 
 OBJS += \
+./Core/drivers/driver_ADXL343.o \
 ./Core/drivers/driver_GP2Y0A41SK0F.o \
 ./Core/drivers/driver_Motor.o \
-./Core/drivers/driver_ToF.o \
 ./Core/drivers/driver_YLIDARX2.o 
 
 C_DEPS += \
+./Core/drivers/driver_ADXL343.d \
 ./Core/drivers/driver_GP2Y0A41SK0F.d \
 ./Core/drivers/driver_Motor.d \
-./Core/drivers/driver_ToF.d \
 ./Core/drivers/driver_YLIDARX2.d 
 
 
@@ -30,7 +30,7 @@ Core/drivers/%.o Core/drivers/%.su Core/drivers/%.cyclo: ../Core/drivers/%.c Cor
 clean: clean-Core-2f-drivers
 
 clean-Core-2f-drivers:
-	-$(RM) ./Core/drivers/driver_GP2Y0A41SK0F.cyclo ./Core/drivers/driver_GP2Y0A41SK0F.d ./Core/drivers/driver_GP2Y0A41SK0F.o ./Core/drivers/driver_GP2Y0A41SK0F.su ./Core/drivers/driver_Motor.cyclo ./Core/drivers/driver_Motor.d ./Core/drivers/driver_Motor.o ./Core/drivers/driver_Motor.su ./Core/drivers/driver_ToF.cyclo ./Core/drivers/driver_ToF.d ./Core/drivers/driver_ToF.o ./Core/drivers/driver_ToF.su ./Core/drivers/driver_YLIDARX2.cyclo ./Core/drivers/driver_YLIDARX2.d ./Core/drivers/driver_YLIDARX2.o ./Core/drivers/driver_YLIDARX2.su
+	-$(RM) ./Core/drivers/driver_ADXL343.cyclo ./Core/drivers/driver_ADXL343.d ./Core/drivers/driver_ADXL343.o ./Core/drivers/driver_ADXL343.su ./Core/drivers/driver_GP2Y0A41SK0F.cyclo ./Core/drivers/driver_GP2Y0A41SK0F.d ./Core/drivers/driver_GP2Y0A41SK0F.o ./Core/drivers/driver_GP2Y0A41SK0F.su ./Core/drivers/driver_Motor.cyclo ./Core/drivers/driver_Motor.d ./Core/drivers/driver_Motor.o ./Core/drivers/driver_Motor.su ./Core/drivers/driver_YLIDARX2.cyclo ./Core/drivers/driver_YLIDARX2.d ./Core/drivers/driver_YLIDARX2.o ./Core/drivers/driver_YLIDARX2.su
 
 .PHONY: clean-Core-2f-drivers
 

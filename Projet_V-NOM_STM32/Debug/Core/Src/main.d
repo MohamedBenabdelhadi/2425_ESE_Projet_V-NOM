@@ -39,7 +39,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Src/../drivers/driver_GP2Y0A41SK0F.h \
  ../Core/Src/../drivers/driver_YLIDARX2.h \
  ../Core/Src/../drivers/driver_YLIDARX2.h \
- ../Core/Src/../drivers/driver_ToF.h ../Core/Inc/ADXL.h
+ ../Core/Src/../drivers/driver_ADXL343.h
 ../Core/Inc/main.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
@@ -85,5 +85,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Src/../drivers/driver_GP2Y0A41SK0F.h:
 ../Core/Src/../drivers/driver_YLIDARX2.h:
 ../Core/Src/../drivers/driver_YLIDARX2.h:
-../Core/Src/../drivers/driver_ToF.h:
-../Core/Inc/ADXL.h:
+../Core/Src/../drivers/driver_ADXL343.h:
