@@ -6,9 +6,6 @@
 #define TIM_CHANNEL_1N 0x00000004U
 #define TIM_CHANNEL_2N 0x00000004U
 
-#define MOTOR1_SPEED_INCREASE_RATE 1
-#define MOTOR2_SPEED_INCREASE_RATE 1
-
 // Motors pin attribution
 #define MOTOR1_FWD_PIN       GPIO_PIN_8   // FWD (TIM1 CH1)
 #define MOTOR1_FWD_PORT      GPIOA        // Port FWD
@@ -36,8 +33,10 @@ typedef struct {
 	int speed2;          // Target speed for motor 2
 
 	// Private variables for speed variation
-	int current_speed1;      // Current speed for motor 1
-	int current_speed2;      // Current speed for motor 2
+	int current_speed1;       // Current speed for motor 1
+	int current_speed2;       // Current speed for motor 2
+	int speed_increase_rate1; // Rate of speed increase for motor 1
+	int speed_increase_rate2; // Rate of speed increase for motor 2
 
 	TIM_HandleTypeDef * htim; // Timer handle for PWM control
 } h_Motor_t;
