@@ -35,17 +35,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 000012ff  00000000  00000000  000332c0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00023d25  00000000  00000000  000345bf  2**0
+ 16 .debug_macro  00023d1f  00000000  00000000  000345bf  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0001da91  00000000  00000000  000582e4  2**0
+ 17 .debug_line   0001da91  00000000  00000000  000582de  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000e1c94  00000000  00000000  00075d75  2**0
+ 18 .debug_str    000e1c8d  00000000  00000000  00075d6f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  00157a09  2**0
+ 19 .comment      00000043  00000000  00000000  001579fc  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00007e0c  00000000  00000000  00157a4c  2**2
+ 20 .debug_frame  00007e0c  00000000  00000000  00157a40  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000079  00000000  00000000  0015f858  2**0
+ 21 .debug_line_str 00000079  00000000  00000000  0015f84c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -4253,11 +4253,11 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
 	...
 
 080020d0 <GP2Y0A41SK0F_Init>:
-#include <stdio.h>
 
-#define DEBUG 0
-
-
+/**
+ * @brief Initialize the GP2Y0A41SK0F sensors.
+ * @param htof Pointer to the GP2Y0A41SK0F handle structure.
+ */
 void GP2Y0A41SK0F_Init(h_GP2Y0A41SK0F_t * htof) {
  80020d0:	b580      	push	{r7, lr}
  80020d2:	b082      	sub	sp, #8
@@ -4319,8 +4319,10 @@ void GP2Y0A41SK0F_Init(h_GP2Y0A41SK0F_t * htof) {
  8002128:	04300002 	.word	0x04300002
 
 0800212c <GP2Y0A41SK0F_Read_ToF1>:
-
-
+/**
+ * @brief Read raw ADC value from ToF sensor 1.
+ * @param htof Pointer to the GP2Y0A41SK0F handle structure.
+ */
 void GP2Y0A41SK0F_Read_ToF1(h_GP2Y0A41SK0F_t * htof)
 {
  800212c:	b580      	push	{r7, lr}
@@ -4382,7 +4384,10 @@ void GP2Y0A41SK0F_Read_ToF1(h_GP2Y0A41SK0F_t * htof)
 
 08002192 <GP2Y0A41SK0F_Read_ToF2>:
 
-
+/**
+ * @brief Read raw ADC value from ToF sensor 2.
+ * @param htof Pointer to the GP2Y0A41SK0F handle structure.
+ */
 void GP2Y0A41SK0F_Read_ToF2(h_GP2Y0A41SK0F_t * htof) {
  8002192:	b580      	push	{r7, lr}
  8002194:	b082      	sub	sp, #8
@@ -4441,8 +4446,8 @@ void GP2Y0A41SK0F_Read_ToF2(h_GP2Y0A41SK0F_t * htof) {
  80021f6:	bd80      	pop	{r7, pc}
 
 080021f8 <GP2Y0A41SK0F_get_distance>:
- * 	- It's expected to use a 12 bits ADC as an imput
- * Source:
+ * 	- It expects to use a 12 bits ADC as an imput
+ * @wource:
  * 	- https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y0a41sk0f_demo/sharp_gp2y0a41sk0f_demo.ino
  */
 void GP2Y0A41SK0F_get_distance(h_GP2Y0A41SK0F_t * htof)
