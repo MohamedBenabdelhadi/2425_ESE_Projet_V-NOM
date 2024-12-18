@@ -319,9 +319,10 @@ int main(void)
 	{
 		/* ToF test */
 		GP2Y0A41SK0F_get_distance(&hTof);
-		printf("ToF1 distance: %d, ToF2 distance: %d", hTof.distance_tof1, hTof.distance_tof2);
+		printf("ToF1 distance: %d mm, ToF2 distance: %d mm\r\n", hTof.distance_tof1, hTof.distance_tof2);
 		/* Motors test */
-		printf("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
+		Motor_SetSpeed_percent(&hMotors, hTof.distance_tof1, hTof.distance_tof1);
+		//printf("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
 		Motor_UpdateSpeed(&hMotors);
 
 		/* USER CODE END WHILE */

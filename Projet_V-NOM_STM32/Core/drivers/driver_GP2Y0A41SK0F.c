@@ -10,9 +10,11 @@
 #include "gpio.h"
 #include <stdio.h>
 
-#define DEBUG 1
 
-
+/**
+ * @brief Initialize the GP2Y0A41SK0F sensors.
+ * @param htof Pointer to the GP2Y0A41SK0F handle structure.
+ */
 void GP2Y0A41SK0F_Init(h_GP2Y0A41SK0F_t * htof) {
 	// The ADC used is wired on the board so it's ADC1
 	htof->hadc = &hadc1;
@@ -22,38 +24,29 @@ void GP2Y0A41SK0F_Init(h_GP2Y0A41SK0F_t * htof) {
 	}
 
 	// Channel Config ADC ToF1
-	htof->cConfig_tof1->Channel = ADC_CHANNEL_3;
-	htof->cConfig_tof1->Rank = ADC_REGULAR_RANK_1;
-	htof->cConfig_tof1->SamplingTime = ADC_SAMPLETIME_47CYCLES_5;
+	htof->cConfig_tof1.Channel = ADC_CHANNEL_3;
+	htof->cConfig_tof1.Rank = ADC_REGULAR_RANK_1;
+	htof->cConfig_tof1.SamplingTime = ADC_SAMPLETIME_47CYCLES_5;
 
 	// Channel Config ADC ToF2
-	htof->cConfig_tof2->Channel = ADC_CHANNEL_1;
-	htof->cConfig_tof2->Rank = ADC_REGULAR_RANK_1;
-	htof->cConfig_tof2->SamplingTime = ADC_SAMPLETIME_47CYCLES_5;
+	htof->cConfig_tof2.Channel = ADC_CHANNEL_1;
+	htof->cConfig_tof2.Rank = ADC_REGULAR_RANK_1;
+	htof->cConfig_tof2.SamplingTime = ADC_SAMPLETIME_47CYCLES_5;
 }
 
-
+/**
+ * @brief Read raw ADC value from ToF sensor 1.
+ * @param htof Pointer to the GP2Y0A41SK0F handle structure.
+ */
 void GP2Y0A41SK0F_Read_ToF1(h_GP2Y0A41SK0F_t * htof)
 {
-#if (DEBUG)
-		printf("HAL_ADC_ConfigChannel ToF1\r\n");
-#endif
-	if (HAL_ADC_ConfigChannel(htof->hadc, htof->cConfig_tof1) != HAL_OK) {
-#if (DEBUG)
-		printf("GP2Y0A41SK0F error: HAL_ADC_ConfigChannel failure\r\n");
-#endif
+	if (HAL_ADC_ConfigChannel(htof->hadc, &htof->cConfig_tof1) != HAL_OK) {
 		Error_Handler();
 	}
 
-#if (DEBUG)
-		printf("HAL_ADC_Start ToF1\r\n");
-#endif
 	HAL_ADC_Start(htof->hadc);
 
 	if (HAL_ADC_PollForConversion(htof->hadc, HAL_MAX_DELAY) != HAL_OK) {
-#if (DEBUG)
-		printf("GP2Y0A41SK0F error: HAL_ADC_PollForConversion failure\r\n");
-#endif
 		Error_Handler();
 	}
 
@@ -61,24 +54,17 @@ void GP2Y0A41SK0F_Read_ToF1(h_GP2Y0A41SK0F_t * htof)
 	HAL_ADC_Stop(htof->hadc);
 }
 
-
+/**
+ * @brief Read raw ADC value from ToF sensor 2.
+ * @param htof Pointer to the GP2Y0A41SK0F handle structure.
+ */
 void GP2Y0A41SK0F_Read_ToF2(h_GP2Y0A41SK0F_t * htof) {
-	if (HAL_ADC_ConfigChannel(htof->hadc, htof->cConfig_tof2) != HAL_OK) {
-#if (DEBUG)
-		printf("GP2Y0A41SK0F error: HAL_ADC_ConfigChannel failure\r\n");
-#endif
+	if (HAL_ADC_ConfigChannel(htof->hadc, &htof->cConfig_tof2) != HAL_OK) {
 		Error_Handler();
 	}
-
-#if (DEBUG)
-		printf("HAL_ADC_Start ToF2\r\n");
-#endif
 	HAL_ADC_Start(htof->hadc);
 
 	if (HAL_ADC_PollForConversion(htof->hadc, HAL_MAX_DELAY) != HAL_OK) {
-#if (DEBUG)
-		printf("GP2Y0A41SK0F error: HAL_ADC_PollForConversion failure\r\n");
-#endif
 		Error_Handler();
 	}
 
@@ -87,10 +73,16 @@ void GP2Y0A41SK0F_Read_ToF2(h_GP2Y0A41SK0F_t * htof) {
 }
 
 /**
- * Compute the measured distance by the sensor.
- * Warning:
- * 	- It's expected to use a 12 bits ADC as an imput
- * Source:
+ * @brief Compute distances for both ToF sensors based on ADC readings.
+ *
+ * This function converts ADC values to distances in millimeters using a formula
+ * derived from the sensor datasheet.
+ *
+ * @param htof Pointer to the GP2Y0A41SK0F handle structure.
+ *
+ * @warning:
+ * 	- It expects to use a 12 bits ADC as an imput
+ * @wource:
  * 	- https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y0a41sk0f_demo/sharp_gp2y0a41sk0f_demo.ino
  */
 void GP2Y0A41SK0F_get_distance(h_GP2Y0A41SK0F_t * htof)
@@ -104,13 +96,7 @@ void GP2Y0A41SK0F_get_distance(h_GP2Y0A41SK0F_t * htof)
 	const float b = 0.03875;
 	float Vo = 0;
 
-#if (DEBUG)
-		printf("Reading ToF1\r\n");
-#endif
 	GP2Y0A41SK0F_Read_ToF1(htof);
-#if (DEBUG)
-		printf("Reading ToF2\r\n");
-#endif
 	GP2Y0A41SK0F_Read_ToF2(htof);
 
 	Vo = (5.0 * htof->adc_val_tof1) / GP2Y0A41SK0F_ADC_MAX_VALUE;
