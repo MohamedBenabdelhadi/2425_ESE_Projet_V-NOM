@@ -8,6 +8,9 @@
 #include "driver_GP2Y0A41SK0F.h"
 #include "adc.h"
 #include "gpio.h"
+#include <stdio.h>
+
+#define DEBUG 1
 
 
 void GP2Y0A41SK0F_Init(h_GP2Y0A41SK0F_t * htof) {
@@ -30,13 +33,27 @@ void GP2Y0A41SK0F_Init(h_GP2Y0A41SK0F_t * htof) {
 }
 
 
-void GP2Y0A41SK0F_Read_ToF1(h_GP2Y0A41SK0F_t * htof) {
+void GP2Y0A41SK0F_Read_ToF1(h_GP2Y0A41SK0F_t * htof)
+{
+#if (DEBUG)
+		printf("HAL_ADC_ConfigChannel ToF1\r\n");
+#endif
 	if (HAL_ADC_ConfigChannel(htof->hadc, htof->cConfig_tof1) != HAL_OK) {
+#if (DEBUG)
+		printf("GP2Y0A41SK0F error: HAL_ADC_ConfigChannel failure\r\n");
+#endif
 		Error_Handler();
 	}
 
+#if (DEBUG)
+		printf("HAL_ADC_Start ToF1\r\n");
+#endif
 	HAL_ADC_Start(htof->hadc);
+
 	if (HAL_ADC_PollForConversion(htof->hadc, HAL_MAX_DELAY) != HAL_OK) {
+#if (DEBUG)
+		printf("GP2Y0A41SK0F error: HAL_ADC_PollForConversion failure\r\n");
+#endif
 		Error_Handler();
 	}
 
@@ -47,11 +64,21 @@ void GP2Y0A41SK0F_Read_ToF1(h_GP2Y0A41SK0F_t * htof) {
 
 void GP2Y0A41SK0F_Read_ToF2(h_GP2Y0A41SK0F_t * htof) {
 	if (HAL_ADC_ConfigChannel(htof->hadc, htof->cConfig_tof2) != HAL_OK) {
+#if (DEBUG)
+		printf("GP2Y0A41SK0F error: HAL_ADC_ConfigChannel failure\r\n");
+#endif
 		Error_Handler();
 	}
 
+#if (DEBUG)
+		printf("HAL_ADC_Start ToF2\r\n");
+#endif
 	HAL_ADC_Start(htof->hadc);
+
 	if (HAL_ADC_PollForConversion(htof->hadc, HAL_MAX_DELAY) != HAL_OK) {
+#if (DEBUG)
+		printf("GP2Y0A41SK0F error: HAL_ADC_PollForConversion failure\r\n");
+#endif
 		Error_Handler();
 	}
 
@@ -77,7 +104,13 @@ void GP2Y0A41SK0F_get_distance(h_GP2Y0A41SK0F_t * htof)
 	const float b = 0.03875;
 	float Vo = 0;
 
+#if (DEBUG)
+		printf("Reading ToF1\r\n");
+#endif
 	GP2Y0A41SK0F_Read_ToF1(htof);
+#if (DEBUG)
+		printf("Reading ToF2\r\n");
+#endif
 	GP2Y0A41SK0F_Read_ToF2(htof);
 
 	Vo = (5.0 * htof->adc_val_tof1) / GP2Y0A41SK0F_ADC_MAX_VALUE;

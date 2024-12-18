@@ -135,6 +135,8 @@ h_YLIDARX2_t hYLIDAR;
 // Motors
 h_Motor_t hMotors;
 
+// ToF sensors
+h_GP2Y0A41SK0F_t hTof;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -166,7 +168,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if (huart->Instance == USART2)
 	{
-		printf("UART2: 0x%X\r\n", rxByte);
+		//printf("UART2: 0x%X\r\n", rxByte);
 		YLIDARX2_UART_irq(&hYLIDAR);
 
 		// Restart reception for the next byte
@@ -290,19 +292,23 @@ int main(void)
 
 	// Motor initialization
 	Motor_Init(&hMotors, &htim1);
-	hMotors.mode_mot1 = REVERSE_MODE;
-	hMotors.mode_mot2 = REVERSE_MODE;
+	hMotors.mode_mot1 = FORWARD_MODE;
+	hMotors.mode_mot2 = FORWARD_MODE;
 	Motor_SetMode(&hMotors);
 	Motor_SetSpeed_percent(&hMotors, 90.0, 90.0);
 
-	/*
-	// YLIDAR X2 Initialization
+	/* YLIDAR X2 Initialization */
 	printf("YLIDAR X2 Initialization...\r\n");
 	hYLIDAR.uart_buffer = &rxByte;
 	// Start UART reception in interrupt mode (1 byte at a time)
 	HAL_UART_Receive_IT(&huart2, &rxByte, 1);
 	printf("YLIDAR X2 Initialization Successful!\r\n");
-	*/
+
+	// ToF sensors Initialization
+	printf("GP2Y0A41SK0F Initialization...\r\n");
+	GP2Y0A41SK0F_Init(&hTof);
+	printf("GP2Y0A41SK0F Initialization Successful!\r\n");
+
 	// ADXL343 Initialization
 	//init_ADXL();
 	/* USER CODE END 2 */
@@ -311,8 +317,13 @@ int main(void)
 	/* USER CODE BEGIN WHILE */
 	while (1)
 	{
+		/* ToF test */
+		GP2Y0A41SK0F_get_distance(&hTof);
+		printf("ToF1 distance: %d, ToF2 distance: %d", hTof.distance_tof1, hTof.distance_tof2);
+		/* Motors test */
 		printf("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
 		Motor_UpdateSpeed(&hMotors);
+
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */

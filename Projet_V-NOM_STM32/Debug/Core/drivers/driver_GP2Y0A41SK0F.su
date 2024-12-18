@@ -1,4 +1,4 @@
-../Core/drivers/driver_GP2Y0A41SK0F.c:13:6:GP2Y0A41SK0F_Init	16	static
-../Core/drivers/driver_GP2Y0A41SK0F.c:33:6:GP2Y0A41SK0F_Read_ToF1	16	static
-../Core/drivers/driver_GP2Y0A41SK0F.c:48:6:GP2Y0A41SK0F_Read_ToF2	16	static
-../Core/drivers/driver_GP2Y0A41SK0F.c:69:6:GP2Y0A41SK0F_get_distance	32	static
+../Core/drivers/driver_GP2Y0A41SK0F.c:16:6:GP2Y0A41SK0F_Init	16	static
+../Core/drivers/driver_GP2Y0A41SK0F.c:36:6:GP2Y0A41SK0F_Read_ToF1	16	static
+../Core/drivers/driver_GP2Y0A41SK0F.c:65:6:GP2Y0A41SK0F_Read_ToF2	16	static
+../Core/drivers/driver_GP2Y0A41SK0F.c:96:6:GP2Y0A41SK0F_get_distance	32	static
