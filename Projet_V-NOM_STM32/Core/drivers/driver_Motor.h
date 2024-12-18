@@ -1,5 +1,5 @@
-#ifndef DRIVER_H
-#define DRIVER_H
+#ifndef DRIVER_MOTOR_H
+#define DRIVER_MOTOR_H
 
 #include "stm32g4xx_hal.h"
 
@@ -23,29 +23,31 @@
 
 // Modes de fonctionnement du moteur
 typedef enum {
-    STANDBY_MODE, // Stop a motor
-    FORWARD_MODE,
-    REVERSE_MODE,
-    BRAKE_MODE
+	STANDBY_MODE, // Stops a motor
+	FORWARD_MODE,
+	REVERSE_MODE,
+	BRAKE_MODE
 } MotorMode;
 
 typedef struct {
-	MotorMode mode_mot1;
-	MotorMode mode_mot2;
-	int speed1;
-	int speed2;
+	MotorMode mode_mot1; // Operating mode for motor 1
+	MotorMode mode_mot2; // Operating mode for motor 2
+	int speed1;          // Target speed for motor 1
+	int speed2;          // Target speed for motor 2
 
 	// Private variables for speed variation
-	int current_speed1;
-	int current_speed2;
+	int current_speed1;      // Current speed for motor 1
+	int current_speed2;      // Current speed for motor 2
 
-	TIM_HandleTypeDef * htim; // Timer used for PWM
+	TIM_HandleTypeDef * htim; // Timer handle for PWM control
 } h_Motor_t;
 
 
-// Déclaration des fonctions
-void Motor_Init(void);
-void Motor_SetMode(uint8_t motor, MotorMode mode);
-void Motor_Speed(uint8_t motor);
-void Motor_StandbyAll(void);
-#endif // DRIVER_H
+// Function prototypes
+void Motor_Init(h_Motor_t *hMotors, TIM_HandleTypeDef *htim);
+void Motor_SetMode(h_Motor_t *hMotors);
+void Motor_SetSpeed_percent(h_Motor_t *hMotor, float percent1, float percent2);
+void Motor_Stop(h_Motor_t *hMotor);
+void Motor_UpdateSpeed(h_Motor_t *hMotor);
+
+#endif // DRIVER_MOTOR_H

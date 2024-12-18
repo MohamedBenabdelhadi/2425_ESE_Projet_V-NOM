@@ -134,6 +134,9 @@ char jumbo_logo_msg[] = "\r\n"
 uint8_t rxByte; // For single-byte reception
 h_YLIDARX2_t hYLIDAR;
 
+// Motors
+h_Motor_t hMotor;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -288,7 +291,7 @@ int main(void)
 	printf("%s", big_logo_msg);
 
 	// Motor initialization
-	Motor_Init();
+	Motor_Init(&hMotor, &htim1);
 
 	// YLIDAR X2 Initialization
 	printf("YLIDAR X2 Initialization...\r\n");
@@ -305,6 +308,7 @@ int main(void)
 	/* USER CODE BEGIN WHILE */
 	while (1)
 	{
+		Motor_UpdateSpeed(&hMotor);
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
