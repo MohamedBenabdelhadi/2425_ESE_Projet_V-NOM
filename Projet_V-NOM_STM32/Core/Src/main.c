@@ -287,6 +287,9 @@ int main(void)
 	printf("\r\n*** Waking up V-NOM ***\r\n");
 	printf("%s", big_logo_msg);
 
+	// Motor initialization
+	Motor_Init();
+
 	// YLIDAR X2 Initialization
 	printf("YLIDAR X2 Initialization...\r\n");
 	hYLIDAR.uart_buffer = &rxByte;

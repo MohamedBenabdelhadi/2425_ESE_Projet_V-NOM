@@ -6,9 +6,10 @@
 #define TIM_CHANNEL_1N 0x00000004U
 #define TIM_CHANNEL_2N 0x00000004U
 
-#define PWM_MAX 65535  // Valeur maximale pour le signal PWM
+#define MOTOR1_SPEED_INCREASE_RATE 1
+#define MOTOR2_SPEED_INCREASE_RATE 1
 
-
+// Motors pin attribution
 #define MOTOR1_FWD_PIN       GPIO_PIN_8   // FWD (TIM1 CH1)
 #define MOTOR1_FWD_PORT      GPIOA        // Port FWD
 #define MOTOR1_REV_PIN       GPIO_PIN_13  // REV (TIM1 CH1N)
@@ -27,6 +28,19 @@ typedef enum {
     REVERSE_MODE,
     BRAKE_MODE
 } MotorMode;
+
+typedef struct {
+	MotorMode mode_mot1;
+	MotorMode mode_mot2;
+	int speed1;
+	int speed2;
+
+	// Private variables for speed variation
+	int current_speed1;
+	int current_speed2;
+
+	TIM_HandleTypeDef * htim; // Timer used for PWM
+} h_Motor_t;
 
 
 // Déclaration des fonctions
