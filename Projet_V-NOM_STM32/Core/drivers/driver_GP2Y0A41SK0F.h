@@ -9,6 +9,7 @@
 #include <inttypes.h>
 #include "adc.h"
 
+#define GP2Y0A41SK0F_ADC_VCC 5.0
 #define GP2Y0A41SK0F_ADC_BITS 12 ///< Number of ADC bits used.
 #define GP2Y0A41SK0F_ADC_MAX_VALUE ((1 << GP2Y0A41SK0F_ADC_BITS) - 1) ///< Maximum ADC value.
 

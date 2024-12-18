@@ -11,7 +11,7 @@
 #include <string.h>
 #include <math.h>
 
-#define LOGS 1
+#define LOGS 0
 #define DEBUG 1
 
 uint16_t bufferIndex = 0;

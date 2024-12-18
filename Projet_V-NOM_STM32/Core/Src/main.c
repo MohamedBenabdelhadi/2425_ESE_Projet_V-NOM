@@ -310,7 +310,7 @@ int main(void)
 	printf("GP2Y0A41SK0F Initialization Successful!\r\n");
 
 	// ADXL343 Initialization
-	//init_ADXL();
+	init_ADXL();
 	/* USER CODE END 2 */
 
 	/* Infinite loop */

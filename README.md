@@ -153,11 +153,13 @@ git push origin <branch_name> --force
 ```
 ## Test Hardware :
 Composants fonctionnels:
-1. UART1
+1. UART1 (printf)
 2. Quartz
 3. Switch*2
-4. Connecteur lidar
-5. Driver Moteur
+4. Connecteur lidar et Lidar
+5. Driver Moteurs
+6. USART2 (YDLIDAR X2)
+7. Capteurs ToF
 
 Composants non fonctionnels:
 1. Leds (inversés)

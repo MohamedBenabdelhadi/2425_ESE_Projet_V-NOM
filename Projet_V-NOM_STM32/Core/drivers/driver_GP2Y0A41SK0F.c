@@ -82,6 +82,7 @@ void GP2Y0A41SK0F_Read_ToF2(h_GP2Y0A41SK0F_t * htof) {
  *
  * @warning:
  * 	- It expects to use a 12 bits ADC as an imput
+ * 	- it ranges from 35 mm to 400 mm
  * @wource:
  * 	- https://github.com/sharpsensoruser/sharp-sensor-demos/blob/master/sharp_gp2y0a41sk0f_demo/sharp_gp2y0a41sk0f_demo.ino
  */
@@ -91,15 +92,15 @@ void GP2Y0A41SK0F_get_distance(h_GP2Y0A41SK0F_t * htof)
 	// by approximating datasheet graph
 	// using equation of form: y = a/x + b
 	// and two (x,y) points on the graph:
-	// (60mm, 2.02V) and (300mm, 0.435V)
-	const float a = 118.875;
-	const float b = 0.03875;
+	// (35mm, 3V) and (400mm, 0.3V)
+	const float a = 120;
+	const float b = 0.03;
 	float Vo = 0;
 
 	GP2Y0A41SK0F_Read_ToF1(htof);
 	GP2Y0A41SK0F_Read_ToF2(htof);
 
-	Vo = (5.0 * htof->adc_val_tof1) / GP2Y0A41SK0F_ADC_MAX_VALUE;
+	Vo = (GP2Y0A41SK0F_ADC_VCC * htof->adc_val_tof1) / GP2Y0A41SK0F_ADC_MAX_VALUE;
 
 	if ( Vo > b ) {
 		// Distance measured by ToF1 in mm
