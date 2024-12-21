@@ -199,7 +199,26 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 	}
 }
 
-void init_ADXL(void)
+void test_YLIDARX2(void)
+{
+	printf("YLIDAR X2 Initialization...\r\n");
+		hYLIDAR.uart_buffer = &rxByte;
+		// Start UART reception in interrupt mode (1 byte at a time)
+		HAL_UART_Receive_IT(&huart2, &rxByte, 1);
+		printf("YLIDAR X2 Initialization Successful!\r\n");
+}
+
+void test_Motors(void)
+{
+	Motor_Init(&hMotors, &htim1);
+
+	hMotors.mode_mot1 = FORWARD_MODE;
+		hMotors.mode_mot2 = FORWARD_MODE;
+		Motor_SetMode(&hMotors);
+		Motor_SetSpeed_percent(&hMotors, 90.0, 90.0);
+}
+
+void test_ADXL(void)
 {
 	printf("\r\nInitializing ADXL...\r\n");
 
@@ -248,6 +267,127 @@ void init_ADXL(void)
 	ADXL_Standby(ON);
 }
 
+//////////////////// ADXL343 ////////////////////
+/*
+ * https://controllerstech.com/adxl345-accelerometer-using-stm32/
+ */
+// ADXL343 Registers
+#define ADXL343_DEVICE_ID_REG 0x00
+
+/**
+ * @brief Sends a command and data to the ADXL343 over SPI.
+ *
+ * @param address The address of the register to write to.
+ * @param data The data to write to the register.
+ */
+void spiWrite(uint8_t address, uint8_t *data, uint16_t length)
+{
+    HAL_StatusTypeDef status;
+
+    // Set the write command (clear MSB of the register address)
+    uint8_t writeAddress = address & 0x7F;
+
+    // Pull CS low to start the SPI transaction
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+
+    // Transmit the address
+    status = HAL_SPI_Transmit(&hspi1, &writeAddress, 1, HAL_MAX_DELAY);
+    if (status != HAL_OK)
+    {
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high on error
+        printf("SPI Write Error during address transmission!\n");
+        Error_Handler();
+    }
+
+    // Transmit the data
+    status = HAL_SPI_Transmit(&hspi1, data, length, HAL_MAX_DELAY);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high after transaction
+
+    if (status != HAL_OK)
+    {
+        printf("SPI Write Error during data transmission!\n");
+        Error_Handler();
+    }
+}
+
+
+/**
+ * @brief Reads data from the ADXL343 over SPI.
+ *
+ * @param address The address of the register to read from.
+ * @return uint8_t The data read from the register.
+ */
+void spiRead(uint8_t address, uint8_t *data, uint16_t length)
+{
+    HAL_StatusTypeDef status;
+
+    // Set the read command (set MSB of the register address)
+    uint8_t readAddress = address | 0x80;
+
+    // Pull CS low to start the SPI transaction
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+
+    // Transmit the address
+    status = HAL_SPI_Transmit(&hspi1, &readAddress, 1, HAL_MAX_DELAY);
+    if (status != HAL_OK)
+    {
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high on error
+        printf("SPI Read Error during address transmission!\n");
+        Error_Handler();
+    }
+
+    // Receive the data
+    status = HAL_SPI_Receive(&hspi1, data, length, HAL_MAX_DELAY);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high after transaction
+
+    if (status != HAL_OK)
+    {
+        printf("SPI Read Error during data reception!\n");
+        Error_Handler();
+    }
+}
+
+
+/**
+ * @brief Writes a value to a specified register on the ADXL343.
+ *
+ * @param reg The register address to write to.
+ * @param value The value to write to the register.
+ */
+void ADXL343_writeRegister(uint8_t reg, uint8_t value) {
+    // Set the write command by clearing the MSB of the register address
+    uint8_t writeAddress = reg & 0x7F;
+    spiWrite(writeAddress, value);
+}
+
+/**
+ * @brief Reads a value from a specified register on the ADXL343.
+ *
+ * @param reg The register address to read from.
+ * @return uint8_t The value read from the register.
+ */
+uint8_t ADXL343_readRegister(uint8_t reg) {
+    // Set the read command by setting the MSB of the register address
+    //uint8_t readAddress = reg | 0x80;
+	uint8_t readAddress = reg & ~(0x80);
+    return spiRead(readAddress);
+}
+
+/**
+ * @brief Tests communication by reading the Device ID register.
+ */
+void testDeviceID(void) {
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high
+
+    uint8_t deviceID = ADXL343_readRegister(ADXL343_DEVICE_ID_REG);
+
+    if (deviceID == 0xE5) { // Device ID for ADXL343
+        printf("ADXL343 detected successfully! Device ID: 0x%02X\n", deviceID);
+    } else {
+        printf("Failed to detect ADXL343. Read Device ID: 0x%02X\n", deviceID);
+    }
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -290,40 +430,38 @@ int main(void)
 	printf("\r\n*** Waking up V-NOM ***\r\n");
 	printf("%s", jumbo_logo_msg);
 
-	// Motor initialization
-	Motor_Init(&hMotors, &htim1);
-	hMotors.mode_mot1 = FORWARD_MODE;
-	hMotors.mode_mot2 = FORWARD_MODE;
-	Motor_SetMode(&hMotors);
-	Motor_SetSpeed_percent(&hMotors, 90.0, 90.0);
+	/* Motors test & initialization *
+	test_Motors();
+	*/
 
-	/* YLIDAR X2 Initialization */
-	printf("YLIDAR X2 Initialization...\r\n");
-	hYLIDAR.uart_buffer = &rxByte;
-	// Start UART reception in interrupt mode (1 byte at a time)
-	HAL_UART_Receive_IT(&huart2, &rxByte, 1);
-	printf("YLIDAR X2 Initialization Successful!\r\n");
+	/* YLIDAR X2 test & Initialization *
+	test_YLIDARX2();
+	*/
 
-	// ToF sensors Initialization
+	/* ToF sensors Initialization *
 	printf("GP2Y0A41SK0F Initialization...\r\n");
 	GP2Y0A41SK0F_Init(&hTof);
 	printf("GP2Y0A41SK0F Initialization Successful!\r\n");
+	*/
 
-	// ADXL343 Initialization
-	init_ADXL();
+	/* ADXL343 Initialization */
+	//test_ADXL();
+	testDeviceID();
+
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	while (1)
 	{
-		/* ToF test */
+		/* ToF test *
 		GP2Y0A41SK0F_get_distance(&hTof);
 		printf("ToF1 distance: %d mm, ToF2 distance: %d mm\r\n", hTof.distance_tof1, hTof.distance_tof2);
-		/* Motors test */
+		/* Motors test *
 		Motor_SetSpeed_percent(&hMotors, hTof.distance_tof1, hTof.distance_tof1);
 		//printf("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
 		Motor_UpdateSpeed(&hMotors);
+		*/
 
 		/* USER CODE END WHILE */
 

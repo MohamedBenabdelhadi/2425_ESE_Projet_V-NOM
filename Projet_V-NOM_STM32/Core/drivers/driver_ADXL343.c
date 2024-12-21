@@ -40,7 +40,7 @@ static void writeRegister(uint8_t address, uint8_t value)
  * @num		: number of bytes to be written
  */
 
-static void readRegister(uint8_t address,uint8_t * value, uint8_t num)
+static void readRegister(uint8_t address, uint8_t * value, uint8_t num)
 {
 	if (address > 63)
 		address = 63;
@@ -58,7 +58,6 @@ static void readRegister(uint8_t address,uint8_t * value, uint8_t num)
 	HAL_SPI_Transmit(&SPIhandler,&address,1,10);
 	HAL_SPI_Receive(&SPIhandler,value,num,10);
 	HAL_GPIO_WritePin(ADXLCS_GPIO_Port,ADXLCS_Pin,GPIO_PIN_SET);
-
 
 }
 
