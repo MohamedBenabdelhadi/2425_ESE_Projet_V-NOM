@@ -1,6 +1,6 @@
 ../Core/drivers/driver_ADXL343.c:30:6:spiWrite	24	static
 ../Core/drivers/driver_ADXL343.c:67:6:spiRead	24	static
-../Core/drivers/driver_ADXL343.c:102:6:ADXL343_writeRegister	24	static
-../Core/drivers/driver_ADXL343.c:115:6:ADXL343_readRegister	16	static
-../Core/drivers/driver_ADXL343.c:136:6:ADXL343_Init	24	static
-../Core/drivers/driver_ADXL343.c:166:6:ADXL343_get_Acceleration	56	static
+../Core/drivers/driver_ADXL343.c:100:6:ADXL343_writeRegister	24	static
+../Core/drivers/driver_ADXL343.c:113:6:ADXL343_readRegister	16	static
+../Core/drivers/driver_ADXL343.c:133:6:ADXL343_Init	24	static
+../Core/drivers/driver_ADXL343.c:163:6:ADXL343_get_Acceleration	56	static

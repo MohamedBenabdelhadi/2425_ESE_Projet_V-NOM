@@ -3,7 +3,6 @@
  * @brief C code file for ADXL343 accelerometer driver.
  * @author Oliver
  * @date December 22, 2024
- * @note Resource: https://controllerstech.com/adxl345-accelerometer-using-stm32/
  */
 #include "driver_ADXL343.h"
 #include "spi.h"
@@ -73,7 +72,6 @@ void spiRead(uint8_t address, uint8_t *data, uint16_t length)
 
 	// Transmit the address
 	status = HAL_SPI_Transmit(&hspi1, &address, 1, HAL_MAX_DELAY);
-	DEBUG_PRINT("Transmission status: 0x%X\r\n", status);
 	if (status != HAL_OK)
 	{
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high on error
@@ -83,7 +81,6 @@ void spiRead(uint8_t address, uint8_t *data, uint16_t length)
 
 	// Receive the data
 	status = HAL_SPI_Receive(&hspi1, data, length, HAL_MAX_DELAY);
-	DEBUG_PRINT("Reception status: 0x%X\r\n", status);
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high after transaction
 
 	if (status != HAL_OK)
@@ -125,13 +122,14 @@ void ADXL343_readRegister(uint8_t reg, uint8_t *data, uint16_t num) {
 	// Setting R/W = 1, i.e.: Read Mode
 	reg |= (0x80);
 
-	DEBUG_PRINT("Reading register 0x%X\r\n", reg);
 	spiRead(reg, data, num);
 }
 
 /**
  * @brief Initializes the ADXL343 accelerometer.
  * @param hadxl Pointer to the ADXL343 handle structure.
+ * @note
+ * - Useful resource: https://controllerstech.com/adxl345-accelerometer-using-stm32/
  */
 void ADXL343_Init(h_ADXL343_t * hadxl) {
 	DEBUG_PRINT("Setting CSn\r\n");
@@ -162,10 +160,12 @@ void ADXL343_Init(h_ADXL343_t * hadxl) {
 /**
  * @brief Reads the acceleration data from the ADXL343.
  * @param hadxl Pointer to the ADXL343 handle structure.
+ * @note
+ * - Useful resource: https://controllerstech.com/adxl345-accelerometer-using-stm32/
  */
 void ADXL343_get_Acceleration(h_ADXL343_t * hadxl)
 {
-	ADXL343_readRegister(0x32, hadxl->RxData, 6);
+	ADXL343_readRegister(ADXL343_DATAX0, hadxl->RxData, 6);
 
 	int16_t RAWX = ((hadxl->RxData[1]<<8)|hadxl->RxData[0]);
 	int16_t RAWY = ((hadxl->RxData[3]<<8)|hadxl->RxData[2]);
