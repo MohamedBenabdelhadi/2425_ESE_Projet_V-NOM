@@ -3,6 +3,10 @@
  * @brief C code file for ADXL343 accelerometer driver.
  * @author Oliver
  * @date December 22, 2024
+ *************************************************************
+ * @warning
+ * - The maximum SPI clock speed for the ADXL343 is 5 MHz
+ * 	 with a maximum bus load capacitance of 100 pF.
  */
 #include "driver_ADXL343.h"
 #include "spi.h"
