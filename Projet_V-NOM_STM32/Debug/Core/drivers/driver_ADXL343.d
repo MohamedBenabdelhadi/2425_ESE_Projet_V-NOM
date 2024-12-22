@@ -1,5 +1,5 @@
 Core/drivers/driver_ADXL343.o: ../Core/drivers/driver_ADXL343.c \
- ../Core/drivers/driver_ADXL343.h ../Core/Inc/spi.h ../Core/Inc/main.h \
+ ../Core/drivers/driver_ADXL343.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h \
@@ -33,10 +33,9 @@ Core/drivers/driver_ADXL343.o: ../Core/drivers/driver_ADXL343.c \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
- ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
+ ../Core/Inc/spi.h ../Core/Inc/main.h
 ../Core/drivers/driver_ADXL343.h:
-../Core/Inc/spi.h:
-../Core/Inc/main.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h:
@@ -71,3 +70,5 @@ Core/drivers/driver_ADXL343.o: ../Core/drivers/driver_ADXL343.c \
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
+../Core/Inc/spi.h:
+../Core/Inc/main.h:

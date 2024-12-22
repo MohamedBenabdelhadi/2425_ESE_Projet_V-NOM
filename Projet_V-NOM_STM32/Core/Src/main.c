@@ -45,13 +45,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define DEBUG 1 // Enable debug logs
-
-#if DEBUG
-#define DEBUG_PRINT(...) printf(__VA_ARGS__)
-#else
-#define DEBUG_PRINT(...)
-#endif
 
 /* USER CODE END PD */
 
@@ -144,6 +137,10 @@ h_Motor_t hMotors;
 
 // ToF sensors
 h_GP2Y0A41SK0F_t hTof;
+
+// ADXL343 (Accelerometer)
+h_ADXL343_t hADXL;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -225,57 +222,6 @@ void test_Motors(void)
 	Motor_SetSpeed_percent(&hMotors, 90.0, 90.0);
 }
 
-//////////////////////////////////////////////////
-//////////////////// ADXL343 ////////////////////
-////////////////////////////////////////////////
-
-/*
- * https://controllerstech.com/adxl345-accelerometer-using-stm32/
- */
-h_ADXL343_t hADXL;
-
-/**
- * @brief Tests communication by reading the Device ID register.
- */
-void ADXL343_Init(h_ADXL343_t * hadxl) {
-	DEBUG_PRINT("Setting CSn\r\n");
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high
-
-	uint8_t deviceID;
-	ADXL343_readRegister(ADXL343_DEVICE_ID_REG, &deviceID, 1);
-
-	if (deviceID == 0xE5) { // Device ID for ADXL343
-		printf("ADXL343 detected successfully! Device ID: 0x%02X\r\n", deviceID);
-	} else {
-		printf("Failed to detect ADXL343. Read Device ID: 0x%02X\r\n", deviceID);
-	}
-
-	if (deviceID == 0xE5)
-	{
-		uint8_t val = 0x00;
-		ADXL343_writeRegister (0x2d, &val, 1);  // reset all bits; standby
-
-		val = 0x08;
-		ADXL343_writeRegister (0x2d, &val, 1);  // measure=1 and wake up 8hz
-
-		val = 0x01;
-		ADXL343_writeRegister (0x31, &val, 1);  // 10bit data, range= +- 4g
-	}
-}
-
-void ADXL343_get_Acceleration(h_ADXL343_t * hadxl)
-{
-	ADXL343_readRegister(0x32, hadxl->RxData, 6);
-
-	int16_t RAWX = ((hadxl->RxData[1]<<8)|hadxl->RxData[0]);
-	int16_t RAWY = ((hadxl->RxData[3]<<8)|hadxl->RxData[2]);
-	int16_t RAWZ = ((hadxl->RxData[5]<<8)|hadxl->RxData[4]);
-
-	hadxl->xg = (float)RAWX/128;
-	hadxl->yg = (float)RAWY/128;
-	hadxl->zg = (float)RAWZ/128;
-}
-
 /* USER CODE END 0 */
 
 /**
@@ -351,10 +297,6 @@ int main(void)
 		 */
 		/* ADXL343 test */
 		ADXL343_get_Acceleration(&hADXL);
-		DEBUG_PRINT("Xg: %.4f\r\n"
-				"Yg: %.4f\r\n"
-				"Zg: %.4f\r\n",
-				hADXL.xg, hADXL.yg, hADXL.zg);
 
 		/* USER CODE END WHILE */
 
