@@ -1,66 +1,167 @@
 /*
- * ADXL.c
+ * driver_ADXL343.c
  *
- *  Created on: Dec 11, 2024
- *      Author: Mohamed
+ *  Created on: Dec 22, 2024
+ *      Author: Oliver
  */
 #include "driver_ADXL343.h"
 
 
-float GAINX = 0.0f;
-float GAINY = 0.0f;
-float GAINZ = 0.0f;
+//////////////////////////////////////////////////
+//////////////////// ADXL343 ////////////////////
+////////////////////////////////////////////////
 
-
-/** Writing ADXL Registers.
- * @address: 8-bit address of register
- * @value  : 8-bit value of corresponding register
- * Since the register values to be written are 8-bit, there is no need to multiple writing
+/**
+ * @brief Sends a command and data to the ADXL343 over SPI.
+ *
+ * @param address The address of the register to write to.
+ * @param data The data to write to the register.
  */
-static void writeRegister(uint8_t address, uint8_t value)
+void spiWrite(uint8_t address, uint8_t *data, uint16_t length)
 {
-	if (address > 63)
-		address = 63;
+	HAL_StatusTypeDef status;
 
-	// Setting R/W = 0, i.e.: Write Mode
-	address &= ~(0x80);
+	// Set the write command (clear MSB of the register address)
+	uint8_t writeAddress = address & 0x7F;
 
-	HAL_GPIO_WritePin(ADXLCS_GPIO_Port,ADXLCS_Pin,GPIO_PIN_RESET);
-	HAL_SPI_Transmit(&SPIhandler,&address,1,10);
-	HAL_SPI_Transmit(&SPIhandler,&value,1,10);
-	HAL_GPIO_WritePin(ADXLCS_GPIO_Port,ADXLCS_Pin,GPIO_PIN_SET);
+	// Pull CS low to start the SPI transaction
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
 
+	// Transmit the address
+	status = HAL_SPI_Transmit(&hspi1, &writeAddress, 1, HAL_MAX_DELAY);
+	if (status != HAL_OK)
+	{
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high on error
+		printf("SPI Write Error during address transmission!\n");
+		Error_Handler();
+	}
 
+	// Transmit the data
+	status = HAL_SPI_Transmit(&hspi1, data, length, HAL_MAX_DELAY);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high after transaction
+
+	if (status != HAL_OK)
+	{
+		printf("SPI Write Error during data transmission!\n");
+		Error_Handler();
+	}
 }
 
 
-/** Reading ADXL Registers.
- * @address: 8-bit address of register
- * @retval value  : array of 8-bit values of corresponding register
- * @num		: number of bytes to be written
+/**
+ * @brief Reads data from the ADXL343 over SPI.
+ *
+ * @param address The address of the register to read from.
+ * @return uint8_t The data read from the register.
  */
-
-static void readRegister(uint8_t address, uint8_t * value, uint8_t num)
+void spiRead(uint8_t address, uint8_t *data, uint16_t length)
 {
-	if (address > 63)
-		address = 63;
+	HAL_StatusTypeDef status;
+
+	// Pull CS low to start the SPI transaction
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+
+	// Transmit the address
+	status = HAL_SPI_Transmit(&hspi1, &address, 1, HAL_MAX_DELAY);
+	DEBUG_PRINT("Transmission status: 0x%X\r\n", status);
+	if (status != HAL_OK)
+	{
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high on error
+		printf("SPI Read Error during address transmission!\n");
+		Error_Handler();
+	}
+
+	// Receive the data
+	status = HAL_SPI_Receive(&hspi1, data, length, HAL_MAX_DELAY);
+	DEBUG_PRINT("Reception status: 0x%X\r\n", status);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high after transaction
+
+	if (status != HAL_OK)
+	{
+		printf("SPI Read Error during data reception!\n");
+		Error_Handler();
+	}
+}
+
+
+/**
+ * @brief Writes a value to a specified register on the ADXL343.
+ *
+ * @param reg The register address to write to.
+ * @param value The value to write to the register.
+ */
+void ADXL343_writeRegister(uint8_t reg, uint8_t * values, uint16_t length) {
+	// Setting R/W = 0, i.e.: Write Mode
+	uint8_t writeAddress = reg & ~(0x80);
+
+	spiWrite(writeAddress, values, length);
+}
+
+/**
+ * @brief Reads a value from a specified register on the ADXL343.
+ *
+ * @param reg The register address to read from.
+ * @num		: number of bytes to be read.
+ */
+void ADXL343_readRegister(uint8_t reg, uint8_t *data, uint16_t num) {
+	if (reg > 63)
+		reg = 63;
 
 	// Multiple Byte Read Settings
 	if (num > 1)
-		address |= 0x40;
+		reg |= 0x40;
 	else
-		address &= ~(0x40);
+		reg &= ~(0x40);
 
 	// Setting R/W = 1, i.e.: Read Mode
-	address |= (0x80);
+	reg |= (0x80);
 
-	HAL_GPIO_WritePin(ADXLCS_GPIO_Port,ADXLCS_Pin,GPIO_PIN_RESET);
-	HAL_SPI_Transmit(&SPIhandler,&address,1,10);
-	HAL_SPI_Receive(&SPIhandler,value,num,10);
-	HAL_GPIO_WritePin(ADXLCS_GPIO_Port,ADXLCS_Pin,GPIO_PIN_SET);
-
+	DEBUG_PRINT("Reading register 0x%X\r\n", reg);
+	spiRead(reg, data, num);
 }
 
+void ADXL343_Init(h_ADXL343_t * hadxl) {
+	DEBUG_PRINT("Setting CSn\r\n");
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET); // Set CS high
+
+	uint8_t deviceID;
+	ADXL343_readRegister(ADXL343_DEVID, &deviceID, 1);
+
+	if (deviceID == 0xE5) { // Device ID for ADXL343
+		printf("ADXL343 detected successfully! Device ID: 0x%02X\r\n", deviceID);
+	} else {
+		printf("Failed to detect ADXL343. Read Device ID: 0x%02X\r\n", deviceID);
+	}
+
+	if (deviceID == 0xE5)
+	{
+		uint8_t val = 0x00;
+		ADXL343_writeRegister (ADXL343_POWER_CTL, &val, 1);  // reset all bits; standby
+
+		val = 0x08;
+		ADXL343_writeRegister (ADXL343_POWER_CTL, &val, 1);  // measure=1 and wake up 8hz
+
+		val = 0x01;
+		ADXL343_writeRegister (ADXL343_DATA_FORMAT, &val, 1);  // 10bit data, range= +- 4g
+	}
+}
+
+void ADXL343_get_Acceleration(h_ADXL343_t * hadxl)
+{
+	ADXL343_readRegister(0x32, hadxl->RxData, 6);
+
+	int16_t RAWX = ((hadxl->RxData[1]<<8)|hadxl->RxData[0]);
+	int16_t RAWY = ((hadxl->RxData[3]<<8)|hadxl->RxData[2]);
+	int16_t RAWZ = ((hadxl->RxData[5]<<8)|hadxl->RxData[4]);
+
+	hadxl->xg = (float)RAWX/128;
+	hadxl->yg = (float)RAWY/128;
+	hadxl->zg = (float)RAWZ/128;
+}
+
+//////////////////////////////////////////////////
+//////////////////// ADXL345 ////////////////////
+////////////////////////////////////////////////
 
 /**
 Bandwidth Settings:
