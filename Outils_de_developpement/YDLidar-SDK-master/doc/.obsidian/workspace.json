@@ -1,0 +1,186 @@
+{
+  "main": {
+    "id": "f6641d4ce483731a",
+    "type": "split",
+    "children": [
+      {
+        "id": "6bf19e0a95716211",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "43a29c2320e85528",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "tutorials/writing_lidar_tutorial_c.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "writing_lidar_tutorial_c"
+            }
+          },
+          {
+            "id": "fcdd41b2058448e6",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "SDK.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "SDK"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c03760f1cf260294",
+    "type": "split",
+    "children": [
+      {
+        "id": "8397f2be99ea1cfe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "95cdbc6ba28e1ffe",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "41520d0e7473d0dc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2142aeef602d6704",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d82aab420b5d31de",
+    "type": "split",
+    "children": [
+      {
+        "id": "9baeef075ca7fbf8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7075a788c27c945f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "SDK.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for SDK"
+            }
+          },
+          {
+            "id": "7057418dc9e5c169",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "SDK.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from SDK"
+            }
+          },
+          {
+            "id": "25931eb16d305006",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "255b8bb7746bf036",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "SDK.pdf"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of SDK"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "fcdd41b2058448e6",
+  "lastOpenFiles": [
+    "tutorials/writing_lidar_tutorial_c.md",
+    "SDK.pdf",
+    "Tutorials.md",
+    "YDLidar_SDK_Communication_Protocol.pdf",
+    "YDLIDAR_SDK_API_for_Developers.md"
+  ]
+}
