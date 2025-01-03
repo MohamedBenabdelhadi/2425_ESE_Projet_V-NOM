@@ -30,7 +30,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include <stdlib.h>
-#include "driver_YLIDARX2.h"
+#include "ylidarx2.h"
 
 /* USER CODE END Includes */
 
@@ -41,6 +41,14 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define DEBUG 1 // Enable debug logs
+
+#if DEBUG
+#include <stdio.h>
+#define DEBUG_PRINT(...) printf(__VA_ARGS__)
+#else
+#define DEBUG_PRINT(...)
+#endif
 
 /* USER CODE END PD */
 
@@ -53,7 +61,7 @@
 
 /* USER CODE BEGIN PV */
 uint8_t rxByte; // For single-byte reception
-h_YLIDARX2_t hYLIDAR;
+YDLidar_t lidar;
 
 /* USER CODE END PV */
 
@@ -86,10 +94,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if (huart->Instance == USART3)
 	{
-		YLIDARX2_UART_irq(&hYLIDAR);
-
-		// Restart reception for the next byte
-		HAL_UART_Receive_IT(&huart3, &rxByte, 1);
+		YDLidar_UARTCallback(&lidar);
 	}
 }
 
@@ -103,16 +108,16 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 	if (huart->Instance == USART3)
 	{
 		if (HAL_UART_GetError(huart) & HAL_UART_ERROR_PE)
-			printf("Parity Error!\r\n");
+			DEBUG_PRINT("Parity Error!\r\n");
 		if (HAL_UART_GetError(huart) & HAL_UART_ERROR_NE)
-			printf("Noise Error!\r\n");
+			DEBUG_PRINT("Noise Error!\r\n");
 		if (HAL_UART_GetError(huart) & HAL_UART_ERROR_FE)
-			printf("Framing Error!\r\n");
+			DEBUG_PRINT("Framing Error!\r\n");
 		if (HAL_UART_GetError(huart) & HAL_UART_ERROR_ORE)
-			printf("Overrun Error!\r\n");
+			DEBUG_PRINT("Overrun Error!\r\n");
 
 		// Restart UART reception after error
-		HAL_UART_Receive_IT(&huart3, &rxByte, 1);
+		YDLidar_UARTCallback(&lidar);
 	}
 }
 
@@ -152,13 +157,8 @@ int main(void)
 	/* USER CODE BEGIN 2 */
 	printf("\r\n***** TEST YLIDAR X2 *****\r\n");
 
-	hYLIDAR.uart_buffer = &rxByte;
-
-	// Clear the UART buffer to avoid receiving residual data
-	//HAL_UART_Abort(&huart1);
-
-	// Start UART reception in interrupt mode (1 byte at a time)
-	HAL_UART_Receive_IT(&huart3, &rxByte, 1);
+	// Initialize YDLidar
+	YDLidar_Init(&lidar, &huart3);
 
 	/* USER CODE END 2 */
 

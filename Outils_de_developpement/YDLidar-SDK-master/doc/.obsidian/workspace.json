@@ -33,8 +33,7 @@
               "title": "SDK"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SDK.pdf",
+                "file": "tutorials/writing_lidar_tutorial_c.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +115,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for SDK"
+              "title": "Backlinks for writing_lidar_tutorial_c"
             }
           },
           {
@@ -125,12 +124,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SDK.pdf",
+                "file": "tutorials/writing_lidar_tutorial_c.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from SDK"
+              "title": "Outgoing links from writing_lidar_tutorial_c"
             }
           },
           {
@@ -152,10 +151,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SDK.pdf"
+                "file": "tutorials/writing_lidar_tutorial_c.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of SDK"
+              "title": "Outline of writing_lidar_tutorial_c"
             }
           }
         ]
@@ -175,11 +174,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fcdd41b2058448e6",
+  "active": "43a29c2320e85528",
   "lastOpenFiles": [
+    "Tutorials.md",
+    "tutorials/writing_lidar_tutorial_python.md",
     "tutorials/writing_lidar_tutorial_c.md",
     "SDK.pdf",
-    "Tutorials.md",
     "YDLidar_SDK_Communication_Protocol.pdf",
     "YDLIDAR_SDK_API_for_Developers.md"
   ]

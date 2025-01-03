@@ -1,0 +1,4 @@
+../Core/Src/ylidarx2.c:24:6:YDLidar_Init	16	static
+../Core/Src/ylidarx2.c:37:6:YDLidar_UARTCallback	16	static
+../Core/Src/ylidarx2.c:54:6:YDLidar_ValidateChecksum	24	static
+../Core/Src/ylidarx2.c:63:6:YDLidar_ProcessData	56	static
