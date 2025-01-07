@@ -16,8 +16,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define YLIDARX2_DMA_BUFFER_SIZE 2000 /**< DMA buffer size for UART reception */
-#define YLIDARX2_MAX_POINTS      1000 /**< Maximum number of processed points stored */
+#define YLIDARX2_DMA_BUFFER_SIZE 300 /**< DMA buffer size for UART reception */
+#define YLIDARX2_MAX_POINTS      100 /**< Maximum number of processed points stored */
 #define PACKET_HEADER            0x55AA /**< Frame header identifier */
 #define FRAME_LENGTH_MIN         7 /**< Minimum frame length in bytes */
 
