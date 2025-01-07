@@ -23,6 +23,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -60,8 +61,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t rxByte; // For single-byte reception
-YDLidar_t lidar;
 
 /* USER CODE END PV */
 
@@ -85,16 +84,28 @@ int __io_putchar(int ch)
 	return ch;
 }
 
+// Global LIDAR object
+YLIDARX2_t lidar;
+
+/**
+ * @brief UART receive half complete callback.
+ * @param huart: Pointer to the UART handle
+ * @retval None
+ */
+void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart) {
+	if (huart->Instance == USART3) {
+		YLIDARX2_ProcessDMAHalfComplete(&lidar);
+	}
+}
+
 /**
  * @brief UART receive complete callback.
  * @param huart: Pointer to the UART handle
  * @retval None
  */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-	if (huart->Instance == USART3)
-	{
-		YDLidar_UARTCallback(&lidar);
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	if (huart->Instance == USART3) {
+		YLIDARX2_ProcessDMAComplete(&lidar);
 	}
 }
 
@@ -115,9 +126,6 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 			DEBUG_PRINT("Framing Error!\r\n");
 		if (HAL_UART_GetError(huart) & HAL_UART_ERROR_ORE)
 			DEBUG_PRINT("Overrun Error!\r\n");
-
-		// Restart UART reception after error
-		YDLidar_UARTCallback(&lidar);
 	}
 }
 
@@ -152,13 +160,14 @@ int main(void)
 
 	/* Initialize all configured peripherals */
 	MX_GPIO_Init();
+	MX_DMA_Init();
 	MX_USART2_UART_Init();
 	MX_USART3_UART_Init();
 	/* USER CODE BEGIN 2 */
 	printf("\r\n***** TEST YLIDAR X2 *****\r\n");
 
-	// Initialize YDLidar
-	YDLidar_Init(&lidar, &huart3);
+	// Initialize LIDAR with DMA
+	YLIDARX2_InitDMA(&lidar, &huart3);
 
 	/* USER CODE END 2 */
 
