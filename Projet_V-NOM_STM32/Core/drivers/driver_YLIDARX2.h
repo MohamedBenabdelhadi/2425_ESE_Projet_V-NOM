@@ -16,8 +16,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define YLIDARX2_DMA_BUFFER_SIZE 300 /**< DMA buffer size for UART reception */
-#define YLIDARX2_MAX_POINTS      100 /**< Maximum number of processed points stored */
+#define YLIDARX2_DMA_BUFFER_SIZE 1000 /**< DMA buffer size for UART reception */
+#define YLIDARX2_MAX_POINTS      500 /**< Maximum number of processed points stored */
 #define PACKET_HEADER            0x55AA /**< Frame header identifier */
 #define FRAME_LENGTH_MIN         7 /**< Minimum frame length in bytes */
 
@@ -39,7 +39,7 @@ typedef struct {
     uint16_t currentIndex; /**< Current index in the DMA buffer */
     YLIDARX2_Point_t points[YLIDARX2_MAX_POINTS]; /**< Array of processed points */
     uint16_t pointIndex; /**< Index for storing the next processed point */
-} YLIDARX2_t;
+} h_YLIDARX2_t;
 
 /**
  * @brief Initialize the YDLIDAR X2 driver with DMA.
@@ -47,21 +47,21 @@ typedef struct {
  * @param lidar Pointer to the YDLIDARX2_t structure.
  * @param huart UART handle for communication.
  */
-void YLIDARX2_InitDMA(YLIDARX2_t *lidar, UART_HandleTypeDef *huart);
+void YLIDARX2_InitDMA(h_YLIDARX2_t *lidar, UART_HandleTypeDef *huart);
 
 /**
  * @brief Process the first half of the DMA buffer.
  *
  * @param lidar Pointer to the YDLIDARX2_t structure.
  */
-void YLIDARX2_ProcessDMAHalfComplete(YLIDARX2_t *lidar);
+void YLIDARX2_ProcessDMAHalfComplete(h_YLIDARX2_t *lidar);
 
 /**
  * @brief Process the second half of the DMA buffer.
  *
  * @param lidar Pointer to the YDLIDARX2_t structure.
  */
-void YLIDARX2_ProcessDMAComplete(YLIDARX2_t *lidar);
+void YLIDARX2_ProcessDMAComplete(h_YLIDARX2_t *lidar);
 
 /**
  * @brief Process a portion of the DMA buffer.
@@ -70,7 +70,7 @@ void YLIDARX2_ProcessDMAComplete(YLIDARX2_t *lidar);
  * @param start Start index of the buffer to process.
  * @param end End index of the buffer to process.
  */
-void YLIDARX2_ProcessBuffer(YLIDARX2_t *lidar, uint16_t start, uint16_t end);
+void YLIDARX2_ProcessBuffer(h_YLIDARX2_t *lidar, uint16_t start, uint16_t end);
 
 /**
  * @brief Validate the checksum of a LIDAR frame.
@@ -89,6 +89,6 @@ bool YLIDARX2_ValidateChecksum(const uint8_t *data, uint16_t length);
  * @param lidar Pointer to the YDLIDARX2_t structure.
  * @param frame Pointer to the frame data.
  */
-void YLIDARX2_ProcessFrame(YLIDARX2_t *lidar, const uint8_t *frame);
+void YLIDARX2_ProcessFrame(h_YLIDARX2_t *lidar, const uint8_t *frame);
 
 #endif /* INC_DRIVER_YLIDARX2_H_ */

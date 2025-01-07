@@ -137,7 +137,7 @@ char jumbo_logo_msg[] = "\r\n"
 		"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣤⣿⣧⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n";
 
 // Global YLIDAR X2 handler
-YLIDARX2_t hlidar;
+h_YLIDARX2_t hlidar;
 
 // Global Motors handler
 h_Motor_t hMotors;
@@ -209,6 +209,12 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 			DEBUG_PRINT("Framing Error!\r\n");
 		if (HAL_UART_GetError(huart) & HAL_UART_ERROR_ORE)
 			DEBUG_PRINT("Overrun Error!\r\n");
+
+		HAL_UART_DMAStop(&huart2);                          // STOP Uart
+		MX_USART2_UART_Init();                              // INIT Uart
+		__HAL_UART_CLEAR_IDLEFLAG(&huart2);                 // Clear Idle IT-Flag
+		__HAL_UART_ENABLE_IT(&huart2, UART_IT_IDLE);        // Enable Idle Interrupt
+		HAL_UART_Receive_DMA(&huart2, hlidar.dmaBuffer, YLIDARX2_DMA_BUFFER_SIZE);
 	}
 }
 
@@ -273,13 +279,10 @@ int main(void)
 	YLIDARX2_InitDMA(&hlidar, &huart2);
 
 	/* ToF sensors Initialization *
-	printf("GP2Y0A41SK0F Initialization...\r\n");
 	GP2Y0A41SK0F_Init(&hTof);
-	printf("GP2Y0A41SK0F Initialization Successful!\r\n");
-	 */
 
-	/* ADXL343 Initialization */
-	//ADXL343_Init(&hADXL);
+	/* ADXL343 Initialization *
+	ADXL343_Init(&hADXL);*/
 
   /* USER CODE END 2 */
 
@@ -297,8 +300,8 @@ int main(void)
 		Motor_UpdateSpeed(&hMotors);
 
 		/* ADXL343 test *
-		ADXL343_get_Acceleration(&hADXL);
-		 */
+		ADXL343_get_Acceleration(&hADXL);*/
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -355,6 +358,27 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM2 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM2) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.

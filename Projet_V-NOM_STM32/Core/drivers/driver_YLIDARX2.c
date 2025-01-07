@@ -31,7 +31,7 @@ static uint16_t extract_uint16(const uint8_t *data) {
     return (data[1] << 8) | data[0];
 }
 
-void YLIDARX2_InitDMA(YLIDARX2_t *lidar, UART_HandleTypeDef *huart) {
+void YLIDARX2_InitDMA(h_YLIDARX2_t *lidar, UART_HandleTypeDef *huart) {
     lidar->uart = huart;
     lidar->currentIndex = 0;
     lidar->pointIndex = 0;
@@ -42,15 +42,15 @@ void YLIDARX2_InitDMA(YLIDARX2_t *lidar, UART_HandleTypeDef *huart) {
     DEBUG_PRINT("YLIDARX2 DMA Initialized\r\n");
 }
 
-void YLIDARX2_ProcessDMAHalfComplete(YLIDARX2_t *lidar) {
+void YLIDARX2_ProcessDMAHalfComplete(h_YLIDARX2_t *lidar) {
     YLIDARX2_ProcessBuffer(lidar, 0, YLIDARX2_DMA_BUFFER_SIZE / 2);
 }
 
-void YLIDARX2_ProcessDMAComplete(YLIDARX2_t *lidar) {
+void YLIDARX2_ProcessDMAComplete(h_YLIDARX2_t *lidar) {
     YLIDARX2_ProcessBuffer(lidar, YLIDARX2_DMA_BUFFER_SIZE / 2, YLIDARX2_DMA_BUFFER_SIZE);
 }
 
-void YLIDARX2_ProcessBuffer(YLIDARX2_t *lidar, uint16_t start, uint16_t end) {
+void YLIDARX2_ProcessBuffer(h_YLIDARX2_t *lidar, uint16_t start, uint16_t end) {
     for (uint16_t i = start; i < end - FRAME_LENGTH_MIN; ) {
         uint16_t header = extract_uint16(&lidar->dmaBuffer[i]);
 

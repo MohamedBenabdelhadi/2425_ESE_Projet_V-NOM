@@ -2,7 +2,8 @@
 ../Core/Src/main.c:178:6:HAL_UART_RxHalfCpltCallback	2
 ../Core/Src/main.c:189:6:HAL_UART_RxCpltCallback	2
 ../Core/Src/main.c:200:6:HAL_UART_ErrorCallback	6
-../Core/Src/main.c:215:6:test_Motors	1
-../Core/Src/main.c:231:5:main	1
-../Core/Src/main.c:313:6:SystemClock_Config	3
-../Core/Src/main.c:363:6:Error_Handler	1
+../Core/Src/main.c:221:6:test_Motors	1
+../Core/Src/main.c:237:5:main	1
+../Core/Src/main.c:316:6:SystemClock_Config	3
+../Core/Src/main.c:370:6:HAL_TIM_PeriodElapsedCallback	2
+../Core/Src/main.c:387:6:Error_Handler	1
