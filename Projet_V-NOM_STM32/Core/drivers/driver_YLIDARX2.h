@@ -1,74 +1,94 @@
-/*
- * driver_YLIDARX2.h
+/**
+ * @file driver_YLIDARX2.h
+ * @brief Header file for the YDLIDAR X2 driver.
  *
- *  Created on: Dec 11, 2024
- *      Author: oliver
+ * Provides definitions and function prototypes for initializing,
+ * processing, and handling YDLIDAR X2 data using DMA.
+ *
+ * @date Jan 3, 2025
+ * @author Oliver
  */
 
 #ifndef INC_DRIVER_YLIDARX2_H_
 #define INC_DRIVER_YLIDARX2_H_
 
-#include <inttypes.h>
-
-#define USART_BUFFER_SIZE 1024 // Increase buffer size to handle more data
-
-// YLIDAR2 constants
-#define YLIDAR_START_BYTE1 0x55
-#define YLIDAR_START_BYTE2 0xAA
-#define YLIDAR_PACKET_HEADER_LENGTH 26
-#define YLIDAR_SAMPLE_BYTE_OFFSET 8
-#define YLIDAR_PACKAGE_TYPE(byte)  \
-		((byte) & 0x01 ? "beginning of a lap of data" : "point cloud data packet")
-
-// Math constants
-#define PI 3.14159265359
-
-// Printf binary tools
-#define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
-#define BYTE_TO_BINARY(byte)  \
-		((byte) & 0x80 ? '1' : '0'), \
-		((byte) & 0x40 ? '1' : '0'), \
-		((byte) & 0x20 ? '1' : '0'), \
-		((byte) & 0x10 ? '1' : '0'), \
-		((byte) & 0x08 ? '1' : '0'), \
-		((byte) & 0x04 ? '1' : '0'), \
-		((byte) & 0x02 ? '1' : '0'), \
-		((byte) & 0x01 ? '1' : '0')
-
-#define BINARY_TO_TF(bit)  \
-		((bit) & 1 ? "TRUE" : 'FALSE')
-
-typedef struct {
-	uint16_t data;
-	uint16_t distance;
-	uint8_t interference_flag;
-	float corrected_angle;
-} YLIDARX2_sample_t;
-
-typedef struct {
-	uint8_t* uart_buffer;
-	uint8_t* data_buffer;
-	int data_length;
-	uint8_t sample_quantity;	// Samples in last received data
-	YLIDARX2_sample_t* samples;
-} h_YLIDARX2_t;
-
-
-/*
- * driver_YLIDARX2.c
- *
- *  Created on: Dec 11, 2024
- *      Author: oliver
- */
-
-#include "driver_YLIDARX2.h"
 #include "usart.h"
+#include <stdint.h>
+#include <stdbool.h>
 
+#define YLIDARX2_DMA_BUFFER_SIZE 2000 /**< DMA buffer size for UART reception */
+#define YLIDARX2_MAX_POINTS      1000 /**< Maximum number of processed points stored */
+#define PACKET_HEADER            0x55AA /**< Frame header identifier */
+#define FRAME_LENGTH_MIN         7 /**< Minimum frame length in bytes */
 
-void YLIDARX2_PrintData(h_YLIDARX2_t * hYLIDAR);
-void YLIDARX2_PrintSamples(h_YLIDARX2_t * hYLIDAR);
-uint16_t YLIDARX2_CalculateChecksum(uint8_t *data, uint16_t length);
-void YLIDARX2_ParseData(h_YLIDARX2_t * hYLIDAR);
-void YLIDARX2_UART_irq(h_YLIDARX2_t * hYLIDAR);
+/**
+ * @brief Structure to hold individual LIDAR point data.
+ */
+typedef struct {
+    float angle; /**< Angle in degrees */
+    float distance; /**< Distance in millimeters */
+    uint8_t intensity; /**< Intensity of the signal */
+} YLIDARX2_Point_t;
+
+/**
+ * @brief Structure to hold LIDAR state and data.
+ */
+typedef struct {
+    UART_HandleTypeDef *uart; /**< UART handle for communication */
+    uint8_t dmaBuffer[YLIDARX2_DMA_BUFFER_SIZE]; /**< DMA buffer for raw data */
+    uint16_t currentIndex; /**< Current index in the DMA buffer */
+    YLIDARX2_Point_t points[YLIDARX2_MAX_POINTS]; /**< Array of processed points */
+    uint16_t pointIndex; /**< Index for storing the next processed point */
+} YLIDARX2_t;
+
+/**
+ * @brief Initialize the YDLIDAR X2 driver with DMA.
+ *
+ * @param lidar Pointer to the YDLIDARX2_t structure.
+ * @param huart UART handle for communication.
+ */
+void YLIDARX2_InitDMA(YLIDARX2_t *lidar, UART_HandleTypeDef *huart);
+
+/**
+ * @brief Process the first half of the DMA buffer.
+ *
+ * @param lidar Pointer to the YDLIDARX2_t structure.
+ */
+void YLIDARX2_ProcessDMAHalfComplete(YLIDARX2_t *lidar);
+
+/**
+ * @brief Process the second half of the DMA buffer.
+ *
+ * @param lidar Pointer to the YDLIDARX2_t structure.
+ */
+void YLIDARX2_ProcessDMAComplete(YLIDARX2_t *lidar);
+
+/**
+ * @brief Process a portion of the DMA buffer.
+ *
+ * @param lidar Pointer to the YDLIDARX2_t structure.
+ * @param start Start index of the buffer to process.
+ * @param end End index of the buffer to process.
+ */
+void YLIDARX2_ProcessBuffer(YLIDARX2_t *lidar, uint16_t start, uint16_t end);
+
+/**
+ * @brief Validate the checksum of a LIDAR frame.
+ *
+ * @param data Pointer to the frame data.
+ * @param length Length of the frame.
+ * @return True if the checksum is valid, false otherwise.
+ */
+bool YLIDARX2_ValidateChecksum(const uint8_t *data, uint16_t length);
+
+/**
+ * @brief Process a single LIDAR frame.
+ *
+ * Extracts angle, distance, and intensity from the frame.
+ *
+ * @param lidar Pointer to the YDLIDARX2_t structure.
+ * @param frame Pointer to the frame data.
+ */
+void YLIDARX2_ProcessFrame(YLIDARX2_t *lidar, const uint8_t *frame);
 
 #endif /* INC_DRIVER_YLIDARX2_H_ */

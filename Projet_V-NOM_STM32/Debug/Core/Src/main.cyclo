@@ -1,7 +1,7 @@
-../Core/Src/main.c:159:5:__io_putchar	1
-../Core/Src/main.c:171:6:HAL_UART_RxCpltCallback	2
-../Core/Src/main.c:188:6:HAL_UART_ErrorCallback	6
-../Core/Src/main.c:206:6:test_YLIDARX2	1
+../Core/Src/main.c:166:5:__io_putchar	1
+../Core/Src/main.c:178:6:HAL_UART_RxHalfCpltCallback	2
+../Core/Src/main.c:189:6:HAL_UART_RxCpltCallback	2
+../Core/Src/main.c:200:6:HAL_UART_ErrorCallback	6
 ../Core/Src/main.c:215:6:test_Motors	1
 ../Core/Src/main.c:231:5:main	1
 ../Core/Src/main.c:312:6:SystemClock_Config	3

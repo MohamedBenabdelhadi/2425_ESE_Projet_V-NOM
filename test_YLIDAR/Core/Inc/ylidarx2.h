@@ -81,10 +81,15 @@ void YLIDARX2_ProcessBuffer(YLIDARX2_t *lidar, uint16_t start, uint16_t end);
  */
 bool YLIDARX2_ValidateChecksum(const uint8_t *data, uint16_t length);
 
+
 /**
  * @brief Process a single LIDAR frame.
  *
  * Extracts angle, distance, and intensity from the frame.
  *
  * @param lidar Pointer to the YDLIDARX2_t structure.
- *
+ * @param frame Pointer to the frame data.
+ */
+void YLIDARX2_ProcessFrame(YLIDARX2_t *lidar, const uint8_t *frame);
+
+#endif /* INC_YLIDARX2_H_ */

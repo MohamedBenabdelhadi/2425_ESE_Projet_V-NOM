@@ -1,6 +1,6 @@
-../Core/drivers/driver_ADXL343.c:30:6:spiWrite	3
-../Core/drivers/driver_ADXL343.c:67:6:spiRead	3
-../Core/drivers/driver_ADXL343.c:100:6:ADXL343_writeRegister	1
-../Core/drivers/driver_ADXL343.c:113:6:ADXL343_readRegister	3
-../Core/drivers/driver_ADXL343.c:133:6:ADXL343_Init	3
-../Core/drivers/driver_ADXL343.c:163:6:ADXL343_get_Acceleration	1
+../Core/drivers/driver_ADXL343.c:33:6:spiWrite	3
+../Core/drivers/driver_ADXL343.c:70:6:spiRead	3
+../Core/drivers/driver_ADXL343.c:103:6:ADXL343_writeRegister	1
+../Core/drivers/driver_ADXL343.c:116:6:ADXL343_readRegister	3
+../Core/drivers/driver_ADXL343.c:138:6:ADXL343_Init	3
+../Core/drivers/driver_ADXL343.c:170:6:ADXL343_get_Acceleration	1

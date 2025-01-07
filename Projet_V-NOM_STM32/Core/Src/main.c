@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "dma.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -45,6 +46,13 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define DEBUG 1 /**< Enable or disable debug logs */
+
+#if DEBUG
+#define DEBUG_PRINT(...) printf(__VA_ARGS__)
+#else
+#define DEBUG_PRINT(...)
+#endif
 
 /* USER CODE END PD */
 
@@ -128,17 +136,16 @@ char jumbo_logo_msg[] = "\r\n"
 		"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣷⣾⣄⣷⠀⣷⠀⣿⠀⢸⡇⣆⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n"
 		"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣤⣿⣧⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n";
 
-// YLIDAR X2
-uint8_t rxByte; // For single-byte reception
-h_YLIDARX2_t hYLIDAR;
+// Global YLIDAR X2 handler
+YLIDARX2_t hlidar;
 
-// Motors
+// Global Motors handler
 h_Motor_t hMotors;
 
-// ToF sensors
+// Global ToF sensors handler
 h_GP2Y0A41SK0F_t hTof;
 
-// ADXL343 (Accelerometer)
+// Global ADXL343 (Accelerometer) handler
 h_ADXL343_t hADXL;
 
 /* USER CODE END PV */
@@ -164,19 +171,24 @@ int __io_putchar(int ch)
 }
 
 /**
+ * @brief UART receive half complete callback.
+ * @param huart: Pointer to the UART handle
+ * @retval None
+ */
+void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart) {
+	if (huart->Instance == USART2) {
+		YLIDARX2_ProcessDMAHalfComplete(&hlidar);
+	}
+}
+
+/**
  * @brief UART receive complete callback.
  * @param huart: Pointer to the UART handle
  * @retval None
  */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-	if (huart->Instance == USART2)
-	{
-		//printf("UART2: 0x%X\r\n", rxByte);
-		YLIDARX2_UART_irq(&hYLIDAR);
-
-		// Restart reception for the next byte
-		HAL_UART_Receive_IT(&huart2, &rxByte, 1);
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	if (huart->Instance == USART2) {
+		YLIDARX2_ProcessDMAComplete(&hlidar);
 	}
 }
 
@@ -190,26 +202,14 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 	if (huart->Instance == USART2)
 	{
 		if (HAL_UART_GetError(huart) & HAL_UART_ERROR_PE)
-			printf("Parity Error!\r\n");
+			DEBUG_PRINT("Parity Error!\r\n");
 		if (HAL_UART_GetError(huart) & HAL_UART_ERROR_NE)
-			printf("Noise Error!\r\n");
+			DEBUG_PRINT("Noise Error!\r\n");
 		if (HAL_UART_GetError(huart) & HAL_UART_ERROR_FE)
-			printf("Framing Error!\r\n");
+			DEBUG_PRINT("Framing Error!\r\n");
 		if (HAL_UART_GetError(huart) & HAL_UART_ERROR_ORE)
-			printf("Overrun Error!\r\n");
-
-		// Restart UART reception after error
-		HAL_UART_Receive_IT(&huart2, &rxByte, 1);
+			DEBUG_PRINT("Overrun Error!\r\n");
 	}
-}
-
-void test_YLIDARX2(void)
-{
-	printf("YLIDAR X2 Initialization...\r\n");
-	hYLIDAR.uart_buffer = &rxByte;
-	// Start UART reception in interrupt mode (1 byte at a time)
-	HAL_UART_Receive_IT(&huart2, &rxByte, 1);
-	printf("YLIDAR X2 Initialization Successful!\r\n");
 }
 
 void test_Motors(void)
@@ -253,6 +253,7 @@ int main(void)
 
 	/* Initialize all configured peripherals */
 	MX_GPIO_Init();
+	MX_DMA_Init();
 	MX_SPI1_Init();
 	MX_TIM1_Init();
 	MX_TIM3_Init();
@@ -268,9 +269,8 @@ int main(void)
 	test_Motors();
 	 */
 
-	/* YLIDAR X2 test & Initialization *
-	test_YLIDARX2();
-	 */
+	/* YLIDAR X2 Initialization with DMA */
+	YLIDARX2_InitDMA(&hlidar, &huart2);
 
 	/* ToF sensors Initialization *
 	printf("GP2Y0A41SK0F Initialization...\r\n");
@@ -279,7 +279,7 @@ int main(void)
 	 */
 
 	/* ADXL343 Initialization */
-	ADXL343_Init(&hADXL);
+	//ADXL343_Init(&hADXL);
 
 	/* USER CODE END 2 */
 
@@ -296,7 +296,7 @@ int main(void)
 		Motor_UpdateSpeed(&hMotors);
 		 */
 		/* ADXL343 test */
-		ADXL343_get_Acceleration(&hADXL);
+		//ADXL343_get_Acceleration(&hADXL);
 
 		/* USER CODE END WHILE */
 
