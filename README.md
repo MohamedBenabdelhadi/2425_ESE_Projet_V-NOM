@@ -170,5 +170,5 @@ Notre PCB se présente de la forme suivante sous Kicad :
 Le diagramme d'architecture correspondant est le suivant :  
 ![image](https://github.com/user-attachments/assets/4c272ab7-e6be-4d1b-a504-a4670fe7053b)
 
-Nous avons diviser notre montage en 5 groupes : Acquisition, Interface Utilisateur, Controle, Alimentation et Deplacement.  
+Nous avons divisé notre montage en 5 groupes : Acquisition, Interface Utilisateur, Controle, Alimentation et Deplacement.  
 De cette façon on peut clairement distinguer les dépendances entre chaque groupe afin de mieux comprendre notre système.
