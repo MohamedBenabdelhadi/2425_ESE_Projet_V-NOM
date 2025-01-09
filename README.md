@@ -164,4 +164,6 @@ git push origin <branch_name> --force
 
 ## Architecture du PCB
 
+Notre PCB se présente de la forme suivante sous Kicad :  
+![image](https://github.com/user-attachments/assets/23adb2bf-fa5d-487e-8890-8c57db7297cc)
 
