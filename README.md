@@ -156,6 +156,9 @@ On se remet sur la branche :
 git rebase -i HEAD~2
 ```
 
+
+## Architecture du PCB
+
 Puis on force le push de la branche qu'on souhaite restaurer :
 
 ```bash
