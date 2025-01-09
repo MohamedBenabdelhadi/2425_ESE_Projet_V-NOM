@@ -210,11 +210,7 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 		if (HAL_UART_GetError(huart) & HAL_UART_ERROR_ORE)
 			DEBUG_PRINT("Overrun Error!\r\n");
 
-		HAL_UART_DMAStop(&huart2);                          // STOP Uart
-		MX_USART2_UART_Init();                              // INIT Uart
-		__HAL_UART_CLEAR_IDLEFLAG(&huart2);                 // Clear Idle IT-Flag
-		__HAL_UART_ENABLE_IT(&huart2, UART_IT_IDLE);        // Enable Idle Interrupt
-		HAL_UART_Receive_DMA(&huart2, hlidar.dmaBuffer, YLIDARX2_DMA_BUFFER_SIZE);
+		YLIDARX2_RestartDMA(&hlidar);
 	}
 }
 
@@ -269,13 +265,14 @@ int main(void)
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
 	printf("\r\n*** Waking up V-NOM ***\r\n");
-	printf("%s", jumbo_logo_msg);
+	//printf("%s", jumbo_logo_msg);
 
 	/* Motors test & initialization *
 	test_Motors();
 	 */
 
 	/* YLIDAR X2 Initialization with DMA */
+	LIDAR_RX_GPIO_Port->PUPDR = GPIO_PULLDOWN;
 	YLIDARX2_InitDMA(&hlidar, &huart2);
 
 	/* ToF sensors Initialization *
@@ -358,27 +355,6 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
-
-/**
-  * @brief  Period elapsed callback in non blocking mode
-  * @note   This function is called  when TIM2 interrupt took place, inside
-  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
-  * a global variable "uwTick" used as application time base.
-  * @param  htim : TIM handle
-  * @retval None
-  */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  /* USER CODE BEGIN Callback 0 */
-
-  /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM2) {
-    HAL_IncTick();
-  }
-  /* USER CODE BEGIN Callback 1 */
-
-  /* USER CODE END Callback 1 */
-}
 
 /**
   * @brief  This function is executed in case of error occurrence.

@@ -49,6 +49,8 @@ typedef struct {
  */
 void YLIDARX2_InitDMA(h_YLIDARX2_t *lidar, UART_HandleTypeDef *huart);
 
+void YLIDARX2_RestartDMA(h_YLIDARX2_t *lidar);
+
 /**
  * @brief Process the first half of the DMA buffer.
  *
