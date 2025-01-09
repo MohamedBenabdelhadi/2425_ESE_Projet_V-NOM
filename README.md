@@ -98,6 +98,17 @@ end
 
 ![image](https://github.com/user-attachments/assets/46c6d10b-ff33-4031-baca-c4026fec3046)
 
+## Architecture du PCB
+
+Notre PCB se présente de la forme suivante sous Kicad :  
+![image](https://github.com/user-attachments/assets/23adb2bf-fa5d-487e-8890-8c57db7297cc)
+
+Le diagramme d'architecture correspondant est le suivant :  
+![image](https://github.com/user-attachments/assets/4c272ab7-e6be-4d1b-a504-a4670fe7053b)
+
+Nous avons divisé notre montage en 5 groupes : Acquisition, Interface Utilisateur, Controle, Alimentation et Deplacement.  
+De cette façon on peut clairement distinguer les dépendances entre chaque groupe afin de mieux comprendre notre système.
+
 ---
 
 ## Astuces et solution à des erreurs courrantes
@@ -161,14 +172,3 @@ Puis on force le push de la branche qu'on souhaite restaurer :
 ```bash
 git push origin <branch_name> --force
 ```
-
-## Architecture du PCB
-
-Notre PCB se présente de la forme suivante sous Kicad :  
-![image](https://github.com/user-attachments/assets/23adb2bf-fa5d-487e-8890-8c57db7297cc)
-
-Le diagramme d'architecture correspondant est le suivant :  
-![image](https://github.com/user-attachments/assets/4c272ab7-e6be-4d1b-a504-a4670fe7053b)
-
-Nous avons divisé notre montage en 5 groupes : Acquisition, Interface Utilisateur, Controle, Alimentation et Deplacement.  
-De cette façon on peut clairement distinguer les dépendances entre chaque groupe afin de mieux comprendre notre système.
