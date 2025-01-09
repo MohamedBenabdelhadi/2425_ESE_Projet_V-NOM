@@ -21,8 +21,8 @@
 // Modes de fonctionnement du moteur
 typedef enum {
 	STANDBY_MODE, // Stops a motor
-	FORWARD_MODE,
 	REVERSE_MODE,
+	FORWARD_MODE,
 	BRAKE_MODE
 } MotorMode;
 
