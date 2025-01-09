@@ -92,16 +92,10 @@ subgraph Robot
 end
 ```
 
-
 ## Schémas utiles
 ![image](https://github.com/user-attachments/assets/46c6d10b-ff33-4031-baca-c4026fec3046)
 
-
-## Exemples de projets avec le YDLIDAR X4
-- [**stm32-ydlidar-x4**](https://github.com/radii-dev/stm32-ydlidar-x4)
-> /!\\ Attention : Pour développer avec la carte P-PNUCLEO-IHM3 (avec une NUCLEO-G431RB) il faut retirer le module shield X-NUCLEO-IHM16M1-1 !
-
-
+---
 ## Astuces et solution à des erreurs courrantes
 ### Erreur de STM32CubeIDE recontré en Ubuntu 24 : libncurses5 missing
 > Could not determine GDB version using command: /opt/st/stm32cubeide_1.2.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.linux64_1.0.0.201904181610/tools/bin/arm-none-eabi-gdb --version
@@ -151,15 +145,3 @@ Puis on force le push de la branche qu'on souhaite restaurer :
 ```bash
 git push origin <branch_name> --force
 ```
-## Test Hardware :
-Composants fonctionnels:
-1. UART1 (printf)
-2. Quartz
-3. Switch*2
-4. Connecteur lidar et Lidar
-5. Driver Moteurs
-6. USART2 (YDLIDAR X2)
-7. Capteurs ToF
-
-Composants non fonctionnels:
-1. Leds (inversés)
