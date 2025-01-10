@@ -28,6 +28,8 @@ void GP2Y0A41SK0F_Init(h_GP2Y0A41SK0F_t *htof) {
     if (HAL_ADC_Init(htof->hadc2) != HAL_OK) {
         Error_Handler();
     }
+
+    GP2Y0A41SK0F_Start_Interrupt(htof);
 }
 
 /**

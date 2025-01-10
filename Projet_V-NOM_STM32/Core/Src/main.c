@@ -20,6 +20,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "adc.h"
+#include "dma.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -273,6 +274,7 @@ void task_Motors(void * unsused)
 	{
 		DEBUG_PRINT("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
 		Motor_UpdateSpeed(&hMotors);
+		vTaskDelay(1);
 	}
 }
 
@@ -381,6 +383,7 @@ int main(void)
 
 	/* Initialize all configured peripherals */
 	MX_GPIO_Init();
+	MX_DMA_Init();
 	MX_SPI1_Init();
 	MX_TIM1_Init();
 	MX_TIM3_Init();
