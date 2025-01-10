@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['task_5fbehaviour_0',['task_Behaviour',['../main_8c.html#aaf35fdaa67af4eaef10cd2aa783a30cf',1,'main.c']]],
+  ['task_5fcontrol_0',['task_Control',['../main_8c.html#acd1f91d39bdbd6e86a287e6c0f6eb700',1,'main.c']]],
   ['task_5fmotors_1',['task_Motors',['../main_8c.html#a8f10a863197fb81d232a412773658b78',1,'main.c']]],
   ['task_5fpriority_5fmotor_2',['TASK_PRIORITY_MOTOR',['../main_8c.html#a91bd5a224ef886a986db440d15be4397',1,'main.c']]],
   ['the_20system_20clock_20as_20follows_3a_3',['This file configures the system clock as follows:',['../system__stm32g4xx_8c.html#autotoc_md0',1,'']]],

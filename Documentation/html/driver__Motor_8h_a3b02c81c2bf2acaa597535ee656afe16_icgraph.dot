@@ -14,7 +14,8 @@ digraph "Motor_SetMode"
   Node4 [id="Node000004",label="Motor_Stop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$driver__Motor_8c.html#a7af54401c99ac93f3e732bca464837f1",tooltip="Stop all motors by setting their mode to standby."];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="HAL_GPIO_EXTI_Callback",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a0cd91fd3a9608559c2a87a8ba6cba55f",tooltip="GPIO interrupt callback for EXTI line."];
-  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="task_Behaviour",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#aaf35fdaa67af4eaef10cd2aa783a30cf",tooltip="Behavior control task."];
+  Node4 -> Node6 [id="edge5_Node000004_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="task_Control",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#acd1f91d39bdbd6e86a287e6c0f6eb700",tooltip="Behavior control task."];
   Node6 -> Node3 [id="edge6_Node000006_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge7_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

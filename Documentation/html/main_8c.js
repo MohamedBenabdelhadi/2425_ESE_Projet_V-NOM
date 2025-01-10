@@ -1,5 +1,8 @@
 var main_8c =
 [
+    [ "BTN_START_GPIO_Port", "main_8c.html#a2b12f92fb7c127180fcedbc650cf9a64", null ],
+    [ "BTN_START_Pin", "main_8c.html#aeeceb480d9bc0380e27eb71c39cab186", null ],
+    [ "DEBOUNCE_DELAY_MS", "main_8c.html#ad9f5ab5ce9186dd30e74331b822a3317", null ],
     [ "DEBUG", "main_8c.html#ad72dbcf6d0153db1b8d8a58001feed83", null ],
     [ "DEBUG_PRINT", "main_8c.html#a88edd2aa4feabff4af21a997d5d8aa23", null ],
     [ "STACK_SIZE", "main_8c.html#a6423a880df59733d2d9b509c7718d3a9", null ],
@@ -18,15 +21,16 @@ var main_8c =
     [ "main", "main_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
     [ "MX_FREERTOS_Init", "main_8c.html#abade755e13d07c10889ae83143656158", null ],
     [ "SystemClock_Config", "main_8c.html#a70af21c671abfcc773614a9a4f63d920", null ],
-    [ "task_Behaviour", "main_8c.html#aaf35fdaa67af4eaef10cd2aa783a30cf", null ],
+    [ "task_Control", "main_8c.html#acd1f91d39bdbd6e86a287e6c0f6eb700", null ],
     [ "task_Motors", "main_8c.html#a8f10a863197fb81d232a412773658b78", null ],
     [ "big_logo_msg", "main_8c.html#ade7bc344359b5fe560adf6d6b5d2e2da", null ],
+    [ "buttonStartPressed", "main_8c.html#a7c1f19ca953a6efd92b19e85dc17a798", null ],
     [ "hADXL", "main_8c.html#a708a0148f469d00ce01b25449488baad", null ],
     [ "hlidar", "main_8c.html#a493c06babb7cdbc7da75be96c812804f", null ],
     [ "hMotors", "main_8c.html#a0bcb687a2a521ee4b8f96671baa7f1f1", null ],
     [ "hTof", "main_8c.html#a9b31bf900b0aef147d175d0d2b6aa78b", null ],
     [ "jumbo_logo_msg", "main_8c.html#a11d9c5d5126fbb2339ad812c80f29cac", null ],
     [ "small_logo_msg", "main_8c.html#a6756b7138c240d2483fae1eb2ae7cd3a", null ],
-    [ "xHandle1", "main_8c.html#a4274f173fcd1955697b5aafbba8b7ca3", null ],
-    [ "xHandle2", "main_8c.html#af28baa625146e9b24f6fa065daf07cdf", null ]
+    [ "xControl", "main_8c.html#abad334b01a2fdbe2fb5ce1dff6cd2101", null ],
+    [ "xMotors", "main_8c.html#a8699d330202dcaf5c9a654a7aa93d11c", null ]
 ];

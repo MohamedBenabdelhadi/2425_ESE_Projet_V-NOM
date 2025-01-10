@@ -34,6 +34,12 @@ Include dependency graph for main.\+c\+:
 \#define \mbox{\hyperlink{main_8c_a91bd5a224ef886a986db440d15be4397}{TASK\+\_\+\+PRIORITY\+\_\+\+MOTOR}}~1
 \item 
 \#define \mbox{\hyperlink{main_8c_a4126d324f758cfaaddd14dbc048e3441}{TOF\+\_\+\+TRESHHOLD}}~40
+\item 
+\#define \mbox{\hyperlink{main_8c_ad9f5ab5ce9186dd30e74331b822a3317}{DEBOUNCE\+\_\+\+DELAY\+\_\+\+MS}}~50
+\item 
+\#define \mbox{\hyperlink{main_8c_aeeceb480d9bc0380e27eb71c39cab186}{BTN\+\_\+\+START\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+X
+\item 
+\#define \mbox{\hyperlink{main_8c_a2b12f92fb7c127180fcedbc650cf9a64}{BTN\+\_\+\+START\+\_\+\+GPIO\+\_\+\+Port}}~GPIO\+\_\+\+PORT\+\_\+X
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -54,7 +60,7 @@ void \mbox{\hyperlink{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}{HAL\+\_\+\+GPIO
 \begin{DoxyCompactList}\small\item\em GPIO interrupt callback for EXTI line. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{main_8c_a8f10a863197fb81d232a412773658b78}{task\+\_\+\+Motors}} (void \texorpdfstring{$\ast$}{*}unsused)
 \begin{DoxyCompactList}\small\item\em Task declarations. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{main_8c_aaf35fdaa67af4eaef10cd2aa783a30cf}{task\+\_\+\+Behaviour}} (void \texorpdfstring{$\ast$}{*}unsused)
+void \mbox{\hyperlink{main_8c_acd1f91d39bdbd6e86a287e6c0f6eb700}{task\+\_\+\+Control}} (void \texorpdfstring{$\ast$}{*}unsused)
 \begin{DoxyCompactList}\small\item\em Behavior control task. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{main_8c_aa78a978fbd2432d86e6dd4b572b368af}{err\+Handler\+\_\+x\+Task\+Create}} (Base\+Type\+\_\+t r)
 \begin{DoxyCompactList}\small\item\em Handles errors during task creation. \end{DoxyCompactList}\item 
@@ -85,9 +91,11 @@ char \mbox{\hyperlink{main_8c_a11d9c5d5126fbb2339ad812c80f29cac}{jumbo\+\_\+logo
 \item 
 \mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \mbox{\hyperlink{main_8c_a708a0148f469d00ce01b25449488baad}{h\+ADXL}}
 \item 
-Task\+Handle\+\_\+t \mbox{\hyperlink{main_8c_a4274f173fcd1955697b5aafbba8b7ca3}{x\+Handle1}}
+Task\+Handle\+\_\+t \mbox{\hyperlink{main_8c_a8699d330202dcaf5c9a654a7aa93d11c}{x\+Motors}}
 \item 
-Task\+Handle\+\_\+t \mbox{\hyperlink{main_8c_af28baa625146e9b24f6fa065daf07cdf}{x\+Handle2}}
+Task\+Handle\+\_\+t \mbox{\hyperlink{main_8c_abad334b01a2fdbe2fb5ce1dff6cd2101}{x\+Control}}
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{main_8c_a7c1f19ca953a6efd92b19e85dc17a798}{button\+Start\+Pressed}} = 0
 \end{DoxyCompactItemize}
 
 
@@ -106,6 +114,36 @@ Definition in file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 
 \doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8c_a2b12f92fb7c127180fcedbc650cf9a64}\label{main_8c_a2b12f92fb7c127180fcedbc650cf9a64} 
+\index{main.c@{main.c}!BTN\_START\_GPIO\_Port@{BTN\_START\_GPIO\_Port}}
+\index{BTN\_START\_GPIO\_Port@{BTN\_START\_GPIO\_Port}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{BTN\_START\_GPIO\_Port}{BTN\_START\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define BTN\+\_\+\+START\+\_\+\+GPIO\+\_\+\+Port~GPIO\+\_\+\+PORT\+\_\+X}
+
+Replace {\ttfamily X} with the actual GPIO port for BTN\+\_\+\+START 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00065}{65}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_aeeceb480d9bc0380e27eb71c39cab186}\label{main_8c_aeeceb480d9bc0380e27eb71c39cab186} 
+\index{main.c@{main.c}!BTN\_START\_Pin@{BTN\_START\_Pin}}
+\index{BTN\_START\_Pin@{BTN\_START\_Pin}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{BTN\_START\_Pin}{BTN\_START\_Pin}}
+{\footnotesize\ttfamily \#define BTN\+\_\+\+START\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+X}
+
+Replace {\ttfamily X} with the actual pin number for BTN\+\_\+\+START 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00064}{64}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_ad9f5ab5ce9186dd30e74331b822a3317}\label{main_8c_ad9f5ab5ce9186dd30e74331b822a3317} 
+\index{main.c@{main.c}!DEBOUNCE\_DELAY\_MS@{DEBOUNCE\_DELAY\_MS}}
+\index{DEBOUNCE\_DELAY\_MS@{DEBOUNCE\_DELAY\_MS}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{DEBOUNCE\_DELAY\_MS}{DEBOUNCE\_DELAY\_MS}}
+{\footnotesize\ttfamily \#define DEBOUNCE\+\_\+\+DELAY\+\_\+\+MS~50}
+
+Debounce delay in milliseconds 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00063}{63}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
 \Hypertarget{main_8c_ad72dbcf6d0153db1b8d8a58001feed83}\label{main_8c_ad72dbcf6d0153db1b8d8a58001feed83} 
 \index{main.c@{main.c}!DEBUG@{DEBUG}}
 \index{DEBUG@{DEBUG}!main.c@{main.c}}
@@ -152,7 +190,7 @@ Definition at line \mbox{\hyperlink{main_8c_source_l00059}{59}} of file \mbox{\h
 \doxysubsubsection{\texorpdfstring{TOF\_TRESHHOLD}{TOF\_TRESHHOLD}}
 {\footnotesize\ttfamily \#define TOF\+\_\+\+TRESHHOLD~40}
 
-
+Threshhold for edge detection 
 
 Definition at line \mbox{\hyperlink{main_8c_source_l00061}{61}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
@@ -181,7 +219,7 @@ Transmit a character over UART.
 \end{DoxyRetVals}
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00177}{177}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00184}{184}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 \Hypertarget{main_8c_aa78a978fbd2432d86e6dd4b572b368af}\label{main_8c_aa78a978fbd2432d86e6dd4b572b368af} 
 \index{main.c@{main.c}!errHandler\_xTaskCreate@{errHandler\_xTaskCreate}}
@@ -205,7 +243,7 @@ Handles errors during task creation.
 \end{DoxyRetVals}
 This function checks the return value of {\ttfamily x\+Task\+Create} to determine if a task was created successfully. In case of failure, it performs error handling. 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00334}{334}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00361}{361}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 Here is the call graph for this function\+:
 % FIG 1
@@ -228,7 +266,7 @@ This function is executed in case of error occurrence.
 \end{DoxyRetVals}
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00565}{565}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00592}{592}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 Here is the caller graph for this function\+:
 % FIG 3
@@ -254,7 +292,7 @@ ADC conversion complete callback.
 \end{DoxyRetVals}
 This function processes ADC conversion data when the conversion is complete. It differentiates between ADC1 and ADC2 to process ToF sensor readings. 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00221}{221}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00228}{228}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 Here is the call graph for this function\+:
 % FIG 4
@@ -266,7 +304,7 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00506}{506}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00533}{533}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 Here is the call graph for this function\+:
 % FIG 5
@@ -292,7 +330,7 @@ GPIO interrupt callback for EXTI line.
 \end{DoxyRetVals}
 This callback handles the interrupt triggered by the accelerometer (single tap or other configured events). 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00239}{239}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00246}{246}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 Here is the call graph for this function\+:
 % FIG 6
@@ -321,7 +359,7 @@ This function is called when TIM2 interrupt took place, inside HAL\+\_\+\+TIM\+\
 \end{DoxyRetVals}
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00548}{548}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00575}{575}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 \Hypertarget{main_8c_a0e0456ea96d55db31de947fb3e954f18}\label{main_8c_a0e0456ea96d55db31de947fb3e954f18} 
 \index{main.c@{main.c}!HAL\_UART\_ErrorCallback@{HAL\_UART\_ErrorCallback}}
@@ -345,7 +383,7 @@ UART error callback.
 \end{DoxyRetVals}
 This function handles UART errors such as parity, noise, framing, or overrun errors. It restarts the LIDAR\textquotesingle{}s DMA in case of errors. 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00521}{521}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00548}{548}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 \Hypertarget{main_8c_ae494a9643f29b87d6d81e5264e60e57b}\label{main_8c_ae494a9643f29b87d6d81e5264e60e57b} 
 \index{main.c@{main.c}!HAL\_UART\_RxCpltCallback@{HAL\_UART\_RxCpltCallback}}
@@ -369,7 +407,7 @@ UART receive complete callback.
 \end{DoxyRetVals}
 This callback processes complete DMA reception for the UART instance. 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00208}{208}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00215}{215}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 Here is the call graph for this function\+:
 % FIG 7
@@ -397,7 +435,7 @@ UART receive half-\/complete callback.
 \end{DoxyRetVals}
 This callback processes partial DMA reception for the UART instance (e.\+g., used for YLIDAR data). 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00196}{196}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00203}{203}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 Here is the call graph for this function\+:
 % FIG 8
@@ -420,7 +458,7 @@ Peripheral initialization.
 
 Contains initialization code for GPIO, ADC, SPI, TIM, etc.
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00357}{357}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00384}{384}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 Here is the call graph for this function\+:
 % FIG 9
@@ -473,17 +511,17 @@ Initializes the RCC Oscillators according to the specified parameters in the RCC
 
 Initializes the CPU, AHB and APB buses clocks
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00462}{462}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00489}{489}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 Here is the call graph for this function\+:
 % FIG 12
 Here is the caller graph for this function\+:
 % FIG 13
-\Hypertarget{main_8c_aaf35fdaa67af4eaef10cd2aa783a30cf}\label{main_8c_aaf35fdaa67af4eaef10cd2aa783a30cf} 
-\index{main.c@{main.c}!task\_Behaviour@{task\_Behaviour}}
-\index{task\_Behaviour@{task\_Behaviour}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{task\_Behaviour()}{task\_Behaviour()}}
-{\footnotesize\ttfamily void task\+\_\+\+Behaviour (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{unsused }\end{DoxyParamCaption})}
+\Hypertarget{main_8c_acd1f91d39bdbd6e86a287e6c0f6eb700}\label{main_8c_acd1f91d39bdbd6e86a287e6c0f6eb700} 
+\index{main.c@{main.c}!task\_Control@{task\_Control}}
+\index{task\_Control@{task\_Control}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{task\_Control()}{task\_Control()}}
+{\footnotesize\ttfamily void task\+\_\+\+Control (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{unsused }\end{DoxyParamCaption})}
 
 
 
@@ -501,7 +539,7 @@ Behavior control task.
 \end{DoxyRetVals}
 This Free\+RTOS task controls motor behavior based on ToF sensor readings. It evaluates distances from ToF sensors and adjusts motor directions accordingly. 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00288}{288}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00304}{304}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 Here is the call graph for this function\+:
 % FIG 14
@@ -531,7 +569,7 @@ Motor control task.
 \end{DoxyRetVals}
 This Free\+RTOS task continuously updates the motor speed based on current settings. 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00271}{271}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00288}{288}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 Here is the call graph for this function\+:
 % FIG 16
@@ -576,7 +614,17 @@ Here is the caller graph for this function\+:
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00086}{86}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00090}{90}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a7c1f19ca953a6efd92b19e85dc17a798}\label{main_8c_a7c1f19ca953a6efd92b19e85dc17a798} 
+\index{main.c@{main.c}!buttonStartPressed@{buttonStartPressed}}
+\index{buttonStartPressed@{buttonStartPressed}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{buttonStartPressed}{buttonStartPressed}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t button\+Start\+Pressed = 0}
+
+Flag to indicate button press state 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00166}{166}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 \Hypertarget{main_8c_a708a0148f469d00ce01b25449488baad}\label{main_8c_a708a0148f469d00ce01b25449488baad} 
 \index{main.c@{main.c}!hADXL@{hADXL}}
@@ -586,7 +634,7 @@ Definition at line \mbox{\hyperlink{main_8c_source_l00086}{86}} of file \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00155}{155}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00159}{159}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 \Hypertarget{main_8c_a493c06babb7cdbc7da75be96c812804f}\label{main_8c_a493c06babb7cdbc7da75be96c812804f} 
 \index{main.c@{main.c}!hlidar@{hlidar}}
@@ -596,7 +644,7 @@ Definition at line \mbox{\hyperlink{main_8c_source_l00155}{155}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00146}{146}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00150}{150}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 \Hypertarget{main_8c_a0bcb687a2a521ee4b8f96671baa7f1f1}\label{main_8c_a0bcb687a2a521ee4b8f96671baa7f1f1} 
 \index{main.c@{main.c}!hMotors@{hMotors}}
@@ -606,7 +654,7 @@ Definition at line \mbox{\hyperlink{main_8c_source_l00146}{146}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00149}{149}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00153}{153}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 \Hypertarget{main_8c_a9b31bf900b0aef147d175d0d2b6aa78b}\label{main_8c_a9b31bf900b0aef147d175d0d2b6aa78b} 
 \index{main.c@{main.c}!hTof@{hTof}}
@@ -616,7 +664,7 @@ Definition at line \mbox{\hyperlink{main_8c_source_l00149}{149}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00152}{152}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00156}{156}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 \Hypertarget{main_8c_a11d9c5d5126fbb2339ad812c80f29cac}\label{main_8c_a11d9c5d5126fbb2339ad812c80f29cac} 
 \index{main.c@{main.c}!jumbo\_logo\_msg@{jumbo\_logo\_msg}}
@@ -626,7 +674,7 @@ Definition at line \mbox{\hyperlink{main_8c_source_l00152}{152}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00111}{111}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00115}{115}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 \Hypertarget{main_8c_a6756b7138c240d2483fae1eb2ae7cd3a}\label{main_8c_a6756b7138c240d2483fae1eb2ae7cd3a} 
 \index{main.c@{main.c}!small\_logo\_msg@{small\_logo\_msg}}
@@ -651,25 +699,25 @@ Definition at line \mbox{\hyperlink{main_8c_source_l00111}{111}} of file \mbox{\
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00074}{74}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00078}{78}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
-\Hypertarget{main_8c_a4274f173fcd1955697b5aafbba8b7ca3}\label{main_8c_a4274f173fcd1955697b5aafbba8b7ca3} 
-\index{main.c@{main.c}!xHandle1@{xHandle1}}
-\index{xHandle1@{xHandle1}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{xHandle1}{xHandle1}}
-{\footnotesize\ttfamily Task\+Handle\+\_\+t x\+Handle1}
-
-
-
-Definition at line \mbox{\hyperlink{main_8c_source_l00158}{158}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
-
-\Hypertarget{main_8c_af28baa625146e9b24f6fa065daf07cdf}\label{main_8c_af28baa625146e9b24f6fa065daf07cdf} 
-\index{main.c@{main.c}!xHandle2@{xHandle2}}
-\index{xHandle2@{xHandle2}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{xHandle2}{xHandle2}}
-{\footnotesize\ttfamily Task\+Handle\+\_\+t x\+Handle2}
+\Hypertarget{main_8c_abad334b01a2fdbe2fb5ce1dff6cd2101}\label{main_8c_abad334b01a2fdbe2fb5ce1dff6cd2101} 
+\index{main.c@{main.c}!xControl@{xControl}}
+\index{xControl@{xControl}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{xControl}{xControl}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t x\+Control}
 
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00159}{159}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00163}{163}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a8699d330202dcaf5c9a654a7aa93d11c}\label{main_8c_a8699d330202dcaf5c9a654a7aa93d11c} 
+\index{main.c@{main.c}!xMotors@{xMotors}}
+\index{xMotors@{xMotors}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{xMotors}{xMotors}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t x\+Motors}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00162}{162}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
