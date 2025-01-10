@@ -64,6 +64,12 @@ typedef struct {
 void ADXL343_Init(h_ADXL343_t *hadxl);
 
 /**
+ * @brief Configures single-tap detection for the ADXL343.
+ * @param hadxl Pointer to the ADXL343 handle structure.
+ */
+void ADXL343_ConfigureTap(h_ADXL343_t *hadxl);
+
+/**
  * @brief Reads the acceleration data from the ADXL343.
  * @param hadxl Pointer to the ADXL343 handle structure.
  */

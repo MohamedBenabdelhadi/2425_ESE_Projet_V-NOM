@@ -1,7 +1,7 @@
-../Core/drivers/driver_ADXL343.c:33:6:spiWrite	24	static
-../Core/drivers/driver_ADXL343.c:70:6:spiRead	24	static
-../Core/drivers/driver_ADXL343.c:103:6:ADXL343_writeRegister	24	static
-../Core/drivers/driver_ADXL343.c:116:6:ADXL343_readRegister	16	static
-../Core/drivers/driver_ADXL343.c:138:6:ADXL343_Init	24	static
-../Core/drivers/driver_ADXL343.c:166:6:ADXL343_ConfigureTap	24	static
-../Core/drivers/driver_ADXL343.c:192:6:ADXL343_get_Acceleration	56	static
+../Core/drivers/driver_ADXL343.c:30:6:spiWrite	24	static
+../Core/drivers/driver_ADXL343.c:66:6:spiRead	24	static
+../Core/drivers/driver_ADXL343.c:99:6:ADXL343_writeRegister	24	static
+../Core/drivers/driver_ADXL343.c:111:6:ADXL343_readRegister	16	static
+../Core/drivers/driver_ADXL343.c:126:6:ADXL343_Init	24	static
+../Core/drivers/driver_ADXL343.c:161:6:ADXL343_ConfigureTap	48	static
+../Core/drivers/driver_ADXL343.c:206:6:ADXL343_get_Acceleration	56	static
