@@ -11,6 +11,7 @@
 #define MOTOR1_FWD_PORT      GPIOA        // Port FWD
 #define MOTOR1_REV_PIN       GPIO_PIN_13  // REV (TIM1 CH1N)
 #define MOTOR1_REV_PORT      GPIOB        // Port REV
+#define MOTOR1_REV_DIFF      0.85
 
 #define MOTOR2_FWD_PIN       GPIO_PIN_9   // FWD (TIM2 CH2)
 #define MOTOR2_FWD_PORT      GPIOA        // Port FWD
@@ -21,8 +22,8 @@
 // Modes de fonctionnement du moteur
 typedef enum {
 	STANDBY_MODE, // Stops a motor
-	REVERSE_MODE,
 	FORWARD_MODE,
+	REVERSE_MODE,
 	BRAKE_MODE
 } MotorMode;
 

@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 #include "adc.h"
 #include "spi.h"
 #include "tim.h"
@@ -52,6 +53,9 @@
 #else
 #define DEBUG_PRINT(...)
 #endif
+
+#define STACK_SIZE 256
+#define TASK_PRIORITY_MOTOR 1
 
 /* USER CODE END PD */
 
@@ -147,10 +151,15 @@ h_GP2Y0A41SK0F_t hTof;
 // Global ADXL343 (Accelerometer) handler
 h_ADXL343_t hADXL;
 
+// Task handles
+TaskHandle_t xHandle1;
+TaskHandle_t xHandle2;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -213,14 +222,108 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 	}
 }
 
-void test_Motors(void)
+/**
+ * @brief ADC conversion complete callback.
+ * This function is called when an ADC conversion is complete.
+ * It retrieves the ADC value and processes the data.
+ */
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
+	if (hadc->Instance == ADC1) {
+		hTof.adc_val_tof1 = HAL_ADC_GetValue(hadc);
+		GP2Y0A41SK0F_get_distance1(&hTof);
+	} else if (hadc->Instance == ADC2) {
+		hTof.adc_val_tof2 = HAL_ADC_GetValue(hadc);
+		GP2Y0A41SK0F_get_distance2(&hTof);
+	}
+}
+
+void HAL_ADC_ErrorCallback(ADC_HandleTypeDef *hadc) {
+	if (hadc->ErrorCode != HAL_ADC_ERROR_NONE) {
+		printf("ADC Error Code: %lx\n", hadc->ErrorCode);
+
+		GP2Y0A41SK0F_Start_Interrupt(&hTof);
+	}
+}
+
+/**
+ * @brief  Gestion d'erreurs de création de tâche.
+ * @param	BaseType_t	Retour de xTaskCreate.
+ */
+void errHandler_xTaskCreate(BaseType_t r)
 {
+	/* Vérification si la tâche a été créée avec succès */
+	if (pdPASS == r) {
+		/* Si la tâche est créée avec succès, démarrer le scheduler */
+		printf("Tâche crée avec succès\r\n");
+	} else if (errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY == r) {
+		printf("Erreur: Mémoire insuffisante\r\n");
+		Error_Handler();
+	} else {
+		/* Cas improbable : code d'erreur non prévu pour xTaskCreate */
+		printf("Erreur inconnue lors de la création de la tâche\r\n");
+		Error_Handler();  	// Gestion d'erreur générique
+		NVIC_SystemReset(); // Réinitialiser le microcontrôleur
+	}
+}
+
+#define TOF_TRESHHOLD 40
+
+void task_Motors(void * unsused)
+{
+	/* Motors test */
 	Motor_Init(&hMotors, &htim1);
 
-	hMotors.mode_mot1 = FORWARD_MODE;
-	hMotors.mode_mot2 = FORWARD_MODE;
-	Motor_SetMode(&hMotors);
-	//Motor_SetSpeed_percent(&hMotors, 90.0, 90.0);
+
+	while (1)
+	{
+		//Motor_SetSpeed_percent(&hMotors, (hTof.distance_tof2 > 40 ? 0 : 80), (hTof.distance_tof1 > 40 ? 0 : 80));
+		//DEBUG_PRINT("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
+		Motor_UpdateSpeed(&hMotors);
+	}
+}
+
+void task_Behaviour(void * unsused)
+{
+	while (1)
+	{
+		DEBUG_PRINT("ToF1 distance: %d mm, ToF2 distance: %d mm\r\n", hTof.distance_tof1, hTof.distance_tof2);
+
+		/* Motors test */
+		if (hTof.distance_tof2 > TOF_TRESHHOLD && hTof.distance_tof1 > TOF_TRESHHOLD)
+		{
+			hMotors.mode_mot1 = FORWARD_MODE;
+			hMotors.mode_mot2 = FORWARD_MODE;
+
+			Motor_SetMode(&hMotors);
+			Motor_SetSpeed_percent(&hMotors, 40, 40);
+			vTaskDelay(1000 / portTICK_PERIOD_MS);
+		}
+		else if (hTof.distance_tof2 > TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
+		{
+			hMotors.mode_mot1 = FORWARD_MODE;
+			hMotors.mode_mot2 = REVERSE_MODE;
+		}
+		else if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 > TOF_TRESHHOLD)
+		{
+			hMotors.mode_mot1 = REVERSE_MODE;
+			hMotors.mode_mot2 = FORWARD_MODE;
+		}
+		else if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
+		{
+			hMotors.mode_mot1 = REVERSE_MODE;
+			hMotors.mode_mot2 = REVERSE_MODE;
+		}
+		else
+		{
+			hMotors.mode_mot1 = REVERSE_MODE;
+			hMotors.mode_mot2 = FORWARD_MODE;
+		}
+
+		Motor_SetMode(&hMotors);
+		Motor_SetSpeed_percent(&hMotors, 40, 40);
+
+		vTaskDelay(1);
+	}
 }
 
 /* USER CODE END 0 */
@@ -233,6 +336,7 @@ int main(void)
 {
 
 	/* USER CODE BEGIN 1 */
+	BaseType_t xReturned;
 
 	/* USER CODE END 1 */
 
@@ -261,61 +365,57 @@ int main(void)
 	MX_USART2_UART_Init();
 	MX_USART1_UART_Init();
 	MX_ADC1_Init();
+	MX_ADC2_Init();
 	/* USER CODE BEGIN 2 */
 	printf("\r\n*** Waking up V-NOM ***\r\n");
 	//printf("%s", jumbo_logo_msg);
 
-	/* Motors test & initialization */
-	test_Motors();
+	/* ToF sensors Initialization */
+	GP2Y0A41SK0F_Init(&hTof);
+
+	/* Motors task */
+	xReturned = xTaskCreate(
+			task_Motors, // Function that implements the task.
+			"task_Motors", // Text name for the task.
+			STACK_SIZE, // Stack size in words, not bytes.
+			(void *) 0, // Parameter passed into the task.
+			TASK_PRIORITY_MOTOR,// Priority at which the task is created.
+			&xHandle1); // Used to pass out the created task's handle.
+
+	errHandler_xTaskCreate(xReturned);
+
+	/* Behaviour task */
+	xReturned = xTaskCreate(
+			task_Behaviour, // Function that implements the task.
+			"task_Behaviour", // Text name for the task.
+			STACK_SIZE, // Stack size in words, not bytes.
+			(void *) 0, // Parameter passed into the task.
+			TASK_PRIORITY_MOTOR,// Priority at which the task is created.
+			&xHandle2); // Used to pass out the created task's handle.
+
+	errHandler_xTaskCreate(xReturned);
 
 	/* YLIDAR X2 Initialization with DMA *
 	LIDAR_RX_GPIO_Port->PUPDR = GPIO_PULLUP;
 	YLIDARX2_InitDMA(&hlidar, &huart2);*/
-
-	/* ToF sensors Initialization */
-	GP2Y0A41SK0F_Init(&hTof);
 
 	/* ADXL343 Initialization *
 	ADXL343_Init(&hADXL);*/
 
 	/* USER CODE END 2 */
 
+	/* Call init function for freertos objects (in cmsis_os2.c) */
+	MX_FREERTOS_Init();
+
+	/* Start scheduler */
+	osKernelStart();
+
+	/* We should never get here as control is now taken by the scheduler */
+
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	while (1)
 	{
-		/* ToF test */
-		GP2Y0A41SK0F_get_distance(&hTof);
-		//printf("ToF1 distance: %d mm, ToF2 distance: %d mm\r\n", hTof.distance_tof1, hTof.distance_tof2);
-
-		/* Motors test */
-		if (hTof.distance_tof2 > 40 && hTof.distance_tof1 > 40)
-		{
-			hMotors.mode_mot1 = REVERSE_MODE;
-			hMotors.mode_mot2 = REVERSE_MODE;
-		}
-		else if (hTof.distance_tof2 > 40 && hTof.distance_tof1 <= 40)
-		{
-			hMotors.mode_mot1 = FORWARD_MODE;
-			hMotors.mode_mot2 = REVERSE_MODE;
-		}
-		else if (hTof.distance_tof2 <= 40 && hTof.distance_tof1 > 40)
-		{
-			hMotors.mode_mot1 = REVERSE_MODE;
-			hMotors.mode_mot2 = FORWARD_MODE;
-		}
-		else if (hTof.distance_tof2 <= 40 && hTof.distance_tof1 <= 40)
-		{
-			hMotors.mode_mot1 = FORWARD_MODE;
-			hMotors.mode_mot2 = FORWARD_MODE;
-		}
-
-		Motor_SetSpeed_percent(&hMotors, 80, 80);
-
-		//Motor_SetSpeed_percent(&hMotors, (hTof.distance_tof2 > 40 ? 0 : 80), (hTof.distance_tof1 > 40 ? 0 : 80));
-		//printf("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
-		Motor_UpdateSpeed(&hMotors);
-
 		/* ADXL343 test *
 		ADXL343_get_Acceleration(&hADXL);*/
 
@@ -375,6 +475,27 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/**
+ * @brief  Period elapsed callback in non blocking mode
+ * @note   This function is called  when TIM2 interrupt took place, inside
+ * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+ * a global variable "uwTick" used as application time base.
+ * @param  htim : TIM handle
+ * @retval None
+ */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	/* USER CODE BEGIN Callback 0 */
+
+	/* USER CODE END Callback 0 */
+	if (htim->Instance == TIM2) {
+		HAL_IncTick();
+	}
+	/* USER CODE BEGIN Callback 1 */
+
+	/* USER CODE END Callback 1 */
+}
 
 /**
  * @brief  This function is executed in case of error occurrence.

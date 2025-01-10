@@ -3,4 +3,5 @@
 ../Core/drivers/driver_ADXL343.c:103:6:ADXL343_writeRegister	1
 ../Core/drivers/driver_ADXL343.c:116:6:ADXL343_readRegister	3
 ../Core/drivers/driver_ADXL343.c:138:6:ADXL343_Init	3
-../Core/drivers/driver_ADXL343.c:170:6:ADXL343_get_Acceleration	1
+../Core/drivers/driver_ADXL343.c:166:6:ADXL343_ConfigureTap	1
+../Core/drivers/driver_ADXL343.c:192:6:ADXL343_get_Acceleration	1

@@ -61,8 +61,6 @@ void Error_Handler(void);
 #define BTN_START_GPIO_Port GPIOC
 #define ToF2_Pin GPIO_PIN_0
 #define ToF2_GPIO_Port GPIOA
-#define ToF1_Pin GPIO_PIN_2
-#define ToF1_GPIO_Port GPIOA
 #define AG_INT1_Pin GPIO_PIN_3
 #define AG_INT1_GPIO_Port GPIOA
 #define AG_INT2_Pin GPIO_PIN_4

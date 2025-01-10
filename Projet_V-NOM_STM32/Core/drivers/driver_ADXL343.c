@@ -159,6 +159,28 @@ void ADXL343_Init(h_ADXL343_t * hadxl) {
 		val = 0x01;
 		ADXL343_writeRegister (ADXL343_DATA_FORMAT, &val, 1);  // 10bit data, range= +- 4g
 	}
+
+	ADXL343_ConfigureTap(hadxl);
+}
+
+void ADXL343_ConfigureTap(h_ADXL343_t *hadxl) {
+   uint8_t val;
+
+   // Seuil de tap (ajustez selon vos besoins)
+   val = 50; // Seuil de 50 (0.0625g par incrément)
+   ADXL343_writeRegister(ADXL343_THRESH_TAP, &val, 1);
+
+   // Durée du tap
+   val = 30; // 30 ms
+   ADXL343_writeRegister(ADXL343_DUR, &val, 1);
+
+   // Active les axes pour la détection de tap (X, Y, Z)
+   val = 0x07; // Active X, Y, Z
+   ADXL343_writeRegister(ADXL343_TAP_AXES, &val, 1);
+
+   // Active l'interruption de tap sur INT1
+   val = 0x40; // Single tap interrupt
+   ADXL343_writeRegister(ADXL343_INT_ENABLE, &val, 1);
 }
 
 /**
