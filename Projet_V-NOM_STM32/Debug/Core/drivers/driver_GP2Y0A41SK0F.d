@@ -33,7 +33,8 @@ Core/drivers/driver_GP2Y0A41SK0F.o: ../Core/drivers/driver_GP2Y0A41SK0F.c \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
- ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
+ ../Core/Inc/gpio.h
 ../Core/drivers/driver_GP2Y0A41SK0F.h:
 ../Core/Inc/adc.h:
 ../Core/Inc/main.h:
@@ -71,3 +72,4 @@ Core/drivers/driver_GP2Y0A41SK0F.o: ../Core/drivers/driver_GP2Y0A41SK0F.c \
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
+../Core/Inc/gpio.h:

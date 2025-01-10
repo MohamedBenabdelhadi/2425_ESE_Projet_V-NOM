@@ -56,7 +56,8 @@
 #endif
 
 #define STACK_SIZE 256
-#define TASK_PRIORITY_MOTOR 1
+#define TASK_PRIORITY_MOTOR 10
+#define TASK_PRIORITY_CONTROL 2
 
 #define TOF_TRESHHOLD 40 /**< Threshhold for edge detection */
 
@@ -222,7 +223,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
  * @retval None
  * @details This function processes ADC conversion data when the conversion
  * is complete. It differentiates between ADC1 and ADC2 to process ToF sensor readings.
- */
+ *
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
 	if (hadc->Instance == ADC1) {
 		hTof.adc_val_tof1 = HAL_ADC_GetValue(hadc);
@@ -233,7 +234,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
 		GP2Y0A41SK0F_get_distance2(&hTof);
 	}
 }
-
+ */
 /**
  * @brief GPIO interrupt callback for EXTI line.
  * @param GPIO_Pin: The GPIO pin that triggered the interrupt.
@@ -285,8 +286,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
  */
 void task_Motors(void * unsused)
 {
+	DEBUG_PRINT("task_Motors\r\n");
+
 	while (1)
 	{
+		GP2Y0A41SK0F_get_distance(&hTof);
 		Motor_UpdateSpeed(&hMotors);
 		vTaskDelay(1);
 	}
@@ -301,49 +305,39 @@ void task_Motors(void * unsused)
  */
 void task_Control(void * unsused)
 {
+	DEBUG_PRINT("task_Control\r\n");
+
 	while (1)
 	{
-		if(buttonStartPressed)
+		DEBUG_PRINT("ToF1 distance: %d mm, ToF2 distance: %d mm\r\n", hTof.distance_tof1, hTof.distance_tof2);
+
+		/* Motors test */
+		if (hTof.distance_tof2 > TOF_TRESHHOLD && hTof.distance_tof1 > TOF_TRESHHOLD)
 		{
-			DEBUG_PRINT("ToF1 distance: %d mm, ToF2 distance: %d mm\r\n", hTof.distance_tof1, hTof.distance_tof2);
-
-			/* Motors test */
-			if (hTof.distance_tof2 > TOF_TRESHHOLD && hTof.distance_tof1 > TOF_TRESHHOLD)
-			{
-				hMotors.mode_mot1 = FORWARD_MODE;
-				hMotors.mode_mot2 = FORWARD_MODE;
-
-				Motor_SetMode(&hMotors);
-				Motor_SetSpeed_percent(&hMotors, 40, 40);
-				vTaskDelay(1000 / portTICK_PERIOD_MS);
-			}
-			else if (hTof.distance_tof2 > TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
-			{
-				hMotors.mode_mot1 = FORWARD_MODE;
-				hMotors.mode_mot2 = REVERSE_MODE;
-			}
-			else if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 > TOF_TRESHHOLD)
-			{
-				hMotors.mode_mot1 = REVERSE_MODE;
-				hMotors.mode_mot2 = FORWARD_MODE;
-			}
-			else //if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
-			{
-				hMotors.mode_mot1 = REVERSE_MODE;
-				hMotors.mode_mot2 = REVERSE_MODE;
-			}
-
-			Motor_SetMode(&hMotors);
-			Motor_SetSpeed_percent(&hMotors, 40, 40);
-			DEBUG_PRINT("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
-
-			vTaskDelay(1);
+			hMotors.mode_mot1 = FORWARD_MODE;
+			hMotors.mode_mot2 = FORWARD_MODE;
 		}
-		else
+		else if (hTof.distance_tof2 > TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
 		{
-			Motor_SetSpeed_percent(&hMotors, 0, 0);
-			vTaskDelay(1000 / portTICK_PERIOD_MS);
+			hMotors.mode_mot1 = FORWARD_MODE;
+			hMotors.mode_mot2 = REVERSE_MODE;
 		}
+		else if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 > TOF_TRESHHOLD)
+		{
+			hMotors.mode_mot1 = REVERSE_MODE;
+			hMotors.mode_mot2 = FORWARD_MODE;
+		}
+		else //if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
+		{
+			hMotors.mode_mot1 = REVERSE_MODE;
+			hMotors.mode_mot2 = REVERSE_MODE;
+		}
+
+		Motor_SetMode(&hMotors);
+		Motor_SetSpeed_percent(&hMotors, 40, 40);
+		DEBUG_PRINT("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
+
+		vTaskDelay(1);
 	}
 
 }
@@ -415,7 +409,6 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART1_UART_Init();
   MX_ADC1_Init();
-  MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
 	DEBUG_PRINT("\r\n*** Waking up V-NOM ***\r\n");
 	//DEBUG_PRINT("%s", jumbo_logo_msg);
@@ -423,8 +416,8 @@ int main(void)
 	/* ToF sensors Initialization */
 	GP2Y0A41SK0F_Init(&hTof);
 
-	/* ADXL343 Initialization */
-	ADXL343_Init(&hADXL);
+	/* ADXL343 Initialization *
+	ADXL343_Init(&hADXL);*/
 
 	/* Motors Initialization */
 	Motor_Init(&hMotors, &htim1);
@@ -450,7 +443,7 @@ int main(void)
 			"task_Control", // Text name for the task.
 			STACK_SIZE, // Stack size in words, not bytes.
 			(void *) 0, // Parameter passed into the task.
-			TASK_PRIORITY_MOTOR,// Priority at which the task is created.
+			TASK_PRIORITY_CONTROL,// Priority at which the task is created.
 			&xControl); // Used to pass out the created task's handle.
 
 	errHandler_xTaskCreate(xReturned);
@@ -526,14 +519,6 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
-void HAL_ADC_ErrorCallback(ADC_HandleTypeDef *hadc) {
-	if (hadc->ErrorCode != HAL_ADC_ERROR_NONE) {
-		printf("ADC Error Code: %lx\n", hadc->ErrorCode);
-
-		GP2Y0A41SK0F_Start_Interrupt(&hTof);
-	}
-}
 
 /**
  * @brief UART error callback.

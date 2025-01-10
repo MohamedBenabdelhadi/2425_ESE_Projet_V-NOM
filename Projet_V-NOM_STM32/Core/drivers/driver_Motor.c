@@ -24,8 +24,8 @@
 void Motor_Init(h_Motor_t * hMotors, TIM_HandleTypeDef * htim) {
 	// Allows to get direct parameters from the timer used
 	hMotors->htim = htim;
-	hMotors->speed_increase_rate1 = 10;
-	hMotors->speed_increase_rate2 = 10;
+	hMotors->speed_increase_rate1 = 50;
+	hMotors->speed_increase_rate2 = 50;
 
 	__HAL_RCC_GPIOA_CLK_ENABLE();
 	__HAL_RCC_GPIOB_CLK_ENABLE();
