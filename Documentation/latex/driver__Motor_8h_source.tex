@@ -1,0 +1,59 @@
+\doxysection{driver\+\_\+\+Motor.\+h}
+\hypertarget{driver__Motor_8h_source}{}\label{driver__Motor_8h_source}\index{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_Motor.h@{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_Motor.h}}
+\mbox{\hyperlink{driver__Motor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ DRIVER\_MOTOR\_H}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ DRIVER\_MOTOR\_H}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}stm32g4xx\_hal.h"{}}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00006}\mbox{\hyperlink{driver__Motor_8h_a3f3744c76b037d6cd51de8d62033052e}{00006}}\ \textcolor{preprocessor}{\#define\ TIM\_CHANNEL\_1N\ 0x00000004U}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00007}\mbox{\hyperlink{driver__Motor_8h_ae4405c593f1b715d1122614adc6dc353}{00007}}\ \textcolor{preprocessor}{\#define\ TIM\_CHANNEL\_2N\ 0x00000004U}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00009}00009\ \textcolor{comment}{//\ Motors\ pin\ attribution}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00010}\mbox{\hyperlink{driver__Motor_8h_a45e0fb4b8b40f202f1aabfc8661c7115}{00010}}\ \textcolor{preprocessor}{\#define\ MOTOR1\_FWD\_PIN\ \ \ \ \ \ \ GPIO\_PIN\_8\ \ \ }\textcolor{comment}{//\ FWD\ (TIM1\ CH1)}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00011}\mbox{\hyperlink{driver__Motor_8h_ab65d9a0a8b1687e420d5cfb529b97c3e}{00011}}\ \textcolor{preprocessor}{\#define\ MOTOR1\_FWD\_PORT\ \ \ \ \ \ GPIOA\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Port\ FWD}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00012}\mbox{\hyperlink{driver__Motor_8h_a91c29c7fcefaec93b5de1996d1d522ba}{00012}}\ \textcolor{preprocessor}{\#define\ MOTOR1\_REV\_PIN\ \ \ \ \ \ \ GPIO\_PIN\_13\ \ }\textcolor{comment}{//\ REV\ (TIM1\ CH1N)}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00013}\mbox{\hyperlink{driver__Motor_8h_aeb0dd2971768d1e4fdd8d57e73918cb6}{00013}}\ \textcolor{preprocessor}{\#define\ MOTOR1\_REV\_PORT\ \ \ \ \ \ GPIOB\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Port\ REV}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00014}\mbox{\hyperlink{driver__Motor_8h_a7ceb9a76bf36e33f3d1543c522ec6fa4}{00014}}\ \textcolor{preprocessor}{\#define\ MOTOR1\_REV\_DIFF\ \ \ \ \ \ 0.85}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00016}\mbox{\hyperlink{driver__Motor_8h_ac942af410a956ea68b42a5f4b58461b2}{00016}}\ \textcolor{preprocessor}{\#define\ MOTOR2\_FWD\_PIN\ \ \ \ \ \ \ GPIO\_PIN\_9\ \ \ }\textcolor{comment}{//\ FWD\ (TIM2\ CH2)}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00017}\mbox{\hyperlink{driver__Motor_8h_ab4b7a40d7c5ac961f2223b1a87e6c0ff}{00017}}\ \textcolor{preprocessor}{\#define\ MOTOR2\_FWD\_PORT\ \ \ \ \ \ GPIOA\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Port\ FWD}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00018}\mbox{\hyperlink{driver__Motor_8h_a7c186fe0ec6aa59fe0311f94d3a348e5}{00018}}\ \textcolor{preprocessor}{\#define\ MOTOR2\_REV\_PIN\ \ \ \ \ \ \ GPIO\_PIN\_14\ \ }\textcolor{comment}{//\ REV\ (TIM2\ CH2N)}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00019}\mbox{\hyperlink{driver__Motor_8h_a771c588688b780fde2fa12a5689a1789}{00019}}\ \textcolor{preprocessor}{\#define\ MOTOR2\_REV\_PORT\ \ \ \ \ \ GPIOB\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Port\ REV}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00022}00022\ \textcolor{comment}{//\ Modes\ de\ fonctionnement\ du\ moteur}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00023}\mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85c}{00023}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00024}\mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85ca6cc2183e0159e2fcbdfd85156b263ec0}{00024}}\ \ \ \ \ \mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85ca6cc2183e0159e2fcbdfd85156b263ec0}{STANDBY\_MODE}},\ \textcolor{comment}{//\ Stops\ a\ motor}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00025}\mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85cad1f6f09deeb1242535c57abee1c7a8ac}{00025}}\ \ \ \ \ \mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85cad1f6f09deeb1242535c57abee1c7a8ac}{FORWARD\_MODE}},}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00026}\mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85ca372ede0ca384ff46db46e8e76b955f30}{00026}}\ \ \ \ \ \mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85ca372ede0ca384ff46db46e8e76b955f30}{REVERSE\_MODE}},}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85cac6fc05a3cfd46fd775ddd380adf6a83b}{BRAKE\_MODE}}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00028}\mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85cac6fc05a3cfd46fd775ddd380adf6a83b}{00028}}\ \}\ \mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85c}{MotorMode}};}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00030}\mbox{\hyperlink{structh__Motor__t}{00030}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00031}\mbox{\hyperlink{structh__Motor__t_aacedbdb8cb4d02b7279b79c3c82c3bb1}{00031}}\ \ \ \ \ \mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85c}{MotorMode}}\ \mbox{\hyperlink{structh__Motor__t_aacedbdb8cb4d02b7279b79c3c82c3bb1}{mode\_mot1}};\ \textcolor{comment}{//\ Operating\ mode\ for\ motor\ 1}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00032}\mbox{\hyperlink{structh__Motor__t_a40847f19d30aafdc35322769d7849b38}{00032}}\ \ \ \ \ \mbox{\hyperlink{driver__Motor_8h_acf114e04f9a4c659c80ce0106398f85c}{MotorMode}}\ \mbox{\hyperlink{structh__Motor__t_a40847f19d30aafdc35322769d7849b38}{mode\_mot2}};\ \textcolor{comment}{//\ Operating\ mode\ for\ motor\ 2}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00033}\mbox{\hyperlink{structh__Motor__t_a8df75e44122e148783e198e3e81691ee}{00033}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structh__Motor__t_a8df75e44122e148783e198e3e81691ee}{speed1}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Target\ speed\ for\ motor\ 1}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00034}\mbox{\hyperlink{structh__Motor__t_ab84050b626016809de350970d5006968}{00034}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structh__Motor__t_ab84050b626016809de350970d5006968}{speed2}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Target\ speed\ for\ motor\ 2}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ Private\ variables\ for\ speed\ variation}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00037}\mbox{\hyperlink{structh__Motor__t_a14c979980e342e3df7207e6db0df9d76}{00037}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structh__Motor__t_a14c979980e342e3df7207e6db0df9d76}{current\_speed1}};\ \ \ \ \ \ \ \textcolor{comment}{//\ Current\ speed\ for\ motor\ 1}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00038}\mbox{\hyperlink{structh__Motor__t_a953835017f6e2a80bd10bd5433fa4444}{00038}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structh__Motor__t_a953835017f6e2a80bd10bd5433fa4444}{current\_speed2}};\ \ \ \ \ \ \ \textcolor{comment}{//\ Current\ speed\ for\ motor\ 2}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00039}\mbox{\hyperlink{structh__Motor__t_a5a9eda21d5770e2629c31b5eddbe0dba}{00039}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structh__Motor__t_a5a9eda21d5770e2629c31b5eddbe0dba}{speed\_increase\_rate1}};\ \textcolor{comment}{//\ Rate\ of\ speed\ increase\ for\ motor\ 1}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00040}\mbox{\hyperlink{structh__Motor__t_a3a2ab33027bcc09292944cceea755590}{00040}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structh__Motor__t_a3a2ab33027bcc09292944cceea755590}{speed\_increase\_rate2}};\ \textcolor{comment}{//\ Rate\ of\ speed\ increase\ for\ motor\ 2}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00042}\mbox{\hyperlink{structh__Motor__t_a5dc7d1c65997ccaed48a93a3f4ffc486}{00042}}\ \ \ \ \ TIM\_HandleTypeDef\ *\ \mbox{\hyperlink{structh__Motor__t_a5dc7d1c65997ccaed48a93a3f4ffc486}{htim}};\ \textcolor{comment}{//\ Timer\ handle\ for\ PWM\ control}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00043}00043\ \}\ \mbox{\hyperlink{structh__Motor__t}{h\_Motor\_t}};}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00046}00046\ \textcolor{comment}{//\ Function\ prototypes}}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00047}00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__Motor_8h_ad1dfbf8ee0a807290e2030e9792ef959}{Motor\_Init}}(\mbox{\hyperlink{structh__Motor__t}{h\_Motor\_t}}\ *\mbox{\hyperlink{main_8c_a0bcb687a2a521ee4b8f96671baa7f1f1}{hMotors}},\ TIM\_HandleTypeDef\ *htim);}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00048}00048\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__Motor_8h_a3b02c81c2bf2acaa597535ee656afe16}{Motor\_SetMode}}(\mbox{\hyperlink{structh__Motor__t}{h\_Motor\_t}}\ *\mbox{\hyperlink{main_8c_a0bcb687a2a521ee4b8f96671baa7f1f1}{hMotors}});}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00049}00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__Motor_8h_a99e002085849d62c67a8c049a9e18f68}{Motor\_SetSpeed\_percent}}(\mbox{\hyperlink{structh__Motor__t}{h\_Motor\_t}}\ *hMotor,\ \textcolor{keywordtype}{float}\ percent1,\ \textcolor{keywordtype}{float}\ percent2);}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00050}00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__Motor_8h_a61275e4b9d830e8363a59712759b5616}{Motor\_Stop}}(\mbox{\hyperlink{structh__Motor__t}{h\_Motor\_t}}\ *hMotor);}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00051}00051\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__Motor_8h_aaf133644e4ad60b557c154c119555dab}{Motor\_UpdateSpeed}}(\mbox{\hyperlink{structh__Motor__t}{h\_Motor\_t}}\ *hMotor);}
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{driver__Motor_8h_source_l00053}00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DRIVER\_MOTOR\_H}}
+
+\end{DoxyCode}

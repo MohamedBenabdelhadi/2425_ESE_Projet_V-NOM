@@ -1,0 +1,93 @@
+\doxysection{h\+\_\+\+YLIDARX2\+\_\+t Struct Reference}
+\hypertarget{structh__YLIDARX2__t}{}\label{structh__YLIDARX2__t}\index{h\_YLIDARX2\_t@{h\_YLIDARX2\_t}}
+
+
+Structure to hold LIDAR state and data.  
+
+
+
+
+{\ttfamily \#include $<$driver\+\_\+\+YLIDARX2.\+h$>$}
+
+
+
+Collaboration diagram for h\+\_\+\+YLIDARX2\+\_\+t\+:
+% FIG 0
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+UART\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structh__YLIDARX2__t_a31b2a452cffe839ac4a3bf86eddc16b0}{uart}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dma\+Buffer}} \mbox{[}\mbox{\hyperlink{driver__YLIDARX2_8h_a9b08f201880f08d1b268f723b138bca0}{YLIDARX2\+\_\+\+DMA\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structh__YLIDARX2__t_a43006e01a8f5210a5c02f3267ab0679d}{current\+Index}}
+\item 
+\mbox{\hyperlink{structYLIDARX2__Point__t}{YLIDARX2\+\_\+\+Point\+\_\+t}} \mbox{\hyperlink{structh__YLIDARX2__t_a1a0080efe655e569028fd79c3f0c32dd}{points}} \mbox{[}\mbox{\hyperlink{driver__YLIDARX2_8h_a2baf69d5741479065f9e385ccd2faf8f}{YLIDARX2\+\_\+\+MAX\+\_\+\+POINTS}}\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{point\+Index}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure to hold LIDAR state and data. 
+
+Definition at line \mbox{\hyperlink{driver__YLIDARX2_8h_source_l00036}{36}} of file \mbox{\hyperlink{driver__YLIDARX2_8h_source}{driver\+\_\+\+YLIDARX2.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structh__YLIDARX2__t_a43006e01a8f5210a5c02f3267ab0679d}\label{structh__YLIDARX2__t_a43006e01a8f5210a5c02f3267ab0679d} 
+\index{h\_YLIDARX2\_t@{h\_YLIDARX2\_t}!currentIndex@{currentIndex}}
+\index{currentIndex@{currentIndex}!h\_YLIDARX2\_t@{h\_YLIDARX2\_t}}
+\doxysubsubsection{\texorpdfstring{currentIndex}{currentIndex}}
+{\footnotesize\ttfamily uint16\+\_\+t current\+Index}
+
+Current index in the DMA buffer 
+
+Definition at line \mbox{\hyperlink{driver__YLIDARX2_8h_source_l00039}{39}} of file \mbox{\hyperlink{driver__YLIDARX2_8h_source}{driver\+\_\+\+YLIDARX2.\+h}}.
+
+\Hypertarget{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}\label{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9} 
+\index{h\_YLIDARX2\_t@{h\_YLIDARX2\_t}!dmaBuffer@{dmaBuffer}}
+\index{dmaBuffer@{dmaBuffer}!h\_YLIDARX2\_t@{h\_YLIDARX2\_t}}
+\doxysubsubsection{\texorpdfstring{dmaBuffer}{dmaBuffer}}
+{\footnotesize\ttfamily uint8\+\_\+t dma\+Buffer\mbox{[}\mbox{\hyperlink{driver__YLIDARX2_8h_a9b08f201880f08d1b268f723b138bca0}{YLIDARX2\+\_\+\+DMA\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]}}
+
+DMA buffer for raw data 
+
+Definition at line \mbox{\hyperlink{driver__YLIDARX2_8h_source_l00038}{38}} of file \mbox{\hyperlink{driver__YLIDARX2_8h_source}{driver\+\_\+\+YLIDARX2.\+h}}.
+
+\Hypertarget{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}\label{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8} 
+\index{h\_YLIDARX2\_t@{h\_YLIDARX2\_t}!pointIndex@{pointIndex}}
+\index{pointIndex@{pointIndex}!h\_YLIDARX2\_t@{h\_YLIDARX2\_t}}
+\doxysubsubsection{\texorpdfstring{pointIndex}{pointIndex}}
+{\footnotesize\ttfamily uint16\+\_\+t point\+Index}
+
+Index for storing the next processed point 
+
+Definition at line \mbox{\hyperlink{driver__YLIDARX2_8h_source_l00041}{41}} of file \mbox{\hyperlink{driver__YLIDARX2_8h_source}{driver\+\_\+\+YLIDARX2.\+h}}.
+
+\Hypertarget{structh__YLIDARX2__t_a1a0080efe655e569028fd79c3f0c32dd}\label{structh__YLIDARX2__t_a1a0080efe655e569028fd79c3f0c32dd} 
+\index{h\_YLIDARX2\_t@{h\_YLIDARX2\_t}!points@{points}}
+\index{points@{points}!h\_YLIDARX2\_t@{h\_YLIDARX2\_t}}
+\doxysubsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structYLIDARX2__Point__t}{YLIDARX2\+\_\+\+Point\+\_\+t}} points\mbox{[}\mbox{\hyperlink{driver__YLIDARX2_8h_a2baf69d5741479065f9e385ccd2faf8f}{YLIDARX2\+\_\+\+MAX\+\_\+\+POINTS}}\mbox{]}}
+
+Array of processed points 
+
+Definition at line \mbox{\hyperlink{driver__YLIDARX2_8h_source_l00040}{40}} of file \mbox{\hyperlink{driver__YLIDARX2_8h_source}{driver\+\_\+\+YLIDARX2.\+h}}.
+
+\Hypertarget{structh__YLIDARX2__t_a31b2a452cffe839ac4a3bf86eddc16b0}\label{structh__YLIDARX2__t_a31b2a452cffe839ac4a3bf86eddc16b0} 
+\index{h\_YLIDARX2\_t@{h\_YLIDARX2\_t}!uart@{uart}}
+\index{uart@{uart}!h\_YLIDARX2\_t@{h\_YLIDARX2\_t}}
+\doxysubsubsection{\texorpdfstring{uart}{uart}}
+{\footnotesize\ttfamily UART\+\_\+\+Handle\+Type\+Def\texorpdfstring{$\ast$}{*} uart}
+
+UART handle for communication 
+
+Definition at line \mbox{\hyperlink{driver__YLIDARX2_8h_source_l00037}{37}} of file \mbox{\hyperlink{driver__YLIDARX2_8h_source}{driver\+\_\+\+YLIDARX2.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/oliver/\+Documents/3\+A/2425\+\_\+\+ESE\+\_\+\+Projet\+\_\+\+V-\/\+NOM/\+Projet\+\_\+\+V-\/\+NOM\+\_\+\+STM32/\+Core/drivers/\mbox{\hyperlink{driver__YLIDARX2_8h}{driver\+\_\+\+YLIDARX2.\+h}}\end{DoxyCompactItemize}

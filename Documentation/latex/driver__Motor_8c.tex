@@ -1,0 +1,168 @@
+\doxysection{/home/oliver/\+Documents/3\+A/2425\+\_\+\+ESE\+\_\+\+Projet\+\_\+\+V-\/\+NOM/\+Projet\+\_\+\+V-\/\+NOM\+\_\+\+STM32/\+Core/drivers/driver\+\_\+\+Motor.c File Reference}
+\hypertarget{driver__Motor_8c}{}\label{driver__Motor_8c}\index{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_Motor.c@{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_Motor.c}}
+{\ttfamily \#include "{}driver\+\_\+\+Motor.\+h"{}}\newline
+{\ttfamily \#include "{}tim.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for driver\+\_\+\+Motor.\+c\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{driver__Motor_8c_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}~0
+\item 
+\#define \mbox{\hyperlink{driver__Motor_8c_a88edd2aa4feabff4af21a997d5d8aa23}{DEBUG\+\_\+\+PRINT}}(...)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{driver__Motor_8c_ad1dfbf8ee0a807290e2030e9792ef959}{Motor\+\_\+\+Init}} (\mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a0bcb687a2a521ee4b8f96671baa7f1f1}{h\+Motors}}, TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}htim)
+\begin{DoxyCompactList}\small\item\em Initialize the motors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__Motor_8c_a3b02c81c2bf2acaa597535ee656afe16}{Motor\+\_\+\+Set\+Mode}} (\mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a0bcb687a2a521ee4b8f96671baa7f1f1}{h\+Motors}})
+\begin{DoxyCompactList}\small\item\em Set the operating mode of the motors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__Motor_8c_a99e002085849d62c67a8c049a9e18f68}{Motor\+\_\+\+Set\+Speed\+\_\+percent}} (\mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} \texorpdfstring{$\ast$}{*}h\+Motor, float percent1, float percent2)
+\begin{DoxyCompactList}\small\item\em Set the speed of the motors as a percentage of maximum speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__Motor_8c_a7af54401c99ac93f3e732bca464837f1}{Motor\+\_\+\+Stop}} (\mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a0bcb687a2a521ee4b8f96671baa7f1f1}{h\+Motors}})
+\begin{DoxyCompactList}\small\item\em Stop all motors by setting their mode to standby. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__Motor_8c_a545aba630910986048b10789d7eefc60}{Motor\+\_\+\+Update\+Speed}} (\mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8c_a0bcb687a2a521ee4b8f96671baa7f1f1}{h\+Motors}})
+\begin{DoxyCompactList}\small\item\em Update motor speeds gradually to achieve smoother transitions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{driver__Motor_8c_ad72dbcf6d0153db1b8d8a58001feed83}\label{driver__Motor_8c_ad72dbcf6d0153db1b8d8a58001feed83} 
+\index{driver\_Motor.c@{driver\_Motor.c}!DEBUG@{DEBUG}}
+\index{DEBUG@{DEBUG}!driver\_Motor.c@{driver\_Motor.c}}
+\doxysubsubsection{\texorpdfstring{DEBUG}{DEBUG}}
+{\footnotesize\ttfamily \#define DEBUG~0}
+
+Enable or disable debug logs 
+
+Definition at line \mbox{\hyperlink{driver__Motor_8c_source_l00010}{10}} of file \mbox{\hyperlink{driver__Motor_8c_source}{driver\+\_\+\+Motor.\+c}}.
+
+\Hypertarget{driver__Motor_8c_a88edd2aa4feabff4af21a997d5d8aa23}\label{driver__Motor_8c_a88edd2aa4feabff4af21a997d5d8aa23} 
+\index{driver\_Motor.c@{driver\_Motor.c}!DEBUG\_PRINT@{DEBUG\_PRINT}}
+\index{DEBUG\_PRINT@{DEBUG\_PRINT}!driver\_Motor.c@{driver\_Motor.c}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PRINT}{DEBUG\_PRINT}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PRINT(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{driver__Motor_8c_source_l00015}{15}} of file \mbox{\hyperlink{driver__Motor_8c_source}{driver\+\_\+\+Motor.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{driver__Motor_8c_ad1dfbf8ee0a807290e2030e9792ef959}\label{driver__Motor_8c_ad1dfbf8ee0a807290e2030e9792ef959} 
+\index{driver\_Motor.c@{driver\_Motor.c}!Motor\_Init@{Motor\_Init}}
+\index{Motor\_Init@{Motor\_Init}!driver\_Motor.c@{driver\_Motor.c}}
+\doxysubsubsection{\texorpdfstring{Motor\_Init()}{Motor\_Init()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{h\+Motors,  }\item[{TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{htim }\end{DoxyParamCaption})}
+
+
+
+Initialize the motors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Motors} & Pointer to the motor handle structure. \\
+\hline
+{\em htim} & Pointer to the timer handle used for PWM control. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__Motor_8c_source_l00024}{24}} of file \mbox{\hyperlink{driver__Motor_8c_source}{driver\+\_\+\+Motor.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{driver__Motor_8c_a3b02c81c2bf2acaa597535ee656afe16}\label{driver__Motor_8c_a3b02c81c2bf2acaa597535ee656afe16} 
+\index{driver\_Motor.c@{driver\_Motor.c}!Motor\_SetMode@{Motor\_SetMode}}
+\index{Motor\_SetMode@{Motor\_SetMode}!driver\_Motor.c@{driver\_Motor.c}}
+\doxysubsubsection{\texorpdfstring{Motor\_SetMode()}{Motor\_SetMode()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{h\+Motors }\end{DoxyParamCaption})}
+
+
+
+Set the operating mode of the motors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Motors} & Pointer to the motor handle structure. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__Motor_8c_source_l00050}{50}} of file \mbox{\hyperlink{driver__Motor_8c_source}{driver\+\_\+\+Motor.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{driver__Motor_8c_a99e002085849d62c67a8c049a9e18f68}\label{driver__Motor_8c_a99e002085849d62c67a8c049a9e18f68} 
+\index{driver\_Motor.c@{driver\_Motor.c}!Motor\_SetSpeed\_percent@{Motor\_SetSpeed\_percent}}
+\index{Motor\_SetSpeed\_percent@{Motor\_SetSpeed\_percent}!driver\_Motor.c@{driver\_Motor.c}}
+\doxysubsubsection{\texorpdfstring{Motor\_SetSpeed\_percent()}{Motor\_SetSpeed\_percent()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Set\+Speed\+\_\+percent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{h\+Motor,  }\item[{float}]{percent1,  }\item[{float}]{percent2 }\end{DoxyParamCaption})}
+
+
+
+Set the speed of the motors as a percentage of maximum speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Motor} & Pointer to the motor handle structure. \\
+\hline
+{\em percent1} & Speed percentage for motor 1 (0.\+0 to 100.\+0). \\
+\hline
+{\em percent2} & Speed percentage for motor 2 (0.\+0 to 100.\+0). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__Motor_8c_source_l00101}{101}} of file \mbox{\hyperlink{driver__Motor_8c_source}{driver\+\_\+\+Motor.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{driver__Motor_8c_a7af54401c99ac93f3e732bca464837f1}\label{driver__Motor_8c_a7af54401c99ac93f3e732bca464837f1} 
+\index{driver\_Motor.c@{driver\_Motor.c}!Motor\_Stop@{Motor\_Stop}}
+\index{Motor\_Stop@{Motor\_Stop}!driver\_Motor.c@{driver\_Motor.c}}
+\doxysubsubsection{\texorpdfstring{Motor\_Stop()}{Motor\_Stop()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{h\+Motors }\end{DoxyParamCaption})}
+
+
+
+Stop all motors by setting their mode to standby. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Motor} & Pointer to the motor handle structure. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__Motor_8c_source_l00110}{110}} of file \mbox{\hyperlink{driver__Motor_8c_source}{driver\+\_\+\+Motor.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{driver__Motor_8c_a545aba630910986048b10789d7eefc60}\label{driver__Motor_8c_a545aba630910986048b10789d7eefc60} 
+\index{driver\_Motor.c@{driver\_Motor.c}!Motor\_UpdateSpeed@{Motor\_UpdateSpeed}}
+\index{Motor\_UpdateSpeed@{Motor\_UpdateSpeed}!driver\_Motor.c@{driver\_Motor.c}}
+\doxysubsubsection{\texorpdfstring{Motor\_UpdateSpeed()}{Motor\_UpdateSpeed()}}
+{\footnotesize\ttfamily void Motor\+\_\+\+Update\+Speed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{h\+Motors }\end{DoxyParamCaption})}
+
+
+
+Update motor speeds gradually to achieve smoother transitions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Motor} & Pointer to the motor handle structure. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__Motor_8c_source_l00120}{120}} of file \mbox{\hyperlink{driver__Motor_8c_source}{driver\+\_\+\+Motor.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 7

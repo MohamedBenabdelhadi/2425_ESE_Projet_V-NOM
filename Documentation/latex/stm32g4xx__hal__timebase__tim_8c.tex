@@ -1,0 +1,136 @@
+\doxysection{/home/oliver/\+Documents/3\+A/2425\+\_\+\+ESE\+\_\+\+Projet\+\_\+\+V-\/\+NOM/\+Projet\+\_\+\+V-\/\+NOM\+\_\+\+STM32/\+Core/\+Src/stm32g4xx\+\_\+hal\+\_\+timebase\+\_\+tim.c File Reference}
+\hypertarget{stm32g4xx__hal__timebase__tim_8c}{}\label{stm32g4xx__hal__timebase__tim_8c}\index{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/Src/stm32g4xx\_hal\_timebase\_tim.c@{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/Src/stm32g4xx\_hal\_timebase\_tim.c}}
+
+
+HAL time base based on the hardware TIM.  
+
+
+{\ttfamily \#include "{}stm32g4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}stm32g4xx\+\_\+hal\+\_\+tim.\+h"{}}\newline
+Include dependency graph for stm32g4xx\+\_\+hal\+\_\+timebase\+\_\+tim.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_a879cdb21ef051eb81ec51c18147397d5}{HAL\+\_\+\+Init\+Tick}} (uint32\+\_\+t Tick\+Priority)
+\begin{DoxyCompactList}\small\item\em This function configures the TIM2 as a time base source. The time source is configured to have 1ms time base with a dedicated Tick interrupt priority. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_aaf651af2afe688a991c657f64f8fa5f9}{HAL\+\_\+\+Suspend\+Tick}} (void)
+\begin{DoxyCompactList}\small\item\em Suspend Tick increment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_a24e0ee9dae1ec0f9d19200f5575ff790}{HAL\+\_\+\+Resume\+Tick}} (void)
+\begin{DoxyCompactList}\small\item\em Resume Tick increment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_a2c80fd5510e2990a59a5c90d745c716c}{htim2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+HAL time base based on the hardware TIM. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2025 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+Definition in file \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_source}{stm32g4xx\+\_\+hal\+\_\+timebase\+\_\+tim.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{stm32g4xx__hal__timebase__tim_8c_a879cdb21ef051eb81ec51c18147397d5}\label{stm32g4xx__hal__timebase__tim_8c_a879cdb21ef051eb81ec51c18147397d5} 
+\index{stm32g4xx\_hal\_timebase\_tim.c@{stm32g4xx\_hal\_timebase\_tim.c}!HAL\_InitTick@{HAL\_InitTick}}
+\index{HAL\_InitTick@{HAL\_InitTick}!stm32g4xx\_hal\_timebase\_tim.c@{stm32g4xx\_hal\_timebase\_tim.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_InitTick()}{HAL\_InitTick()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def HAL\+\_\+\+Init\+Tick (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Tick\+Priority }\end{DoxyParamCaption})}
+
+
+
+This function configures the TIM2 as a time base source. The time source is configured to have 1ms time base with a dedicated Tick interrupt priority. 
+
+\begin{DoxyNote}{Note}
+This function is called automatically at the beginning of program after reset by HAL\+\_\+\+Init() or at any time when clock is configured, by HAL\+\_\+\+RCC\+\_\+\+Clock\+Config(). 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em Tick\+Priority} & Tick interrupt priority. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em HAL} & status \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_source_l00041}{41}} of file \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_source}{stm32g4xx\+\_\+hal\+\_\+timebase\+\_\+tim.\+c}}.
+
+\Hypertarget{stm32g4xx__hal__timebase__tim_8c_a24e0ee9dae1ec0f9d19200f5575ff790}\label{stm32g4xx__hal__timebase__tim_8c_a24e0ee9dae1ec0f9d19200f5575ff790} 
+\index{stm32g4xx\_hal\_timebase\_tim.c@{stm32g4xx\_hal\_timebase\_tim.c}!HAL\_ResumeTick@{HAL\_ResumeTick}}
+\index{HAL\_ResumeTick@{HAL\_ResumeTick}!stm32g4xx\_hal\_timebase\_tim.c@{stm32g4xx\_hal\_timebase\_tim.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_ResumeTick()}{HAL\_ResumeTick()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+Resume\+Tick (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Resume Tick increment. 
+
+\begin{DoxyNote}{Note}
+Enable the tick increment by Enabling TIM2 update interrupt. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_source_l00119}{119}} of file \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_source}{stm32g4xx\+\_\+hal\+\_\+timebase\+\_\+tim.\+c}}.
+
+\Hypertarget{stm32g4xx__hal__timebase__tim_8c_aaf651af2afe688a991c657f64f8fa5f9}\label{stm32g4xx__hal__timebase__tim_8c_aaf651af2afe688a991c657f64f8fa5f9} 
+\index{stm32g4xx\_hal\_timebase\_tim.c@{stm32g4xx\_hal\_timebase\_tim.c}!HAL\_SuspendTick@{HAL\_SuspendTick}}
+\index{HAL\_SuspendTick@{HAL\_SuspendTick}!stm32g4xx\_hal\_timebase\_tim.c@{stm32g4xx\_hal\_timebase\_tim.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_SuspendTick()}{HAL\_SuspendTick()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+Suspend\+Tick (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Suspend Tick increment. 
+
+\begin{DoxyNote}{Note}
+Disable the tick increment by disabling TIM2 update interrupt. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_source_l00107}{107}} of file \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_source}{stm32g4xx\+\_\+hal\+\_\+timebase\+\_\+tim.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{stm32g4xx__hal__timebase__tim_8c_a2c80fd5510e2990a59a5c90d745c716c}\label{stm32g4xx__hal__timebase__tim_8c_a2c80fd5510e2990a59a5c90d745c716c} 
+\index{stm32g4xx\_hal\_timebase\_tim.c@{stm32g4xx\_hal\_timebase\_tim.c}!htim2@{htim2}}
+\index{htim2@{htim2}!stm32g4xx\_hal\_timebase\_tim.c@{stm32g4xx\_hal\_timebase\_tim.c}}
+\doxysubsubsection{\texorpdfstring{htim2}{htim2}}
+{\footnotesize\ttfamily TIM\+\_\+\+Handle\+Type\+Def htim2}
+
+
+
+Definition at line \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_source_l00028}{28}} of file \mbox{\hyperlink{stm32g4xx__hal__timebase__tim_8c_source}{stm32g4xx\+\_\+hal\+\_\+timebase\+\_\+tim.\+c}}.
+

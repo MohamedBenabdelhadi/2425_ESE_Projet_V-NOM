@@ -1,0 +1,14 @@
+digraph "GP2Y0A41SK0F_Init"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="GP2Y0A41SK0F_Init",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Initialize the GP2Y0A41SK0F sensors."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Error_Handler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a1730ffe1e560465665eb47d9264826f9",tooltip="This function is executed in case of error occurrence."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="GP2Y0A41SK0F_Start\l_Interrupt",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$driver__GP2Y0A41SK0F_8c.html#a1c7d64610092ccdb5905b88ce335925b",tooltip="Start ADC conversion using interrupts."];
+  Node3 -> Node2 [id="edge3_Node000003_Node000002",color="steelblue1",style="solid",tooltip=" "];
+}

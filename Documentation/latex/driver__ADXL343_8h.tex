@@ -1,0 +1,434 @@
+\doxysection{/home/oliver/\+Documents/3\+A/2425\+\_\+\+ESE\+\_\+\+Projet\+\_\+\+V-\/\+NOM/\+Projet\+\_\+\+V-\/\+NOM\+\_\+\+STM32/\+Core/drivers/driver\+\_\+\+ADXL343.h File Reference}
+\hypertarget{driver__ADXL343_8h}{}\label{driver__ADXL343_8h}\index{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_ADXL343.h@{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_ADXL343.h}}
+
+
+Header file for ADXL343 accelerometer driver.  
+
+
+{\ttfamily \#include "{}stm32g4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for driver\+\_\+\+ADXL343.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Handle structure for the ADXL343. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958}{ADXL343\+\_\+\+Register\+\_\+t}} \{ \newline
+\mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a72fb36c7463090495bb952f8a2627d9f}{ADXL343\+\_\+\+DEVID}} = 0x00
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958aea08933aafa4ce4ce31233ac0e602334}{ADXL343\+\_\+\+THRESH\+\_\+\+TAP}} = 0x1D
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ada8eb815686170b4eb054a174225343e}{ADXL343\+\_\+\+OFSX}} = 0x1E
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958afdd83852b8c579d9bd001c73ef9f3907}{ADXL343\+\_\+\+OFSY}} = 0x1F
+, \newline
+\mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ae0af62a764eeec63911482bed8ead957}{ADXL343\+\_\+\+OFSZ}} = 0x20
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a41a73f53583c7eb8af7c864202df85a4}{ADXL343\+\_\+\+DUR}} = 0x21
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ab75f1c381e56f4a0b8628b81ca245f01}{ADXL343\+\_\+\+LATENT}} = 0x22
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a1a41014712c2b9206276bfc964f313d2}{ADXL343\+\_\+\+WINDOW}} = 0x23
+, \newline
+\mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a1930b1d4a93b87ebc2dd92f6255d3b2f}{ADXL343\+\_\+\+THRESH\+\_\+\+ACT}} = 0x24
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a1f3dd88b9fa08f663edb8b3726828a07}{ADXL343\+\_\+\+THRESH\+\_\+\+INACT}} = 0x25
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958adff8b5063e8ca72f34ed05dc95e19f71}{ADXL343\+\_\+\+TIME\+\_\+\+INACT}} = 0x26
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a2a4de4079419b884283e3397b0fa2dd7}{ADXL343\+\_\+\+ACT\+\_\+\+INACT\+\_\+\+CTL}} = 0x27
+, \newline
+\mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ac5b4881abe1649be61064a3b95734d09}{ADXL343\+\_\+\+THRESH\+\_\+\+FF}} = 0x28
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a03d7f627fbe40a00544b432135a0e8b1}{ADXL343\+\_\+\+TIME\+\_\+\+FF}} = 0x29
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ac21a5aba44ad1507631118a4ef09275e}{ADXL343\+\_\+\+TAP\+\_\+\+AXES}} = 0x2A
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a93405b500e2578289669856fa39bc8f9}{ADXL343\+\_\+\+ACT\+\_\+\+TAP\+\_\+\+STATUS}} = 0x2B
+, \newline
+\mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a8382519fb20acb242454ad3997076a59}{ADXL343\+\_\+\+BW\+\_\+\+RATE}} = 0x2C
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a63c03fbddd2a7cae38969d302e2e4ebb}{ADXL343\+\_\+\+POWER\+\_\+\+CTL}} = 0x2D
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a4624fbdd9d098578a22698ff1c347f90}{ADXL343\+\_\+\+INT\+\_\+\+ENABLE}} = 0x2E
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a6d0ec7a0021a11e744ffe974cc394538}{ADXL343\+\_\+\+INT\+\_\+\+MAP}} = 0x2F
+, \newline
+\mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a0ac29a96fb12a4193fd19dc561328275}{ADXL343\+\_\+\+INT\+\_\+\+SOURCE}} = 0x30
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a604b4391dd212edcabdc9b3c2a310594}{ADXL343\+\_\+\+DATA\+\_\+\+FORMAT}} = 0x31
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a058ab6a51aacc885cf788d44fa0f00e9}{ADXL343\+\_\+\+DATAX0}} = 0x32
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958afd4117275def8bd0562d2b4e4bb07388}{ADXL343\+\_\+\+DATAX1}} = 0x33
+, \newline
+\mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a70d616c7dc661d1d520ff99e1c530c93}{ADXL343\+\_\+\+DATAY0}} = 0x34
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a2b07ca16a7bc3620f2d89981767946cb}{ADXL343\+\_\+\+DATAY1}} = 0x35
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ab1913fea8fd52f2768064c473baf2fb5}{ADXL343\+\_\+\+DATAZ0}} = 0x36
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a2996a3ee544caab7194f034009d215b2}{ADXL343\+\_\+\+DATAZ1}} = 0x37
+, \newline
+\mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ae538f6168e4a0840203f90e6f67c0f82}{ADXL343\+\_\+\+FIFO\+\_\+\+CTL}} = 0x38
+, \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a458c260c50df22b104fe5264cdf2fbba}{ADXL343\+\_\+\+FIFO\+\_\+\+STATUS}} = 0x39
+ \}
+\begin{DoxyCompactList}\small\item\em ADXL343 register addresses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{driver__ADXL343_8h_ac75b471ef5ee00618abe6cc7cdc9ba46}{ADXL343\+\_\+\+Init}} (\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}hadxl)
+\begin{DoxyCompactList}\small\item\em Initializes the ADXL343 accelerometer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8h_a4271a55c2cc57351024a86ac84a0203a}{ADXL343\+\_\+\+Configure\+Tap}} (\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}hadxl)
+\begin{DoxyCompactList}\small\item\em Configures single-\/tap detection for the ADXL343. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8h_ac00a63f3e7e827b116fec0ed2238942f}{ADXL343\+\_\+get\+\_\+\+Acceleration}} (\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}hadxl)
+\begin{DoxyCompactList}\small\item\em Reads the acceleration data from the ADXL343. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8h_afb2c4ce84c1c1dade8c7f0ff62730591}{ADXL343\+\_\+write\+Register}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}values, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Writes data to a specific register of the ADXL343. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8h_a5e3d1b1903a9848b19c1eb0048631d6a}{ADXL343\+\_\+read\+Register}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t num)
+\begin{DoxyCompactList}\small\item\em Reads data from a specific register of the ADXL343. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8h_aaf4313256e790823fa015e28b544a29c}{spi\+Write}} (uint8\+\_\+t address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Sends a command and data to the ADXL343 over SPI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8h_a989890910c714e6261f0b93cb6112a24}{spi\+Read}} (uint8\+\_\+t address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Reads data from the ADXL343 over SPI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for ADXL343 accelerometer driver. 
+
+\begin{DoxyAuthor}{Author}
+Oliver 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+December 22, 2024 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{driver__ADXL343_8h_source}{driver\+\_\+\+ADXL343.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958} 
+\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_Register\_t@{ADXL343\_Register\_t}}
+\index{ADXL343\_Register\_t@{ADXL343\_Register\_t}!driver\_ADXL343.h@{driver\_ADXL343.h}}
+\doxysubsubsection{\texorpdfstring{ADXL343\_Register\_t}{ADXL343\_Register\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958}{ADXL343\+\_\+\+Register\+\_\+t}}}
+
+
+
+ADXL343 register addresses. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_DEVID@{ADXL343\_DEVID}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_DEVID@{ADXL343\_DEVID}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a72fb36c7463090495bb952f8a2627d9f}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a72fb36c7463090495bb952f8a2627d9f} 
+ADXL343\+\_\+\+DEVID&Device ID \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_THRESH\_TAP@{ADXL343\_THRESH\_TAP}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_THRESH\_TAP@{ADXL343\_THRESH\_TAP}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958aea08933aafa4ce4ce31233ac0e602334}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958aea08933aafa4ce4ce31233ac0e602334} 
+ADXL343\+\_\+\+THRESH\+\_\+\+TAP&Tap threshold \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_OFSX@{ADXL343\_OFSX}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_OFSX@{ADXL343\_OFSX}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ada8eb815686170b4eb054a174225343e}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ada8eb815686170b4eb054a174225343e} 
+ADXL343\+\_\+\+OFSX&X-\/axis offset \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_OFSY@{ADXL343\_OFSY}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_OFSY@{ADXL343\_OFSY}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958afdd83852b8c579d9bd001c73ef9f3907}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958afdd83852b8c579d9bd001c73ef9f3907} 
+ADXL343\+\_\+\+OFSY&Y-\/axis offset \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_OFSZ@{ADXL343\_OFSZ}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_OFSZ@{ADXL343\_OFSZ}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ae0af62a764eeec63911482bed8ead957}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ae0af62a764eeec63911482bed8ead957} 
+ADXL343\+\_\+\+OFSZ&Z-\/axis offset \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_DUR@{ADXL343\_DUR}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_DUR@{ADXL343\_DUR}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a41a73f53583c7eb8af7c864202df85a4}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a41a73f53583c7eb8af7c864202df85a4} 
+ADXL343\+\_\+\+DUR&Tap duration \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_LATENT@{ADXL343\_LATENT}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_LATENT@{ADXL343\_LATENT}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ab75f1c381e56f4a0b8628b81ca245f01}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ab75f1c381e56f4a0b8628b81ca245f01} 
+ADXL343\+\_\+\+LATENT&Tap latency \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_WINDOW@{ADXL343\_WINDOW}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_WINDOW@{ADXL343\_WINDOW}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a1a41014712c2b9206276bfc964f313d2}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a1a41014712c2b9206276bfc964f313d2} 
+ADXL343\+\_\+\+WINDOW&Tap window \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_THRESH\_ACT@{ADXL343\_THRESH\_ACT}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_THRESH\_ACT@{ADXL343\_THRESH\_ACT}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a1930b1d4a93b87ebc2dd92f6255d3b2f}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a1930b1d4a93b87ebc2dd92f6255d3b2f} 
+ADXL343\+\_\+\+THRESH\+\_\+\+ACT&Activity threshold \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_THRESH\_INACT@{ADXL343\_THRESH\_INACT}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_THRESH\_INACT@{ADXL343\_THRESH\_INACT}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a1f3dd88b9fa08f663edb8b3726828a07}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a1f3dd88b9fa08f663edb8b3726828a07} 
+ADXL343\+\_\+\+THRESH\+\_\+\+INACT&Inactivity threshold \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_TIME\_INACT@{ADXL343\_TIME\_INACT}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_TIME\_INACT@{ADXL343\_TIME\_INACT}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958adff8b5063e8ca72f34ed05dc95e19f71}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958adff8b5063e8ca72f34ed05dc95e19f71} 
+ADXL343\+\_\+\+TIME\+\_\+\+INACT&Inactivity time \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_ACT\_INACT\_CTL@{ADXL343\_ACT\_INACT\_CTL}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_ACT\_INACT\_CTL@{ADXL343\_ACT\_INACT\_CTL}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a2a4de4079419b884283e3397b0fa2dd7}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a2a4de4079419b884283e3397b0fa2dd7} 
+ADXL343\+\_\+\+ACT\+\_\+\+INACT\+\_\+\+CTL&Axis enable control for activity and inactivity detection \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_THRESH\_FF@{ADXL343\_THRESH\_FF}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_THRESH\_FF@{ADXL343\_THRESH\_FF}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ac5b4881abe1649be61064a3b95734d09}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ac5b4881abe1649be61064a3b95734d09} 
+ADXL343\+\_\+\+THRESH\+\_\+\+FF&Free-\/fall threshold \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_TIME\_FF@{ADXL343\_TIME\_FF}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_TIME\_FF@{ADXL343\_TIME\_FF}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a03d7f627fbe40a00544b432135a0e8b1}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a03d7f627fbe40a00544b432135a0e8b1} 
+ADXL343\+\_\+\+TIME\+\_\+\+FF&Free-\/fall time \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_TAP\_AXES@{ADXL343\_TAP\_AXES}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_TAP\_AXES@{ADXL343\_TAP\_AXES}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ac21a5aba44ad1507631118a4ef09275e}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ac21a5aba44ad1507631118a4ef09275e} 
+ADXL343\+\_\+\+TAP\+\_\+\+AXES&Axis control for single/double tap \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_ACT\_TAP\_STATUS@{ADXL343\_ACT\_TAP\_STATUS}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_ACT\_TAP\_STATUS@{ADXL343\_ACT\_TAP\_STATUS}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a93405b500e2578289669856fa39bc8f9}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a93405b500e2578289669856fa39bc8f9} 
+ADXL343\+\_\+\+ACT\+\_\+\+TAP\+\_\+\+STATUS&Source of single/double tap \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_BW\_RATE@{ADXL343\_BW\_RATE}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_BW\_RATE@{ADXL343\_BW\_RATE}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a8382519fb20acb242454ad3997076a59}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a8382519fb20acb242454ad3997076a59} 
+ADXL343\+\_\+\+BW\+\_\+\+RATE&Data rate and power mode control \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_POWER\_CTL@{ADXL343\_POWER\_CTL}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_POWER\_CTL@{ADXL343\_POWER\_CTL}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a63c03fbddd2a7cae38969d302e2e4ebb}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a63c03fbddd2a7cae38969d302e2e4ebb} 
+ADXL343\+\_\+\+POWER\+\_\+\+CTL&Power-\/saving features control \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_INT\_ENABLE@{ADXL343\_INT\_ENABLE}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_INT\_ENABLE@{ADXL343\_INT\_ENABLE}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a4624fbdd9d098578a22698ff1c347f90}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a4624fbdd9d098578a22698ff1c347f90} 
+ADXL343\+\_\+\+INT\+\_\+\+ENABLE&Interrupt enable control \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_INT\_MAP@{ADXL343\_INT\_MAP}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_INT\_MAP@{ADXL343\_INT\_MAP}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a6d0ec7a0021a11e744ffe974cc394538}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a6d0ec7a0021a11e744ffe974cc394538} 
+ADXL343\+\_\+\+INT\+\_\+\+MAP&Interrupt mapping control \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_INT\_SOURCE@{ADXL343\_INT\_SOURCE}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_INT\_SOURCE@{ADXL343\_INT\_SOURCE}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a0ac29a96fb12a4193fd19dc561328275}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a0ac29a96fb12a4193fd19dc561328275} 
+ADXL343\+\_\+\+INT\+\_\+\+SOURCE&Source of interrupts \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_DATA\_FORMAT@{ADXL343\_DATA\_FORMAT}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_DATA\_FORMAT@{ADXL343\_DATA\_FORMAT}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a604b4391dd212edcabdc9b3c2a310594}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a604b4391dd212edcabdc9b3c2a310594} 
+ADXL343\+\_\+\+DATA\+\_\+\+FORMAT&Data format control \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_DATAX0@{ADXL343\_DATAX0}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_DATAX0@{ADXL343\_DATAX0}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a058ab6a51aacc885cf788d44fa0f00e9}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a058ab6a51aacc885cf788d44fa0f00e9} 
+ADXL343\+\_\+\+DATAX0&X-\/\+Axis Data 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_DATAX1@{ADXL343\_DATAX1}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_DATAX1@{ADXL343\_DATAX1}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958afd4117275def8bd0562d2b4e4bb07388}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958afd4117275def8bd0562d2b4e4bb07388} 
+ADXL343\+\_\+\+DATAX1&X-\/\+Axis Data 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_DATAY0@{ADXL343\_DATAY0}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_DATAY0@{ADXL343\_DATAY0}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a70d616c7dc661d1d520ff99e1c530c93}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a70d616c7dc661d1d520ff99e1c530c93} 
+ADXL343\+\_\+\+DATAY0&Y-\/\+Axis Data 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_DATAY1@{ADXL343\_DATAY1}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_DATAY1@{ADXL343\_DATAY1}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a2b07ca16a7bc3620f2d89981767946cb}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a2b07ca16a7bc3620f2d89981767946cb} 
+ADXL343\+\_\+\+DATAY1&Y-\/\+Axis Data 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_DATAZ0@{ADXL343\_DATAZ0}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_DATAZ0@{ADXL343\_DATAZ0}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ab1913fea8fd52f2768064c473baf2fb5}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ab1913fea8fd52f2768064c473baf2fb5} 
+ADXL343\+\_\+\+DATAZ0&Z-\/\+Axis Data 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_DATAZ1@{ADXL343\_DATAZ1}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_DATAZ1@{ADXL343\_DATAZ1}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a2996a3ee544caab7194f034009d215b2}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a2996a3ee544caab7194f034009d215b2} 
+ADXL343\+\_\+\+DATAZ1&Z-\/\+Axis Data 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_FIFO\_CTL@{ADXL343\_FIFO\_CTL}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_FIFO\_CTL@{ADXL343\_FIFO\_CTL}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ae538f6168e4a0840203f90e6f67c0f82}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958ae538f6168e4a0840203f90e6f67c0f82} 
+ADXL343\+\_\+\+FIFO\+\_\+\+CTL&FIFO control \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADXL343\_FIFO\_STATUS@{ADXL343\_FIFO\_STATUS}!driver\_ADXL343.h@{driver\_ADXL343.h}}\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_FIFO\_STATUS@{ADXL343\_FIFO\_STATUS}}}\Hypertarget{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a458c260c50df22b104fe5264cdf2fbba}\label{driver__ADXL343_8h_aebadcf1e92c2ea64469d6b325e370958a458c260c50df22b104fe5264cdf2fbba} 
+ADXL343\+\_\+\+FIFO\+\_\+\+STATUS&FIFO status \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8h_source_l00017}{17}} of file \mbox{\hyperlink{driver__ADXL343_8h_source}{driver\+\_\+\+ADXL343.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{driver__ADXL343_8h_a4271a55c2cc57351024a86ac84a0203a}\label{driver__ADXL343_8h_a4271a55c2cc57351024a86ac84a0203a} 
+\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_ConfigureTap@{ADXL343\_ConfigureTap}}
+\index{ADXL343\_ConfigureTap@{ADXL343\_ConfigureTap}!driver\_ADXL343.h@{driver\_ADXL343.h}}
+\doxysubsubsection{\texorpdfstring{ADXL343\_ConfigureTap()}{ADXL343\_ConfigureTap()}}
+{\footnotesize\ttfamily void ADXL343\+\_\+\+Configure\+Tap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{hadxl }\end{DoxyParamCaption})}
+
+
+
+Configures single-\/tap detection for the ADXL343. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hadxl} & Pointer to the ADXL343 handle structure.\\
+\hline
+{\em hadxl} & Pointer to the ADXL343 handle structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Configures tap threshold, duration, and interrupt mapping. 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00161}{161}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{driver__ADXL343_8h_ac00a63f3e7e827b116fec0ed2238942f}\label{driver__ADXL343_8h_ac00a63f3e7e827b116fec0ed2238942f} 
+\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_get\_Acceleration@{ADXL343\_get\_Acceleration}}
+\index{ADXL343\_get\_Acceleration@{ADXL343\_get\_Acceleration}!driver\_ADXL343.h@{driver\_ADXL343.h}}
+\doxysubsubsection{\texorpdfstring{ADXL343\_get\_Acceleration()}{ADXL343\_get\_Acceleration()}}
+{\footnotesize\ttfamily void ADXL343\+\_\+get\+\_\+\+Acceleration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{hadxl }\end{DoxyParamCaption})}
+
+
+
+Reads the acceleration data from the ADXL343. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hadxl} & Pointer to the ADXL343 handle structure.\\
+\hline
+{\em hadxl} & Pointer to the ADXL343 handle structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Converts raw data to acceleration in g. 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00206}{206}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+\Hypertarget{driver__ADXL343_8h_ac75b471ef5ee00618abe6cc7cdc9ba46}\label{driver__ADXL343_8h_ac75b471ef5ee00618abe6cc7cdc9ba46} 
+\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_Init@{ADXL343\_Init}}
+\index{ADXL343\_Init@{ADXL343\_Init}!driver\_ADXL343.h@{driver\_ADXL343.h}}
+\doxysubsubsection{\texorpdfstring{ADXL343\_Init()}{ADXL343\_Init()}}
+{\footnotesize\ttfamily void ADXL343\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{hadxl }\end{DoxyParamCaption})}
+
+
+
+Initializes the ADXL343 accelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hadxl} & Pointer to the ADXL343 handle structure.\\
+\hline
+{\em hadxl} & Pointer to the ADXL343 handle structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Verifies device ID and configures for single-\/tap detection. 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00126}{126}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{driver__ADXL343_8h_a5e3d1b1903a9848b19c1eb0048631d6a}\label{driver__ADXL343_8h_a5e3d1b1903a9848b19c1eb0048631d6a} 
+\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_readRegister@{ADXL343\_readRegister}}
+\index{ADXL343\_readRegister@{ADXL343\_readRegister}!driver\_ADXL343.h@{driver\_ADXL343.h}}
+\doxysubsubsection{\texorpdfstring{ADXL343\_readRegister()}{ADXL343\_readRegister()}}
+{\footnotesize\ttfamily void ADXL343\+\_\+read\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint16\+\_\+t}]{num }\end{DoxyParamCaption})}
+
+
+
+Reads data from a specific register of the ADXL343. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & The register address to read from. \\
+\hline
+{\em data} & Pointer to the buffer to store the read data. \\
+\hline
+{\em num} & Number of bytes to read. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00111}{111}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{driver__ADXL343_8h_afb2c4ce84c1c1dade8c7f0ff62730591}\label{driver__ADXL343_8h_afb2c4ce84c1c1dade8c7f0ff62730591} 
+\index{driver\_ADXL343.h@{driver\_ADXL343.h}!ADXL343\_writeRegister@{ADXL343\_writeRegister}}
+\index{ADXL343\_writeRegister@{ADXL343\_writeRegister}!driver\_ADXL343.h@{driver\_ADXL343.h}}
+\doxysubsubsection{\texorpdfstring{ADXL343\_writeRegister()}{ADXL343\_writeRegister()}}
+{\footnotesize\ttfamily void ADXL343\+\_\+write\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{values,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Writes data to a specific register of the ADXL343. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & The register address to write to. \\
+\hline
+{\em values} & Pointer to the data to write. \\
+\hline
+{\em length} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00099}{99}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\Hypertarget{driver__ADXL343_8h_a989890910c714e6261f0b93cb6112a24}\label{driver__ADXL343_8h_a989890910c714e6261f0b93cb6112a24} 
+\index{driver\_ADXL343.h@{driver\_ADXL343.h}!spiRead@{spiRead}}
+\index{spiRead@{spiRead}!driver\_ADXL343.h@{driver\_ADXL343.h}}
+\doxysubsubsection{\texorpdfstring{spiRead()}{spiRead()}}
+{\footnotesize\ttfamily void spi\+Read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Reads data from the ADXL343 over SPI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & The address of the register to read from. \\
+\hline
+{\em data} & Pointer to the buffer to store the received data. \\
+\hline
+{\em length} & Number of bytes to read. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00066}{66}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\Hypertarget{driver__ADXL343_8h_aaf4313256e790823fa015e28b544a29c}\label{driver__ADXL343_8h_aaf4313256e790823fa015e28b544a29c} 
+\index{driver\_ADXL343.h@{driver\_ADXL343.h}!spiWrite@{spiWrite}}
+\index{spiWrite@{spiWrite}!driver\_ADXL343.h@{driver\_ADXL343.h}}
+\doxysubsubsection{\texorpdfstring{spiWrite()}{spiWrite()}}
+{\footnotesize\ttfamily void spi\+Write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Sends a command and data to the ADXL343 over SPI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & The address of the register to write to. \\
+\hline
+{\em data} & Pointer to the data to send. \\
+\hline
+{\em length} & Number of bytes to send. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00030}{30}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14

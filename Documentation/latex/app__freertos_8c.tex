@@ -1,0 +1,97 @@
+\doxysection{/home/oliver/\+Documents/3\+A/2425\+\_\+\+ESE\+\_\+\+Projet\+\_\+\+V-\/\+NOM/\+Projet\+\_\+\+V-\/\+NOM\+\_\+\+STM32/\+Core/\+Src/app\+\_\+freertos.c File Reference}
+\hypertarget{app__freertos_8c}{}\label{app__freertos_8c}\index{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/Src/app\_freertos.c@{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/Src/app\_freertos.c}}
+{\ttfamily \#include "{}Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}task.\+h"{}}\newline
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}cmsis\+\_\+os.\+h"{}}\newline
+Include dependency graph for app\+\_\+freertos.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app__freertos_8c_a016544463b4842ced7191baf8f449cea}{Start\+Default\+Task}} (void const \texorpdfstring{$\ast$}{*}argument)
+\begin{DoxyCompactList}\small\item\em Function implementing the default\+Task thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app__freertos_8c_abade755e13d07c10889ae83143656158}{MX\+\_\+\+FREERTOS\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Free\+RTOS initialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+os\+Thread\+Id \mbox{\hyperlink{app__freertos_8c_aa658fe134a5d1309d7a15c8116fa142c}{default\+Task\+Handle}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{app__freertos_8c_abade755e13d07c10889ae83143656158}\label{app__freertos_8c_abade755e13d07c10889ae83143656158} 
+\index{app\_freertos.c@{app\_freertos.c}!MX\_FREERTOS\_Init@{MX\_FREERTOS\_Init}}
+\index{MX\_FREERTOS\_Init@{MX\_FREERTOS\_Init}!app\_freertos.c@{app\_freertos.c}}
+\doxysubsubsection{\texorpdfstring{MX\_FREERTOS\_Init()}{MX\_FREERTOS\_Init()}}
+{\footnotesize\ttfamily void MX\+\_\+\+FREERTOS\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Free\+RTOS initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{app__freertos_8c_source_l00066}{66}} of file \mbox{\hyperlink{app__freertos_8c_source}{app\+\_\+freertos.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{app__freertos_8c_a016544463b4842ced7191baf8f449cea}\label{app__freertos_8c_a016544463b4842ced7191baf8f449cea} 
+\index{app\_freertos.c@{app\_freertos.c}!StartDefaultTask@{StartDefaultTask}}
+\index{StartDefaultTask@{StartDefaultTask}!app\_freertos.c@{app\_freertos.c}}
+\doxysubsubsection{\texorpdfstring{StartDefaultTask()}{StartDefaultTask()}}
+{\footnotesize\ttfamily void Start\+Default\+Task (\begin{DoxyParamCaption}\item[{void const \texorpdfstring{$\ast$}{*}}]{argument }\end{DoxyParamCaption})}
+
+
+
+Function implementing the default\+Task thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argument} & Not used \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{app__freertos_8c_source_l00105}{105}} of file \mbox{\hyperlink{app__freertos_8c_source}{app\+\_\+freertos.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{app__freertos_8c_aa658fe134a5d1309d7a15c8116fa142c}\label{app__freertos_8c_aa658fe134a5d1309d7a15c8116fa142c} 
+\index{app\_freertos.c@{app\_freertos.c}!defaultTaskHandle@{defaultTaskHandle}}
+\index{defaultTaskHandle@{defaultTaskHandle}!app\_freertos.c@{app\_freertos.c}}
+\doxysubsubsection{\texorpdfstring{defaultTaskHandle}{defaultTaskHandle}}
+{\footnotesize\ttfamily os\+Thread\+Id default\+Task\+Handle}
+
+File Name \+: \doxylink{app__freertos_8c}{app\+\_\+freertos.\+c} Description \+: Code for freertos applications
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2025 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+Definition at line \mbox{\hyperlink{app__freertos_8c_source_l00050}{50}} of file \mbox{\hyperlink{app__freertos_8c_source}{app\+\_\+freertos.\+c}}.
+

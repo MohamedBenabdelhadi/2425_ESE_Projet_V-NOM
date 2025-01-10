@@ -1,0 +1,102 @@
+\doxysection{driver\+\_\+\+YLIDARX2.\+c}
+\hypertarget{driver__YLIDARX2_8c_source}{}\label{driver__YLIDARX2_8c_source}\index{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_YLIDARX2.c@{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_YLIDARX2.c}}
+\mbox{\hyperlink{driver__YLIDARX2_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{driver__YLIDARX2_8h}{driver\_YLIDARX2.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00016}\mbox{\hyperlink{driver__YLIDARX2_8c_ad72dbcf6d0153db1b8d8a58001feed83}{00016}}\ \textcolor{preprocessor}{\#define\ DEBUG\ 1\ }}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00018}00018\ \textcolor{preprocessor}{\#if\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00019}\mbox{\hyperlink{driver__YLIDARX2_8c_a88edd2aa4feabff4af21a997d5d8aa23}{00019}}\ \textcolor{preprocessor}{\#define\ DEBUG\_PRINT(...)\ printf(\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00020}00020\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00021}00021\ \textcolor{preprocessor}{\#define\ DEBUG\_PRINT(...)}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00022}00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00030}00030\ \textcolor{keyword}{static}\ uint16\_t\ extract\_uint16(\textcolor{keyword}{const}\ uint8\_t\ *data)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ (data[1]\ <<\ 8)\ |\ data[0];}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00034}\mbox{\hyperlink{driver__YLIDARX2_8c_a763cead40ecca92b7b3416d894686709}{00034}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__YLIDARX2_8c_a763cead40ecca92b7b3416d894686709}{YLIDARX2\_InitDMA}}(\mbox{\hyperlink{structh__YLIDARX2__t}{h\_YLIDARX2\_t}}\ *lidar,\ UART\_HandleTypeDef\ *huart)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00035}00035\ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a31b2a452cffe839ac4a3bf86eddc16b0}{uart}}\ =\ huart;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00036}00036\ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a43006e01a8f5210a5c02f3267ab0679d}{currentIndex}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00037}00037\ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{pointIndex}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00038}00038\ \ \ \ \ memset(lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}},\ 0,\ \textcolor{keyword}{sizeof}(lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}}));}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00040}00040\ \ \ \ \ HAL\_UART\_Abort(lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a31b2a452cffe839ac4a3bf86eddc16b0}{uart}});}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00041}00041\ \ \ \ \ HAL\_UART\_Receive\_DMA(lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a31b2a452cffe839ac4a3bf86eddc16b0}{uart}},\ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}},\ \mbox{\hyperlink{driver__YLIDARX2_8h_a9b08f201880f08d1b268f723b138bca0}{YLIDARX2\_DMA\_BUFFER\_SIZE}});}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{driver__YLIDARX2_8c_a88edd2aa4feabff4af21a997d5d8aa23}{DEBUG\_PRINT}}(\textcolor{stringliteral}{"{}YLIDARX2\ DMA\ Initialized\(\backslash\)r\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00046}\mbox{\hyperlink{driver__YLIDARX2_8c_a242f78691663fad7e5b74671a38b8942}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__YLIDARX2_8c_a242f78691663fad7e5b74671a38b8942}{YLIDARX2\_RestartDMA}}(\mbox{\hyperlink{structh__YLIDARX2__t}{h\_YLIDARX2\_t}}\ *lidar)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00047}00047\ \ \ \ \ HAL\_UART\_Abort(lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a31b2a452cffe839ac4a3bf86eddc16b0}{uart}});}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00048}00048\ \ \ \ \ HAL\_UART\_DMAStop(lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a31b2a452cffe839ac4a3bf86eddc16b0}{uart}});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ STOP\ Uart}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{usart_8h_a052088fe5bb3f807a4b2502e664fd4fd}{MX\_USART2\_UART\_Init}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ INIT\ Uart}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00050}00050\ \ \ \ \ \_\_HAL\_UART\_CLEAR\_IDLEFLAG(lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a31b2a452cffe839ac4a3bf86eddc16b0}{uart}});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clear\ Idle\ IT-\/Flag}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00051}00051\ \ \ \ \ \_\_HAL\_UART\_ENABLE\_IT(lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a31b2a452cffe839ac4a3bf86eddc16b0}{uart}},\ UART\_IT\_IDLE);\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Enable\ Idle\ Interrupt}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00052}00052\ \ \ \ \ HAL\_UART\_Receive\_DMA(lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a31b2a452cffe839ac4a3bf86eddc16b0}{uart}},\ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}},\ \mbox{\hyperlink{driver__YLIDARX2_8h_a9b08f201880f08d1b268f723b138bca0}{YLIDARX2\_DMA\_BUFFER\_SIZE}});}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00055}\mbox{\hyperlink{driver__YLIDARX2_8c_a93def8b27b98e3f7c450d1ac3bbd45a9}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__YLIDARX2_8c_a93def8b27b98e3f7c450d1ac3bbd45a9}{YLIDARX2\_ProcessDMAHalfComplete}}(\mbox{\hyperlink{structh__YLIDARX2__t}{h\_YLIDARX2\_t}}\ *lidar)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{driver__YLIDARX2_8c_a80962194ceb6d474ed1dbb0db25032f2}{YLIDARX2\_ProcessBuffer}}(lidar,\ 0,\ \mbox{\hyperlink{driver__YLIDARX2_8h_a9b08f201880f08d1b268f723b138bca0}{YLIDARX2\_DMA\_BUFFER\_SIZE}}\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00059}\mbox{\hyperlink{driver__YLIDARX2_8c_a849a62d7f79669b165d9a8aa50796b25}{00059}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__YLIDARX2_8c_a849a62d7f79669b165d9a8aa50796b25}{YLIDARX2\_ProcessDMAComplete}}(\mbox{\hyperlink{structh__YLIDARX2__t}{h\_YLIDARX2\_t}}\ *lidar)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{driver__YLIDARX2_8c_a80962194ceb6d474ed1dbb0db25032f2}{YLIDARX2\_ProcessBuffer}}(lidar,\ \mbox{\hyperlink{driver__YLIDARX2_8h_a9b08f201880f08d1b268f723b138bca0}{YLIDARX2\_DMA\_BUFFER\_SIZE}}\ /\ 2,\ \mbox{\hyperlink{driver__YLIDARX2_8h_a9b08f201880f08d1b268f723b138bca0}{YLIDARX2\_DMA\_BUFFER\_SIZE}});}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00061}00061\ \}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00063}\mbox{\hyperlink{driver__YLIDARX2_8c_a80962194ceb6d474ed1dbb0db25032f2}{00063}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__YLIDARX2_8c_a80962194ceb6d474ed1dbb0db25032f2}{YLIDARX2\_ProcessBuffer}}(\mbox{\hyperlink{structh__YLIDARX2__t}{h\_YLIDARX2\_t}}\ *lidar,\ uint16\_t\ start,\ uint16\_t\ end)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint16\_t\ i\ =\ start;\ i\ <\ end\ -\/\ \mbox{\hyperlink{driver__YLIDARX2_8h_afee58d787f4e5ebb6de7d7eec1621d14}{FRAME\_LENGTH\_MIN}};\ )\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ uint16\_t\ header\ =\ extract\_uint16(\&lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}}[i]);}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (header\ ==\ \mbox{\hyperlink{driver__YLIDARX2_8h_a1aa8b6627486da5c445e6bdbe5c2ed0b}{PACKET\_HEADER}})\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ ct\ =\ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}}[i\ +\ 2];}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ lsn\ =\ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}}[i\ +\ 3];}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ fsa\ =\ extract\_uint16(\&lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}}[i\ +\ 4]);}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ lsa\ =\ extract\_uint16(\&lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}}[i\ +\ 6]);}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ checksum\ =\ extract\_uint16(\&lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}}[i\ +\ 8\ +\ (lsn\ *\ 2)]);}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ calculatedChecksum\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint16\_t\ j\ =\ i;\ j\ <\ i\ +\ 8\ +\ (lsn\ *\ 2);\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ calculatedChecksum\ \string^=\ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}}[j];}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (calculatedChecksum\ ==\ checksum)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ startAngle\ =\ (fsa\ >>\ 1)\ /\ 64.0f;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ endAngle\ =\ (lsa\ >>\ 1)\ /\ 64.0f;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ angleIncrement\ =\ (endAngle\ -\/\ startAngle)\ /\ (lsn\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ j\ =\ 0;\ j\ <\ lsn;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{pointIndex}}\ >=\ \mbox{\hyperlink{driver__YLIDARX2_8h_a2baf69d5741479065f9e385ccd2faf8f}{YLIDARX2\_MAX\_POINTS}})\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{pointIndex}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ distance\ =\ extract\_uint16(\&lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a6b68921913d85a14362cb482fac223a9}{dmaBuffer}}[i\ +\ 8\ +\ (j\ *\ 2)]);}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ angle\ =\ startAngle\ +\ (j\ *\ angleIncrement)\ -\/\ 180;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a1a0080efe655e569028fd79c3f0c32dd}{points}}[lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{pointIndex}}].\mbox{\hyperlink{structYLIDARX2__Point__t_ab8ef1bf8a70cc07c6d55823c390a7e76}{angle}}\ =\ angle;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a1a0080efe655e569028fd79c3f0c32dd}{points}}[lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{pointIndex}}].\mbox{\hyperlink{structYLIDARX2__Point__t_a06f14a9abd47b91465f895d5259cdc1b}{distance}}\ =\ distance\ /\ 4.0f;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a1a0080efe655e569028fd79c3f0c32dd}{points}}[lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{pointIndex}}].\mbox{\hyperlink{structYLIDARX2__Point__t_a076e47e2f3a82762ee000a8a77adccbd}{intensity}}\ =\ (distance\ \&\ 0x01)\ ?\ 1\ :\ 0;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{driver__YLIDARX2_8c_a88edd2aa4feabff4af21a997d5d8aa23}{DEBUG\_PRINT}}(\textcolor{stringliteral}{"{}Point\ \%d:\ Angle\ \%.2f°,\ Distance\ \%.2f\ mm,\ Intensity\ \%u\(\backslash\)r\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{pointIndex}},}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a1a0080efe655e569028fd79c3f0c32dd}{points}}[lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{pointIndex}}].\mbox{\hyperlink{structYLIDARX2__Point__t_ab8ef1bf8a70cc07c6d55823c390a7e76}{angle}},}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a1a0080efe655e569028fd79c3f0c32dd}{points}}[lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{pointIndex}}].\mbox{\hyperlink{structYLIDARX2__Point__t_a06f14a9abd47b91465f895d5259cdc1b}{distance}},}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a1a0080efe655e569028fd79c3f0c32dd}{points}}[lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{pointIndex}}].\mbox{\hyperlink{structYLIDARX2__Point__t_a076e47e2f3a82762ee000a8a77adccbd}{intensity}});}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lidar-\/>\mbox{\hyperlink{structh__YLIDARX2__t_a88980ba2f9ca204b6a3ccf9d999510b8}{pointIndex}}++;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 10\ +\ (lsn\ *\ 2);\ \textcolor{comment}{//\ Move\ to\ next\ packet}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{driver__YLIDARX2_8c_a88edd2aa4feabff4af21a997d5d8aa23}{DEBUG\_PRINT}}(\textcolor{stringliteral}{"{}Checksum\ failed\ at\ index\ \%d\(\backslash\)r\(\backslash\)n"{}},\ i);}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00109}00109\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__YLIDARX2_8c_source_l00113}00113\ \}}
+
+\end{DoxyCode}

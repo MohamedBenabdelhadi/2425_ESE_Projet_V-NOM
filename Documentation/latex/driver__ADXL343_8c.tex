@@ -1,0 +1,277 @@
+\doxysection{/home/oliver/\+Documents/3\+A/2425\+\_\+\+ESE\+\_\+\+Projet\+\_\+\+V-\/\+NOM/\+Projet\+\_\+\+V-\/\+NOM\+\_\+\+STM32/\+Core/drivers/driver\+\_\+\+ADXL343.c File Reference}
+\hypertarget{driver__ADXL343_8c}{}\label{driver__ADXL343_8c}\index{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_ADXL343.c@{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_ADXL343.c}}
+
+
+C code file for ADXL343 accelerometer driver.  
+
+
+{\ttfamily \#include "{}driver\+\_\+\+ADXL343.\+h"{}}\newline
+{\ttfamily \#include "{}spi.\+h"{}}\newline
+{\ttfamily \#include "{}gpio.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for driver\+\_\+\+ADXL343.\+c\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{driver__ADXL343_8c_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}~1
+\item 
+\#define \mbox{\hyperlink{driver__ADXL343_8c_a88edd2aa4feabff4af21a997d5d8aa23}{DEBUG\+\_\+\+PRINT}}(...)~printf(\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{driver__ADXL343_8c_aaf4313256e790823fa015e28b544a29c}{spi\+Write}} (uint8\+\_\+t address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Sends a command and data to the ADXL343 over SPI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8c_a989890910c714e6261f0b93cb6112a24}{spi\+Read}} (uint8\+\_\+t address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Reads data from the ADXL343 over SPI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8c_afb2c4ce84c1c1dade8c7f0ff62730591}{ADXL343\+\_\+write\+Register}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}values, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Writes data to a specific register of the ADXL343. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8c_a5e3d1b1903a9848b19c1eb0048631d6a}{ADXL343\+\_\+read\+Register}} (uint8\+\_\+t reg, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t num)
+\begin{DoxyCompactList}\small\item\em Reads data from a specific register of the ADXL343. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8c_ac75b471ef5ee00618abe6cc7cdc9ba46}{ADXL343\+\_\+\+Init}} (\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}hadxl)
+\begin{DoxyCompactList}\small\item\em Initializes the ADXL343 accelerometer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8c_a4271a55c2cc57351024a86ac84a0203a}{ADXL343\+\_\+\+Configure\+Tap}} (\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}hadxl)
+\begin{DoxyCompactList}\small\item\em Configures single-\/tap detection for the ADXL343. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{driver__ADXL343_8c_ac00a63f3e7e827b116fec0ed2238942f}{ADXL343\+\_\+get\+\_\+\+Acceleration}} (\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}hadxl)
+\begin{DoxyCompactList}\small\item\em Reads the acceleration data from the ADXL343. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C code file for ADXL343 accelerometer driver. 
+
+\begin{DoxyAuthor}{Author}
+Oliver 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+December 22, 2024
+\end{DoxyDate}
+\begin{DoxyWarning}{Warning}
+
+\begin{DoxyItemize}
+\item The maximum SPI clock speed for the ADXL343 is 5 MHz with a maximum bus load capacitance of 100 pF. 
+\end{DoxyItemize}
+\end{DoxyWarning}
+
+
+Definition in file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{driver__ADXL343_8c_ad72dbcf6d0153db1b8d8a58001feed83}\label{driver__ADXL343_8c_ad72dbcf6d0153db1b8d8a58001feed83} 
+\index{driver\_ADXL343.c@{driver\_ADXL343.c}!DEBUG@{DEBUG}}
+\index{DEBUG@{DEBUG}!driver\_ADXL343.c@{driver\_ADXL343.c}}
+\doxysubsubsection{\texorpdfstring{DEBUG}{DEBUG}}
+{\footnotesize\ttfamily \#define DEBUG~1}
+
+Enable debug logs 
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00015}{15}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+\Hypertarget{driver__ADXL343_8c_a88edd2aa4feabff4af21a997d5d8aa23}\label{driver__ADXL343_8c_a88edd2aa4feabff4af21a997d5d8aa23} 
+\index{driver\_ADXL343.c@{driver\_ADXL343.c}!DEBUG\_PRINT@{DEBUG\_PRINT}}
+\index{DEBUG\_PRINT@{DEBUG\_PRINT}!driver\_ADXL343.c@{driver\_ADXL343.c}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PRINT}{DEBUG\_PRINT}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PRINT(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~printf(\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00019}{19}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{driver__ADXL343_8c_a4271a55c2cc57351024a86ac84a0203a}\label{driver__ADXL343_8c_a4271a55c2cc57351024a86ac84a0203a} 
+\index{driver\_ADXL343.c@{driver\_ADXL343.c}!ADXL343\_ConfigureTap@{ADXL343\_ConfigureTap}}
+\index{ADXL343\_ConfigureTap@{ADXL343\_ConfigureTap}!driver\_ADXL343.c@{driver\_ADXL343.c}}
+\doxysubsubsection{\texorpdfstring{ADXL343\_ConfigureTap()}{ADXL343\_ConfigureTap()}}
+{\footnotesize\ttfamily void ADXL343\+\_\+\+Configure\+Tap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{hadxl }\end{DoxyParamCaption})}
+
+
+
+Configures single-\/tap detection for the ADXL343. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hadxl} & Pointer to the ADXL343 handle structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Configures tap threshold, duration, and interrupt mapping. 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00161}{161}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{driver__ADXL343_8c_ac00a63f3e7e827b116fec0ed2238942f}\label{driver__ADXL343_8c_ac00a63f3e7e827b116fec0ed2238942f} 
+\index{driver\_ADXL343.c@{driver\_ADXL343.c}!ADXL343\_get\_Acceleration@{ADXL343\_get\_Acceleration}}
+\index{ADXL343\_get\_Acceleration@{ADXL343\_get\_Acceleration}!driver\_ADXL343.c@{driver\_ADXL343.c}}
+\doxysubsubsection{\texorpdfstring{ADXL343\_get\_Acceleration()}{ADXL343\_get\_Acceleration()}}
+{\footnotesize\ttfamily void ADXL343\+\_\+get\+\_\+\+Acceleration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{hadxl }\end{DoxyParamCaption})}
+
+
+
+Reads the acceleration data from the ADXL343. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hadxl} & Pointer to the ADXL343 handle structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Converts raw data to acceleration in g. 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00206}{206}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\Hypertarget{driver__ADXL343_8c_ac75b471ef5ee00618abe6cc7cdc9ba46}\label{driver__ADXL343_8c_ac75b471ef5ee00618abe6cc7cdc9ba46} 
+\index{driver\_ADXL343.c@{driver\_ADXL343.c}!ADXL343\_Init@{ADXL343\_Init}}
+\index{ADXL343\_Init@{ADXL343\_Init}!driver\_ADXL343.c@{driver\_ADXL343.c}}
+\doxysubsubsection{\texorpdfstring{ADXL343\_Init()}{ADXL343\_Init()}}
+{\footnotesize\ttfamily void ADXL343\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{hadxl }\end{DoxyParamCaption})}
+
+
+
+Initializes the ADXL343 accelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hadxl} & Pointer to the ADXL343 handle structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Verifies device ID and configures for single-\/tap detection. 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00126}{126}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{driver__ADXL343_8c_a5e3d1b1903a9848b19c1eb0048631d6a}\label{driver__ADXL343_8c_a5e3d1b1903a9848b19c1eb0048631d6a} 
+\index{driver\_ADXL343.c@{driver\_ADXL343.c}!ADXL343\_readRegister@{ADXL343\_readRegister}}
+\index{ADXL343\_readRegister@{ADXL343\_readRegister}!driver\_ADXL343.c@{driver\_ADXL343.c}}
+\doxysubsubsection{\texorpdfstring{ADXL343\_readRegister()}{ADXL343\_readRegister()}}
+{\footnotesize\ttfamily void ADXL343\+\_\+read\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint16\+\_\+t}]{num }\end{DoxyParamCaption})}
+
+
+
+Reads data from a specific register of the ADXL343. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & The register address to read from. \\
+\hline
+{\em data} & Pointer to the buffer to store the read data. \\
+\hline
+{\em num} & Number of bytes to read. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00111}{111}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\Hypertarget{driver__ADXL343_8c_afb2c4ce84c1c1dade8c7f0ff62730591}\label{driver__ADXL343_8c_afb2c4ce84c1c1dade8c7f0ff62730591} 
+\index{driver\_ADXL343.c@{driver\_ADXL343.c}!ADXL343\_writeRegister@{ADXL343\_writeRegister}}
+\index{ADXL343\_writeRegister@{ADXL343\_writeRegister}!driver\_ADXL343.c@{driver\_ADXL343.c}}
+\doxysubsubsection{\texorpdfstring{ADXL343\_writeRegister()}{ADXL343\_writeRegister()}}
+{\footnotesize\ttfamily void ADXL343\+\_\+write\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{values,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Writes data to a specific register of the ADXL343. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & The register address to write to. \\
+\hline
+{\em values} & Pointer to the data to write. \\
+\hline
+{\em length} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00099}{99}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\Hypertarget{driver__ADXL343_8c_a989890910c714e6261f0b93cb6112a24}\label{driver__ADXL343_8c_a989890910c714e6261f0b93cb6112a24} 
+\index{driver\_ADXL343.c@{driver\_ADXL343.c}!spiRead@{spiRead}}
+\index{spiRead@{spiRead}!driver\_ADXL343.c@{driver\_ADXL343.c}}
+\doxysubsubsection{\texorpdfstring{spiRead()}{spiRead()}}
+{\footnotesize\ttfamily void spi\+Read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Reads data from the ADXL343 over SPI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & The address of the register to read from. \\
+\hline
+{\em data} & Pointer to the buffer to store the received data. \\
+\hline
+{\em length} & Number of bytes to read. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00066}{66}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
+\Hypertarget{driver__ADXL343_8c_aaf4313256e790823fa015e28b544a29c}\label{driver__ADXL343_8c_aaf4313256e790823fa015e28b544a29c} 
+\index{driver\_ADXL343.c@{driver\_ADXL343.c}!spiWrite@{spiWrite}}
+\index{spiWrite@{spiWrite}!driver\_ADXL343.c@{driver\_ADXL343.c}}
+\doxysubsubsection{\texorpdfstring{spiWrite()}{spiWrite()}}
+{\footnotesize\ttfamily void spi\+Write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Sends a command and data to the ADXL343 over SPI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & The address of the register to write to. \\
+\hline
+{\em data} & Pointer to the data to send. \\
+\hline
+{\em length} & Number of bytes to send. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{driver__ADXL343_8c_source_l00030}{30}} of file \mbox{\hyperlink{driver__ADXL343_8c_source}{driver\+\_\+\+ADXL343.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
