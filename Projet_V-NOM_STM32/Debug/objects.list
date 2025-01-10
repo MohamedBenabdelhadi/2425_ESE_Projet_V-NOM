@@ -1,5 +1,6 @@
 "./Core/Src/adc.o"
 "./Core/Src/app_freertos.o"
+"./Core/Src/dma.o"
 "./Core/Src/gpio.o"
 "./Core/Src/main.o"
 "./Core/Src/spi.o"

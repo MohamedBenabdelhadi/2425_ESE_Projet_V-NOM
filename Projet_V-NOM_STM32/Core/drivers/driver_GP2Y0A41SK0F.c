@@ -29,7 +29,7 @@ void GP2Y0A41SK0F_Init(h_GP2Y0A41SK0F_t *htof) {
         Error_Handler();
     }
 
-    GP2Y0A41SK0F_Start_Interrupt(htof);
+    //GP2Y0A41SK0F_Start_Interrupt(htof);
 }
 
 /**
