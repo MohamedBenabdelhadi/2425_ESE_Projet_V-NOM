@@ -105,6 +105,16 @@ Le diagramme d'architecture correspondant est le suivant :
 Nous avons divisé notre montage en 5 groupes : Acquisition, Interface Utilisateur, Controle, Alimentation et Deplacement.  
 De cette façon on peut clairement distinguer les dépendances entre chaque groupe afin de mieux comprendre notre système.
 
+# Test de l'ensemble
+
+## Valeur Tof1 et Tof 2
+
+![WhatsApp Image 2025-01-10 at 08 03 31](https://github.com/user-attachments/assets/89f28cec-c6fe-48bb-afb0-812875c3b871)
+
+## Le robot évite les bordures s'il détecte une valeur supérieure à 40.
+
+https://github.com/user-attachments/assets/6fe6b484-391f-4125-b6b6-b91c0b271807
+
 ---
 
 ## Astuces et solution à des erreurs courrantes
@@ -168,13 +178,3 @@ Puis on force le push de la branche qu'on souhaite restaurer :
 ```bash
 git push origin <branch_name> --force
 ```
-### Test de l'ensemble
-
-## Valeur Tof1 et Tof 2
-
-![WhatsApp Image 2025-01-10 at 08 03 31](https://github.com/user-attachments/assets/89f28cec-c6fe-48bb-afb0-812875c3b871)
-
-## Le robot évite les bordures s'il détecte une valeur supérieure à 60.
-
-https://github.com/user-attachments/assets/6fe6b484-391f-4125-b6b6-b91c0b271807
-
