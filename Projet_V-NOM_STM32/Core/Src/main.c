@@ -160,6 +160,7 @@ h_ADXL343_t hADXL;
 // Task handles
 TaskHandle_t xMotors;
 TaskHandle_t xControl;
+SemaphoreHandle_t xMutex;
 
 // Buttons variables
 volatile uint8_t buttonStartPressed = 1; /**< Flag to indicate button press state */
@@ -218,24 +219,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 }
 
 /**
- * @brief ADC conversion complete callback.
- * @param hadc: Pointer to the ADC handle.
- * @retval None
- * @details This function processes ADC conversion data when the conversion
- * is complete. It differentiates between ADC1 and ADC2 to process ToF sensor readings.
- *
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
-	if (hadc->Instance == ADC1) {
-		hTof.adc_val_tof1 = HAL_ADC_GetValue(hadc);
-		GP2Y0A41SK0F_get_distance1(&hTof);
-	}
-	else if (hadc->Instance == ADC2) {
-		hTof.adc_val_tof2 = HAL_ADC_GetValue(hadc);
-		GP2Y0A41SK0F_get_distance2(&hTof);
-	}
-}
- */
-/**
  * @brief GPIO interrupt callback for EXTI line.
  * @param GPIO_Pin: The GPIO pin that triggered the interrupt.
  * @retval None
@@ -292,6 +275,7 @@ void task_Motors(void * unsused)
 	{
 		GP2Y0A41SK0F_get_distance(&hTof);
 		Motor_UpdateSpeed(&hMotors);
+
 		vTaskDelay(1);
 	}
 }
@@ -339,7 +323,6 @@ void task_Control(void * unsused)
 
 		vTaskDelay(1);
 	}
-
 }
 
 /**
@@ -425,6 +408,12 @@ int main(void)
 	/* YLIDAR X2 Initialization with DMA *
 	LIDAR_RX_GPIO_Port->PUPDR = GPIO_PULLUP;
 	YLIDARX2_InitDMA(&hlidar, &huart2);*/
+
+	xMutex = xSemaphoreCreateMutex();
+	if (xMutex == NULL) {
+		printf("Erreur lors de la création du Mutex\r\n");
+		Error_Handler();
+	}
 
 	/* Motors task */
 	xReturned = xTaskCreate(

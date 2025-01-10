@@ -107,7 +107,7 @@ void GP2Y0A41SK0F_get_distance(h_GP2Y0A41SK0F_t * htof)
 		htof->distance_tof1 = (int)( a / (Vo - b) );
 	}
 
-	Vo = (5.0 * htof->adc_val_tof2) / GP2Y0A41SK0F_ADC_MAX_VALUE;
+	Vo = (GP2Y0A41SK0F_ADC_VCC * htof->adc_val_tof2) / GP2Y0A41SK0F_ADC_MAX_VALUE;
 
 	if ( Vo > b ) {
 		// Distance measured by ToF2 in mm
