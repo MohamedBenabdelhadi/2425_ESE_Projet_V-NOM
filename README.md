@@ -94,10 +94,6 @@ subgraph Robot
 end
 ```
 
-## Schémas utiles
-
-![image](https://github.com/user-attachments/assets/46c6d10b-ff33-4031-baca-c4026fec3046)
-
 ## Architecture du PCB
 
 Notre PCB se présente de la forme suivante sous Kicad :  
