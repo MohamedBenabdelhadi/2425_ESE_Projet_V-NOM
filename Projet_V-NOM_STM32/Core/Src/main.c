@@ -58,7 +58,11 @@
 #define STACK_SIZE 256
 #define TASK_PRIORITY_MOTOR 1
 
-#define TOF_TRESHHOLD 40
+#define TOF_TRESHHOLD 40 /**< Threshhold for edge detection */
+
+#define DEBOUNCE_DELAY_MS 50 /**< Debounce delay in milliseconds */
+#define BTN_START_Pin GPIO_PIN_X /**< Replace `X` with the actual pin number for BTN_START */
+#define BTN_START_GPIO_Port GPIO_PORT_X /**< Replace `X` with the actual GPIO port for BTN_START */
 
 /* USER CODE END PD */
 
@@ -155,8 +159,11 @@ h_GP2Y0A41SK0F_t hTof;
 h_ADXL343_t hADXL;
 
 // Task handles
-TaskHandle_t xHandle1;
-TaskHandle_t xHandle2;
+TaskHandle_t xMotors;
+TaskHandle_t xControl;
+
+// Buttons variables
+volatile uint8_t buttonStartPressed = 0; /**< Flag to indicate button press state */
 
 /* USER CODE END PV */
 
@@ -247,13 +254,23 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		{
 			DEBUG_PRINT("Single Tap Detected!\n");
 			Motor_Stop(&hMotors);
-			vTaskDelete(xHandle2);
+			vTaskDelete(xControl);
 		}
 	}
 	else if (GPIO_Pin == AG_INT2_Pin) // Interrupt triggered by INT2
 	{
 		DEBUG_PRINT("Interrupt triggered on INT2\n");
 		// Handle other potential events from INT2 if needed
+	}
+	else if (GPIO_Pin == BTN_START_Pin) { // Check if the interrupt is from BTN_START
+		static uint32_t last_interrupt_time = 0;
+		uint32_t current_time = HAL_GetTick();
+
+		// Debounce handling
+		if ((current_time - last_interrupt_time) > DEBOUNCE_DELAY_MS) {
+			buttonStartPressed++; // Set flag for button press
+			last_interrupt_time = current_time;
+		}
 	}
 }
 
@@ -272,7 +289,6 @@ void task_Motors(void * unsused)
 {
 	while (1)
 	{
-		DEBUG_PRINT("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
 		Motor_UpdateSpeed(&hMotors);
 		vTaskDelay(1);
 	}
@@ -285,43 +301,54 @@ void task_Motors(void * unsused)
  * @details This FreeRTOS task controls motor behavior based on ToF sensor readings.
  * It evaluates distances from ToF sensors and adjusts motor directions accordingly.
  */
-void task_Behaviour(void * unsused)
+void task_Control(void * unsused)
 {
 	while (1)
 	{
-		DEBUG_PRINT("ToF1 distance: %d mm, ToF2 distance: %d mm\r\n", hTof.distance_tof1, hTof.distance_tof2);
-
-		/* Motors test */
-		if (hTof.distance_tof2 > TOF_TRESHHOLD && hTof.distance_tof1 > TOF_TRESHHOLD)
+		if(buttonStartPressed)
 		{
-			hMotors.mode_mot1 = FORWARD_MODE;
-			hMotors.mode_mot2 = FORWARD_MODE;
+			DEBUG_PRINT("ToF1 distance: %d mm, ToF2 distance: %d mm\r\n", hTof.distance_tof1, hTof.distance_tof2);
+
+			/* Motors test */
+			if (hTof.distance_tof2 > TOF_TRESHHOLD && hTof.distance_tof1 > TOF_TRESHHOLD)
+			{
+				hMotors.mode_mot1 = FORWARD_MODE;
+				hMotors.mode_mot2 = FORWARD_MODE;
+
+				Motor_SetMode(&hMotors);
+				Motor_SetSpeed_percent(&hMotors, 40, 40);
+				vTaskDelay(1000 / portTICK_PERIOD_MS);
+			}
+			else if (hTof.distance_tof2 > TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
+			{
+				hMotors.mode_mot1 = FORWARD_MODE;
+				hMotors.mode_mot2 = REVERSE_MODE;
+			}
+			else if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 > TOF_TRESHHOLD)
+			{
+				hMotors.mode_mot1 = REVERSE_MODE;
+				hMotors.mode_mot2 = FORWARD_MODE;
+			}
+			else //if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
+			{
+				hMotors.mode_mot1 = REVERSE_MODE;
+				hMotors.mode_mot2 = REVERSE_MODE;
+			}
 
 			Motor_SetMode(&hMotors);
 			Motor_SetSpeed_percent(&hMotors, 40, 40);
+			DEBUG_PRINT("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
+
+			vTaskDelay(1);
+		}
+		else
+		{
+			Motor_SetSpeed_percent(&hMotors, 0, 0);
 			vTaskDelay(1000 / portTICK_PERIOD_MS);
+			Motor_Stop(&hMotors);
 		}
-		else if (hTof.distance_tof2 > TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
-		{
-			hMotors.mode_mot1 = FORWARD_MODE;
-			hMotors.mode_mot2 = REVERSE_MODE;
-		}
-		else if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 > TOF_TRESHHOLD)
-		{
-			hMotors.mode_mot1 = REVERSE_MODE;
-			hMotors.mode_mot2 = FORWARD_MODE;
-		}
-		else //if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
-		{
-			hMotors.mode_mot1 = REVERSE_MODE;
-			hMotors.mode_mot2 = REVERSE_MODE;
-		}
-
-		Motor_SetMode(&hMotors);
-		Motor_SetSpeed_percent(&hMotors, 40, 40);
-
-		vTaskDelay(1);
 	}
+
 }
 
 /**
@@ -416,18 +443,18 @@ int main(void)
 			STACK_SIZE, // Stack size in words, not bytes.
 			(void *) 0, // Parameter passed into the task.
 			TASK_PRIORITY_MOTOR,// Priority at which the task is created.
-			&xHandle1); // Used to pass out the created task's handle.
+			&xMotors); // Used to pass out the created task's handle.
 
 	errHandler_xTaskCreate(xReturned);
 
-	/* Behaviour task */
+	/* Control task */
 	xReturned = xTaskCreate(
-			task_Behaviour, // Function that implements the task.
-			"task_Behaviour", // Text name for the task.
+			task_Control, // Function that implements the task.
+			"task_Control", // Text name for the task.
 			STACK_SIZE, // Stack size in words, not bytes.
 			(void *) 0, // Parameter passed into the task.
 			TASK_PRIORITY_MOTOR,// Priority at which the task is created.
-			&xHandle2); // Used to pass out the created task's handle.
+			&xControl); // Used to pass out the created task's handle.
 
 	errHandler_xTaskCreate(xReturned);
 
