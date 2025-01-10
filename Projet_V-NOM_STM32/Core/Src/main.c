@@ -299,11 +299,9 @@ void task_Motors(void * unsused)
 	/* Motors test */
 	Motor_Init(&hMotors, &htim1);
 
-
 	while (1)
 	{
-		//Motor_SetSpeed_percent(&hMotors, (hTof.distance_tof2 > 40 ? 0 : 80), (hTof.distance_tof1 > 40 ? 0 : 80));
-		//DEBUG_PRINT("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
+		DEBUG_PRINT("Mot1 speed: %d, Mot2 speed: %d\r\n", hMotors.current_speed1, hMotors.current_speed2);
 		Motor_UpdateSpeed(&hMotors);
 	}
 }
@@ -334,15 +332,10 @@ void task_Behaviour(void * unsused)
 			hMotors.mode_mot1 = REVERSE_MODE;
 			hMotors.mode_mot2 = FORWARD_MODE;
 		}
-		else if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
+		else //if (hTof.distance_tof2 <= TOF_TRESHHOLD && hTof.distance_tof1 <= TOF_TRESHHOLD)
 		{
 			hMotors.mode_mot1 = REVERSE_MODE;
 			hMotors.mode_mot2 = REVERSE_MODE;
-		}
-		else
-		{
-			hMotors.mode_mot1 = REVERSE_MODE;
-			hMotors.mode_mot2 = FORWARD_MODE;
 		}
 
 		Motor_SetMode(&hMotors);
