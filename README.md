@@ -1,6 +1,6 @@
 # 2425-ESE-Projet-V-NOM
 
-Ce projet consiste à créer un robot capable de jouer à chat avec d'autres robots du même type. Ils joueront sur une table sans bordures et devront donc être capable de détecter les bords de celle-ci.
+Ce projet consiste à créer un robot capable de jouer à chat ou souris avec d'autres robots du même type. Ils joueront sur une table sans bordures et devront donc être capable de détecter les bords de celle-ci.
 Les élèves sont chargés de réaliser les schémas électroniques, le routage et la configuration des différents composants choisis pour réaliser ce projet.
 Celui-ci est piloté par un microcontrôleur de type STM32.
 
