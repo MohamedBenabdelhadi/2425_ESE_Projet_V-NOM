@@ -176,6 +176,5 @@ git push origin <branch_name> --force
 
 ## Le robot évite les bordures s'il détecte une valeur supérieure à 60.
 
-https://github.com/user-attachments/assets/fa271bca-c7e0-49e8-bdcb-1a816ebbda52
-
+https://github.com/user-attachments/assets/6fe6b484-391f-4125-b6b6-b91c0b271807
 
