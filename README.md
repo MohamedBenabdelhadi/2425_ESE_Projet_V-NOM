@@ -123,7 +123,12 @@ Dans la vidéo suivante on voit que le robot réagit lorsqu'un obstacle est dét
 
 https://github.com/user-attachments/assets/d30b63fb-a8c7-4677-afde-1267030bd842
 
-## Le lidar renvoie un angle et une distance par point
+## Le lidar renvoie des données
+
+Le lidar envoie des données tous les 1°, donc environ 360 points si on ne compte pas les erreurs occasionnelles.  
+Chaque point affiche la distance mesurée entre le Lidar et l'obstacle, avec l'angle correspondant.
+
+https://github.com/user-attachments/assets/2a43f50e-ff47-4074-a242-2cb1f4e33f11
 
 ---
 
