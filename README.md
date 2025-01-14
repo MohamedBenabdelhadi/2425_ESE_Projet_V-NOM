@@ -109,7 +109,7 @@ L'architecture correspondante est la suivante :
 Nous avons divisé notre montage en 5 groupes : Acquisition, Interface Utilisateur, Controle, Alimentation et Deplacement.  
 De cette façon on peut clairement distinguer les dépendances entre chaque groupe afin de mieux comprendre notre système.
 
-## Test# de l'ensemble
+## Test de l'ensemble
 
 ### Déplacement
 
