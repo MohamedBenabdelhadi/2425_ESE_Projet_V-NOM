@@ -115,11 +115,15 @@ https://github.com/user-attachments/assets/6fe6b484-391f-4125-b6b6-b91c0b271807
 
 ## Valeur Tof1 et Tof 2
 
+Ici on a placé nos mains devant les capteurs à différentes positions pour faire varier les valeurs renvoyées par ces capteurs. C'est aussi de cette façon que nous avons dans un premier temps testé le comportement du robot en simulant les bords de table.  
+Nous avons choisi de mettre nos deux capteurs TOFs à l'avant de notre robot pour que celui-ci puisse différencier le cas où le bord de la table est proche de son côté gauche ou droit.  
+Cela permet d'implémenter une réponse différente dans ces deux cas, évitant une manoeuvre pas toujours utile pour éviter la chute du robot.
+
 ![WhatsApp Image 2025-01-10 at 08 03 31](https://github.com/user-attachments/assets/89f28cec-c6fe-48bb-afb0-812875c3b871)
 
 ## Le robot évite les bordures s'il détecte une valeur supérieure à 40.
 
-Dans la vidéo suivante on voit que le robot réagit lorsqu'un obstacle est détecté (ou non) par les capteurs TOFs. Cela ne se voit pas bien à l'image mais ça s'entend très bien.
+Dans la vidéo suivante on voit que le robot réagit lorsqu'un bord est détecté (ou non) par les capteurs TOFs. Cela ne se voit pas très bien à l'image mais ça s'entend très bien.
 
 https://github.com/user-attachments/assets/d30b63fb-a8c7-4677-afde-1267030bd842
 
@@ -129,6 +133,8 @@ Le lidar envoie des données tous les 1°, donc environ 360 points si on ne comp
 Chaque point affiche la distance mesurée entre le Lidar et l'obstacle, avec l'angle correspondant.
 
 https://github.com/user-attachments/assets/2a43f50e-ff47-4074-a242-2cb1f4e33f11
+
+![image](https://github.com/user-attachments/assets/234b85a4-5771-40a6-812e-22702c0faf35)
 
 ---
 
