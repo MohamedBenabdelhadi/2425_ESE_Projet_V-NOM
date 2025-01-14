@@ -136,6 +136,20 @@ https://github.com/user-attachments/assets/2a43f50e-ff47-4074-a242-2cb1f4e33f11
 
 ![image](https://github.com/user-attachments/assets/234b85a4-5771-40a6-812e-22702c0faf35)
 
+## Conclusion
+
+Le point sur lequel nous avons rencontré le plus de problèmes concernait l'intégration.  
+En prenant l'exemple du Lidar, nous n'avons jamais réussi à le faire fonctionner en dehors de notre carte test nucléo. Celui-ci renvoyait alors une erreur UART.  
+
+On avait réussi à intégrer l'évitement de bord et le fait que notre robot suive une trajectoire en ligne droite la veille de la présentation. Mais en y travaillant davantage durant la nuit nous avons endommagé un régulateur 3v lors de la mise sous tension du robot. Nous suspectons le câble d'un des deux moteurs d'avoir eu un faux contact.  
+On a donc manqué de temps pour refaire fonctionner tout l'ensemble le lendemain matin suite à de nouveaux dysfonctionnements et de nouvelles suspicions de faux-contact sur différents câbles, le sertissage de ceux-ci prenant beaucoup de temps, sans compter le remplacement du régulateur.  
+
+Nous comptions nous servir de l'accéléromètre pour assurer le passage de mode souris à chat si un choc était détecté (le choc contre un robot chat nous ayant touché dans ce cas).  
+Comme nous avons manqué de temps pour avoir un robot complètement fonctionnel jusque là, nous avons décidé de s'en servir comme d'une sorte de bouton d'arrêt en posant notre main sur le robot. En effet, nous nous étions rendu compte pendant les tests que le robot n'était pas si simple à arrêter une fois lancé, et que cette fonctionnalité était rapide à intégrer.
+
+
+
+
 ---
 
 ## Astuces et solution à des erreurs courrantes
