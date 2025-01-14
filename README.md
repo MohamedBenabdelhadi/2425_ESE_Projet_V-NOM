@@ -113,6 +113,10 @@ De cette façon on peut clairement distinguer les dépendances entre chaque grou
 
 ## Le robot évite les bordures s'il détecte une valeur supérieure à 40.
 
+https://github.com/user-attachments/assets/d30b63fb-a8c7-4677-afde-1267030bd842
+
+
+
 https://github.com/user-attachments/assets/6fe6b484-391f-4125-b6b6-b91c0b271807
 
 ---
