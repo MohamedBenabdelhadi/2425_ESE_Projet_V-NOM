@@ -107,17 +107,23 @@ De cette façon on peut clairement distinguer les dépendances entre chaque grou
 
 # Test de l'ensemble
 
+## Le robot se déplace 
+
+Notre robot se déplaçait avec une différence de vitesse de rotation entre les deux moteurs mais nous avons pu corriger cela par la suite de façon à ce que celui-ci avance presque de façon droite.
+
+https://github.com/user-attachments/assets/6fe6b484-391f-4125-b6b6-b91c0b271807
+
 ## Valeur Tof1 et Tof 2
 
 ![WhatsApp Image 2025-01-10 at 08 03 31](https://github.com/user-attachments/assets/89f28cec-c6fe-48bb-afb0-812875c3b871)
 
 ## Le robot évite les bordures s'il détecte une valeur supérieure à 40.
 
+Dans la vidéo suivante on voit que le robot réagit lorsqu'un obstacle est détecté (ou non) par les capteurs TOFs. Cela ne se voit pas bien à l'image mais ça s'entend très bien.
+
 https://github.com/user-attachments/assets/d30b63fb-a8c7-4677-afde-1267030bd842
 
-
-
-https://github.com/user-attachments/assets/6fe6b484-391f-4125-b6b6-b91c0b271807
+## Le lidar renvoie un angle et une distance par point
 
 ---
 
