@@ -140,6 +140,12 @@ https://github.com/user-attachments/assets/2a43f50e-ff47-4074-a242-2cb1f4e33f11
 
 ![image](https://github.com/user-attachments/assets/234b85a4-5771-40a6-812e-22702c0faf35)
 
+### L'accéléromètre
+
+A défaut de pouvoir nous servir de l'accéléromètre pour pouvoir détecter la collision avec d'autres robots par manque de temps, nous nous en sommes servi comme d'un bouton d'arrêt d'urgence, plus accessible que les boutons prévus à cet effet lorsque le robot est en mouvement sur la table.
+
+https://github.com/user-attachments/assets/ef0c44d4-e8ed-4b50-9021-add47195b835
+
 ## Conclusion
 
 Le point sur lequel nous avons rencontré le plus de problèmes concernait l'intégration.  
