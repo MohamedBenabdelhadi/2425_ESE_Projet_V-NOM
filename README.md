@@ -139,16 +139,15 @@ https://github.com/user-attachments/assets/2a43f50e-ff47-4074-a242-2cb1f4e33f11
 ## Conclusion
 
 Le point sur lequel nous avons rencontré le plus de problèmes concernait l'intégration.  
-En prenant l'exemple du Lidar, nous n'avons jamais réussi à le faire fonctionner en dehors de notre carte test nucléo. Celui-ci renvoyait alors une erreur UART.  
+En prenant l'exemple du Lidar, nous n'avons jamais réussi à le faire fonctionner en dehors de notre carte test nucléo. Celui-ci renvoyait alors des erreurs UART.  
 
-On avait réussi à intégrer l'évitement de bord et le fait que notre robot suive une trajectoire en ligne droite la veille de la présentation. Mais en y travaillant davantage durant la nuit nous avons endommagé un régulateur 3v lors de la mise sous tension du robot. Nous suspectons le câble d'un des deux moteurs d'avoir eu un faux contact.  
+On avait réussi à intégrer l'évitement de bord et le fait que notre robot suive une trajectoire en ligne droite la veille de la présentation. Mais en y travaillant davantage durant la nuit nous avons endommagé un régulateur lors de la mise sous tension du robot. Nous suspectons le câble d'un des deux moteurs d'avoir eu un faux contact.  
 On a donc manqué de temps pour refaire fonctionner tout l'ensemble le lendemain matin suite à de nouveaux dysfonctionnements et de nouvelles suspicions de faux-contact sur différents câbles, le sertissage de ceux-ci prenant beaucoup de temps, sans compter le remplacement du régulateur.  
 
 Nous comptions nous servir de l'accéléromètre pour assurer le passage de mode souris à chat si un choc était détecté (le choc contre un robot chat nous ayant touché dans ce cas).  
 Comme nous avons manqué de temps pour avoir un robot complètement fonctionnel jusque là, nous avons décidé de s'en servir comme d'une sorte de bouton d'arrêt en posant notre main sur le robot. En effet, nous nous étions rendu compte pendant les tests que le robot n'était pas si simple à arrêter une fois lancé, et que cette fonctionnalité était rapide à intégrer.
 
-
-
+Pour conclure, ce projet nous aura permis d'appliquer les différentes connaissances techniques acquises au cours de ce semestre, concernant les systèmes à microcontrôleurs, le design de PCB, la programmation en temps réel et la robotique. Ce projet nous aura aussi permis de développer notre travail d'équipe, que ce soit à travers la répartition des tâches, l'entraide ou encore par notre capacité à rester ouvert à des idées auxquelles on aurait pas pensé dans un premier temps.
 
 ---
 
