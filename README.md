@@ -1,17 +1,21 @@
 # 2425-ESE-Projet-V-NOM
 
-Ce projet consiste à créer un robot capable de jouer à chat ou souris avec d'autres robots du même type. Ils joueront sur une table sans bordures et devront donc être capable de détecter les bords de celle-ci.
+Ce projet consiste à créer un robot capable de jouer au chat et la souris avec d'autres robots du même type. Ils joueront sur une table sans bordures et devront donc être capable de détecter les bords de celle-ci.
 Les élèves sont chargés de réaliser les schémas électroniques, le routage et la configuration des différents composants choisis pour réaliser ce projet.
 Celui-ci est piloté par un microcontrôleur de type STM32.
 
-Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
+> Groupe: Mohamed Benabdelhadi, Nouhaila Faris, Oliver Belliard, Valerian Priou.
 
 ## Strategie
 
-La stratégie de déplacement retenue a été de détecter les bords de la surface de l'arène grâce à des capteurs de distance à l'avant et à l'arrière du robot.  
+La stratégie de déplacement retenue a été de détecter les bords de la surface de l'arène grâce à des capteurs de distance à l'avant du robot pointant chacun à 45° de l'axe central du robot, dans des directions opposées. L'idée d'origine consistait à mettre un capteur à l'avant et l'arrière mais suite aux conseils d'un intervenant extérieur, il a été jugé plus judicieux de placer les capteurs dans un même sens pour éviter que le robot tombe de la table dans les cas critiques, comme par exemple lorsque le robot s'approche du bord de la table avec une trajectoire diagonale avec un angle d'attaque très faible.  
+  
 **En mode souris :** le robot cherche à garder la plus grande distance possible du robot adverse ("chat"), tout en évitant les bords.  
 **En mode chat :** le robot cherche à entrer en contact avec le robot adverse ("souris") par collision.  
-La détection de la position du robot adverse se fait grâce au capteur Lidar qui permet de déterminer une trajectoire en temps réel. La détection de la collision est faite grâce à l'accéléromètre.
+  
+La détection de la position du robot adverse se fait grâce au capteur Lidar qui permet de déterminer une trajectoire en temps réel. La détection de la collision est faite grâce à l'accéléromètre sur le PCB.  
+  
+Notre logique de direction consiste à réduire la différence entre l'angle où se trouve la cible détectée avec le Lidar puis s'approcher ou s'éloigner de celle ci en fonction du mode.  
 
 ## BOM (Bill Of Materials)
 
@@ -37,7 +41,7 @@ La détection de la position du robot adverse se fait grâce au capteur Lidar qu
 - Boutons poussoirs : [Wurth 430182070816] → empreinte KiCAD : SW Push 1P1T NO 6x6mm H9.5mm
 - Interrupteur ON/OFF : [Wurth 472121020311] → empreinte à faire  
   
-**Fournisseurs autorisés :** RS, Farnell, Mouser.
+> **Fournisseurs autorisés :** RS, Farnell, Mouser.
 
 ### Sources d'empreintes
 
@@ -99,38 +103,38 @@ end
 Notre PCB se présente de la forme suivante sous Kicad :  
 ![image](https://github.com/user-attachments/assets/23adb2bf-fa5d-487e-8890-8c57db7297cc)
 
-Le diagramme d'architecture correspondant est le suivant :  
+L'architecture correspondante est la suivante :  
 ![image](https://github.com/user-attachments/assets/4c272ab7-e6be-4d1b-a504-a4670fe7053b)
 
 Nous avons divisé notre montage en 5 groupes : Acquisition, Interface Utilisateur, Controle, Alimentation et Deplacement.  
 De cette façon on peut clairement distinguer les dépendances entre chaque groupe afin de mieux comprendre notre système.
 
-# Test de l'ensemble
+## Test# de l'ensemble
 
-## Le robot se déplace 
+### Déplacement
 
-Notre robot se déplaçait avec une différence de vitesse de rotation entre les deux moteurs mais nous avons pu corriger cela par la suite de façon à ce que celui-ci avance presque de façon droite.
+Notre robot se déplaçait avec une différence de vitesse de rotation entre les deux moteurs mais nous avons pu corriger cela par la suite avec la commande PWM, de façon à ce que celui-ci avance quasiment en ligne droite.
 
 https://github.com/user-attachments/assets/6fe6b484-391f-4125-b6b6-b91c0b271807
 
-## Valeur Tof1 et Tof 2
+### Capteurs de bord (ToF)
 
-Ici on a placé nos mains devant les capteurs à différentes positions pour faire varier les valeurs renvoyées par ces capteurs. C'est aussi de cette façon que nous avons dans un premier temps testé le comportement du robot en simulant les bords de table.  
-Nous avons choisi de mettre nos deux capteurs TOFs à l'avant de notre robot pour que celui-ci puisse différencier le cas où le bord de la table est proche de son côté gauche ou droit.  
-Cela permet d'implémenter une réponse différente dans ces deux cas, évitant une manoeuvre pas toujours utile pour éviter la chute du robot.
+Pour ce test, nous avons placé nos mains devant les capteurs à différentes distances pour faire varier les valeurs renvoyées par ces capteurs. C'est aussi de cette façon que nous avons dans un premier temps testé le comportement du robot en simulant les bords de table.  
+Comme précisé plus tôt, nous avons choisi de mettre nos deux capteurs TOFs à l'avant de notre robot pour que celui-ci puisse différencier le cas où le bord de la table est proche de son côté gauche ou droit.  
+Cela permet d'implémenter une réponse différente dans ces deux cas distincts et d'éviter les chutes accidentelles dues à une mauvaise manœuvre lors de la détection du bord de la table.
 
 ![WhatsApp Image 2025-01-10 at 08 03 31](https://github.com/user-attachments/assets/89f28cec-c6fe-48bb-afb0-812875c3b871)
 
-## Le robot évite les bordures s'il détecte une valeur supérieure à 40.
+### Détection des bords
 
-Dans la vidéo suivante on voit que le robot réagit lorsqu'un bord est détecté (ou non) par les capteurs TOFs. Cela ne se voit pas très bien à l'image mais ça s'entend très bien.
+Le robot évite les bordures de la table si une distance supérieure à 40 mm des ToF est détectée. Dans la vidéo suivante on voit que le robot réagit lorsqu'un bord est détecté par les capteurs TOFs. Ces images ne lui font pas justice mais nous avons testé et filmé ces images lorsqu'il était encore possible.
 
 https://github.com/user-attachments/assets/d30b63fb-a8c7-4677-afde-1267030bd842
 
-## Le lidar renvoie des données
+### Le lidar
 
-Le lidar envoie des données tous les 1°, donc environ 360 points si on ne compte pas les erreurs occasionnelles.  
-Chaque point affiche la distance mesurée entre le Lidar et l'obstacle, avec l'angle correspondant.
+Le lidar envoie des données par DMA, on enregistre et on traite 1000 points à la fois, même si en réalité il ne mesure qu'un point par degré par tour. on traite alors les points mesurés lors d'environ 3 tours pour avoir une bonne résolution.  
+Chaque point affiche la distance mesurée entre le Lidar et l'obstacle, avec l'angle correspondant à la différence d'angle avec l'axe frontal central du robot.
 
 https://github.com/user-attachments/assets/2a43f50e-ff47-4074-a242-2cb1f4e33f11
 
@@ -139,15 +143,14 @@ https://github.com/user-attachments/assets/2a43f50e-ff47-4074-a242-2cb1f4e33f11
 ## Conclusion
 
 Le point sur lequel nous avons rencontré le plus de problèmes concernait l'intégration.  
-En prenant l'exemple du Lidar, nous n'avons jamais réussi à le faire fonctionner en dehors de notre carte test nucléo. Celui-ci renvoyait alors des erreurs UART.  
+En prenant l'exemple du Lidar, nous n'avons jamais réussi à l'utiliser sur le robot sans erreurs de communication UART.  
+  
+On avait réussi à intégrer l'évitement des bords et le fait que notre robot suive une trajectoire en ligne droite la veille de la présentation. Mais en y travaillant davantage durant la nuit nous avons endommagé un régulateur lors de la mise sous tension du robot. Nous suspectons le câble d'un des deux moteurs d'avoir eu un faux contact.  
+On a donc manqué de temps pour refaire fonctionner tout l'ensemble le lendemain, le matin de la démonstration, suite à de nouveaux dysfonctionnements et de nouvelles suspicions de faux-contact sur plusieurs câbles. Le sertissage de ceux-ci prenant beaucoup de temps, ainsi que le remplacement du régulateur, il nous a été physiquement impossible d'avoir une démonstration complète.  
 
-On avait réussi à intégrer l'évitement de bord et le fait que notre robot suive une trajectoire en ligne droite la veille de la présentation. Mais en y travaillant davantage durant la nuit nous avons endommagé un régulateur lors de la mise sous tension du robot. Nous suspectons le câble d'un des deux moteurs d'avoir eu un faux contact.  
-On a donc manqué de temps pour refaire fonctionner tout l'ensemble le lendemain matin suite à de nouveaux dysfonctionnements et de nouvelles suspicions de faux-contact sur différents câbles, le sertissage de ceux-ci prenant beaucoup de temps, sans compter le remplacement du régulateur.  
-
-Nous comptions nous servir de l'accéléromètre pour assurer le passage de mode souris à chat si un choc était détecté (le choc contre un robot chat nous ayant touché dans ce cas).  
-Comme nous avons manqué de temps pour avoir un robot complètement fonctionnel jusque là, nous avons décidé de s'en servir comme d'une sorte de bouton d'arrêt en posant notre main sur le robot. En effet, nous nous étions rendu compte pendant les tests que le robot n'était pas si simple à arrêter une fois lancé, et que cette fonctionnalité était rapide à intégrer.
-
-Pour conclure, ce projet nous aura permis d'appliquer les différentes connaissances techniques acquises au cours de ce semestre, concernant les systèmes à microcontrôleurs, le design de PCB, la programmation en temps réel et la robotique. Ce projet nous aura aussi permis de développer notre travail d'équipe, que ce soit à travers la répartition des tâches, l'entraide ou encore par notre capacité à rester ouvert à des idées auxquelles on aurait pas pensé dans un premier temps.
+Nous comptions nous servir de l'accéléromètre pour assurer la détection du contact avec un autre robot. Comme nous avons manqué de temps pour avoir un robot complètement fonctionnel jusque là, nous avons décidé de nous en servir comme une sorte de bouton d'arrêt en posant notre main sur le robot. En effet, nous nous étions rendu compte pendant les tests que le robot n'était pas si simple à arrêter une fois lancé, et que cette fonctionnalité était rapide à intégrer.  
+  
+Pour conclure, ce projet nous aura permis d'appliquer les différentes connaissances techniques acquises au cours de ce semestre, concernant les systèmes à microcontrôleurs, le design de PCB, la programmation en temps réel et la robotique. Ce projet nous aura aussi permis de développer notre travail d'équipe, que ce soit à travers la répartition des tâches, l'entraide ou encore par notre capacité à rester ouverts à des idées auxquelles on aurait pas pensé dans un premier temps.
 
 ---
 
