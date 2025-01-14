@@ -1,0 +1,5 @@
+../Core/Src/ylidarx2.c:21:17:extract_uint16	16	static
+../Core/Src/ylidarx2.c:25:6:YLIDARX2_InitDMA	16	static
+../Core/Src/ylidarx2.c:36:6:YLIDARX2_ProcessDMAHalfComplete	16	static
+../Core/Src/ylidarx2.c:40:6:YLIDARX2_ProcessDMAComplete	16	static
+../Core/Src/ylidarx2.c:44:6:YLIDARX2_ProcessBuffer	88	static
