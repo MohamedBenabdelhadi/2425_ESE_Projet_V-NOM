@@ -117,7 +117,7 @@ Notre robot se déplaçait avec une différence de vitesse de rotation entre les
 
 https://github.com/user-attachments/assets/6fe6b484-391f-4125-b6b6-b91c0b271807
 
-### Capteurs de bord (ToF)
+### Détection des bords
 
 Le robot évite les bordures de la table si une distance supérieure à 40 mm des capteurs ToF est détectée.
 
