@@ -1,0 +1,20 @@
+digraph "task_Motors"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="task_Motors",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Task declarations."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="GP2Y0A41SK0F_get_distance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$driver__GP2Y0A41SK0F_8c.html#a45360e44b7a7b368b4fa9ba584d6fb3a",tooltip="Compute distances for both ToF sensors based on ADC readings."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="GP2Y0A41SK0F_Read_ToF1",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$driver__GP2Y0A41SK0F_8c.html#a717bc3d5b29849d805ba7bb3db352d56",tooltip="Read raw ADC value from ToF sensor 1."];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Error_Handler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8c.html#a1730ffe1e560465665eb47d9264826f9",tooltip="This function is executed in case of error occurrence."];
+  Node2 -> Node5 [id="edge4_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="GP2Y0A41SK0F_Read_ToF2",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$driver__GP2Y0A41SK0F_8c.html#ad0568e5c44844e6efc75a7dfe9f9d490",tooltip="Read raw ADC value from ToF sensor 2."];
+  Node5 -> Node4 [id="edge5_Node000005_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge6_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Motor_UpdateSpeed",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$driver__Motor_8c.html#a545aba630910986048b10789d7eefc60",tooltip="Update motor speeds gradually to achieve smoother transitions."];
+}
