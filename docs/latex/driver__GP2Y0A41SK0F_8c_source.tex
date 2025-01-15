@@ -1,0 +1,96 @@
+\doxysection{driver\+\_\+\+GP2\+Y0\+A41\+SK0\+F.\+c}
+\hypertarget{driver__GP2Y0A41SK0F_8c_source}{}\label{driver__GP2Y0A41SK0F_8c_source}\index{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_GP2Y0A41SK0F.c@{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_GP2Y0A41SK0F.c}}
+\mbox{\hyperlink{driver__GP2Y0A41SK0F_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00002}00002\ \textcolor{comment}{\ *\ driver\_GP2Y0A41SK0F.c}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Oct\ 22,\ 2024}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ oliver}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{driver__GP2Y0A41SK0F_8h}{driver\_GP2Y0A41SK0F.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{adc_8h}{adc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gpio_8h}{gpio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00018}\mbox{\hyperlink{driver__GP2Y0A41SK0F_8c_aa7ad3e9907f6fb052aca0e5fd419485e}{00018}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8c_aa7ad3e9907f6fb052aca0e5fd419485e}{GP2Y0A41SK0F\_Init}}(\mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{h\_GP2Y0A41SK0F\_t}}\ *\ htof)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ The\ ADC\ used\ is\ wired\ on\ the\ board\ so\ it's\ ADC1}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00020}00020\ \ \ \ \ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}}\ =\ \&\mbox{\hyperlink{adc_8h_a22b804736f5648d52f639b2647d4ed13}{hadc1}};}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (HAL\_ADC\_Init(htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}})\ !=\ HAL\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ Channel\ Config\ ADC\ ToF1}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00027}00027\ \ \ \ \ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a6a234707c2a0e0c0c2305eebb7d76f11}{cConfig\_tof1}}.Channel\ =\ ADC\_CHANNEL\_3;}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00028}00028\ \ \ \ \ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a6a234707c2a0e0c0c2305eebb7d76f11}{cConfig\_tof1}}.Rank\ =\ ADC\_REGULAR\_RANK\_1;}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00029}00029\ \ \ \ \ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a6a234707c2a0e0c0c2305eebb7d76f11}{cConfig\_tof1}}.SamplingTime\ =\ ADC\_SAMPLETIME\_47CYCLES\_5;}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Channel\ Config\ ADC\ ToF2}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00032}00032\ \ \ \ \ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a49d8eee2d2571b3ae0a696d0e6377d8e}{cConfig\_tof2}}.Channel\ =\ ADC\_CHANNEL\_1;}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00033}00033\ \ \ \ \ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a49d8eee2d2571b3ae0a696d0e6377d8e}{cConfig\_tof2}}.Rank\ =\ ADC\_REGULAR\_RANK\_1;}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00034}00034\ \ \ \ \ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a49d8eee2d2571b3ae0a696d0e6377d8e}{cConfig\_tof2}}.SamplingTime\ =\ ADC\_SAMPLETIME\_47CYCLES\_5;}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00041}\mbox{\hyperlink{driver__GP2Y0A41SK0F_8c_a717bc3d5b29849d805ba7bb3db352d56}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8c_a717bc3d5b29849d805ba7bb3db352d56}{GP2Y0A41SK0F\_Read\_ToF1}}(\mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{h\_GP2Y0A41SK0F\_t}}\ *\ htof)}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (HAL\_ADC\_ConfigChannel(htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}},\ \&htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a6a234707c2a0e0c0c2305eebb7d76f11}{cConfig\_tof1}})\ !=\ HAL\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00047}00047\ \ \ \ \ HAL\_ADC\_Start(htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}});}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (HAL\_ADC\_PollForConversion(htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}},\ HAL\_MAX\_DELAY)\ !=\ HAL\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00053}00053\ \ \ \ \ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a7fdc15c2ad2f480408312ff4135c9970}{adc\_val\_tof1}}\ =\ HAL\_ADC\_GetValue(htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}});}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00054}00054\ \ \ \ \ HAL\_ADC\_Stop(htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}});}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00061}\mbox{\hyperlink{driver__GP2Y0A41SK0F_8c_ad0568e5c44844e6efc75a7dfe9f9d490}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8c_ad0568e5c44844e6efc75a7dfe9f9d490}{GP2Y0A41SK0F\_Read\_ToF2}}(\mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{h\_GP2Y0A41SK0F\_t}}\ *\ htof)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (HAL\_ADC\_ConfigChannel(htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}},\ \&htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a49d8eee2d2571b3ae0a696d0e6377d8e}{cConfig\_tof2}})\ !=\ HAL\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00065}00065\ \ \ \ \ HAL\_ADC\_Start(htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}});}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{if}\ (HAL\_ADC\_PollForConversion(htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}},\ HAL\_MAX\_DELAY)\ !=\ HAL\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00071}00071\ \ \ \ \ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_aa9bd1e494692cd188986a8550db9350b}{adc\_val\_tof2}}\ =\ HAL\_ADC\_GetValue(htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}});}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00072}00072\ \ \ \ \ HAL\_ADC\_Stop(htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}});}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00089}\mbox{\hyperlink{driver__GP2Y0A41SK0F_8c_a45360e44b7a7b368b4fa9ba584d6fb3a}{00089}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8c_a45360e44b7a7b368b4fa9ba584d6fb3a}{GP2Y0A41SK0F\_get\_distance}}(\mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{h\_GP2Y0A41SK0F\_t}}\ *\ htof)}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00090}00090\ \{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00091}00091\ \ \ \ \ \textcolor{comment}{//\ Convert\ to\ Distance\ in\ units\ of\ mm}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00092}00092\ \ \ \ \ \textcolor{comment}{//\ by\ approximating\ datasheet\ graph}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//\ using\ equation\ of\ form:\ y\ =\ a/x\ +\ b}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//\ and\ two\ (x,y)\ points\ on\ the\ graph:}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00095}00095\ \ \ \ \ \textcolor{comment}{//\ (35mm,\ 3V)\ and\ (400mm,\ 0.3V)}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00096}00096\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ a\ =\ 120;}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ b\ =\ 0.03;}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{float}\ Vo\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8c_a717bc3d5b29849d805ba7bb3db352d56}{GP2Y0A41SK0F\_Read\_ToF1}}(htof);}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8c_ad0568e5c44844e6efc75a7dfe9f9d490}{GP2Y0A41SK0F\_Read\_ToF2}}(htof);}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00103}00103\ \ \ \ \ Vo\ =\ (\mbox{\hyperlink{driver__GP2Y0A41SK0F_8h_a1689d22b50ca895d410d0257bdf1d36c}{GP2Y0A41SK0F\_ADC\_VCC}}\ *\ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a7fdc15c2ad2f480408312ff4135c9970}{adc\_val\_tof1}})\ /\ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8h_aceb25d2d4176d0c88881b1fd42496fb6}{GP2Y0A41SK0F\_ADC\_MAX\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ Vo\ >\ b\ )\ \{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Distance\ measured\ by\ ToF1\ in\ mm}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00107}00107\ \ \ \ \ \ \ \ \ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_aa1e82a003d8c3efe362e113d40d08e8d}{distance\_tof1}}\ =\ (int)(\ a\ /\ (Vo\ -\/\ b)\ );}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00110}00110\ \ \ \ \ Vo\ =\ (\mbox{\hyperlink{driver__GP2Y0A41SK0F_8h_a1689d22b50ca895d410d0257bdf1d36c}{GP2Y0A41SK0F\_ADC\_VCC}}\ *\ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_aa9bd1e494692cd188986a8550db9350b}{adc\_val\_tof2}})\ /\ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8h_aceb25d2d4176d0c88881b1fd42496fb6}{GP2Y0A41SK0F\_ADC\_MAX\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ Vo\ >\ b\ )\ \{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Distance\ measured\ by\ ToF2\ in\ mm}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00114}00114\ \ \ \ \ \ \ \ \ htof-\/>\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a49f5b20a5cab5095c8aade8c4483638e}{distance\_tof2}}\ =\ (int)(\ a\ /\ (Vo\ -\/\ b)\ );}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8c_source_l00116}00116\ \}}
+
+\end{DoxyCode}

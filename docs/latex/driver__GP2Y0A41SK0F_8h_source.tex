@@ -1,0 +1,42 @@
+\doxysection{driver\+\_\+\+GP2\+Y0\+A41\+SK0\+F.\+h}
+\hypertarget{driver__GP2Y0A41SK0F_8h_source}{}\label{driver__GP2Y0A41SK0F_8h_source}\index{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_GP2Y0A41SK0F.h@{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/drivers/driver\_GP2Y0A41SK0F.h}}
+\mbox{\hyperlink{driver__GP2Y0A41SK0F_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00002}00002\ \textcolor{comment}{\ *\ driver\_GP2Y0A41SK0F.h}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Oct\ 22,\ 2024}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ oliver}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <inttypes.h>}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{adc_8h}{adc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00012}\mbox{\hyperlink{driver__GP2Y0A41SK0F_8h_a1689d22b50ca895d410d0257bdf1d36c}{00012}}\ \textcolor{preprocessor}{\#define\ GP2Y0A41SK0F\_ADC\_VCC\ 5.0}}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00013}\mbox{\hyperlink{driver__GP2Y0A41SK0F_8h_abfc41b989d0b4c4186dbfc17bfbd5a0c}{00013}}\ \textcolor{preprocessor}{\#define\ GP2Y0A41SK0F\_ADC\_BITS\ 12\ }}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00014}\mbox{\hyperlink{driver__GP2Y0A41SK0F_8h_aceb25d2d4176d0c88881b1fd42496fb6}{00014}}\ \textcolor{preprocessor}{\#define\ GP2Y0A41SK0F\_ADC\_MAX\_VALUE\ ((1\ <<\ GP2Y0A41SK0F\_ADC\_BITS)\ -\/\ 1)\ }}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00020}\mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{00020}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00021}\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{00021}}\ \ \ \ \ ADC\_HandleTypeDef\ *\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_af982c0fe5d77061049c468b599100134}{hadc}};\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00022}\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a6a234707c2a0e0c0c2305eebb7d76f11}{00022}}\ \ \ \ \ ADC\_ChannelConfTypeDef\ \mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a6a234707c2a0e0c0c2305eebb7d76f11}{cConfig\_tof1}};\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00023}\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a49d8eee2d2571b3ae0a696d0e6377d8e}{00023}}\ \ \ \ \ ADC\_ChannelConfTypeDef\ \mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a49d8eee2d2571b3ae0a696d0e6377d8e}{cConfig\_tof2}};\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00025}\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a7fdc15c2ad2f480408312ff4135c9970}{00025}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a7fdc15c2ad2f480408312ff4135c9970}{adc\_val\_tof1}};\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00026}\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_aa9bd1e494692cd188986a8550db9350b}{00026}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structh__GP2Y0A41SK0F__t_aa9bd1e494692cd188986a8550db9350b}{adc\_val\_tof2}};\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00028}\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_aa1e82a003d8c3efe362e113d40d08e8d}{00028}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structh__GP2Y0A41SK0F__t_aa1e82a003d8c3efe362e113d40d08e8d}{distance\_tof1}};\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00029}\mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a49f5b20a5cab5095c8aade8c4483638e}{00029}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structh__GP2Y0A41SK0F__t_a49f5b20a5cab5095c8aade8c4483638e}{distance\_tof2}};\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00030}00030\ \}\ \mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{h\_GP2Y0A41SK0F\_t}};}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00037}00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8h_aa7ad3e9907f6fb052aca0e5fd419485e}{GP2Y0A41SK0F\_Init}}(\mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{h\_GP2Y0A41SK0F\_t}}\ *htof);}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00043}00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8h_a717bc3d5b29849d805ba7bb3db352d56}{GP2Y0A41SK0F\_Read\_ToF1}}(\mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{h\_GP2Y0A41SK0F\_t}}\ *htof);}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00049}00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8h_ad0568e5c44844e6efc75a7dfe9f9d490}{GP2Y0A41SK0F\_Read\_ToF2}}(\mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{h\_GP2Y0A41SK0F\_t}}\ *htof);}
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{driver__GP2Y0A41SK0F_8h_source_l00055}00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{driver__GP2Y0A41SK0F_8h_a45360e44b7a7b368b4fa9ba584d6fb3a}{GP2Y0A41SK0F\_get\_distance}}(\mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{h\_GP2Y0A41SK0F\_t}}\ *htof);}
+
+\end{DoxyCode}

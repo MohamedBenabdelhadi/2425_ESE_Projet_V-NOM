@@ -1,0 +1,681 @@
+\doxysection{/home/oliver/\+Documents/3\+A/2425\+\_\+\+ESE\+\_\+\+Projet\+\_\+\+V-\/\+NOM/\+Projet\+\_\+\+V-\/\+NOM\+\_\+\+STM32/\+Core/\+Src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/Src/main.c@{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/Src/main.c}}
+
+
+\+: Main program body  
+
+
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}cmsis\+\_\+os.\+h"{}}\newline
+{\ttfamily \#include "{}adc.\+h"{}}\newline
+{\ttfamily \#include "{}dma.\+h"{}}\newline
+{\ttfamily \#include "{}spi.\+h"{}}\newline
+{\ttfamily \#include "{}tim.\+h"{}}\newline
+{\ttfamily \#include "{}usart.\+h"{}}\newline
+{\ttfamily \#include "{}gpio.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}stm32g4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}../drivers/driver\+\_\+\+Motor.\+h"{}}\newline
+{\ttfamily \#include "{}../drivers/driver\+\_\+\+GP2\+Y0\+A41\+SK0\+F.\+h"{}}\newline
+{\ttfamily \#include "{}../drivers/driver\+\_\+\+YLIDARX2.\+h"{}}\newline
+{\ttfamily \#include "{}../drivers/driver\+\_\+\+ADXL343.\+h"{}}\newline
+Include dependency graph for main.\+c\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}~1
+\item 
+\#define \mbox{\hyperlink{main_8c_a88edd2aa4feabff4af21a997d5d8aa23}{DEBUG\+\_\+\+PRINT}}(...)~printf(\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{main_8c_a6423a880df59733d2d9b509c7718d3a9}{STACK\+\_\+\+SIZE}}~256
+\item 
+\#define \mbox{\hyperlink{main_8c_a91bd5a224ef886a986db440d15be4397}{TASK\+\_\+\+PRIORITY\+\_\+\+MOTOR}}~10
+\item 
+\#define \mbox{\hyperlink{main_8c_ac5576123162ae1669c3f0d2b0ede59f8}{TASK\+\_\+\+PRIORITY\+\_\+\+CONTROL}}~2
+\item 
+\#define \mbox{\hyperlink{main_8c_a4126d324f758cfaaddd14dbc048e3441}{TOF\+\_\+\+TRESHHOLD}}~40
+\item 
+\#define \mbox{\hyperlink{main_8c_ad9f5ab5ce9186dd30e74331b822a3317}{DEBOUNCE\+\_\+\+DELAY\+\_\+\+MS}}~50
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_abade755e13d07c10889ae83143656158}{MX\+\_\+\+FREERTOS\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Free\+RTOS initialization. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_abc513dd972081ae765b6949a62872eb7}{\+\_\+\+\_\+io\+\_\+putchar}} (int ch)
+\begin{DoxyCompactList}\small\item\em Transmit a character over UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a1884970cc493d8efba5aec28c0d526e7}{HAL\+\_\+\+UART\+\_\+\+Rx\+Half\+Cplt\+Callback}} (UART\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}huart)
+\begin{DoxyCompactList}\small\item\em Interrupt callbacks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ae494a9643f29b87d6d81e5264e60e57b}{HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback}} (UART\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}huart)
+\begin{DoxyCompactList}\small\item\em UART receive complete callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}{HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback}} (uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em GPIO interrupt callback for EXTI line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a8f10a863197fb81d232a412773658b78}{task\+\_\+\+Motors}} (void \texorpdfstring{$\ast$}{*}unsused)
+\begin{DoxyCompactList}\small\item\em Task declarations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_acd1f91d39bdbd6e86a287e6c0f6eb700}{task\+\_\+\+Control}} (void \texorpdfstring{$\ast$}{*}unsused)
+\begin{DoxyCompactList}\small\item\em Behavior control task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_aa78a978fbd2432d86e6dd4b572b368af}{err\+Handler\+\_\+x\+Task\+Create}} (Base\+Type\+\_\+t r)
+\begin{DoxyCompactList}\small\item\em Handles errors during task creation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a0e0456ea96d55db31de947fb3e954f18}{HAL\+\_\+\+UART\+\_\+\+Error\+Callback}} (UART\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}huart)
+\begin{DoxyCompactList}\small\item\em UART error callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}{HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback}} (TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}htim)
+\begin{DoxyCompactList}\small\item\em Period elapsed callback in non blocking mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{main_8c_a6756b7138c240d2483fae1eb2ae7cd3a}{small\+\_\+logo\+\_\+msg}} \mbox{[}$\,$\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_ade7bc344359b5fe560adf6d6b5d2e2da}{big\+\_\+logo\+\_\+msg}} \mbox{[}$\,$\mbox{]}
+\item 
+char \mbox{\hyperlink{main_8c_a11d9c5d5126fbb2339ad812c80f29cac}{jumbo\+\_\+logo\+\_\+msg}} \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{structh__YLIDARX2__t}{h\+\_\+\+YLIDARX2\+\_\+t}} \mbox{\hyperlink{main_8c_a493c06babb7cdbc7da75be96c812804f}{hlidar}}
+\item 
+\mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} \mbox{\hyperlink{main_8c_a0bcb687a2a521ee4b8f96671baa7f1f1}{h\+Motors}}
+\item 
+\mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{h\+\_\+\+GP2\+Y0\+A41\+SK0\+F\+\_\+t}} \mbox{\hyperlink{main_8c_a9b31bf900b0aef147d175d0d2b6aa78b}{h\+Tof}}
+\item 
+\mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} \mbox{\hyperlink{main_8c_a708a0148f469d00ce01b25449488baad}{h\+ADXL}}
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{main_8c_a8699d330202dcaf5c9a654a7aa93d11c}{x\+Motors}}
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{main_8c_abad334b01a2fdbe2fb5ce1dff6cd2101}{x\+Control}}
+\item 
+Semaphore\+Handle\+\_\+t \mbox{\hyperlink{main_8c_ae146f0f510d7944fd0e8ffd727b32f24}{x\+Mutex}}
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{main_8c_a7c1f19ca953a6efd92b19e85dc17a798}{button\+Start\+Pressed}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Main program body 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2024 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+Definition in file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8c_ad9f5ab5ce9186dd30e74331b822a3317}\label{main_8c_ad9f5ab5ce9186dd30e74331b822a3317} 
+\index{main.c@{main.c}!DEBOUNCE\_DELAY\_MS@{DEBOUNCE\_DELAY\_MS}}
+\index{DEBOUNCE\_DELAY\_MS@{DEBOUNCE\_DELAY\_MS}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{DEBOUNCE\_DELAY\_MS}{DEBOUNCE\_DELAY\_MS}}
+{\footnotesize\ttfamily \#define DEBOUNCE\+\_\+\+DELAY\+\_\+\+MS~50}
+
+Debounce delay in milliseconds 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00064}{64}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_ad72dbcf6d0153db1b8d8a58001feed83}\label{main_8c_ad72dbcf6d0153db1b8d8a58001feed83} 
+\index{main.c@{main.c}!DEBUG@{DEBUG}}
+\index{DEBUG@{DEBUG}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{DEBUG}{DEBUG}}
+{\footnotesize\ttfamily \#define DEBUG~1}
+
+Enable or disable debug logs 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00050}{50}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a88edd2aa4feabff4af21a997d5d8aa23}\label{main_8c_a88edd2aa4feabff4af21a997d5d8aa23} 
+\index{main.c@{main.c}!DEBUG\_PRINT@{DEBUG\_PRINT}}
+\index{DEBUG\_PRINT@{DEBUG\_PRINT}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PRINT}{DEBUG\_PRINT}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PRINT(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~printf(\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00053}{53}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a6423a880df59733d2d9b509c7718d3a9}\label{main_8c_a6423a880df59733d2d9b509c7718d3a9} 
+\index{main.c@{main.c}!STACK\_SIZE@{STACK\_SIZE}}
+\index{STACK\_SIZE@{STACK\_SIZE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{STACK\_SIZE}{STACK\_SIZE}}
+{\footnotesize\ttfamily \#define STACK\+\_\+\+SIZE~256}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00058}{58}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_ac5576123162ae1669c3f0d2b0ede59f8}\label{main_8c_ac5576123162ae1669c3f0d2b0ede59f8} 
+\index{main.c@{main.c}!TASK\_PRIORITY\_CONTROL@{TASK\_PRIORITY\_CONTROL}}
+\index{TASK\_PRIORITY\_CONTROL@{TASK\_PRIORITY\_CONTROL}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TASK\_PRIORITY\_CONTROL}{TASK\_PRIORITY\_CONTROL}}
+{\footnotesize\ttfamily \#define TASK\+\_\+\+PRIORITY\+\_\+\+CONTROL~2}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00060}{60}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a91bd5a224ef886a986db440d15be4397}\label{main_8c_a91bd5a224ef886a986db440d15be4397} 
+\index{main.c@{main.c}!TASK\_PRIORITY\_MOTOR@{TASK\_PRIORITY\_MOTOR}}
+\index{TASK\_PRIORITY\_MOTOR@{TASK\_PRIORITY\_MOTOR}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TASK\_PRIORITY\_MOTOR}{TASK\_PRIORITY\_MOTOR}}
+{\footnotesize\ttfamily \#define TASK\+\_\+\+PRIORITY\+\_\+\+MOTOR~10}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00059}{59}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a4126d324f758cfaaddd14dbc048e3441}\label{main_8c_a4126d324f758cfaaddd14dbc048e3441} 
+\index{main.c@{main.c}!TOF\_TRESHHOLD@{TOF\_TRESHHOLD}}
+\index{TOF\_TRESHHOLD@{TOF\_TRESHHOLD}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TOF\_TRESHHOLD}{TOF\_TRESHHOLD}}
+{\footnotesize\ttfamily \#define TOF\+\_\+\+TRESHHOLD~40}
+
+Threshhold for edge detection 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00062}{62}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_abc513dd972081ae765b6949a62872eb7}\label{main_8c_abc513dd972081ae765b6949a62872eb7} 
+\index{main.c@{main.c}!\_\_io\_putchar@{\_\_io\_putchar}}
+\index{\_\_io\_putchar@{\_\_io\_putchar}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{\_\_io\_putchar()}{\_\_io\_putchar()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+io\+\_\+putchar (\begin{DoxyParamCaption}\item[{int}]{ch }\end{DoxyParamCaption})}
+
+
+
+Transmit a character over UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & Character to transmit. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & The transmitted character. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00184}{184}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_aa78a978fbd2432d86e6dd4b572b368af}\label{main_8c_aa78a978fbd2432d86e6dd4b572b368af} 
+\index{main.c@{main.c}!errHandler\_xTaskCreate@{errHandler\_xTaskCreate}}
+\index{errHandler\_xTaskCreate@{errHandler\_xTaskCreate}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{errHandler\_xTaskCreate()}{errHandler\_xTaskCreate()}}
+{\footnotesize\ttfamily void err\+Handler\+\_\+x\+Task\+Create (\begin{DoxyParamCaption}\item[{Base\+Type\+\_\+t}]{r }\end{DoxyParamCaption})}
+
+
+
+Handles errors during task creation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Return value from x\+Task\+Create. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+This function checks the return value of {\ttfamily x\+Task\+Create} to determine if a task was created successfully. In case of failure, it performs error handling. 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00336}{336}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\label{main_8c_a1730ffe1e560465665eb47d9264826f9} 
+\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00564}{564}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}\label{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f} 
+\index{main.c@{main.c}!HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}}
+\index{HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_GPIO\_EXTI\_Callback()}{HAL\_GPIO\_EXTI\_Callback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+GPIO interrupt callback for EXTI line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIO\+\_\+\+Pin} & The GPIO pin that triggered the interrupt. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+This callback handles the interrupt triggered by the accelerometer (single tap or other configured events). 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00228}{228}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+\Hypertarget{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}\label{main_8c_a8a3b0ad512a6e6c6157440b68d395eac} 
+\index{main.c@{main.c}!HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}}
+\index{HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_PeriodElapsedCallback()}{HAL\_TIM\_PeriodElapsedCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{htim }\end{DoxyParamCaption})}
+
+
+
+Period elapsed callback in non blocking mode. 
+
+\begin{DoxyNote}{Note}
+This function is called when TIM2 interrupt took place, inside HAL\+\_\+\+TIM\+\_\+\+IRQHandler(). It makes a direct call to HAL\+\_\+\+Inc\+Tick() to increment a global variable "{}uw\+Tick"{} used as application time base. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & \+: TIM handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00547}{547}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a0e0456ea96d55db31de947fb3e954f18}\label{main_8c_a0e0456ea96d55db31de947fb3e954f18} 
+\index{main.c@{main.c}!HAL\_UART\_ErrorCallback@{HAL\_UART\_ErrorCallback}}
+\index{HAL\_UART\_ErrorCallback@{HAL\_UART\_ErrorCallback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_UART\_ErrorCallback()}{HAL\_UART\_ErrorCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+UART\+\_\+\+Error\+Callback (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{huart }\end{DoxyParamCaption})}
+
+
+
+UART error callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em huart} & Pointer to the UART handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+This function handles UART errors such as parity, noise, framing, or overrun errors. It restarts the LIDAR\textquotesingle{}s DMA in case of errors. 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00520}{520}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_ae494a9643f29b87d6d81e5264e60e57b}\label{main_8c_ae494a9643f29b87d6d81e5264e60e57b} 
+\index{main.c@{main.c}!HAL\_UART\_RxCpltCallback@{HAL\_UART\_RxCpltCallback}}
+\index{HAL\_UART\_RxCpltCallback@{HAL\_UART\_RxCpltCallback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_UART\_RxCpltCallback()}{HAL\_UART\_RxCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{huart }\end{DoxyParamCaption})}
+
+
+
+UART receive complete callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em huart} & Pointer to the UART handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+This callback processes complete DMA reception for the UART instance. 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00215}{215}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+\Hypertarget{main_8c_a1884970cc493d8efba5aec28c0d526e7}\label{main_8c_a1884970cc493d8efba5aec28c0d526e7} 
+\index{main.c@{main.c}!HAL\_UART\_RxHalfCpltCallback@{HAL\_UART\_RxHalfCpltCallback}}
+\index{HAL\_UART\_RxHalfCpltCallback@{HAL\_UART\_RxHalfCpltCallback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_UART\_RxHalfCpltCallback()}{HAL\_UART\_RxHalfCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+UART\+\_\+\+Rx\+Half\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{huart }\end{DoxyParamCaption})}
+
+
+
+Interrupt callbacks. 
+
+Contains interrupt service routines (ISRs) and related callbacks.
+
+UART receive half-\/complete callback. 
+\begin{DoxyParams}{Parameters}
+{\em huart} & Pointer to the UART handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+This callback processes partial DMA reception for the UART instance (e.\+g., used for YLIDAR data). 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00203}{203}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+Peripheral initialization.
+
+Contains initialization code for GPIO, ADC, SPI, TIM, etc.
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00359}{359}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+\Hypertarget{main_8c_abade755e13d07c10889ae83143656158}\label{main_8c_abade755e13d07c10889ae83143656158} 
+\index{main.c@{main.c}!MX\_FREERTOS\_Init@{MX\_FREERTOS\_Init}}
+\index{MX\_FREERTOS\_Init@{MX\_FREERTOS\_Init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{MX\_FREERTOS\_Init()}{MX\_FREERTOS\_Init()}}
+{\footnotesize\ttfamily void MX\+\_\+\+FREERTOS\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Free\+RTOS initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{app__freertos_8c_source_l00066}{66}} of file \mbox{\hyperlink{app__freertos_8c_source}{app\+\_\+freertos.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\label{main_8c_a70af21c671abfcc773614a9a4f63d920} 
+\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure the main internal regulator output voltage
+
+Initializes the RCC Oscillators according to the specified parameters in the RCC\+\_\+\+Osc\+Init\+Type\+Def structure.
+
+Initializes the CPU, AHB and APB buses clocks
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00469}{469}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
+\Hypertarget{main_8c_acd1f91d39bdbd6e86a287e6c0f6eb700}\label{main_8c_acd1f91d39bdbd6e86a287e6c0f6eb700} 
+\index{main.c@{main.c}!task\_Control@{task\_Control}}
+\index{task\_Control@{task\_Control}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{task\_Control()}{task\_Control()}}
+{\footnotesize\ttfamily void task\+\_\+\+Control (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{unsused }\end{DoxyParamCaption})}
+
+
+
+Behavior control task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unsused} & Unused parameter. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+This Free\+RTOS task controls motor behavior based on ToF sensor readings. It evaluates distances from ToF sensors and adjusts motor directions accordingly. 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00291}{291}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
+\Hypertarget{main_8c_a8f10a863197fb81d232a412773658b78}\label{main_8c_a8f10a863197fb81d232a412773658b78} 
+\index{main.c@{main.c}!task\_Motors@{task\_Motors}}
+\index{task\_Motors@{task\_Motors}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{task\_Motors()}{task\_Motors()}}
+{\footnotesize\ttfamily void task\+\_\+\+Motors (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{unsused }\end{DoxyParamCaption})}
+
+
+
+Task declarations. 
+
+Contains declarations for Free\+RTOS tasks in the system.
+
+Motor control task. 
+\begin{DoxyParams}{Parameters}
+{\em unsused} & Unused parameter. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+This Free\+RTOS task continuously updates the motor speed based on current settings. 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00271}{271}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 14
+Here is the caller graph for this function\+:
+% FIG 15
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_ade7bc344359b5fe560adf6d6b5d2e2da}\label{main_8c_ade7bc344359b5fe560adf6d6b5d2e2da} 
+\index{main.c@{main.c}!big\_logo\_msg@{big\_logo\_msg}}
+\index{big\_logo\_msg@{big\_logo\_msg}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{big\_logo\_msg}{big\_logo\_msg}}
+{\footnotesize\ttfamily char big\+\_\+logo\+\_\+msg\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{stringliteral}{"{}\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⠤⠶⠶⠶⠤⠤⣤⣀\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠀⠀⢀⣠⠶⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⢦⣀\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠀⣰⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⡄\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⣰⠏⠀⢠⣶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⡀⠀⠹⣆\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⢠⡏⠀⢠⠟⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⢳⡄⠀⢹⡄\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⣾⠀⠀⡞⠀⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠇⠀⢷⠀⠈⣇\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⢠⡇⠀⢠⠇⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠋⠀⠀⠸⡆⠀⣿\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⢸⡇⠀⢸⠀⠀⠀⠀⠙⢦⡀⠀⠀⠀⠀⠀⠀⢀⡾⠃⠀⠀⠀⢰⠇⠀⣿\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⢸⡇⠀⢸⠀⠀⠀⠀⠀⠀⠳⣄⣰⡄⢰⣄⣰⠋⠀⠀⠀⠀⠀⢸⡀⠀⣿\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠘⡇⠀⢸⠀⠀⠀⠀⠀⠀⠀⠈⢹⡇⢸⠉⠁⠀⠀⠀⠀⠀⠀⠈⡇⠀⡟\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⢿⠀⠈⢧⡀⠀⠀⠀⠀⠀⠀⣾⠀⢸⣄⠀⠀⠀⠀⠀⠀⠀⡼⢁⢸⡇\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⢸⠘⣆⠈⢧⠀⠀⠀⠀⣠⠴⠃⠀⠀⠙⢧⣀⠀⠀⠀⠀⡼⠀⡼⢸⡃⠀⠀⠀⠀⠀⢀\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⣾⠀⢸⣆⠘⠷⠤⠴⠚⣁⣀⣤⣤⣤⣄⣀⠉⠙⠲⠴⠚⢡⣾⠇⠘⡇⠀⠀⠀⠀⠀⠈⢷⣤⡀\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⢹⣆⠈⣿⣷⣾⡖⣾⠻⣟⣾⣏⣻⣹⡟⡟⣿⢳⣶⣶⣾⣿⡟⠀⢰⡇⠀⠀⠀⠀⠀⠀⠘⣇⢻⡄\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠻⣄⢸⣿⡋⠹⠿⣿⣿⡿⢿⣿⡟⣿⢿⣿⡟⠹⠋⠙⡿⠁⣴⠟⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⣷\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠀⠹⣶⣿⣿⣄⠀⢻⣘⣦⣼⣿⣴⣿⣼⣼⣇⡀⣰⣿⠃⣴⠏⠀⠀⠀⠀⠀⠀⠀⢀⣴⠏⢀⡏\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠀⠀⠙⣿⢿⣿⣥⣾⠛⠉⠀⠀⠉⠙⢦⡀⠈⠙⢿⣇⣰⠃⠀⠀⠀⠀⣀⣀⡤⠶⠛⠁⢠⡾⠁\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠀⠀⠀⠘⣿⠻⣿⢻⣦⠀⢀⡀⠀⠀⠀⠙⠀⠀⠀⠹⣇⠀⠀⢀⣴⠟⠉⠀⠀⢀⣠⡼⠋\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠀⠀⠀⠀⠘⣿⢹⡾⢻⣇⣴⡿⠳⢦⣀⠀⠀⠀⠀⠀⠙⠳⠶⠛⠁⠀⠀⢀⡼⠋⠁\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠀⠀⠀⠀⠀⠘⣿⠻⡎⢹⢿⣷⣶⣎⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠁\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠀⠀⠀⠀⠀⠀⠸⣆⠙⢾⣸⠙⡿⢿⣩⠏⢹⣦⣀⠀⠀⠀⠀⠀⢀⣴⠟⠁\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣦⡀⠉⠉⠉⠉⠁⣰⠏⠀⠈⠉⠛⠒⠒⠛⠉⠁\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠓⠒⠒⠒⠋⠁\(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00089}{89}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a7c1f19ca953a6efd92b19e85dc17a798}\label{main_8c_a7c1f19ca953a6efd92b19e85dc17a798} 
+\index{main.c@{main.c}!buttonStartPressed@{buttonStartPressed}}
+\index{buttonStartPressed@{buttonStartPressed}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{buttonStartPressed}{buttonStartPressed}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t button\+Start\+Pressed = 1}
+
+Flag to indicate button press state 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00166}{166}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a708a0148f469d00ce01b25449488baad}\label{main_8c_a708a0148f469d00ce01b25449488baad} 
+\index{main.c@{main.c}!hADXL@{hADXL}}
+\index{hADXL@{hADXL}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hADXL}{hADXL}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structh__ADXL343__t}{h\+\_\+\+ADXL343\+\_\+t}} h\+ADXL}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00158}{158}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a493c06babb7cdbc7da75be96c812804f}\label{main_8c_a493c06babb7cdbc7da75be96c812804f} 
+\index{main.c@{main.c}!hlidar@{hlidar}}
+\index{hlidar@{hlidar}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hlidar}{hlidar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structh__YLIDARX2__t}{h\+\_\+\+YLIDARX2\+\_\+t}} hlidar}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00149}{149}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a0bcb687a2a521ee4b8f96671baa7f1f1}\label{main_8c_a0bcb687a2a521ee4b8f96671baa7f1f1} 
+\index{main.c@{main.c}!hMotors@{hMotors}}
+\index{hMotors@{hMotors}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hMotors}{hMotors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structh__Motor__t}{h\+\_\+\+Motor\+\_\+t}} h\+Motors}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00152}{152}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a9b31bf900b0aef147d175d0d2b6aa78b}\label{main_8c_a9b31bf900b0aef147d175d0d2b6aa78b} 
+\index{main.c@{main.c}!hTof@{hTof}}
+\index{hTof@{hTof}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hTof}{hTof}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structh__GP2Y0A41SK0F__t}{h\+\_\+\+GP2\+Y0\+A41\+SK0\+F\+\_\+t}} h\+Tof}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00155}{155}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a11d9c5d5126fbb2339ad812c80f29cac}\label{main_8c_a11d9c5d5126fbb2339ad812c80f29cac} 
+\index{main.c@{main.c}!jumbo\_logo\_msg@{jumbo\_logo\_msg}}
+\index{jumbo\_logo\_msg@{jumbo\_logo\_msg}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{jumbo\_logo\_msg}{jumbo\_logo\_msg}}
+{\footnotesize\ttfamily char jumbo\+\_\+logo\+\_\+msg\mbox{[}$\,$\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00114}{114}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a6756b7138c240d2483fae1eb2ae7cd3a}\label{main_8c_a6756b7138c240d2483fae1eb2ae7cd3a} 
+\index{main.c@{main.c}!small\_logo\_msg@{small\_logo\_msg}}
+\index{small\_logo\_msg@{small\_logo\_msg}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{small\_logo\_msg}{small\_logo\_msg}}
+{\footnotesize\ttfamily char small\+\_\+logo\+\_\+msg\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\textcolor{stringliteral}{"{}\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \(\backslash\)\(\backslash\)\_\_\_\_\_\_\_/\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \`{}.,-\/'\(\backslash\)\(\backslash\)\_\_\_\_\_/`-\/.,'\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ /`..'\(\backslash\)\(\backslash\)\ \_\ /`.,'\(\backslash\)\(\backslash\)\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ /\ \ /`.,'\ \`{}.,'\(\backslash\)\(\backslash\)\ \ \(\backslash\)\(\backslash\)\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\_\_/\_\_/\_\_/V-\/NOM\(\backslash\)\(\backslash\)\_\_\(\backslash\)\(\backslash\)\_\_\(\backslash\)\(\backslash\)\_\_\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \(\backslash\)\(\backslash\)\ \ \(\backslash\)\(\backslash\)\ \ \(\backslash\)\(\backslash\)\ \ \ \ \ /\ \ /\ \ /\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \(\backslash\)\(\backslash\)\ \ \(\backslash\)\(\backslash\),'`.\_,'`./\ \ /\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ \(\backslash\)\(\backslash\),'`./\_\_\_\(\backslash\)\(\backslash\),'`./\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ ,'`-\/./\_\_\_\_\_\(\backslash\)\(\backslash\),-\/'`.\(\backslash\)r\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ /\ \ \ \ \ \ \ \(\backslash\)\(\backslash\)\ \(\backslash\)r\(\backslash\)n"{}}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00077}{77}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_abad334b01a2fdbe2fb5ce1dff6cd2101}\label{main_8c_abad334b01a2fdbe2fb5ce1dff6cd2101} 
+\index{main.c@{main.c}!xControl@{xControl}}
+\index{xControl@{xControl}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{xControl}{xControl}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t x\+Control}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00162}{162}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_a8699d330202dcaf5c9a654a7aa93d11c}\label{main_8c_a8699d330202dcaf5c9a654a7aa93d11c} 
+\index{main.c@{main.c}!xMotors@{xMotors}}
+\index{xMotors@{xMotors}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{xMotors}{xMotors}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t x\+Motors}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00161}{161}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_ae146f0f510d7944fd0e8ffd727b32f24}\label{main_8c_ae146f0f510d7944fd0e8ffd727b32f24} 
+\index{main.c@{main.c}!xMutex@{xMutex}}
+\index{xMutex@{xMutex}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{xMutex}{xMutex}}
+{\footnotesize\ttfamily Semaphore\+Handle\+\_\+t x\+Mutex}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00163}{163}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+

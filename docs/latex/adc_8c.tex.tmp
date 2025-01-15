@@ -1,0 +1,96 @@
+\doxysection{/home/oliver/\+Documents/3\+A/2425\+\_\+\+ESE\+\_\+\+Projet\+\_\+\+V-\/\+NOM/\+Projet\+\_\+\+V-\/\+NOM\+\_\+\+STM32/\+Core/\+Src/adc.c File Reference}
+\hypertarget{adc_8c}{}\label{adc_8c}\index{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/Src/adc.c@{/home/oliver/Documents/3A/2425\_ESE\_Projet\_V-\/NOM/Projet\_V-\/NOM\_STM32/Core/Src/adc.c}}
+
+
+This file provides code for the configuration of the ADC instances.  
+
+
+{\ttfamily \#include "{}adc.\+h"{}}\newline
+Include dependency graph for adc.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{adc_8c_acccd58aa70215a6b184ad242312ffd0c}{MX\+\_\+\+ADC1\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{adc_8c_ac3139540667c403c5dfd37a99c610b1c}{HAL\+\_\+\+ADC\+\_\+\+Msp\+Init}} (ADC\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}adc\+Handle)
+\item 
+void \mbox{\hyperlink{adc_8c_a3f61f2c2af0f122f81a87af8ad7b4360}{HAL\+\_\+\+ADC\+\_\+\+Msp\+De\+Init}} (ADC\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}adc\+Handle)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ADC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{adc_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides code for the configuration of the ADC instances. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2024 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+Definition in file \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{adc_8c_a3f61f2c2af0f122f81a87af8ad7b4360}\label{adc_8c_a3f61f2c2af0f122f81a87af8ad7b4360} 
+\index{adc.c@{adc.c}!HAL\_ADC\_MspDeInit@{HAL\_ADC\_MspDeInit}}
+\index{HAL\_ADC\_MspDeInit@{HAL\_ADC\_MspDeInit}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_ADC\_MspDeInit()}{HAL\_ADC\_MspDeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+ADC\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{adc\+Handle }\end{DoxyParamCaption})}
+
+ADC1 GPIO Configuration PA0 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC1\+\_\+\+IN1 PA2 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC1\+\_\+\+IN3
+
+Definition at line \mbox{\hyperlink{adc_8c_source_l00132}{132}} of file \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\Hypertarget{adc_8c_ac3139540667c403c5dfd37a99c610b1c}\label{adc_8c_ac3139540667c403c5dfd37a99c610b1c} 
+\index{adc.c@{adc.c}!HAL\_ADC\_MspInit@{HAL\_ADC\_MspInit}}
+\index{HAL\_ADC\_MspInit@{HAL\_ADC\_MspInit}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_ADC\_MspInit()}{HAL\_ADC\_MspInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+ADC\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{adc\+Handle }\end{DoxyParamCaption})}
+
+Initializes the peripherals clocks
+
+ADC1 GPIO Configuration PA0 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC1\+\_\+\+IN1 PA2 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC1\+\_\+\+IN3
+
+Definition at line \mbox{\hyperlink{adc_8c_source_l00093}{93}} of file \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+\Hypertarget{adc_8c_acccd58aa70215a6b184ad242312ffd0c}\label{adc_8c_acccd58aa70215a6b184ad242312ffd0c} 
+\index{adc.c@{adc.c}!MX\_ADC1\_Init@{MX\_ADC1\_Init}}
+\index{MX\_ADC1\_Init@{MX\_ADC1\_Init}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{MX\_ADC1\_Init()}{MX\_ADC1\_Init()}}
+{\footnotesize\ttfamily void MX\+\_\+\+ADC1\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Common config
+
+Configure the ADC multi-\/mode
+
+Configure Regular Channel
+
+Definition at line \mbox{\hyperlink{adc_8c_source_l00030}{30}} of file \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{adc_8c_a22b804736f5648d52f639b2647d4ed13}\label{adc_8c_a22b804736f5648d52f639b2647d4ed13} 
+\index{adc.c@{adc.c}!hadc1@{hadc1}}
+\index{hadc1@{hadc1}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{hadc1}{hadc1}}
+{\footnotesize\ttfamily ADC\+\_\+\+Handle\+Type\+Def hadc1}
+
+
+
+Definition at line \mbox{\hyperlink{adc_8c_source_l00027}{27}} of file \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
