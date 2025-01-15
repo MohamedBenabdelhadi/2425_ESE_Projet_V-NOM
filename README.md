@@ -114,14 +114,17 @@ De cette façon on peut clairement distinguer les dépendances entre chaque grou
 ### Déplacement
 
 Notre robot se déplaçait avec une différence de vitesse de rotation entre les deux moteurs mais nous avons pu corriger cela par la suite avec la commande PWM, de façon à ce que celui-ci avance de façon plus satisfaisante.
+Voici deux vidéos que nous avons filmé du déplacement du robot sur la table :  
 
 https://github.com/user-attachments/assets/6fe6b484-391f-4125-b6b6-b91c0b271807
+
+Et sur le sol :
 
 https://github.com/user-attachments/assets/b978a031-3b2a-425c-8a7f-36d00a8f8381
 
 ### Détection des bords
 
-Le robot évite les bordures de la table si une distance supérieure à 40 mm des capteurs ToF est détectée.
+Le robot évite les bordures de la table en mesurant si une distance supérieure à 40 mm (distance entre les capteurs et la surface où repose le robot) des capteurs ToF est détectée.
 
 Pour ce test, nous avons placé nos mains devant les capteurs à différentes distances pour faire varier les valeurs renvoyées par ces capteurs. C'est aussi de cette façon que nous avons dans un premier temps testé le comportement du robot en simulant les bords de table.  
 
@@ -132,7 +135,7 @@ Cela permet d'implémenter une réponse différente dans ces deux cas distincts 
 
 https://github.com/user-attachments/assets/6ce4b2a9-2457-454e-afb0-1f59e9b68249
 
-Placer ces deux capteurs à l'avant permettent de couvrir le cas où ceux-ci captent simultanément un bord, ou dans notre cas test, la présence de nos mains.
+Placer ces deux capteurs à l'avant permet de couvrir le cas où ceux-ci captent simultanément un bord, ou dans notre cas test, la présence de nos mains.
 
 https://github.com/user-attachments/assets/8c24e3c7-2838-483b-800a-837b5c4522e4
 
@@ -144,6 +147,8 @@ Le lidar envoie des données par DMA, on enregistre et on traite 1000 points à 
 Chaque point affiche la distance mesurée entre le Lidar et l'obstacle, avec l'angle correspondant à la différence d'angle avec l'axe frontal central du robot.
 
 https://github.com/user-attachments/assets/2a43f50e-ff47-4074-a242-2cb1f4e33f11
+  
+Les informations reçues du Lidar sont comme le montre la capture ci dessous :  
 
 ![image](https://github.com/user-attachments/assets/234b85a4-5771-40a6-812e-22702c0faf35)
 
