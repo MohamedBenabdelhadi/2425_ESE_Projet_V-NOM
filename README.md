@@ -113,9 +113,11 @@ De cette façon on peut clairement distinguer les dépendances entre chaque grou
 
 ### Déplacement
 
-Notre robot se déplaçait avec une différence de vitesse de rotation entre les deux moteurs mais nous avons pu corriger cela par la suite avec la commande PWM, de façon à ce que celui-ci avance quasiment en ligne droite.
+Notre robot se déplaçait avec une différence de vitesse de rotation entre les deux moteurs mais nous avons pu corriger cela par la suite avec la commande PWM, de façon à ce que celui-ci avance de façon plus satisfaisante.
 
 https://github.com/user-attachments/assets/6fe6b484-391f-4125-b6b6-b91c0b271807
+
+https://github.com/user-attachments/assets/b978a031-3b2a-425c-8a7f-36d00a8f8381
 
 ### Détection des bords
 
