@@ -123,12 +123,18 @@ Le robot évite les bordures de la table si une distance supérieure à 40 mm de
 
 Pour ce test, nous avons placé nos mains devant les capteurs à différentes distances pour faire varier les valeurs renvoyées par ces capteurs. C'est aussi de cette façon que nous avons dans un premier temps testé le comportement du robot en simulant les bords de table.  
 
-https://github.com/user-attachments/assets/6ce4b2a9-2457-454e-afb0-1f59e9b68249
+![WhatsApp Image 2025-01-10 at 08 03 31](https://github.com/user-attachments/assets/89f28cec-c6fe-48bb-afb0-812875c3b871)
 
 Comme précisé plus tôt, nous avons choisi de mettre nos deux capteurs TOFs à l'avant de notre robot pour que celui-ci puisse différencier le cas où le bord de la table est proche de son côté gauche ou droit.  
 Cela permet d'implémenter une réponse différente dans ces deux cas distincts et d'éviter les chutes accidentelles dues à une mauvaise manœuvre lors de la détection du bord de la table.
 
-![WhatsApp Image 2025-01-10 at 08 03 31](https://github.com/user-attachments/assets/89f28cec-c6fe-48bb-afb0-812875c3b871)
+https://github.com/user-attachments/assets/6ce4b2a9-2457-454e-afb0-1f59e9b68249
+
+Placer ces deux capteurs à l'avant permettent de couvrir le cas où ceux-ci captent simultanément un bord, ou dans notre cas test, la présence de nos mains.
+
+https://github.com/user-attachments/assets/8c24e3c7-2838-483b-800a-837b5c4522e4
+
+Mis bout à bout, ces différentes réactions auraient permi au robot de longer le bord de la table grâce à une correction proportionnelle le jour de la démonstration.
 
 ### Le lidar
 
